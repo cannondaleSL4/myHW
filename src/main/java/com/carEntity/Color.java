@@ -1,6 +1,8 @@
 package com.carEntity;
 
 import org.codehaus.jackson.annotate.JsonTypeInfo;
+import org.hibernate.annotations.GeneratorType;
+import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.SQLInsert;
 
 import javax.persistence.*;
@@ -16,7 +18,7 @@ import static javax.persistence.GenerationType.IDENTITY;
         name="color_table",
         uniqueConstraints = { @UniqueConstraint(columnNames =
                 { "color_table_name", "is_metallic" }) })
-/*@SQLInsert(sql = "INSERT INTO color_table(color_table_name, is_metallic) VALUES (?, ?)" +
+/*@SQLInsert(sql = "INSERT INTO color_table (idcolor_table,color_table_name, is_metallic) VALUES (?,?,?)" +
         " on CONFLICT do nothing;")*/
 @JsonTypeInfo (use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
 public class Color implements CarParts {
@@ -34,7 +36,12 @@ public class Color implements CarParts {
 
     @Id
     @Column(name = "idcolor_table")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    //@GenericGenerator(name="gen",strategy="increment")
+    //@GeneratedValue(generator="gen")
+
+    @GeneratedValue(strategy = GenerationType.AUTO)
     public int getId() {
         return id;
     }

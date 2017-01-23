@@ -74,7 +74,8 @@ public class ApiDb {
         try{
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
-            session.save(carParts);
+            //session.save(carParts);
+            session.merge(carParts);
             session.getTransaction().commit();
         }catch (Exception e){
             e.printStackTrace();
