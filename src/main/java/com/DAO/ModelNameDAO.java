@@ -2,6 +2,7 @@ package com.DAO;
 
 import com.api.HibernateUtil;
 import com.carEntity.Color;
+import com.carEntity.Engine;
 import com.carEntity.ModelName;
 import org.hibernate.Session;
 
@@ -11,7 +12,7 @@ import java.sql.SQLException;
 /**
  * Created by dima on 24.01.17.
  */
-public class ModelNameDAO {
+public class ModelNameDAO implements DAO <ModelName> {
     public void add(ModelName modelName) throws SQLException {
         Session session = null;
         try{

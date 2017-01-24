@@ -2,6 +2,7 @@ package com.DAO;
 
 import com.api.HibernateUtil;
 import com.carEntity.Color;
+import com.carEntity.Engine;
 import com.carEntity.KindOfBody;
 import org.hibernate.Session;
 
@@ -11,7 +12,7 @@ import java.sql.SQLException;
 /**
  * Created by dima on 24.01.17.
  */
-public class KindOfBodyDAO {
+public class KindOfBodyDAO implements DAO <KindOfBody> {
     public void add(KindOfBody kindOfBody) throws SQLException {
         Session session = null;
         try{

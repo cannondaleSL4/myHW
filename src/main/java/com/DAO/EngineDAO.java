@@ -11,7 +11,7 @@ import java.sql.SQLException;
 /**
  * Created by dima on 24.01.17.
  */
-public class EngineDAO {
+public class EngineDAO implements DAO <Engine> {
     public void add(Engine engine) throws SQLException {
         Session session = null;
         try{
