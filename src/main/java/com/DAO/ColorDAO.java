@@ -60,4 +60,21 @@ public class ColorDAO implements DAO<Color> {
         }
         return color;
     }
+
+    @Override
+    public void delete(Color color) {
+        Session session = null;
+        try{
+            session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            session.delete(color);
+            session.getTransaction().commit();
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error while deleting", JOptionPane.OK_OPTION);
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+    }
 }

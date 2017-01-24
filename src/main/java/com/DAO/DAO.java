@@ -9,4 +9,5 @@ public interface DAO <T> {
     void add(T t)throws SQLException;
     void update(Long l,T t)throws SQLException;
     T getById(Long l);
+    void delete(T t);
 }

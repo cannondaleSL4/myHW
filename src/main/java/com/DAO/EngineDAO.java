@@ -60,4 +60,21 @@ public class EngineDAO implements DAO <Engine> {
         }
         return engine;
     }
+
+    @Override
+    public void delete(Engine engine) {
+        Session session = null;
+        try{
+            session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            session.delete(engine);
+            session.getTransaction().commit();
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error while deleting", JOptionPane.OK_OPTION);
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+    }
 }

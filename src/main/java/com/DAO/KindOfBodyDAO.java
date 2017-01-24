@@ -1,6 +1,7 @@
 package com.DAO;
 
 import com.api.HibernateUtil;
+import com.carEntity.Color;
 import com.carEntity.KindOfBody;
 import org.hibernate.Session;
 
@@ -59,5 +60,22 @@ public class KindOfBodyDAO implements DAO <KindOfBody> {
             }
         }
         return kindOfBody;
+    }
+
+    @Override
+    public void delete(KindOfBody kindOfBody) {
+        Session session = null;
+        try{
+            session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            session.delete(kindOfBody);
+            session.getTransaction().commit();
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error while deleting", JOptionPane.OK_OPTION);
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
     }
 }

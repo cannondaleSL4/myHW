@@ -1,6 +1,7 @@
 package com.DAO;
 
 import com.api.HibernateUtil;
+import com.carEntity.Color;
 import com.carEntity.ModelName;
 import org.hibernate.Session;
 
@@ -59,5 +60,22 @@ public class ModelNameDAO implements DAO <ModelName> {
             }
         }
         return modelName;
+    }
+
+    @Override
+    public void delete(ModelName modelName) {
+        Session session = null;
+        try{
+            session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            session.delete(modelName);
+            session.getTransaction().commit();
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error while deleting", JOptionPane.OK_OPTION);
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
     }
 }

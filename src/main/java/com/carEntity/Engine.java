@@ -16,16 +16,21 @@ public class Engine implements CarParts {
     private int horsepower;
 
 
-    public Engine(String nameOfEngine, int horsepower,Long id) {
-        this.nameOfEngine = nameOfEngine;
-        this.horsepower = horsepower;
-        this.id = id;
-    }
-
     public Engine(){}
 
     public Engine(String nameOfEngine) {
         this.nameOfEngine = nameOfEngine;
+    }
+
+    public Engine(String nameOfEngine, int horsepower) {
+        this.nameOfEngine = nameOfEngine;
+        this.horsepower = horsepower;
+    }
+
+    public Engine(String nameOfEngine, int horsepower,Long id) {
+        this.nameOfEngine = nameOfEngine;
+        this.horsepower = horsepower;
+        this.id = id;
     }
 
     @Id
