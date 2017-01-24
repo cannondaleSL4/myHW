@@ -14,12 +14,19 @@ import static javax.persistence.GenerationType.IDENTITY;
  * Created by dima on 08.12.16.
  */
 @Entity
-@Table(
+@Table (
+        name  = "color_table",
+        uniqueConstraints =
+                @UniqueConstraint(columnNames = {"color_table_name","is_metallic"})
+)
+/*@Table(
         name="color_table",
         uniqueConstraints = { @UniqueConstraint(columnNames =
-                { "color_table_name", "is_metallic" }) })
+                { "color_table_name", "is_metallic" }) })*/
 /*@SQLInsert(sql = "INSERT INTO color_table (idcolor_table,color_table_name, is_metallic) VALUES (?,?,?)" +
         " on CONFLICT do nothing;")*/
+@SQLInsert(callable = true,sql = "INSERT INTO color_table (color_table_name, is_metallic) VALUES (?,?)" +
+        " on conflict do nothing ;")
 @JsonTypeInfo (use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
 public class Color implements CarParts {
 
@@ -36,12 +43,12 @@ public class Color implements CarParts {
 
     @Id
     @Column(name = "idcolor_table")
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     //@GenericGenerator(name="gen",strategy="increment")
     //@GeneratedValue(generator="gen")
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
     public int getId() {
         return id;
     }

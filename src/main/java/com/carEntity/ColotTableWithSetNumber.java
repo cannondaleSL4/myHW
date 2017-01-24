@@ -1,7 +1,7 @@
 package com.carEntity;
 
 
-import javafx.util.Pair;
+
 import org.codehaus.jackson.annotate.JsonTypeInfo;
 
 import javax.persistence.Entity;
@@ -13,9 +13,9 @@ import java.util.Set;
 /**
  * Created by dima on 08.12.16.
  */
-@Entity
+/*@Entity
 @Table(name ="color_table_has_color_set")
-@JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
+@JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")*/
 public class ColotTableWithSetNumber {
     
     private Set<Color> colors;
