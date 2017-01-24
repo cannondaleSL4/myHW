@@ -11,7 +11,7 @@ import javax.persistence.*;
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
 public class KindOfBody implements CarParts {
 
-    private int id;
+    private Long id;
     private String nameKindOfBody;
 
     public KindOfBody(String nameKindOfBody) {
@@ -23,11 +23,11 @@ public class KindOfBody implements CarParts {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name = "idkind_of_body")
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

@@ -12,7 +12,7 @@ import javax.persistence.*;
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
 public class ModelName implements CarParts {
 
-    private int id;
+    private Long id;
     private String modelName;
 
     public ModelName(String modelName) {
@@ -24,11 +24,11 @@ public class ModelName implements CarParts {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name = "idcurrent_model")
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

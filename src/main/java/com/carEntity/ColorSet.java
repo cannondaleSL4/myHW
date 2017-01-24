@@ -16,20 +16,20 @@ public class ColorSet implements CarParts {
     @Id
     @Column(name = "idcolor_set")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
-    public ColorSet(int idColorSet){
+    public ColorSet(Long idColorSet){
         this.id = idColorSet;
     }
 
     public ColorSet() {
     }
 
-    public int getIdColorSet() {
+    public Long getIdColorSet() {
         return id;
     }
 
-    public void setIdColorSet(int idColorSet) {
+    public void setIdColorSet(Long idColorSet) {
         this.id = idColorSet;
     }
 

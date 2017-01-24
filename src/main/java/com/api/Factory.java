@@ -1,6 +1,7 @@
 package com.api;
 
 import com.DAO.*;
+import com.carEntity.CarParts;
 
 /**
  * Created by dima on 24.01.17.
@@ -21,8 +22,6 @@ public class Factory {
         }
         return instance;
     }
-
-
 
     public ColorDAO getColorDAO(){
         if (colorDAO == null){
@@ -58,8 +57,5 @@ public class Factory {
         }
         return  transmissionDAO;
     }
-
-
-
 
 }

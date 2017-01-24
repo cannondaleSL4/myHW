@@ -24,7 +24,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 @JsonTypeInfo (use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
 public class Color implements CarParts {
 
-    private int id;
+    private Long id;
     private String colorName;
     private boolean isMetallic;
 
@@ -38,11 +38,11 @@ public class Color implements CarParts {
     @Id
     @Column(name = "idcolor_table")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

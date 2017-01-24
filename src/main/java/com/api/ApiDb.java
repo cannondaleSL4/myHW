@@ -7,6 +7,7 @@ import org.codehaus.jackson.map.ObjectMapper;
 
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 /**
  * Created by dima on 07.01.17.
@@ -26,7 +27,7 @@ public class ApiDb {
     private ApiDb() {
     }
 
-    public void makeReq(String req) throws IOException {
+    public void makeReq(String req) throws IOException, SQLException {
         String [] strArray = req.split("/");
         String operation = strArray[0];//it's couse the first element is name of operation
         switch (operation){
@@ -71,8 +72,18 @@ public class ApiDb {
         return null;
     }
 
-    private void create(CarParts carParts) throws IOException{
-
+    private void create(CarParts carParts) throws IOException, SQLException {
+        if (carParts instanceof Color){
+            factory.getColorDAO().add((Color)carParts);
+        }else if(carParts instanceof ModelName){
+            factory.getModelNameDAO().add((ModelName)carParts);
+        }else if(carParts instanceof Engine){
+            factory.getEngineDAO().add((Engine)carParts);
+        }else if(carParts instanceof KindOfBody){
+            factory.getKindOfBody().add((KindOfBody)carParts);
+        }else if(carParts instanceof Transmission){
+            factory.getTransmissionDAO().add((Transmission)carParts);
+        }
         /*Session session = null;
         try{
             session = HibernateUtil.getSessionFactory().openSession();

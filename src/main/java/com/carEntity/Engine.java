@@ -11,14 +11,15 @@ import javax.persistence.*;
 @Table(name="engine")
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
 public class Engine implements CarParts {
-    private int id;
+    private Long id;
     private String nameOfEngine;
     private int horsepower;
 
 
-    public Engine(String nameOfEngine, int horsepower) {
+    public Engine(String nameOfEngine, int horsepower,Long id) {
         this.nameOfEngine = nameOfEngine;
         this.horsepower = horsepower;
+        this.id = id;
     }
 
     public Engine(){}
@@ -30,11 +31,11 @@ public class Engine implements CarParts {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name = "idengine")
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

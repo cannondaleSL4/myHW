@@ -28,4 +28,38 @@ public class KindOfBodyDAO implements DAO <KindOfBody> {
             }
         }
     }
+
+    @Override
+    public void update(Long l, KindOfBody kindOfBody) throws SQLException {
+        Session session = null;
+        try{
+            session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            session.update(getById(l));
+            session.getTransaction().commit();
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error for update", JOptionPane.OK_OPTION);
+        }finally {
+            if (session != null && session.isOpen()){
+                session.close();
+            }
+        }
+    }
+
+    @Override
+    public KindOfBody getById(Long l) {
+        Session session = null;
+        KindOfBody kindOfBody = null;
+        try{
+            session = HibernateUtil.getSessionFactory().openSession();
+            kindOfBody = (KindOfBody) session.load(KindOfBody.class,l);
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error for  getting by id", JOptionPane.OK_OPTION);
+        }finally {
+            if (session != null && session.isOpen()){
+                session.close();
+            }
+        }
+        return kindOfBody;
+    }
 }
