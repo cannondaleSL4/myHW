@@ -8,6 +8,8 @@ import org.codehaus.jackson.map.ObjectMapper;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by dima on 07.01.17.
@@ -18,6 +20,8 @@ public class ApiDb {
     private static Factory factory = Factory.getInstance();
 
     private static ObjectMapper objectMapper;
+
+    private List collectionObj;
 
     public static ApiDb getInstance() {
         objectMapper = new ObjectMapper();
@@ -32,17 +36,18 @@ public class ApiDb {
         String operation = strArray[0];//it's couse the first element is name of operation
         switch (operation){
             case "create":
-                //if the first token is create - pass to create the result of getParts
                 create(getParts(strArray[1]));
                 break;
             case "delete":
-                //delete(strArray[1]);
+                delete(getParts(strArray[1]));
                 break;
             case "update":
                 //update(strArray[2],strArray[1]);
                 break;
             case "getAll":
                 //мм пока не решил как вернуть массив объектов
+                collectionObj = new ArrayList();
+                //collectionObj = gettAll();
                 break;
         }
     }
@@ -84,22 +89,20 @@ public class ApiDb {
         }else if(carParts instanceof Transmission){
             factory.getTransmissionDAO().add((Transmission)carParts);
         }
-        /*Session session = null;
-        try{
-            session = HibernateUtil.getSessionFactory().openSession();
-            session.beginTransaction();
-            session.save(carParts);
-            //session.merge(carParts);
-            //session.saveOrUpdate(carParts);
-            session.getTransaction().commit();
-        }catch (Exception e){
-            e.printStackTrace();
-        }finally {
-            if (session != null && session.isOpen()){
-                session.close();
-            }
-        }*/
+    }
 
+    private void delete(CarParts carParts) throws IOException, SQLException {
+        if (carParts instanceof Color){
+            factory.getColorDAO().delete((Color)carParts);
+        }else if(carParts instanceof ModelName){
+            factory.getModelNameDAO().delete((ModelName)carParts);
+        }else if(carParts instanceof Engine){
+            factory.getEngineDAO().delete((Engine)carParts);
+        }else if(carParts instanceof KindOfBody){
+            factory.getKindOfBody().delete((KindOfBody)carParts);
+        }else if(carParts instanceof Transmission){
+            factory.getTransmissionDAO().delete((Transmission)carParts);
+        }
     }
 
 }

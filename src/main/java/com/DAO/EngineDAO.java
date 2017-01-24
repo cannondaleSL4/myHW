@@ -4,8 +4,13 @@ import com.api.HibernateUtil;
 import com.carEntity.Engine;
 import org.hibernate.Session;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
 import javax.swing.*;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 /**
  * Created by dima on 24.01.17.
@@ -77,4 +82,24 @@ public class EngineDAO implements DAO <Engine> {
             }
         }
     }
+
+    @Override
+    public Collection getAll() {
+        Session session = null;
+        List engine  = new ArrayList<Engine>();
+        try{
+            session = HibernateUtil.getSessionFactory().openSession();
+            CriteriaBuilder builder = session.getCriteriaBuilder();
+            CriteriaQuery<Engine> criteria = builder.createQuery(Engine.class);
+            criteria.from(Engine.class);
+            engine = session.createQuery(criteria).getResultList();
+        }catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage(),"Error while gettAll operation", JOptionPane.OK_OPTION);
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+            return engine;
+        }
 }

@@ -3,11 +3,17 @@ package com.DAO;
 import com.api.HibernateUtil;
 import com.carEntity.Color;
 import com.carEntity.Engine;
+import com.carEntity.KindOfBody;
 import com.carEntity.Transmission;
 import org.hibernate.Session;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
 import javax.swing.*;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 /**
  * Created by dima on 24.01.17.
@@ -78,5 +84,25 @@ public class TransmissionDAO implements DAO <Transmission> {
                 session.close();
             }
         }
+    }
+
+    @Override
+    public Collection getAll() {
+        Session session = null;
+        List transmission  = new ArrayList<Transmission>();
+        try{
+            session = HibernateUtil.getSessionFactory().openSession();
+            CriteriaBuilder builder = session.getCriteriaBuilder();
+            CriteriaQuery<Transmission> criteria = builder.createQuery(Transmission.class);
+            criteria.from(Transmission.class);
+            transmission = session.createQuery(criteria).getResultList();
+        }catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage(),"Error while gettAll operation", JOptionPane.OK_OPTION);
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+        return transmission;
     }
 }

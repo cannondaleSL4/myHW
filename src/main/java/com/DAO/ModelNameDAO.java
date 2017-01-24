@@ -2,11 +2,17 @@ package com.DAO;
 
 import com.api.HibernateUtil;
 import com.carEntity.Color;
+import com.carEntity.KindOfBody;
 import com.carEntity.ModelName;
 import org.hibernate.Session;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
 import javax.swing.*;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 /**
  * Created by dima on 24.01.17.
@@ -77,5 +83,25 @@ public class ModelNameDAO implements DAO <ModelName> {
                 session.close();
             }
         }
+    }
+
+    @Override
+    public Collection getAll() {
+        Session session = null;
+        List models  = new ArrayList<ModelName>();
+        try{
+            session = HibernateUtil.getSessionFactory().openSession();
+            CriteriaBuilder builder = session.getCriteriaBuilder();
+            CriteriaQuery<ModelName> criteria = builder.createQuery(ModelName.class);
+            criteria.from(ModelName.class);
+            models = session.createQuery(criteria).getResultList();
+        }catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage(),"Error while gettAll operation", JOptionPane.OK_OPTION);
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+        return models;
     }
 }

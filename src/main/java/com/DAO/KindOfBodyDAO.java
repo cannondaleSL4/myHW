@@ -1,12 +1,16 @@
 package com.DAO;
 
 import com.api.HibernateUtil;
-import com.carEntity.Color;
 import com.carEntity.KindOfBody;
 import org.hibernate.Session;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
 import javax.swing.*;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 /**
  * Created by dima on 24.01.17.
@@ -77,5 +81,25 @@ public class KindOfBodyDAO implements DAO <KindOfBody> {
                 session.close();
             }
         }
+    }
+
+    @Override
+    public Collection getAll() {
+        Session session = null;
+        List bodies  = new ArrayList<KindOfBody>();
+        try{
+            session = HibernateUtil.getSessionFactory().openSession();
+            CriteriaBuilder builder = session.getCriteriaBuilder();
+            CriteriaQuery<KindOfBody> criteria = builder.createQuery(KindOfBody.class);
+            criteria.from(KindOfBody.class);
+            bodies = session.createQuery(criteria).getResultList();
+        }catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage(),"Error while gettAll operation", JOptionPane.OK_OPTION);
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+        return bodies;
     }
 }
