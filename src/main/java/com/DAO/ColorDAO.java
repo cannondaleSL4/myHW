@@ -1,7 +1,6 @@
 package com.DAO;
 
 import com.api.HibernateUtil;
-import com.carEntity.CarParts;
 import com.carEntity.Color;
 import org.hibernate.Session;
 
