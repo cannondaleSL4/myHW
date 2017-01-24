@@ -12,7 +12,7 @@ import java.sql.SQLException;
  * Created by dima on 24.01.17.
  */
 public class ModelNameDAO {
-    public void addModelName(ModelName modelName) throws SQLException {
+    public void add(ModelName modelName) throws SQLException {
         Session session = null;
         try{
             session = HibernateUtil.getSessionFactory().openSession();

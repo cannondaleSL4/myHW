@@ -1,6 +1,7 @@
 package com.DAO;
 
 import com.api.HibernateUtil;
+import com.carEntity.CarParts;
 import com.carEntity.Color;
 import org.hibernate.Session;
 
@@ -10,8 +11,8 @@ import java.sql.SQLException;
 /**
  * Created by dima on 24.01.17.
  */
-public class ColorDAO {
-    public void addColor(Color color) throws SQLException{
+public class ColorDAO implements DAO<Color> {
+    public void add(Color color) throws SQLException{
         Session session = null;
         try{
             session = HibernateUtil.getSessionFactory().openSession();

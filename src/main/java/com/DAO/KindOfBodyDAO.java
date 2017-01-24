@@ -12,7 +12,7 @@ import java.sql.SQLException;
  * Created by dima on 24.01.17.
  */
 public class KindOfBodyDAO {
-    public void addKindOfBody(KindOfBody kindOfBody) throws SQLException {
+    public void add(KindOfBody kindOfBody) throws SQLException {
         Session session = null;
         try{
             session = HibernateUtil.getSessionFactory().openSession();

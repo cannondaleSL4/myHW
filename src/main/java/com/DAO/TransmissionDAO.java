@@ -12,7 +12,7 @@ import java.sql.SQLException;
  * Created by dima on 24.01.17.
  */
 public class TransmissionDAO {
-    public void addTransmission(Transmission transmission) throws SQLException {
+    public void add(Transmission transmission) throws SQLException {
         Session session = null;
         try{
             session = HibernateUtil.getSessionFactory().openSession();
