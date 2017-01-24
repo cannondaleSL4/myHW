@@ -4,7 +4,6 @@ package com.api;
 import com.carEntity.*;
 import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.map.ObjectMapper;
-import org.hibernate.Session;
 
 
 import java.io.IOException;
@@ -14,6 +13,9 @@ import java.io.IOException;
  */
 public class ApiDb {
     private static ApiDb ourInstance = new ApiDb();
+
+    private static Factory factory = Factory.getInstance();
+
     private static ObjectMapper objectMapper;
 
     public static ApiDb getInstance() {
@@ -70,7 +72,8 @@ public class ApiDb {
     }
 
     private void create(CarParts carParts) throws IOException{
-        Session session = null;
+
+        /*Session session = null;
         try{
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
@@ -84,7 +87,8 @@ public class ApiDb {
             if (session != null && session.isOpen()){
                 session.close();
             }
-        }
+        }*/
+
     }
 
 }
