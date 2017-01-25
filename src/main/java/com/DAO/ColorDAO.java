@@ -7,6 +7,7 @@ import org.hibernate.Session;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.swing.*;
+import java.io.Serializable;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -72,10 +73,39 @@ public class ColorDAO implements DAO<Color> {
         try{
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
+            /*System.out.println("try");
+            Object id = session.getIdentifier(color);
+            System.out.println(id);
+            Serializable idd = session.getIdentifier(color);*/
+            //System.out.println(add(color));
+            //System.out.println(id);
+            //System.out.println(session.getIdentifier(color));
+            //color.setId((Long)session.getIdentifier(color));
+            //session.delete(color);
+            //System.out.println(session.get(Color.class,1));
             session.delete(color);
             session.getTransaction().commit();
         }catch (Exception e){
-            JOptionPane.showMessageDialog(null, e.getMessage(), "Error while deleting", JOptionPane.OK_OPTION);
+            //JOptionPane.showMessageDialog(null, e.getMessage(), "Error while deleting", JOptionPane.OK_OPTION);
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+    }
+
+    @Override
+    public void delete(Long l) {
+        Session session = null;
+        Color color =null;
+        try{
+            session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            color = (Color) session.load(Color.class,l);
+            session.delete(color);
+            session.getTransaction().commit();
+        }catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage(),"Error while gettAll operation", JOptionPane.OK_OPTION);
         } finally {
             if (session != null && session.isOpen()) {
                 session.close();

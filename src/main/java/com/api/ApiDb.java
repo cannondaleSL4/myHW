@@ -31,6 +31,10 @@ public class ApiDb {
     private ApiDb() {
     }
 
+    public static Factory getFactory() {
+        return factory;
+    }
+
     public void makeReq(String req) throws IOException, SQLException {
         String [] strArray = req.split("/");
         String operation = strArray[0];//it's couse the first element is name of operation

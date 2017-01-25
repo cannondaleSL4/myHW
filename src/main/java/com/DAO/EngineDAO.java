@@ -1,6 +1,7 @@
 package com.DAO;
 
 import com.api.HibernateUtil;
+import com.carEntity.Color;
 import com.carEntity.Engine;
 import org.hibernate.Session;
 
@@ -76,6 +77,25 @@ public class EngineDAO implements DAO <Engine> {
             session.getTransaction().commit();
         }catch (Exception e){
             JOptionPane.showMessageDialog(null, e.getMessage(), "Error while deleting", JOptionPane.OK_OPTION);
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+    }
+
+    @Override
+    public void delete(Long l) {
+        Session session = null;
+        Engine engine =null;
+        try{
+            session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            engine = (Engine) session.load(Engine.class,l);
+            session.delete(engine);
+            session.getTransaction().commit();
+        }catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage(),"Error while gettAll operation", JOptionPane.OK_OPTION);
         } finally {
             if (session != null && session.isOpen()) {
                 session.close();

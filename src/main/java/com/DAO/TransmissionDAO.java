@@ -52,6 +52,8 @@ public class TransmissionDAO implements DAO <Transmission> {
         }
     }
 
+
+
     @Override
     public Transmission getById(Long l) {
         Session session = null;
@@ -79,6 +81,25 @@ public class TransmissionDAO implements DAO <Transmission> {
             session.getTransaction().commit();
         }catch (Exception e){
             JOptionPane.showMessageDialog(null, e.getMessage(), "Error while deleting", JOptionPane.OK_OPTION);
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+    }
+
+    @Override
+    public void delete(Long l) {
+        Session session = null;
+        Transmission transmission =null;
+        try{
+            session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            transmission = (Transmission) session.load(Transmission.class,l);
+            session.delete(transmission);
+            session.getTransaction().commit();
+        }catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage(),"Error while gettAll operation", JOptionPane.OK_OPTION);
         } finally {
             if (session != null && session.isOpen()) {
                 session.close();

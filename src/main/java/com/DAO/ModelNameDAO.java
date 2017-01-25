@@ -86,6 +86,25 @@ public class ModelNameDAO implements DAO <ModelName> {
     }
 
     @Override
+    public void delete(Long l) {
+        Session session = null;
+        ModelName modelName =null;
+        try{
+            session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            modelName = (ModelName) session.load(ModelName.class,l);
+            session.delete(modelName);
+            session.getTransaction().commit();
+        }catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage(),"Error while gettAll operation", JOptionPane.OK_OPTION);
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+    }
+
+    @Override
     public Collection getAll() {
         Session session = null;
         List models  = new ArrayList<ModelName>();

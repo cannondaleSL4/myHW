@@ -19,6 +19,7 @@ public class TestClass {
         ObjectMapper objectMapper = new ObjectMapper();
         String baseJson = "";
         String create = "create/";
+        String delete = "delete/";
         String requestText = "";
 
         // add sonme colors to base
@@ -91,6 +92,17 @@ public class TestClass {
         /*CarParametrs carParametrs = new CarParametrs();
         carParametrs.setModelName(new ModelName("mondeo"));*/
         //baseJson = objectMapper.writeValueAsString()
+        //check delete
 
+        /*for(Color color: arrayColor){
+            baseJson = objectMapper.writeValueAsString(color);
+            requestText = delete + baseJson;
+            apiDb.makeReq(requestText);
+        }*/
+        List<Color> colors = new ArrayList<>(apiDb.getFactory().getColorDAO().getAll());
+
+        for(Color color:colors){
+            System.out.println(color);
+        }
     }
 }

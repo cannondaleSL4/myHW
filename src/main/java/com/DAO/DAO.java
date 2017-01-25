@@ -12,4 +12,5 @@ public interface DAO <T> {
     T getById(Long l);
     void delete(T t);
     Collection getAll();
+    void delete(Long l);
 }

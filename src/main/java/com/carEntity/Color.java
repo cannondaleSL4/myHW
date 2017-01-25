@@ -82,4 +82,13 @@ public class Color implements CarParts {
         result = 31 * result + (isMetallic ? 1 : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Color{" +
+                "id=" + id +
+                ", colorName='" + colorName + '\'' +
+                ", isMetallic=" + isMetallic +
+                '}';
+    }
 }
