@@ -1,6 +1,7 @@
 package com.api;
 
 import com.DAO.*;
+import com.carEntity.CarParametrs;
 import com.carEntity.CarParts;
 
 /**
@@ -15,6 +16,7 @@ public class Factory {
     private static KindOfBodyDAO kindOfBody = null;
     private static ModelNameDAO modelNameDAO = null;
     private static TransmissionDAO transmissionDAO = null;
+    private static CarParametrsDAO carParametrsDAO = null;
 
     public static synchronized Factory getInstance(){
         if (instance == null){
@@ -56,6 +58,13 @@ public class Factory {
             transmissionDAO = new TransmissionDAO();
         }
         return  transmissionDAO;
+    }
+
+    public CarParametrsDAO getCarParametrsDAO(){
+        if (carParametrsDAO == null){
+            carParametrsDAO = new CarParametrsDAO();
+        }
+        return carParametrsDAO;
     }
 
 }

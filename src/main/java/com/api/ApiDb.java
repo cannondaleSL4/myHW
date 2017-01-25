@@ -37,7 +37,7 @@ public class ApiDb {
 
     public void makeReq(String req) throws IOException, SQLException {
         String [] strArray = req.split("/");
-        String operation = strArray[0];//it's couse the first element is name of operation
+        String operation = strArray[0];
         switch (operation){
             case "create":
                 create(getParts(strArray[1]));
@@ -77,6 +77,9 @@ public class ApiDb {
             case "com.carEntity.ModelName":
                 ModelName modelName = objectMapper.readValue(s,ModelName.class);
                 return modelName;
+            case "com.carEntity.CarParametrs":
+                CarParametrs carParametrs = objectMapper.readValue(s,CarParametrs.class);
+                return carParametrs;
         }
         return null;
     }
@@ -92,6 +95,9 @@ public class ApiDb {
             factory.getKindOfBody().add((KindOfBody)carParts);
         }else if(carParts instanceof Transmission){
             factory.getTransmissionDAO().add((Transmission)carParts);
+        }else if(carParts instanceof  CarParametrs){
+            System.out.println("tetete");
+            factory.getCarParametrsDAO().add((CarParametrs)carParts);
         }
     }
 
@@ -106,6 +112,8 @@ public class ApiDb {
             factory.getKindOfBody().delete((KindOfBody)carParts);
         }else if(carParts instanceof Transmission){
             factory.getTransmissionDAO().delete((Transmission)carParts);
+        }else if(carParts instanceof  CarParametrs){
+
         }
     }
 

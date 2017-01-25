@@ -8,21 +8,16 @@ import javax.persistence.*;
  * Created by dima on 13.12.16.
  */
 
+/*
+ПОСЛЕ ДОБАВЛЕНИЯ НАБОРА ЦВЕТОВ ОБЯЗАТЕЛЬНО ДОПОЛНИТЬ СПИСОК UNICKE!!!!!!!!
+ */
+
 @Entity
 @Table(name ="car_parm")
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
 public class CarParametrs implements CarParts  {
 
     private Long id;
-
-
-    public CarParametrs(Long id) {
-        this.id = id;
-    }
-
-    public CarParametrs() {
-
-    }
 
     @Id
     @Column(name = "id_car_parm")
@@ -35,16 +30,29 @@ public class CarParametrs implements CarParts  {
         this.id = id;
     }
 
-    /*@OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "idengine")
+    private Engine engine;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
+    private KindOfBody kindOfBody;
+
+    @OneToOne(cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
     private ModelName modelName;
 
-    @Column(name= "model_name")
-    public ModelName getModelName() {
-        return modelName;
-    }
+    @OneToOne(cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
+    private Transmission transmission;
 
-    public void setModelName(ModelName modelName) {
+    public CarParametrs() { }
+
+    public CarParametrs(Engine engine,KindOfBody kindOfBody,
+                        ModelName modelName, Transmission transmission){
+        this.engine = engine;
+        this.kindOfBody = kindOfBody;
         this.modelName = modelName;
-    }*/
+        this.transmission = transmission;
+    }
 }
