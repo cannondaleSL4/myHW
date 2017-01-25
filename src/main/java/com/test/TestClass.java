@@ -99,9 +99,14 @@ public class TestClass {
         }
         */
 
-        CarParametrs carParametrs = new CarParametrs(arrayEngine.get(1),arrayKindOfBody.get(1),arrayModel.get(1),arrayTransmission.get(1));
+
+
+
+        /*CarParametrs carParametrs = new CarParametrs(arrayEngine.get(1),arrayKindOfBody.get(1),arrayModel.get(1),arrayTransmission.get(1));
         baseJson = objectMapper.writeValueAsString(carParametrs);
         requestText = create + baseJson;
-        apiDb.makeReq(requestText);
+        apiDb.makeReq(requestText);*/
+
+        //System.out.println(apiDb.getFactory().getCarParametrsDAO().getById(1L));
     }
 }

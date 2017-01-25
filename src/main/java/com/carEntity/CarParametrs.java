@@ -19,6 +19,16 @@ public class CarParametrs implements CarParts  {
 
     private Long id;
 
+    public CarParametrs() { }
+
+    public CarParametrs(Engine engine,KindOfBody kindOfBody,
+                        ModelName modelName, Transmission transmission){
+        this.engine = engine;
+        this.kindOfBody = kindOfBody;
+        this.modelName = modelName;
+        this.transmission = transmission;
+    }
+
     @Id
     @Column(name = "id_car_parm")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,28 +41,30 @@ public class CarParametrs implements CarParts  {
     }
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "idengine")
     private Engine engine;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
     private KindOfBody kindOfBody;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
     private ModelName modelName;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
     private Transmission transmission;
 
-    public CarParametrs() { }
+    public Engine getEngine() {
+        return engine;
+    }
 
-    public CarParametrs(Engine engine,KindOfBody kindOfBody,
-                        ModelName modelName, Transmission transmission){
-        this.engine = engine;
-        this.kindOfBody = kindOfBody;
-        this.modelName = modelName;
-        this.transmission = transmission;
+    public KindOfBody getKindOfBody() {
+        return kindOfBody;
+    }
+
+    public ModelName getModelName() {
+        return modelName;
+    }
+
+    public Transmission getTransmission() {
+        return transmission;
     }
 }

@@ -96,7 +96,6 @@ public class ApiDb {
         }else if(carParts instanceof Transmission){
             factory.getTransmissionDAO().add((Transmission)carParts);
         }else if(carParts instanceof  CarParametrs){
-            System.out.println("tetete");
             factory.getCarParametrsDAO().add((CarParametrs)carParts);
         }
     }
@@ -113,7 +112,7 @@ public class ApiDb {
         }else if(carParts instanceof Transmission){
             factory.getTransmissionDAO().delete((Transmission)carParts);
         }else if(carParts instanceof  CarParametrs){
-
+            factory.getCarParametrsDAO().delete((CarParametrs)carParts);
         }
     }
 

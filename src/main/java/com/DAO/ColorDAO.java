@@ -73,16 +73,6 @@ public class ColorDAO implements DAO<Color> {
         try{
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
-            /*System.out.println("try");
-            Object id = session.getIdentifier(color);
-            System.out.println(id);
-            Serializable idd = session.getIdentifier(color);*/
-            //System.out.println(add(color));
-            //System.out.println(id);
-            //System.out.println(session.getIdentifier(color));
-            //color.setId((Long)session.getIdentifier(color));
-            //session.delete(color);
-            //System.out.println(session.get(Color.class,1));
             session.delete(color);
             session.getTransaction().commit();
         }catch (Exception e){

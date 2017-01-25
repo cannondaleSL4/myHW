@@ -11,8 +11,8 @@
     <schema id="3" parent="1" name="public">
       <object-id>2200</object-id>
       <visible>1</visible>
-      <introspection-state-number>1877</introspection-state-number>
-      <introspection-timestamp>2017-01-23.21:54:55.785</introspection-timestamp>
+      <introspection-state-number>2083</introspection-state-number>
+      <introspection-timestamp>2017-01-25.21:52:43.039</introspection-timestamp>
     </schema>
     <schema id="4" parent="1" name="pg_catalog">
       <object-id>11</object-id>
@@ -29,218 +29,15 @@
     <schema id="8" parent="1" name="information_schema">
       <object-id>12123</object-id>
     </schema>
-    <sequence id="9" parent="3" name="car_parm_id_car_parm_seq">
-      <object-id>41435</object-id>
-      <state-number>1871</state-number>
+    <sequence id="9" parent="3" name="hibernate_sequence">
+      <object-id>41637</object-id>
+      <state-number>2083</state-number>
     </sequence>
-    <sequence id="10" parent="3" name="color_table_idcolor_table_seq">
-      <object-id>41443</object-id>
-      <state-number>1872</state-number>
-    </sequence>
-    <sequence id="11" parent="3" name="current_model_idcurrent_model_seq">
-      <object-id>41451</object-id>
-      <state-number>1873</state-number>
-    </sequence>
-    <sequence id="12" parent="3" name="engine_idengine_seq">
-      <object-id>41459</object-id>
-      <state-number>1874</state-number>
-    </sequence>
-    <sequence id="13" parent="3" name="kind_of_body_idkind_of_body_seq">
-      <object-id>41467</object-id>
-      <state-number>1875</state-number>
-    </sequence>
-    <sequence id="14" parent="3" name="seq_gen_sequence">
+    <sequence id="10" parent="3" name="seq_gen_sequence">
       <object-id>33506</object-id>
       <state-number>1008</state-number>
       <increment-by>50</increment-by>
       <next-value>50</next-value>
     </sequence>
-    <sequence id="15" parent="3" name="transmission_idtransmission_seq">
-      <object-id>41475</object-id>
-      <state-number>1876</state-number>
-    </sequence>
-    <table id="16" parent="3" name="car_parm">
-      <object-id>41437</object-id>
-      <state-number>1871</state-number>
-    </table>
-    <table id="17" parent="3" name="color_table">
-      <object-id>41445</object-id>
-      <state-number>1872</state-number>
-    </table>
-    <table id="18" parent="3" name="current_model">
-      <object-id>41453</object-id>
-      <state-number>1873</state-number>
-    </table>
-    <table id="19" parent="3" name="engine">
-      <object-id>41461</object-id>
-      <state-number>1874</state-number>
-    </table>
-    <table id="20" parent="3" name="kind_of_body">
-      <object-id>41469</object-id>
-      <state-number>1875</state-number>
-    </table>
-    <table id="21" parent="3" name="transmission">
-      <object-id>41477</object-id>
-      <state-number>1876</state-number>
-    </table>
-    <column id="22" parent="16" name="id_car_parm">
-      <state-number>1871</state-number>
-      <mandatory>1</mandatory>
-      <data-type>integer|0</data-type>
-      <default-expression>nextval(&apos;car_parm_id_car_parm_seq&apos;::regclass)</default-expression>
-    </column>
-    <index id="23" parent="16" name="car_parm_pkey">
-      <object-id>41441</object-id>
-      <columns>id_car_parm</columns>
-      <desc-columns></desc-columns>
-      <unique>1</unique>
-    </index>
-    <key id="24" parent="16" name="car_parm_pkey">
-      <object-id>41442</object-id>
-      <columns>id_car_parm</columns>
-      <underlying-index>car_parm_pkey</underlying-index>
-      <primary>1</primary>
-    </key>
-    <column id="25" parent="17" name="idcolor_table">
-      <state-number>1872</state-number>
-      <mandatory>1</mandatory>
-      <data-type>integer|0</data-type>
-      <default-expression>nextval(&apos;color_table_idcolor_table_seq&apos;::regclass)</default-expression>
-    </column>
-    <column id="26" parent="17" name="color_table_name">
-      <state-number>1872</state-number>
-      <mandatory>1</mandatory>
-      <data-type>varchar(255)|0</data-type>
-    </column>
-    <column id="27" parent="17" name="is_metallic">
-      <state-number>1872</state-number>
-      <mandatory>1</mandatory>
-      <data-type>boolean|0</data-type>
-    </column>
-    <index id="28" parent="17" name="color_table_pkey">
-      <object-id>41449</object-id>
-      <columns>idcolor_table</columns>
-      <desc-columns></desc-columns>
-      <unique>1</unique>
-    </index>
-    <index id="29" parent="17" name="ukcp47l70n2rbydkrast098062k">
-      <object-id>41483</object-id>
-      <columns>color_table_name
-is_metallic</columns>
-      <desc-columns></desc-columns>
-      <unique>1</unique>
-    </index>
-    <key id="30" parent="17" name="color_table_pkey">
-      <object-id>41450</object-id>
-      <columns>idcolor_table</columns>
-      <underlying-index>color_table_pkey</underlying-index>
-      <primary>1</primary>
-    </key>
-    <key id="31" parent="17" name="ukcp47l70n2rbydkrast098062k">
-      <object-id>41484</object-id>
-      <columns>color_table_name
-is_metallic</columns>
-      <underlying-index>ukcp47l70n2rbydkrast098062k</underlying-index>
-    </key>
-    <column id="32" parent="18" name="idcurrent_model">
-      <state-number>1873</state-number>
-      <mandatory>1</mandatory>
-      <data-type>integer|0</data-type>
-      <default-expression>nextval(&apos;current_model_idcurrent_model_seq&apos;::regclass)</default-expression>
-    </column>
-    <column id="33" parent="18" name="current_modelcol">
-      <state-number>1873</state-number>
-      <data-type>varchar(255)|0</data-type>
-    </column>
-    <index id="34" parent="18" name="current_model_pkey">
-      <object-id>41457</object-id>
-      <columns>idcurrent_model</columns>
-      <desc-columns></desc-columns>
-      <unique>1</unique>
-    </index>
-    <key id="35" parent="18" name="current_model_pkey">
-      <object-id>41458</object-id>
-      <columns>idcurrent_model</columns>
-      <underlying-index>current_model_pkey</underlying-index>
-      <primary>1</primary>
-    </key>
-    <column id="36" parent="19" name="idengine">
-      <state-number>1874</state-number>
-      <mandatory>1</mandatory>
-      <data-type>integer|0</data-type>
-      <default-expression>nextval(&apos;engine_idengine_seq&apos;::regclass)</default-expression>
-    </column>
-    <column id="37" parent="19" name="horsepower">
-      <state-number>1874</state-number>
-      <data-type>integer|0</data-type>
-    </column>
-    <column id="38" parent="19" name="engine_name">
-      <state-number>1874</state-number>
-      <mandatory>1</mandatory>
-      <data-type>varchar(255)|0</data-type>
-    </column>
-    <index id="39" parent="19" name="engine_pkey">
-      <object-id>41465</object-id>
-      <columns>idengine</columns>
-      <desc-columns></desc-columns>
-      <unique>1</unique>
-    </index>
-    <key id="40" parent="19" name="engine_pkey">
-      <object-id>41466</object-id>
-      <columns>idengine</columns>
-      <underlying-index>engine_pkey</underlying-index>
-      <primary>1</primary>
-    </key>
-    <column id="41" parent="20" name="idkind_of_body">
-      <state-number>1875</state-number>
-      <mandatory>1</mandatory>
-      <data-type>integer|0</data-type>
-      <default-expression>nextval(&apos;kind_of_body_idkind_of_body_seq&apos;::regclass)</default-expression>
-    </column>
-    <column id="42" parent="20" name="name_of_kind_of_body">
-      <state-number>1875</state-number>
-      <mandatory>1</mandatory>
-      <data-type>varchar(255)|0</data-type>
-    </column>
-    <index id="43" parent="20" name="kind_of_body_pkey">
-      <object-id>41473</object-id>
-      <columns>idkind_of_body</columns>
-      <desc-columns></desc-columns>
-      <unique>1</unique>
-    </index>
-    <key id="44" parent="20" name="kind_of_body_pkey">
-      <object-id>41474</object-id>
-      <columns>idkind_of_body</columns>
-      <underlying-index>kind_of_body_pkey</underlying-index>
-      <primary>1</primary>
-    </key>
-    <column id="45" parent="21" name="idtransmission">
-      <state-number>1876</state-number>
-      <mandatory>1</mandatory>
-      <data-type>integer|0</data-type>
-      <default-expression>nextval(&apos;transmission_idtransmission_seq&apos;::regclass)</default-expression>
-    </column>
-    <column id="46" parent="21" name="number_of_speed">
-      <state-number>1876</state-number>
-      <mandatory>1</mandatory>
-      <data-type>integer|0</data-type>
-    </column>
-    <column id="47" parent="21" name="transmission_name">
-      <state-number>1876</state-number>
-      <mandatory>1</mandatory>
-      <data-type>varchar(255)|0</data-type>
-    </column>
-    <index id="48" parent="21" name="transmission_pkey">
-      <object-id>41481</object-id>
-      <columns>idtransmission</columns>
-      <desc-columns></desc-columns>
-      <unique>1</unique>
-    </index>
-    <key id="49" parent="21" name="transmission_pkey">
-      <object-id>41482</object-id>
-      <columns>idtransmission</columns>
-      <underlying-index>transmission_pkey</underlying-index>
-      <primary>1</primary>
-    </key>
   </database-model>
 </dataSource>

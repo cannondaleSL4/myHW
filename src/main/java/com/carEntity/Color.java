@@ -1,13 +1,10 @@
 package com.carEntity;
 
 import org.codehaus.jackson.annotate.JsonTypeInfo;
-import org.hibernate.annotations.GeneratorType;
-import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.SQLInsert;
 
 import javax.persistence.*;
 
-import static javax.persistence.GenerationType.IDENTITY;
 
 
 /**

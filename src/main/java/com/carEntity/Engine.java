@@ -70,7 +70,4 @@ public class Engine implements CarParts {
                 ", horsepower=" + horsepower +
                 "}";
     }
-
-    @OneToOne(mappedBy = "engine")
-    private  CarParametrs carParametrs;
 }
