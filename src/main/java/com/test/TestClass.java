@@ -89,20 +89,16 @@ public class TestClass {
             apiDb.makeReq(requestText);
         }
 
-        /*CarParametrs carParametrs = new CarParametrs();
-        carParametrs.setModelName(new ModelName("mondeo"));*/
-        //baseJson = objectMapper.writeValueAsString()
-        //check delete
-
-        /*for(Color color: arrayColor){
-            baseJson = objectMapper.writeValueAsString(color);
-            requestText = delete + baseJson;
-            apiDb.makeReq(requestText);
-        }*/
+        /*
+        //check getAll and delete - work okey
         List<Color> colors = new ArrayList<>(apiDb.getFactory().getColorDAO().getAll());
 
         for(Color color:colors){
             System.out.println(color);
+            apiDb.getFactory().getColorDAO().delete(color);
         }
+        */
+
+
     }
 }
