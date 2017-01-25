@@ -40,6 +40,9 @@ public class CarParametrs implements CarParts  {
         this.id = id;
     }
 
+    /*
+    вот здесь херня!
+     */
     @OneToOne(cascade = CascadeType.ALL)
     private Engine engine;
 
