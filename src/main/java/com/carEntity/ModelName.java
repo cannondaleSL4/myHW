@@ -32,7 +32,7 @@ public class ModelName implements CarParts {
         this.id = id;
     }
 
-    @Column(name= "current_modelcol")
+    @Column(name= "current_modelcol",nullable = false ,unique = true)
     public String getModelName() {
         return modelName;
     }

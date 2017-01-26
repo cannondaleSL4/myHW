@@ -31,7 +31,7 @@ public class KindOfBody implements CarParts {
         this.id = id;
     }
 
-    @Column(name="name_of_kind_of_body",nullable = false)
+    @Column(name="name_of_kind_of_body",nullable = false, unique = true)
     public String getNameKindOfBody() {
         return nameKindOfBody;
     }

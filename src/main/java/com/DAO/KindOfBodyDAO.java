@@ -25,7 +25,7 @@ public class KindOfBodyDAO implements DAO <KindOfBody> {
             session.save(kindOfBody);
             session.getTransaction().commit();
         }catch (Exception e){
-            JOptionPane.showMessageDialog(null, e.getMessage(), "Error Insert", JOptionPane.OK_OPTION);
+            //JOptionPane.showMessageDialog(null, e.getMessage(), "Error Insert", JOptionPane.OK_OPTION);
         }finally {
             if (session != null && session.isOpen()){
                 session.close();

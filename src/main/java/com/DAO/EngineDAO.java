@@ -24,7 +24,7 @@ public class EngineDAO implements DAO <Engine> {
             session.save(engine);
             session.getTransaction().commit();
         }catch (Exception e){
-            JOptionPane.showMessageDialog(null, e.getMessage(), "Error Insert", JOptionPane.OK_OPTION);
+            //JOptionPane.showMessageDialog(null, e.getMessage(), "Error Insert", JOptionPane.OK_OPTION);
         }finally {
             if (session != null && session.isOpen()){
                 session.close();

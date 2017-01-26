@@ -45,7 +45,7 @@ public class Engine implements CarParts {
         this.id = id;
     }
 
-    @Column(name = "engine_name",nullable = false)
+    @Column(name = "engine_name",nullable = false, unique = true)
     public String getNameOfEngine() {
         return nameOfEngine;
     }

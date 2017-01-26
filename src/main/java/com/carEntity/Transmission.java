@@ -34,7 +34,7 @@ public class Transmission implements CarParts {
         this.id = id;
     }
 
-    @Column(name = "transmission_name",nullable = false)
+    @Column(name = "transmission_name",nullable = false, unique = true)
     public String getTransmissionName() {
         return transmissionName;
     }
