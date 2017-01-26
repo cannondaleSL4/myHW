@@ -22,7 +22,7 @@ public class TestClass {
         String delete = "delete/";
         String requestText = "";
 
-        // add sonme colors to base
+        // add some colors to base
         List <Color> arrayColor = new ArrayList<Color>();
         arrayColor.add(new Color("black",false));
         arrayColor.add(new Color ("blue",true));
@@ -97,23 +97,22 @@ public class TestClass {
             System.out.println(color);
             apiDb.getFactory().getColorDAO().delete(color);
         }
-        */
-
-
-
-
-        CarParametrs carParametrs = new CarParametrs(arrayEngine.get(1),arrayKindOfBody.get(1),arrayModel.get(1),arrayTransmission.get(1));
-        baseJson = objectMapper.writeValueAsString(carParametrs);
-        requestText = create + baseJson;
-        apiDb.makeReq(requestText);
 
         List<Engine> engines = new ArrayList<>(apiDb.getFactory().getEngineDAO().getAll());
 
         for(Engine engine:engines){
             System.out.println(engine);
             apiDb.getFactory().getEngineDAO().delete(engine);
-        }
+        }*/
 
-        //System.out.println(apiDb.getFactory().getCarParametrsDAO().getById(1L));
+
+        /*ColorSet colorSet = new ColorSet();
+        colorSet.addColor(arrayColor.get(0));
+        colorSet.addColor(arrayColor.get(1));
+
+        CarParametrs carParametrs = new CarParametrs(arrayEngine.get(1),arrayKindOfBody.get(1),arrayModel.get(1),arrayTransmission.get(1),colorSet);
+        baseJson = objectMapper.writeValueAsString(carParametrs);
+        requestText = create + baseJson;
+        apiDb.makeReq(requestText);*/
     }
 }

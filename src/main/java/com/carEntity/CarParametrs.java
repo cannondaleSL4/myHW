@@ -19,15 +19,21 @@ import javax.persistence.*;
 public class CarParametrs implements CarParts  {
 
     private Long id;
+    private Engine engine;
+    private KindOfBody kindOfBody;
+    private ModelName modelName;
+    private Transmission transmission;
+    private ColorSet colorSet;
 
     public CarParametrs() { }
 
     public CarParametrs(Engine engine,KindOfBody kindOfBody,
-                        ModelName modelName, Transmission transmission){
+                        ModelName modelName, Transmission transmission,ColorSet colorSet){
         this.engine = engine;
         this.kindOfBody = kindOfBody;
         this.modelName = modelName;
         this.transmission = transmission;
+        this.colorSet = colorSet;
     }
 
     @Id
@@ -40,14 +46,6 @@ public class CarParametrs implements CarParts  {
     public void setId(Long id) {
         this.id = id;
     }
-
-    /*
-    вот здесь херня!
-     */
-    private Engine engine;
-    private KindOfBody kindOfBody;
-    private ModelName modelName;
-    private Transmission transmission;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "idengine")
@@ -71,6 +69,16 @@ public class CarParametrs implements CarParts  {
     @JoinColumn(name = "idtransmission")
     public Transmission getTransmission() {
         return transmission;
+    }
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "idcolor_set")
+    public ColorSet getColorSet() {
+        return colorSet;
+    }
+
+    public void setColorSet(ColorSet colorSet) {
+        this.colorSet = colorSet;
     }
 
     public void setEngine(Engine engine) {

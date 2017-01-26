@@ -27,6 +27,7 @@
         <mapping class="com.carEntity.KindOfBody"/>
         <mapping class="com.carEntity.ModelName"/>
         <mapping class="com.carEntity.Transmission"/>
+        <mapping class="com.carEntity.ColorSet"/>
         <mapping class="com.carEntity.CarParametrs"/>
 
 
