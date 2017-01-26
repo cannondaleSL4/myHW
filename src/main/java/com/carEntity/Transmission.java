@@ -51,4 +51,7 @@ public class Transmission implements CarParts {
     public void setNumberOfSpeed(int numberOfSpeed) {
         this.numberOfSpeed = numberOfSpeed;
     }
+
+    @OneToOne(mappedBy = "transmission",cascade = CascadeType.REMOVE)
+    private CarParametrs carParametrs;
 }

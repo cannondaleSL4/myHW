@@ -40,4 +40,7 @@ public class ModelName implements CarParts {
     public void setModelName(String modelName) {
         this.modelName = modelName;
     }
+
+    @OneToOne(mappedBy = "modelName",cascade = CascadeType.REMOVE)
+    private CarParametrs carParametrs;
 }

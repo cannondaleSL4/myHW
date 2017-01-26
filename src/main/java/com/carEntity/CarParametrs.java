@@ -1,6 +1,7 @@
 package com.carEntity;
 
 import org.codehaus.jackson.annotate.JsonTypeInfo;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 
@@ -43,31 +44,44 @@ public class CarParametrs implements CarParts  {
     /*
     вот здесь херня!
      */
-    @OneToOne(cascade = CascadeType.ALL)
     private Engine engine;
-
-    @OneToOne(cascade = CascadeType.ALL)
     private KindOfBody kindOfBody;
-
-    @OneToOne(cascade = CascadeType.ALL)
     private ModelName modelName;
-
-    @OneToOne(cascade = CascadeType.ALL)
     private Transmission transmission;
 
+    @OneToOne(cascade = CascadeType.ALL)
     public Engine getEngine() {
         return engine;
     }
 
+    @OneToOne(cascade = CascadeType.ALL)
     public KindOfBody getKindOfBody() {
         return kindOfBody;
     }
 
+    @OneToOne(cascade = CascadeType.ALL)
     public ModelName getModelName() {
         return modelName;
     }
 
+    @OneToOne(cascade = CascadeType.ALL)
     public Transmission getTransmission() {
         return transmission;
+    }
+
+    public void setEngine(Engine engine) {
+        this.engine = engine;
+    }
+
+    public void setKindOfBody(KindOfBody kindOfBody) {
+        this.kindOfBody = kindOfBody;
+    }
+
+    public void setModelName(ModelName modelName) {
+        this.modelName = modelName;
+    }
+
+    public void setTransmission(Transmission transmission) {
+        this.transmission = transmission;
     }
 }

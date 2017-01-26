@@ -1,6 +1,7 @@
 package com.carEntity;
 
 import org.codehaus.jackson.annotate.JsonTypeInfo;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 
@@ -62,7 +63,6 @@ public class Engine implements CarParts {
         this.horsepower = horsepower;
     }
 
-
     @Override
     public String toString() {
         return "Engine{" +
@@ -70,4 +70,7 @@ public class Engine implements CarParts {
                 ", horsepower=" + horsepower +
                 "}";
     }
+
+    @OneToOne(mappedBy = "engine",cascade = CascadeType.REMOVE)
+    private CarParametrs carParametrs;
 }

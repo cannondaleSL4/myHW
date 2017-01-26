@@ -39,4 +39,7 @@ public class KindOfBody implements CarParts {
     public void setNameKindOfBody(String nameKindOfBody) {
         this.nameKindOfBody = nameKindOfBody;
     }
+
+    @OneToOne(mappedBy = "kindOfBody",cascade = CascadeType.REMOVE)
+    private CarParametrs carParametrs;
 }

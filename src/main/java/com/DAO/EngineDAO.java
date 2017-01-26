@@ -72,6 +72,7 @@ public class EngineDAO implements DAO <Engine> {
         try{
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
+            //session.remove(engine);
             session.delete(engine);
             session.getTransaction().commit();
         }catch (Exception e){
