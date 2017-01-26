@@ -71,6 +71,6 @@ public class Engine implements CarParts {
                 "}";
     }
 
-    @OneToOne(mappedBy = "engine",cascade = CascadeType.REMOVE)
+    @OneToOne(mappedBy = "engine",cascade = CascadeType.ALL)
     private CarParametrs carParametrs;
 }

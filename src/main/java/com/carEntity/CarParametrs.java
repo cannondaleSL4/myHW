@@ -50,21 +50,25 @@ public class CarParametrs implements CarParts  {
     private Transmission transmission;
 
     @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "idengine")
     public Engine getEngine() {
         return engine;
     }
 
     @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "idkind_of_body")
     public KindOfBody getKindOfBody() {
         return kindOfBody;
     }
 
     @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "idcurrent_model")
     public ModelName getModelName() {
         return modelName;
     }
 
     @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "idtransmission")
     public Transmission getTransmission() {
         return transmission;
     }
