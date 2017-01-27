@@ -16,8 +16,9 @@ import java.util.Set;
 public class ColorSet implements CarParts {
 
     private Long id;
-    private Set<Color> colors = new HashSet<Color>();
+
     private CarParametrs carParametrs;
+    private Set<Color> colors = new HashSet<Color>();
 
     public ColorSet() {
     }
@@ -41,7 +42,9 @@ public class ColorSet implements CarParts {
         colors.add(color);
     }
 
-    @OneToMany(mappedBy = "colorSet", cascade=CascadeType.ALL)
+
+    @OneToMany(mappedBy = "colorSet")
+    //@JoinColumn(name = "idcolor_table", nullable = false)
     public Set<Color> getColors() {
         return colors;
     }

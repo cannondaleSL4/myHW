@@ -16,14 +16,15 @@ import javax.persistence.*;
         uniqueConstraints =
         @UniqueConstraint(columnNames = {"color_table_name","is_metallic"})
 )
-@SQLInsert(callable = true,sql = "INSERT INTO color_table (color_table_name, is_metallic) VALUES (?,?)" +
-        " on conflict do nothing ;")
+/*@SQLInsert(callable = true,sql = "INSERT INTO color_table (color_table_name, is_metallic) VALUES (?,?)" +
+        " on conflict do nothing ;")*/
 @JsonTypeInfo (use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
 public class Color implements CarParts {
 
     private Long id;
     private String colorName;
     private boolean isMetallic;
+    private ColorSet colorSet = new ColorSet();
 
     public Color(){}
 
@@ -61,10 +62,17 @@ public class Color implements CarParts {
         isMetallic = metallic;
     }
 
-    //@ManyToOne(fetch = FetchType.LAZY,optional=true)
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "idcolor_set")
-    private ColorSet colorSet = new ColorSet();
+    public ColorSet getColorSet() {
+        return colorSet;
+    }
+
+    public void setColorSet(ColorSet colorSet) {
+        this.colorSet = colorSet;
+    }
+
+
 
     @Override
     public boolean equals(Object o) {
