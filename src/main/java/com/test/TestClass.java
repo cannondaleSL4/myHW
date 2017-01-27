@@ -33,14 +33,13 @@ public class TestClass {
             requestText = create + baseJson;
             apiDb.makeReq(requestText);
         }
-        
+
         // add some engine to base
         List<Engine>arrayEngine = new ArrayList<Engine>();
         arrayEngine.add(new Engine("1.6L Ti-VCT I-4 Engine",120));
         arrayEngine.add(new Engine("1.0L EcoBoost I-3 Engine",123));
         arrayEngine.add(new Engine("1.6L 16-valve Ti-VCT Turbocharged Direct Injection EcoBoost I-4",197));
         arrayEngine.add(new Engine("2.0L Ti-VCT I-4 Flex Fuel",160));
-        arrayEngine.add(new Engine("1.0L EcoBoost I-3 Engine",123));
         arrayEngine.add(new Engine("Electric"));
 
         for(Engine engine:arrayEngine){

@@ -16,8 +16,8 @@ import javax.persistence.*;
         uniqueConstraints =
         @UniqueConstraint(columnNames = {"color_table_name","is_metallic"})
 )
-/*@SQLInsert(callable = true,sql = "INSERT INTO color_table (color_table_name, is_metallic) VALUES (?,?)" +
-        " on conflict do nothing ;")*/
+/*@SQLInsert(sql = "INSERT INTO color_table (idcolor_table,color_table_name, is_metallic) VALUES (?,?,?)" +
+        " on CONFLICT do nothing;")*/
 @JsonTypeInfo (use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
 public class Color implements CarParts {
 
