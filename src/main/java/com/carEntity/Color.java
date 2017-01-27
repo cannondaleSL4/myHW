@@ -15,7 +15,7 @@ import javax.persistence.*;
 @Table (
         name  = "color_table",
         uniqueConstraints =
-                @UniqueConstraint(columnNames = {"color_table_name","is_metallic"})
+        @UniqueConstraint(columnNames = {"color_table_name","is_metallic"})
 )
 @SQLInsert(callable = true,sql = "INSERT INTO color_table (color_table_name, is_metallic) VALUES (?,?)" +
         " on conflict do nothing ;")
@@ -25,23 +25,12 @@ public class Color implements CarParts {
     private Long id;
     private String colorName;
     private boolean isMetallic;
-    private ColorSet colorSet;
 
     public Color(){}
 
     public Color(String colorName, boolean isMetallic) {
         this.colorName = colorName;
         this.isMetallic = isMetallic;
-    }
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name ="idcolor_set", nullable = false)
-    public ColorSet getColorSet() {
-        return colorSet;
-    }
-
-    public void setColorSet(ColorSet colorSet) {
-        this.colorSet = colorSet;
     }
 
     @Id
@@ -72,6 +61,10 @@ public class Color implements CarParts {
     public void setMetallic(boolean metallic) {
         isMetallic = metallic;
     }
+
+    //@ManyToOne(fetch = FetchType.LAZY,optional=true)
+    @ManyToOne
+    private ColorSet colorSet = new ColorSet();
 
     @Override
     public boolean equals(Object o) {

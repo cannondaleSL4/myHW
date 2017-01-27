@@ -41,8 +41,8 @@ public class ColorSet implements CarParts {
         colors.add(color);
     }
 
-    @OneToMany(fetch = FetchType.LAZY,mappedBy ="colorSet" )
-    @JoinColumn (name = "idcolor_table")
+    @OneToMany(mappedBy = "colorSet", cascade=CascadeType.ALL)
+    @JoinColumn(name = "idcolor_table")
     public Set<Color> getColors() {
         return colors;
     }
