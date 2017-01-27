@@ -1,7 +1,6 @@
 package com.carEntity;
 
 import org.codehaus.jackson.annotate.JsonTypeInfo;
-import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.SQLInsert;
 
 import javax.persistence.*;
@@ -64,6 +63,7 @@ public class Color implements CarParts {
 
     //@ManyToOne(fetch = FetchType.LAZY,optional=true)
     @ManyToOne
+    @JoinColumn(name = "idcolor_set")
     private ColorSet colorSet = new ColorSet();
 
     @Override
