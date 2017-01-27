@@ -62,7 +62,7 @@ public class Color implements CarParts {
         isMetallic = metallic;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "idcolor_set")
     public ColorSet getColorSet() {
         return colorSet;

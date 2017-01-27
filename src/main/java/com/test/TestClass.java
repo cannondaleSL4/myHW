@@ -33,7 +33,7 @@ public class TestClass {
             requestText = create + baseJson;
             apiDb.makeReq(requestText);
         }
-        /*
+        
         // add some engine to base
         List<Engine>arrayEngine = new ArrayList<Engine>();
         arrayEngine.add(new Engine("1.6L Ti-VCT I-4 Engine",120));
