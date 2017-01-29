@@ -24,7 +24,9 @@ public class TransmissionDAO implements DAO <Transmission> {
         try{
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
-            session.save(transmission);
+            session.saveOrUpdate(transmission);
+            session.flush();
+            session.clear();
             session.getTransaction().commit();
         }catch (Exception e){
             //JOptionPane.showMessageDialog(null, e.getMessage(), "Error Insert", JOptionPane.OK_OPTION);

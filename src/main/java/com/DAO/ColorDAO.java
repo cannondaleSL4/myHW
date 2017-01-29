@@ -3,11 +3,12 @@ package com.DAO;
 import com.api.HibernateUtil;
 import com.carEntity.Color;
 import org.hibernate.Session;
+import org.hibernate.query.Query;
+
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.swing.*;
-import java.io.Serializable;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -22,7 +23,10 @@ public class ColorDAO implements DAO<Color> {
         try{
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
-            session.save(color);
+            check(color);
+            session.saveOrUpdate(color);
+            session.flush();
+            session.clear();
             session.getTransaction().commit();
         }catch (Exception e){
             //JOptionPane.showMessageDialog(null, e.getMessage(), "Error Insert", JOptionPane.OK_OPTION);
@@ -31,6 +35,31 @@ public class ColorDAO implements DAO<Color> {
                 session.close();
             }
         }
+    }
+
+    boolean check(Color color){
+        boolean isitHere = false;
+        Session session = null;
+        //System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+        String sql = "FROM color_table WHERE color_table_name = " + color.getColorName() +"+ AND is_metallic = "+ color.isMetallic()+";";
+        try{
+            session = HibernateUtil.getSessionFactory().openSession();
+            /*Query query = session.createQuery("from color_table where color_table_name = :name and is_metallic = :metallic ");
+            query.setParameter("name",color.getColorName());
+            query.setParameter("metallic", color.isMetallic());
+            int result = query.getFirstResult();
+            System.out.println("dsdsdsdsdsdsd " + result);*/
+            Query query = session.createQuery(sql);
+            List results = query.list();
+            System.out.println(results.size());
+        }catch (Exception e){
+            //JOptionPane.showMessageDialog(null, e.getMessage(), "Error Insert", JOptionPane.OK_OPTION);
+        }finally {
+            if (session != null && session.isOpen()){
+                session.close();
+            }
+        }
+        return isitHere;
     }
 
     @Override
@@ -110,7 +139,7 @@ public class ColorDAO implements DAO<Color> {
         try{
             session = HibernateUtil.getSessionFactory().openSession();
             CriteriaBuilder builder = session.getCriteriaBuilder();
-            CriteriaQuery <Color> criteria = builder.createQuery(Color.class);
+            CriteriaQuery<Color> criteria = builder.createQuery(Color.class);
             criteria.from(Color.class);
             colors = session.createQuery(criteria).getResultList();
         }catch (Exception e) {

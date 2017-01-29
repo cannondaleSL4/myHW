@@ -3,6 +3,7 @@ package com.carEntity;
 import org.codehaus.jackson.annotate.JsonTypeInfo;
 
 import javax.persistence.*;
+import java.math.BigInteger;
 
 /**
  * Created by dima on 08.12.16.
@@ -25,7 +26,7 @@ public class Transmission implements CarParts {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name = "idtransmission")
+    @Column(name = "idtransmission",nullable = false, unique = true)
     public Long getId() {
         return id;
     }
@@ -43,7 +44,7 @@ public class Transmission implements CarParts {
         this.transmissionName = transmissionName;
     }
 
-    @Column(name = "number_of_speed",nullable = false)
+    @Column(name = "number_of_speed",nullable = false, unique = true)
     public int getNumberOfSpeed() {
         return numberOfSpeed;
     }

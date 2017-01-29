@@ -2,14 +2,18 @@ package com.carEntity;
 
 import org.codehaus.jackson.annotate.JsonTypeInfo;
 import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.SQLInsert;
 
 import javax.persistence.*;
+import java.math.BigInteger;
 
 /**
  * Created by dima on 08.12.16.
  */
 @Entity
 @Table(name="engine")
+/*@SQLInsert(sql = "INSERT INTO engine (engine_name, horsepower) VALUES (?,?)" +
+        " on CONFLICT do nothing;")*/
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
 public class Engine implements CarParts {
     private Long id;
@@ -28,7 +32,7 @@ public class Engine implements CarParts {
         this.horsepower = horsepower;
     }
 
-    public Engine(String nameOfEngine, int horsepower,Long id) {
+    public Engine(Long id,String nameOfEngine, int horsepower) {
         this.nameOfEngine = nameOfEngine;
         this.horsepower = horsepower;
         this.id = id;
@@ -36,7 +40,7 @@ public class Engine implements CarParts {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name = "idengine")
+    @Column(name = "idengine",nullable = false, unique = true)
     public Long getId() {
         return id;
     }
@@ -54,7 +58,7 @@ public class Engine implements CarParts {
         this.nameOfEngine = nameOfEngine;
     }
 
-    @Column(name = "horsepower")
+    @Column(name = "horsepower",nullable = false, unique = true)
     public int getHorsepower() {
         return horsepower;
     }

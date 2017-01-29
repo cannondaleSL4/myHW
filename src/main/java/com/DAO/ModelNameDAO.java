@@ -23,7 +23,9 @@ public class ModelNameDAO implements DAO <ModelName> {
         try{
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
-            session.save(modelName);
+            session.saveOrUpdate(modelName);
+            session.flush();
+            session.clear();
             session.getTransaction().commit();
         }catch (Exception e){
             //JOptionPane.showMessageDialog(null, e.getMessage(), "Error Insert model", JOptionPane.OK_OPTION);

@@ -4,6 +4,7 @@ import org.codehaus.jackson.annotate.JsonTypeInfo;
 import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
+import java.math.BigInteger;
 
 /**
  * Created by dima on 13.12.16.

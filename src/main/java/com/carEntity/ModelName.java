@@ -3,6 +3,7 @@ package com.carEntity;
 import org.codehaus.jackson.annotate.JsonTypeInfo;
 
 import javax.persistence.*;
+import java.math.BigInteger;
 
 /**
  * Created by dima on 08.12.16.
@@ -23,7 +24,7 @@ public class ModelName implements CarParts {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name = "idcurrent_model")
+    @Column(name = "idcurrent_model",nullable = false, unique = true)
     public Long getId() {
         return id;
     }

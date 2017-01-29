@@ -23,7 +23,9 @@ public class CarParametrsDAO implements DAO <CarParametrs> {
         try{
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
-            session.save(carParametrs);
+            session.saveOrUpdate(carParametrs);
+            session.flush();
+            session.clear();
             session.getTransaction().commit();
         }catch (Exception e){
             //JOptionPane.showMessageDialog(null, e.getMessage(), "Error Insert", JOptionPane.OK_OPTION);

@@ -80,6 +80,10 @@ public class ApiDb {
             case "com.carEntity.CarParametrs":
                 CarParametrs carParametrs = objectMapper.readValue(s,CarParametrs.class);
                 return carParametrs;
+            case "com.carEntity.ColorSet":
+                System.out.println("here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                ColorSet colorSet = objectMapper.readValue(s,ColorSet.class);
+                return colorSet;
         }
         return null;
     }
@@ -97,6 +101,8 @@ public class ApiDb {
             factory.getTransmissionDAO().add((Transmission)carParts);
         }else if(carParts instanceof  CarParametrs){
             factory.getCarParametrsDAO().add((CarParametrs)carParts);
+        }else if(carParts instanceof  ColorSet) {
+            factory.getColorSetDAO().add((ColorSet) carParts);
         }
     }
 
@@ -113,6 +119,8 @@ public class ApiDb {
             factory.getTransmissionDAO().delete((Transmission)carParts);
         }else if(carParts instanceof  CarParametrs){
             factory.getCarParametrsDAO().delete((CarParametrs)carParts);
+        }else if(carParts instanceof  ColorSet) {
+            factory.getColorSetDAO().delete((ColorSet) carParts);
         }
     }
 

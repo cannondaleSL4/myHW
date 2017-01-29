@@ -4,7 +4,7 @@ import org.codehaus.jackson.annotate.JsonTypeInfo;
 import org.hibernate.annotations.SQLInsert;
 
 import javax.persistence.*;
-
+import java.math.BigInteger;
 
 
 /**
@@ -21,7 +21,7 @@ import javax.persistence.*;
 @JsonTypeInfo (use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
 public class Color implements CarParts {
 
-    private Long id;
+    private int id;
     private String colorName;
     private boolean isMetallic;
     private ColorSet colorSet = new ColorSet();
@@ -36,11 +36,11 @@ public class Color implements CarParts {
     @Id
     @Column(name = "idcolor_table")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

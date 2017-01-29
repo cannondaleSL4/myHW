@@ -21,7 +21,9 @@ public class EngineDAO implements DAO <Engine> {
         try{
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
-            session.save(engine);
+            session.saveOrUpdate(engine);
+            session.flush();
+            session.clear();
             session.getTransaction().commit();
         }catch (Exception e){
             //JOptionPane.showMessageDialog(null, e.getMessage(), "Error Insert", JOptionPane.OK_OPTION);

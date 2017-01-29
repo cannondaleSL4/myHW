@@ -22,7 +22,9 @@ public class KindOfBodyDAO implements DAO <KindOfBody> {
         try{
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
-            session.save(kindOfBody);
+            session.saveOrUpdate(kindOfBody);
+            session.flush();
+            session.clear();
             session.getTransaction().commit();
         }catch (Exception e){
             //JOptionPane.showMessageDialog(null, e.getMessage(), "Error Insert", JOptionPane.OK_OPTION);
