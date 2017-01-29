@@ -40,6 +40,7 @@ public class ColorSet implements CarParts {
     }
 
     public void addColor(Color color){
+        color.setColorSet(this);
         colors.add(color);
     }
 
