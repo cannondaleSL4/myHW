@@ -1,10 +1,7 @@
 package com.carEntity;
 
 import org.codehaus.jackson.annotate.JsonTypeInfo;
-import org.hibernate.annotations.SQLInsert;
-
 import javax.persistence.*;
-import java.math.BigInteger;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -17,20 +14,14 @@ import java.util.Set;
 public class ColorSet implements CarParts {
 
     private Long id;
-
     private CarParametrs carParametrs;
     private Set<Color> colors = new HashSet<Color>();
 
-    public ColorSet() {
-    }
-
-    public ColorSet(Long idColorSet){
-        this.id = idColorSet;
-    }
+    public ColorSet() {}
 
     @Id
-    @Column(name = "idcolor_set")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idcolor_set")
     public Long getIdColorSet() {
         return id;
     }
@@ -44,9 +35,8 @@ public class ColorSet implements CarParts {
         colors.add(color);
     }
 
-
-    @OneToMany(mappedBy = "colorSet")
-    //@JoinColumn(name = "idcolor_table", nullable = false)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "colorSet")
+    //@JoinColumn(name = "idcolor_table")
     public Set<Color> getColors() {
         return colors;
     }

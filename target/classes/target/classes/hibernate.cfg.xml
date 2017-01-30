@@ -18,6 +18,7 @@
 
 
         <property name="show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
 
         <!-- <property name="connection.username"/> -->
         <!-- <property name="connection.password"/> -->

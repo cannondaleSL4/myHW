@@ -33,6 +33,27 @@ public class TestClass {
             requestText = create + baseJson;
             apiDb.makeReq(requestText);
         }
+
+        /*
+        //add some ColorSet to base
+
+        ColorSet colorSetOne = new ColorSet();
+        colorSetOne.addColor(arrayColor.get(0));
+        colorSetOne.addColor(arrayColor.get(1));
+
+        ColorSet colorSetTwo = new ColorSet();
+        colorSetTwo.addColor(arrayColor.get(2));
+
+        List<ColorSet> arrayColorSet = new ArrayList<ColorSet>();
+        arrayColorSet.add(colorSetOne);
+        arrayColorSet.add(colorSetTwo);
+
+        for(ColorSet colorSet: arrayColorSet){
+            baseJson = objectMapper.writeValueAsString(colorSet);
+            requestText = create + baseJson;
+            apiDb.makeReq(requestText);
+        }
+
         /*
         // add some engine to base
         List<Engine>arrayEngine = new ArrayList<Engine>();
