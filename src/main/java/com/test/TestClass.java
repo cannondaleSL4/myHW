@@ -3,11 +3,16 @@ package com.test;
 
 import com.api.ApiDb;
 import com.carEntity.*;
-import org.codehaus.jackson.map.ObjectMapper;
+//import org.codehaus.jackson.map.ObjectMapper;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+
+import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * Created by dima on 09.12.16.
@@ -22,6 +27,20 @@ public class TestClass {
         String delete = "delete/";
         String requestText = "";
 
+
+        //add some ColorSet to base
+        List<ColorSet> arrayColorSet = new ArrayList<ColorSet>();
+        ColorSet colorSetOne = new ColorSet();
+        arrayColorSet.add(colorSetOne);
+        ColorSet colorSetTwo = new ColorSet();
+        arrayColorSet.add(colorSetTwo);
+
+        for(ColorSet colorSet: arrayColorSet){
+            baseJson = objectMapper.writeValueAsString(colorSet);
+            requestText = create + baseJson;
+            apiDb.makeReq(requestText);
+        }
+
         // add some colors to base
         List <Color> arrayColor = new ArrayList<Color>();
         arrayColor.add(new Color("black",false));
@@ -34,25 +53,17 @@ public class TestClass {
             apiDb.makeReq(requestText);
         }
 
-        /*
-        //add some ColorSet to base
-
-        ColorSet colorSetOne = new ColorSet();
         colorSetOne.addColor(arrayColor.get(0));
         colorSetOne.addColor(arrayColor.get(1));
-
-        ColorSet colorSetTwo = new ColorSet();
         colorSetTwo.addColor(arrayColor.get(2));
 
-        List<ColorSet> arrayColorSet = new ArrayList<ColorSet>();
-        arrayColorSet.add(colorSetOne);
-        arrayColorSet.add(colorSetTwo);
-
-        for(ColorSet colorSet: arrayColorSet){
-            baseJson = objectMapper.writeValueAsString(colorSet);
+        for(Color color: arrayColor){
+            System.out.println("color " + color.getColorSet().getIdColorSet());
+            baseJson = objectMapper.writeValueAsString(color);
             requestText = create + baseJson;
             apiDb.makeReq(requestText);
         }
+
 
         /*
         // add some engine to base

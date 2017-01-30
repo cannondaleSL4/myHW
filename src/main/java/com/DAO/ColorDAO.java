@@ -23,11 +23,17 @@ public class ColorDAO implements DAO<Color> {
         try{
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
-            //check(color);
-            session.saveOrUpdate(color);
-            session.flush();
-            session.clear();
-            session.getTransaction().commit();
+            if (!check(color)){
+                session.saveOrUpdate(color);
+                session.flush();
+                session.clear();
+                session.getTransaction().commit();
+            }else{
+                System.out.println("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
+                session.flush();
+                session.clear();
+                session.getTransaction().commit();
+            }
         }catch (Exception e){
             //JOptionPane.showMessageDialog(null, e.getMessage(), "Error Insert", JOptionPane.OK_OPTION);
         }finally {
@@ -38,20 +44,19 @@ public class ColorDAO implements DAO<Color> {
     }
 
     boolean check(Color color){
+        System.out.println("check check check check");
         boolean isitHere = false;
         Session session = null;
-        //System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-        String sql = "FROM color_table WHERE color_table_name = " + color.getColorName() +"+ AND is_metallic = "+ color.isMetallic()+";";
         try{
             session = HibernateUtil.getSessionFactory().openSession();
-            /*Query query = session.createQuery("from color_table where color_table_name = :name and is_metallic = :metallic ");
-            query.setParameter("name",color.getColorName());
-            query.setParameter("metallic", color.isMetallic());
-            int result = query.getFirstResult();
-            System.out.println("dsdsdsdsdsdsd " + result);*/
-            Query query = session.createQuery(sql);
-            List results = query.list();
-            System.out.println(results.size());
+            session.beginTransaction();
+            Long checkLong = (Long)session.getIdentifier(color);
+            System.out.println("dsdsdsdsdsd" + checkLong);
+            if (checkLong != 0){
+                return true;
+            }
+            //color.setId(checkLong);
+            return false;
         }catch (Exception e){
             //JOptionPane.showMessageDialog(null, e.getMessage(), "Error Insert", JOptionPane.OK_OPTION);
         }finally {

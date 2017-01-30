@@ -1,6 +1,6 @@
 package com.carEntity;
 
-import org.codehaus.jackson.annotate.JsonTypeInfo;
+//import org.codehaus.jackson.annotate.JsonTypeInfo;
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.SQLInsert;
 
@@ -14,7 +14,7 @@ import java.math.BigInteger;
 @Table(name="engine")
 /*@SQLInsert(sql = "INSERT INTO engine (engine_name, horsepower) VALUES (?,?)" +
         " on CONFLICT do nothing;")*/
-@JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
+//@JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
 public class Engine implements CarParts {
     private Long id;
     private String nameOfEngine;

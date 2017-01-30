@@ -2,8 +2,12 @@ package com.api;
 
 
 import com.carEntity.*;
-import org.codehaus.jackson.JsonNode;
-import org.codehaus.jackson.map.ObjectMapper;
+/*import org.codehaus.jackson.JsonNode;
+import org.codehaus.jackson.map.ObjectMapper;*/
+import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 
 import java.io.IOException;
@@ -57,7 +61,6 @@ public class ApiDb {
     }
 
     private CarParts getParts(String s) throws IOException {
-
         JsonNode jsonNode = objectMapper.readTree(s);
         String className = jsonNode.get("@class").asText();
 
@@ -81,7 +84,6 @@ public class ApiDb {
                 CarParametrs carParametrs = objectMapper.readValue(s,CarParametrs.class);
                 return carParametrs;
             case "com.carEntity.ColorSet":
-                System.out.println("here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
                 ColorSet colorSet = objectMapper.readValue(s,ColorSet.class);
                 return colorSet;
         }

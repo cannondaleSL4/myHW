@@ -1,6 +1,6 @@
 package com.carEntity;
 
-import org.codehaus.jackson.annotate.JsonTypeInfo;
+//import org.codehaus.jackson.annotate.JsonTypeInfo;
 import javax.persistence.*;
 import java.math.BigInteger;
 
@@ -9,7 +9,7 @@ import java.math.BigInteger;
  */
 @Entity
 @Table(name ="kind_of_body")
-@JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
+//@JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
 public class KindOfBody implements CarParts {
 
     private Long id;

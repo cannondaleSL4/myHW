@@ -1,12 +1,15 @@
 package com.carEntity;
 
-import org.codehaus.jackson.annotate.JsonTypeInfo;
+//import org.codehaus.jackson.annotate.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import org.hibernate.annotations.SQLInsert;
 
 import javax.persistence.*;
 import java.math.BigInteger;
 
-
+import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 /**
  * Created by dima on 08.12.16.
  */
@@ -18,10 +21,10 @@ import java.math.BigInteger;
 )
 /*@SQLInsert(sql = "INSERT INTO color_table (idcolor_table,color_table_name, is_metallic) VALUES (?,?,?)" +
         " on CONFLICT do nothing;")*/
-@JsonTypeInfo (use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
+@JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
 public class Color implements CarParts {
 
-    private int id;
+    private Long id;
     private String colorName;
     private boolean isMetallic;
     private ColorSet colorSet = new ColorSet();
@@ -36,11 +39,11 @@ public class Color implements CarParts {
     @Id
     @Column(name = "idcolor_table")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

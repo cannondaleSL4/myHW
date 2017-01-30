@@ -13,7 +13,6 @@ import java.util.Collection;
 public class ColorSetDAO implements DAO<ColorSet> {
     @Override
     public void add(ColorSet colorSet) throws SQLException {
-        System.out.println("here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         Session session = null;
         try{
             session = HibernateUtil.getSessionFactory().openSession();
