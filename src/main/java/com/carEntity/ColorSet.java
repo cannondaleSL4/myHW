@@ -1,5 +1,6 @@
 package com.carEntity;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
 import org.codehaus.jackson.annotate.JsonTypeInfo;
 import javax.persistence.*;
 import java.util.HashSet;
@@ -35,8 +36,8 @@ public class ColorSet implements CarParts {
         colors.add(color);
     }
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "colorSet")
-    //@JoinColumn(name = "idcolor_table")
+    @JsonIgnore
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "colorSet",cascade = CascadeType.ALL)
     public Set<Color> getColors() {
         return colors;
     }
