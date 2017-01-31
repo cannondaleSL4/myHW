@@ -4,6 +4,7 @@ import org.codehaus.jackson.annotate.JsonTypeInfo;
 import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.math.BigInteger;
 
 /**
@@ -17,7 +18,9 @@ import java.math.BigInteger;
 @Entity
 @Table(name ="car_parm")
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
-public class CarParametrs implements CarParts  {
+public class CarParametrs implements CarParts, Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private Long id;
     private Engine engine;

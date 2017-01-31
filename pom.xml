@@ -34,6 +34,9 @@
             <version>3.4.0.GA</version>
         </dependency>
 
+
+        <!-- for rest api -->
+
         <!-- for rest api -->
         <!-- https://mvnrepository.com/artifact/com.sun.jersey/jersey-server
         <dependency>

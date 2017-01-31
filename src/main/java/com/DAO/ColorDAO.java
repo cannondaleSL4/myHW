@@ -40,7 +40,6 @@ public class ColorDAO implements DAO<Color> {
     boolean check(Color color){
         boolean isitHere = false;
         Session session = null;
-        //System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
         String sql = "FROM color_table WHERE color_table_name = " + color.getColorName() +"+ AND is_metallic = "+ color.isMetallic()+";";
         try{
             session = HibernateUtil.getSessionFactory().openSession();

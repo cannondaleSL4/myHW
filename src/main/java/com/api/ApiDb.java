@@ -2,6 +2,7 @@ package com.api;
 
 
 import com.carEntity.*;
+import jdk.nashorn.internal.parser.JSONParser;
 import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.map.ObjectMapper;
 
@@ -60,6 +61,7 @@ public class ApiDb {
 
         JsonNode jsonNode = objectMapper.readTree(s);
         String className = jsonNode.get("@class").asText();
+
 
         switch (className){
             case "com.carEntity.Color":

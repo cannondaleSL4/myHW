@@ -3,6 +3,7 @@ package com.test;
 
 import com.api.ApiDb;
 import com.carEntity.*;
+import jdk.nashorn.internal.parser.JSONParser;
 import org.codehaus.jackson.map.ObjectMapper;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -38,15 +39,16 @@ public class TestClass {
         arrayColorSet.add(colorSetOne);
         arrayColorSet.add(colorSetTwo);
 
-        colorSetOne.addColor(arrayColor.get(0));
-        colorSetOne.addColor(arrayColor.get(1));
-        colorSetTwo.addColor(arrayColor.get(2));
-
         for(ColorSet colorSet: arrayColorSet){
             baseJson = objectMapper.writeValueAsString(colorSet);
             requestText = create + baseJson;
             apiDb.makeReq(requestText);
+            System.out.println("number!!!!!! " + colorSet.getIdColorSet());
         }
+
+        colorSetOne.addColor(arrayColor.get(0));
+        colorSetOne.addColor(arrayColor.get(1));
+        colorSetTwo.addColor(arrayColor.get(2));
 
 
 

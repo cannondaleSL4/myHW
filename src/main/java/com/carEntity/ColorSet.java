@@ -3,16 +3,17 @@ package com.carEntity;
 import org.codehaus.jackson.annotate.JsonIgnore;
 import org.codehaus.jackson.annotate.JsonTypeInfo;
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Created by dima on 02.01.17.
- */
+
 @Entity
 @Table(name ="color_set")
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
-public class ColorSet implements CarParts {
+public class ColorSet implements CarParts, Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private Long id;
     private CarParametrs carParametrs;

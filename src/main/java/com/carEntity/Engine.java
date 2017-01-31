@@ -5,6 +5,7 @@ import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.SQLInsert;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.math.BigInteger;
 
 /**
@@ -15,7 +16,10 @@ import java.math.BigInteger;
 /*@SQLInsert(sql = "INSERT INTO engine (engine_name, horsepower) VALUES (?,?)" +
         " on CONFLICT do nothing;")*/
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
-public class Engine implements CarParts {
+public class Engine implements CarParts, Serializable {
+
+    private static final long serialVersionUID = 1L;
+
     private Long id;
     private String nameOfEngine;
     private int horsepower;

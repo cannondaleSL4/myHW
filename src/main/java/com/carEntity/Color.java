@@ -4,6 +4,7 @@ import org.codehaus.jackson.annotate.JsonTypeInfo;
 import org.hibernate.annotations.SQLInsert;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.math.BigInteger;
 
 
@@ -19,7 +20,9 @@ import java.math.BigInteger;
 /*@SQLInsert(sql = "INSERT INTO color_table (idcolor_table,color_table_name, is_metallic) VALUES (?,?,?)" +
         " on CONFLICT do nothing;")*/
 @JsonTypeInfo (use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
-public class Color implements CarParts {
+public class Color  implements CarParts, Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private int id;
     private String colorName;

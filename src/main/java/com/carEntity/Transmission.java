@@ -3,6 +3,7 @@ package com.carEntity;
 import org.codehaus.jackson.annotate.JsonTypeInfo;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.math.BigInteger;
 
 /**
@@ -11,7 +12,10 @@ import java.math.BigInteger;
 @Entity
 @Table(name ="transmission")
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
-public class Transmission implements CarParts {
+public class Transmission implements CarParts, Serializable {
+
+
+    private static final long serialVersionUID = 1L;
 
     private Long id;
     private String transmissionName;

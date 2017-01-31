@@ -2,10 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="633ad860-4c97-4e66-9c62-51a5b745ce8d" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/api/JacksonUtil.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/DAO/ColorDAO.class" afterPath="$PROJECT_DIR$/target/classes/com/DAO/ColorDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/carEntity/ColorSet.class" afterPath="$PROJECT_DIR$/target/classes/com/carEntity/ColorSet.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/test/TestClass.class" afterPath="$PROJECT_DIR$/target/classes/com/test/TestClass.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/DAO/ColorSetDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/DAO/ColorSetDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/DAO/ColorDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/DAO/ColorDAO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/api/ApiDb.java" afterPath="$PROJECT_DIR$/src/main/java/com/api/ApiDb.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/carEntity/CarParametrs.java" afterPath="$PROJECT_DIR$/src/main/java/com/carEntity/CarParametrs.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/carEntity/Color.java" afterPath="$PROJECT_DIR$/src/main/java/com/carEntity/Color.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/carEntity/ColorSet.java" afterPath="$PROJECT_DIR$/src/main/java/com/carEntity/ColorSet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/carEntity/Engine.java" afterPath="$PROJECT_DIR$/src/main/java/com/carEntity/Engine.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/carEntity/KindOfBody.java" afterPath="$PROJECT_DIR$/src/main/java/com/carEntity/KindOfBody.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/carEntity/ModelName.java" afterPath="$PROJECT_DIR$/src/main/java/com/carEntity/ModelName.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/carEntity/Transmission.java" afterPath="$PROJECT_DIR$/src/main/java/com/carEntity/Transmission.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/TestClass.java" afterPath="$PROJECT_DIR$/src/main/java/com/test/TestClass.java" />
     </list>
     <ignored path="SuperSite.iws" />
@@ -82,11 +93,11 @@
       <file leaf-file-name="ColorSet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/carEntity/ColorSet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+            <state relative-caret-position="150">
+              <caret line="15" column="52" lean-forward="false" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
               <folding>
-                <element signature="e#766#767#0" expanded="true" />
-                <element signature="e#802#803#0" expanded="true" />
+                <element signature="e#824#825#0" expanded="true" />
+                <element signature="e#860#861#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -95,28 +106,77 @@
       <file leaf-file-name="Color.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/carEntity/Color.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+            <state relative-caret-position="240">
+              <caret line="24" column="52" lean-forward="false" selection-start-line="24" selection-start-column="52" selection-end-line="24" selection-end-column="52" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ColorDAO.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ColorDAO.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/DAO/ColorDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="35" column="13" lean-forward="false" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+            <state relative-caret-position="90">
+              <caret line="27" column="28" lean-forward="true" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ColorSetDAO.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/DAO/ColorSetDAO.java">
+      <file leaf-file-name="Engine.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/carEntity/Engine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="14" column="60" lean-forward="false" selection-start-line="14" selection-start-column="60" selection-end-line="14" selection-end-column="60" />
+            <state relative-caret-position="160">
+              <caret line="20" column="52" lean-forward="false" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KindOfBody.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/carEntity/KindOfBody.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="16" column="52" lean-forward="false" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
+              <folding>
+                <element signature="e#795#796#0" expanded="true" />
+                <element signature="e#820#821#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ModelName.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/carEntity/ModelName.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="17" column="52" lean-forward="false" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
+              <folding>
+                <element signature="e#775#776#0" expanded="true" />
+                <element signature="e#800#801#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Transmission.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/carEntity/Transmission.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-125">
+              <caret line="17" column="52" lean-forward="false" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
+              <folding>
+                <element signature="e#1372#1373#0" expanded="true" />
+                <element signature="e#1408#1409#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="42" column="45" lean-forward="false" selection-start-line="42" selection-start-column="45" selection-end-line="42" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -125,22 +185,25 @@
       <file leaf-file-name="TestClass.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/test/TestClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="42" column="48" lean-forward="false" selection-start-line="42" selection-start-column="48" selection-end-line="42" selection-end-column="48" />
+            <state relative-caret-position="540">
+              <caret line="48" column="48" lean-forward="true" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
               <folding>
-                <element signature="e#681#688#0" expanded="true" />
-                <element signature="e#989#999#0" expanded="true" />
+                <element signature="e#728#735#0" expanded="true" />
+                <element signature="e#1036#1046#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ApiDb.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/api/ApiDb.java">
+      <file leaf-file-name="CarParametrs.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/carEntity/CarParametrs.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-410">
-              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="120">
+              <caret line="22" column="52" lean-forward="false" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
+              <folding>
+                <element signature="e#1258#1259#0" expanded="true" />
+                <element signature="e#1283#1284#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -172,27 +235,28 @@
         <option value="$PROJECT_DIR$/src/main/java/com/carEntity/ColotTableWithSetNumber.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/DAO/ColorDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/DAO/Factory.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/api/HibernateUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/DAO/DAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/api/Factory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/carEntity/CarParametrs.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/DAO/EngineDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/DAO/KindOfBodyDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/DAO/ModelNameDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/DAO/TransmissionDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/DAO/CarParametrsDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/DAO/ColorDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/DAO/ColorSetDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/api/JacksonUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/api/ApiDb.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/carEntity/CarParametrs.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/carEntity/Color.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/carEntity/ColorSet.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/carEntity/Engine.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/carEntity/KindOfBody.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/carEntity/ModelName.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/carEntity/Transmission.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/DAO/ColorDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/carEntity/Color.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/carEntity/ColorSet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/api/ApiDb.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/test/TestClass.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/DAO/ColorSetDAO.java" />
       </list>
     </option>
   </component>
@@ -901,7 +965,7 @@
       <workItem from="1485720838810" duration="88000" />
       <workItem from="1485755419962" duration="2505000" />
       <workItem from="1485759280262" duration="2327000" />
-      <workItem from="1485857420629" duration="3147000" />
+      <workItem from="1485857420629" duration="9081000" />
     </task>
     <task id="LOCAL-00001" summary="some commit">
       <created>1485285442475</created>
@@ -914,7 +978,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108935000" />
+    <option name="totallyTimeSpent" value="114869000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
@@ -934,7 +998,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32721713" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32662538" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1033,34 +1097,26 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/DAO/ColorDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1365">
-          <caret line="101" column="9" lean-forward="false" selection-start-line="101" selection-start-column="9" selection-end-line="101" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/carEntity/Engine.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="11" column="65" lean-forward="false" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="65" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#697#698#0" expanded="false" />
-            <element signature="e#745#746#0" expanded="false" />
-            <element signature="e#1216#1217#0" expanded="false" />
-            <element signature="e#1241#1242#0" expanded="false" />
-            <element signature="e#1275#1276#0" expanded="false" />
-            <element signature="e#1303#1304#0" expanded="false" />
-            <element signature="e#1408#1409#0" expanded="false" />
-            <element signature="e#1443#1444#0" expanded="false" />
-            <element signature="e#1499#1500#0" expanded="false" />
-            <element signature="e#1547#1548#0" expanded="false" />
-            <element signature="e#1646#1647#0" expanded="false" />
-            <element signature="e#1679#1680#0" expanded="false" />
-            <element signature="e#1728#1729#0" expanded="false" />
-            <element signature="e#1772#1773#0" expanded="false" />
+            <element signature="e#795#796#0" expanded="false" />
+            <element signature="e#843#844#0" expanded="false" />
+            <element signature="e#1314#1315#0" expanded="false" />
+            <element signature="e#1339#1340#0" expanded="false" />
+            <element signature="e#1373#1374#0" expanded="false" />
+            <element signature="e#1401#1402#0" expanded="false" />
+            <element signature="e#1506#1507#0" expanded="false" />
+            <element signature="e#1541#1542#0" expanded="false" />
+            <element signature="e#1597#1598#0" expanded="false" />
+            <element signature="e#1645#1646#0" expanded="false" />
+            <element signature="e#1744#1745#0" expanded="false" />
+            <element signature="e#1777#1778#0" expanded="false" />
+            <element signature="e#1826#1827#0" expanded="false" />
+            <element signature="e#1870#1871#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1105,8 +1161,8 @@
         <state relative-caret-position="855">
           <caret line="63" column="9" lean-forward="false" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
           <folding>
-            <element signature="e#681#688#0" expanded="true" />
-            <element signature="e#989#999#0" expanded="true" />
+            <element signature="e#728#735#0" expanded="true" />
+            <element signature="e#1036#1046#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1162,28 +1218,28 @@
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#1221#1222#0" expanded="false" />
-            <element signature="e#1249#1250#0" expanded="false" />
-            <element signature="e#1358#1359#0" expanded="false" />
-            <element signature="e#1387#1388#0" expanded="false" />
-            <element signature="e#1510#1511#0" expanded="false" />
-            <element signature="e#1543#1544#0" expanded="false" />
-            <element signature="e#1665#1666#0" expanded="false" />
-            <element signature="e#1697#1698#0" expanded="false" />
-            <element signature="e#1824#1825#0" expanded="false" />
-            <element signature="e#1859#1860#0" expanded="false" />
-            <element signature="e#1975#1976#0" expanded="false" />
-            <element signature="e#2006#2007#0" expanded="false" />
-            <element signature="e#2056#2057#0" expanded="false" />
-            <element signature="e#2096#2097#0" expanded="false" />
-            <element signature="e#2140#2141#0" expanded="false" />
-            <element signature="e#2176#2177#0" expanded="false" />
-            <element signature="e#2232#2233#0" expanded="false" />
-            <element signature="e#2276#2277#0" expanded="false" />
-            <element signature="e#2329#2330#0" expanded="false" />
-            <element signature="e#2371#2372#0" expanded="false" />
-            <element signature="e#2433#2434#0" expanded="false" />
-            <element signature="e#2481#2482#0" expanded="false" />
+            <element signature="e#1317#1318#0" expanded="false" />
+            <element signature="e#1345#1346#0" expanded="false" />
+            <element signature="e#1454#1455#0" expanded="false" />
+            <element signature="e#1483#1484#0" expanded="false" />
+            <element signature="e#1606#1607#0" expanded="false" />
+            <element signature="e#1639#1640#0" expanded="false" />
+            <element signature="e#1761#1762#0" expanded="false" />
+            <element signature="e#1793#1794#0" expanded="false" />
+            <element signature="e#1920#1921#0" expanded="false" />
+            <element signature="e#1955#1956#0" expanded="false" />
+            <element signature="e#2071#2072#0" expanded="false" />
+            <element signature="e#2102#2103#0" expanded="false" />
+            <element signature="e#2152#2153#0" expanded="false" />
+            <element signature="e#2192#2193#0" expanded="false" />
+            <element signature="e#2236#2237#0" expanded="false" />
+            <element signature="e#2272#2273#0" expanded="false" />
+            <element signature="e#2328#2329#0" expanded="false" />
+            <element signature="e#2372#2373#0" expanded="false" />
+            <element signature="e#2425#2426#0" expanded="false" />
+            <element signature="e#2467#2468#0" expanded="false" />
+            <element signature="e#2529#2530#0" expanded="false" />
+            <element signature="e#2577#2578#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1231,8 +1287,8 @@
         <state relative-caret-position="540">
           <caret line="42" column="47" lean-forward="false" selection-start-line="42" selection-start-column="47" selection-end-line="42" selection-end-column="47" />
           <folding>
-            <element signature="e#681#688#0" expanded="true" />
-            <element signature="e#989#999#0" expanded="true" />
+            <element signature="e#728#735#0" expanded="true" />
+            <element signature="e#1036#1046#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1248,26 +1304,12 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/0c437a51-564f-4b3f-9b00-411f826743aa/console.sql" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/32613915-acdd-463d-9904-49fd02fa357e/console.sql" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/DAO/ColorDAOImpl.java" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="36" column="29" lean-forward="false" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/carEntity/TestClass.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/carEntity/ColotTableWithSetNumber.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/DAO/DAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="15" column="1" lean-forward="false" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/carEntity/CarParts.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1314,80 +1356,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/carEntity/CarParametrs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="44" column="5" lean-forward="false" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1221#1222#0" expanded="false" />
-            <element signature="e#1249#1250#0" expanded="false" />
-            <element signature="e#1358#1359#0" expanded="false" />
-            <element signature="e#1387#1388#0" expanded="false" />
-            <element signature="e#1510#1511#0" expanded="false" />
-            <element signature="e#1543#1544#0" expanded="false" />
-            <element signature="e#1665#1666#0" expanded="false" />
-            <element signature="e#1697#1698#0" expanded="false" />
-            <element signature="e#1824#1825#0" expanded="false" />
-            <element signature="e#1859#1860#0" expanded="false" />
-            <element signature="e#1975#1976#0" expanded="false" />
-            <element signature="e#2006#2007#0" expanded="false" />
-            <element signature="e#2056#2057#0" expanded="false" />
-            <element signature="e#2096#2097#0" expanded="false" />
-            <element signature="e#2140#2141#0" expanded="false" />
-            <element signature="e#2176#2177#0" expanded="false" />
-            <element signature="e#2232#2233#0" expanded="false" />
-            <element signature="e#2276#2277#0" expanded="false" />
-            <element signature="e#2329#2330#0" expanded="false" />
-            <element signature="e#2371#2372#0" expanded="false" />
-            <element signature="e#2433#2434#0" expanded="false" />
-            <element signature="e#2481#2482#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/DAO/CarParametrsDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="27" column="28" lean-forward="false" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/carEntity/ModelName.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="27" column="24" lean-forward="false" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#449#450#0" expanded="false" />
-            <element signature="e#491#492#0" expanded="false" />
-            <element signature="e#736#737#0" expanded="false" />
-            <element signature="e#764#765#0" expanded="false" />
-            <element signature="e#870#871#0" expanded="false" />
-            <element signature="e#902#903#0" expanded="false" />
-            <element signature="e#952#953#0" expanded="false" />
-            <element signature="e#994#995#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/carEntity/Transmission.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="47" column="35" lean-forward="false" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#806#807#0" expanded="false" />
-            <element signature="e#831#832#0" expanded="false" />
-            <element signature="e#865#866#0" expanded="false" />
-            <element signature="e#893#894#0" expanded="false" />
-            <element signature="e#1008#1009#0" expanded="false" />
-            <element signature="e#1047#1048#0" expanded="false" />
-            <element signature="e#1111#1112#0" expanded="false" />
-            <element signature="e#1167#1168#0" expanded="false" />
-            <element signature="e#1365#1366#0" expanded="false" />
-            <element signature="e#1415#1416#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1461,40 +1433,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/carEntity/Engine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="70" column="30" lean-forward="false" selection-start-line="70" selection-start-column="30" selection-end-line="70" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#697#698#0" expanded="false" />
-            <element signature="e#745#746#0" expanded="false" />
-            <element signature="e#1216#1217#0" expanded="false" />
-            <element signature="e#1241#1242#0" expanded="false" />
-            <element signature="e#1275#1276#0" expanded="false" />
-            <element signature="e#1303#1304#0" expanded="false" />
-            <element signature="e#1408#1409#0" expanded="false" />
-            <element signature="e#1443#1444#0" expanded="false" />
-            <element signature="e#1499#1500#0" expanded="false" />
-            <element signature="e#1547#1548#0" expanded="false" />
-            <element signature="e#1646#1647#0" expanded="false" />
-            <element signature="e#1679#1680#0" expanded="false" />
-            <element signature="e#1728#1729#0" expanded="false" />
-            <element signature="e#1772#1773#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/carEntity/KindOfBody.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="26" column="24" lean-forward="false" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
-          <folding>
-            <element signature="e#722#723#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1503,56 +1441,136 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/carEntity/ColorSet.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/DAO/ColorSetDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding>
-            <element signature="e#766#767#0" expanded="true" />
-            <element signature="e#802#803#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="105">
+          <caret line="12" column="38" lean-forward="true" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/TestClass.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/api/JacksonUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="42" column="48" lean-forward="false" selection-start-line="42" selection-start-column="48" selection-end-line="42" selection-end-column="48" />
+        <state relative-caret-position="540">
+          <caret line="36" column="37" lean-forward="true" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="37" />
           <folding>
-            <element signature="e#681#688#0" expanded="true" />
-            <element signature="e#989#999#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1348#1349#0" expanded="true" />
+            <element signature="e#1427#1428#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/api/ApiDb.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-410">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        <state relative-caret-position="145">
+          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/carEntity/CarParts.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/carEntity/CarParametrs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="22" column="52" lean-forward="false" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
+          <folding>
+            <element signature="e#1258#1259#0" expanded="true" />
+            <element signature="e#1283#1284#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/carEntity/Color.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+        <state relative-caret-position="240">
+          <caret line="24" column="52" lean-forward="false" selection-start-line="24" selection-start-column="52" selection-end-line="24" selection-end-column="52" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/carEntity/ColorSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="15" column="52" lean-forward="false" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+          <folding>
+            <element signature="e#824#825#0" expanded="true" />
+            <element signature="e#860#861#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/carEntity/Engine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="20" column="52" lean-forward="false" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/carEntity/KindOfBody.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="16" column="52" lean-forward="false" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
+          <folding>
+            <element signature="e#795#796#0" expanded="true" />
+            <element signature="e#820#821#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/carEntity/ModelName.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="17" column="52" lean-forward="false" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
+          <folding>
+            <element signature="e#775#776#0" expanded="true" />
+            <element signature="e#800#801#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/carEntity/Transmission.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-125">
+          <caret line="17" column="52" lean-forward="false" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
+          <folding>
+            <element signature="e#1372#1373#0" expanded="true" />
+            <element signature="e#1408#1409#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="42" column="45" lean-forward="false" selection-start-line="42" selection-start-column="45" selection-end-line="42" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/TestClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="48" column="48" lean-forward="true" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
+          <folding>
+            <element signature="e#728#735#0" expanded="true" />
+            <element signature="e#1036#1046#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/DAO/ColorDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="35" column="13" lean-forward="false" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/DAO/ColorSetDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="14" column="60" lean-forward="false" selection-start-line="14" selection-start-column="60" selection-end-line="14" selection-end-column="60" />
+        <state relative-caret-position="90">
+          <caret line="27" column="28" lean-forward="true" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
           <folding />
         </state>
       </provider>
