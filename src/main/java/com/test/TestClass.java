@@ -21,7 +21,7 @@ public class TestClass {
         String create = "create/";
         String delete = "delete/";
         String requestText = "";
-
+/*some*/
         // add some colors to base
         List <Color> arrayColor = new ArrayList<Color>();
         arrayColor.add(new Color("black",false));

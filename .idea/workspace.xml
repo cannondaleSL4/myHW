@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="633ad860-4c97-4e66-9c62-51a5b745ce8d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SuperSite.iml" afterPath="$PROJECT_DIR$/SuperSite.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/carEntity/ColorSet.java" afterPath="$PROJECT_DIR$/src/main/java/com/carEntity/ColorSet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/TestClass.java" afterPath="$PROJECT_DIR$/src/main/java/com/test/TestClass.java" />
     </list>
     <ignored path="SuperSite.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -89,11 +88,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Color.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Color.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/carEntity/Color.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+            <state relative-caret-position="226">
+              <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -121,15 +120,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
               <caret line="22" column="29" lean-forward="false" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <marker date="1485857404207" expanded="true" signature="1055:1063" ph="{...}" />
-                <marker date="1485857404207" expanded="false" signature="1114:1125" ph=" { " />
-                <marker date="1485857404207" expanded="false" signature="1137:1143" ph=" }" />
-                <marker date="1485857404207" expanded="true" signature="1201:1209" ph="{...}" />
-                <marker date="1485857404207" expanded="false" signature="1255:1266" ph=" { " />
-                <marker date="1485857404207" expanded="false" signature="1278:1284" ph=" }" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -232,14 +223,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestClass.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TestClass.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/test/TestClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="31" column="62" lean-forward="false" selection-start-line="31" selection-start-column="62" selection-end-line="31" selection-end-column="62" />
+            <state relative-caret-position="120">
+              <caret line="23" column="8" lean-forward="false" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <marker date="1485857404211" expanded="false" signature="1379:1389" ph="&lt;~&gt;" />
+                <element signature="e#689#696#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -289,10 +279,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/carEntity/ModelName.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/carEntity/Transmission.java" />
         <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/test/TestClass.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/DAO/ColorDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/carEntity/ColorSet.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/carEntity/Color.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/test/TestClass.java" />
       </list>
     </option>
   </component>
@@ -997,7 +987,7 @@
       <workItem from="1485720838810" duration="88000" />
       <workItem from="1485755419962" duration="2505000" />
       <workItem from="1485759280262" duration="2327000" />
-      <workItem from="1485857420629" duration="752000" />
+      <workItem from="1485857420629" duration="1113000" />
     </task>
     <task id="LOCAL-00001" summary="some commit">
       <created>1485285442475</created>
@@ -1010,7 +1000,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106540000" />
+    <option name="totallyTimeSpent" value="106901000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
@@ -1208,8 +1198,7 @@
         <state relative-caret-position="855">
           <caret line="63" column="9" lean-forward="false" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <marker date="1485857404211" expanded="false" signature="1379:1389" ph="&lt;~&gt;" />
+            <element signature="e#689#696#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1341,8 +1330,7 @@
         <state relative-caret-position="540">
           <caret line="42" column="47" lean-forward="false" selection-start-line="42" selection-start-column="47" selection-end-line="42" selection-end-column="47" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <marker date="1485857404211" expanded="false" signature="1379:1389" ph="&lt;~&gt;" />
+            <element signature="e#689#696#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1604,17 +1592,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/TestClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="31" column="62" lean-forward="false" selection-start-line="31" selection-start-column="62" selection-end-line="31" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <marker date="1485857404211" expanded="false" signature="1379:1389" ph="&lt;~&gt;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/carEntity/Engine.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
@@ -1635,22 +1612,6 @@
             <element signature="e#1679#1680#0" expanded="false" />
             <element signature="e#1728#1729#0" expanded="false" />
             <element signature="e#1772#1773#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/DAO/ColorSetDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="22" column="29" lean-forward="false" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <marker date="1485857404207" expanded="true" signature="1055:1063" ph="{...}" />
-            <marker date="1485857404207" expanded="false" signature="1114:1125" ph=" { " />
-            <marker date="1485857404207" expanded="false" signature="1137:1143" ph=" }" />
-            <marker date="1485857404207" expanded="true" signature="1201:1209" ph="{...}" />
-            <marker date="1485857404207" expanded="false" signature="1255:1266" ph=" { " />
-            <marker date="1485857404207" expanded="false" signature="1278:1284" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -1683,9 +1644,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/carEntity/Color.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+        <state relative-caret-position="226">
+          <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/DAO/ColorSetDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="22" column="29" lean-forward="false" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/TestClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="23" column="8" lean-forward="false" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+          <folding>
+            <element signature="e#689#696#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
