@@ -81,7 +81,6 @@ public class ApiDb {
                 CarParametrs carParametrs = objectMapper.readValue(s,CarParametrs.class);
                 return carParametrs;
             case "com.carEntity.ColorSet":
-                System.out.println("here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
                 ColorSet colorSet = objectMapper.readValue(s,ColorSet.class);
                 return colorSet;
         }

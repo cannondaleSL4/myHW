@@ -21,38 +21,45 @@ public class TestClass {
         String create = "create/";
         String delete = "delete/";
         String requestText = "";
-/*some*/
+
         // add some colors to base
         List <Color> arrayColor = new ArrayList<Color>();
         arrayColor.add(new Color("black",false));
         arrayColor.add(new Color ("blue",true));
         arrayColor.add(new Color("red",true));
 
-        for(Color color: arrayColor){
-            baseJson = objectMapper.writeValueAsString(color);
-            requestText = create + baseJson;
-            apiDb.makeReq(requestText);
-        }
-
-        /*
-        //add some ColorSet to base
 
         ColorSet colorSetOne = new ColorSet();
-        colorSetOne.addColor(arrayColor.get(0));
-        colorSetOne.addColor(arrayColor.get(1));
+
 
         ColorSet colorSetTwo = new ColorSet();
-        colorSetTwo.addColor(arrayColor.get(2));
 
         List<ColorSet> arrayColorSet = new ArrayList<ColorSet>();
         arrayColorSet.add(colorSetOne);
         arrayColorSet.add(colorSetTwo);
+
+        colorSetOne.addColor(arrayColor.get(0));
+        colorSetOne.addColor(arrayColor.get(1));
+        colorSetTwo.addColor(arrayColor.get(2));
 
         for(ColorSet colorSet: arrayColorSet){
             baseJson = objectMapper.writeValueAsString(colorSet);
             requestText = create + baseJson;
             apiDb.makeReq(requestText);
         }
+
+
+
+        for(Color color: arrayColor){
+            System.out.println(color.getColorSet().getIdColorSet());
+            baseJson = objectMapper.writeValueAsString(color);
+            requestText = create + baseJson;
+            apiDb.makeReq(requestText);
+        }
+
+        //add some ColorSet to base
+
+
 
         /*
         // add some engine to base
