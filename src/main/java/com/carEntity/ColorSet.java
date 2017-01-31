@@ -38,7 +38,7 @@ public class ColorSet implements CarParts, Serializable {
     }
 
     @JsonIgnore
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "colorSet",cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "colorSet")
     public Set<Color> getColors() {
         return colors;
     }

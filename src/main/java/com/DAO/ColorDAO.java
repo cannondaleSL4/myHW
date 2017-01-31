@@ -1,11 +1,10 @@
 package com.DAO;
 
 import com.api.HibernateUtil;
-import com.carEntity.Color;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
-
+import com.carEntity.Color;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.swing.*;
@@ -43,11 +42,6 @@ public class ColorDAO implements DAO<Color> {
         String sql = "FROM color_table WHERE color_table_name = " + color.getColorName() +"+ AND is_metallic = "+ color.isMetallic()+";";
         try{
             session = HibernateUtil.getSessionFactory().openSession();
-            /*Query query = session.createQuery("from color_table where color_table_name = :name and is_metallic = :metallic ");
-            query.setParameter("name",color.getColorName());
-            query.setParameter("metallic", color.isMetallic());
-            int result = query.getFirstResult();
-            System.out.println("dsdsdsdsdsdsd " + result);*/
             Query query = session.createQuery(sql);
             List results = query.list();
             System.out.println(results.size());

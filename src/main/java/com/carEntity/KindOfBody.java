@@ -3,7 +3,6 @@ package com.carEntity;
 import org.codehaus.jackson.annotate.JsonTypeInfo;
 import javax.persistence.*;
 import java.io.Serializable;
-import java.math.BigInteger;
 
 /**
  * Created by dima on 08.12.16.

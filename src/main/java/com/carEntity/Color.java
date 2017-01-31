@@ -1,11 +1,13 @@
 package com.carEntity;
 
 import org.codehaus.jackson.annotate.JsonTypeInfo;
-import org.hibernate.annotations.SQLInsert;
+import org.hibernate.annotations.*;
 
 import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.io.Serializable;
-import java.math.BigInteger;
 
 
 /**
@@ -17,10 +19,8 @@ import java.math.BigInteger;
         uniqueConstraints =
         @UniqueConstraint(columnNames = {"color_table_name","is_metallic"})
 )
-/*@SQLInsert(sql = "INSERT INTO color_table (idcolor_table,color_table_name, is_metallic) VALUES (?,?,?)" +
-        " on CONFLICT do nothing;")*/
 @JsonTypeInfo (use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
-public class Color  implements CarParts, Serializable {
+public class Color implements CarParts, Serializable{
 
     private static final long serialVersionUID = 1L;
 
@@ -66,6 +66,7 @@ public class Color  implements CarParts, Serializable {
     }
 
     @ManyToOne(fetch = FetchType.LAZY)
+    //@Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     @JoinColumn(name = "idcolor_set")
     public ColorSet getColorSet() {
         return colorSet;

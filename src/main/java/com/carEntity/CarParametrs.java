@@ -5,7 +5,6 @@ import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.math.BigInteger;
 
 /**
  * Created by dima on 13.12.16.

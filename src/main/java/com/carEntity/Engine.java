@@ -13,8 +13,6 @@ import java.math.BigInteger;
  */
 @Entity
 @Table(name="engine")
-/*@SQLInsert(sql = "INSERT INTO engine (engine_name, horsepower) VALUES (?,?)" +
-        " on CONFLICT do nothing;")*/
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
 public class Engine implements CarParts, Serializable {
 
