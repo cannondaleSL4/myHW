@@ -18,7 +18,7 @@ public class ColorSet implements CarParts, Serializable {
     private static final long serialVersionUID = 1L;
 
     private Long id;
-    private CarParametrs carParametrs;
+    //private CarParametrs carParametrs;
     private Set<Color> colors = new HashSet<Color>(0);
 
     public ColorSet() {}
@@ -35,31 +35,39 @@ public class ColorSet implements CarParts, Serializable {
     }
 
     public void addColor(Color color){
-        //color.setColorSet(this);
         colors.add(color);
+        color.addColorSet(this);
     }
 
     @JsonIgnore
-    @OneToMany(cascade = CascadeType.ALL)
+    @ManyToMany(fetch=FetchType.EAGER,cascade = CascadeType.ALL)
     @JoinTable(
             name = "option_of_color",
-            joinColumns =  @JoinColumn(name = "idcolor_set"),
-            inverseJoinColumns =  @JoinColumn(name = "idcolor_table")
+            joinColumns = @JoinColumn(name = "idcolor_set"),
+            inverseJoinColumns = @JoinColumn(name = "idcolor_table")
     )
     private Set<Color> getColors() {
         return colors;
     }
 
-    @OneToOne(mappedBy = "colorSet",cascade = CascadeType.ALL)
+    /*@OneToOne(mappedBy = "colorSet",cascade = CascadeType.ALL)
     public CarParametrs getCarParametrs() {
         return carParametrs;
-    }
+    }*/
 
-    public void setCarParametrs(CarParametrs carParametrs) {
+    /*public void setCarParametrs(CarParametrs carParametrs) {
         this.carParametrs = carParametrs;
-    }
+    }*/
 
     public void setColors(Set<Color> colors) {
         this.colors = colors;
+    }
+
+    @Override
+    public String toString() {
+        return "ColorSet{" +
+                "id=" + id +
+                ", colors=" + colors +
+                '}';
     }
 }

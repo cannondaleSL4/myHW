@@ -20,11 +20,9 @@ public class ColorDAO implements DAO<Color> {
     public void add(Color color) throws SQLException{
         Session session = null;
         try{
-            System.out.println("ddddddddddddddddddddddddddddd");
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
             //check(color);
-            System.out.println("sasassas" + session.contains(color));
             session.saveOrUpdate(color);
             session.flush();
             session.clear();

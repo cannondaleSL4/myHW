@@ -2,6 +2,7 @@ package com.test;
 
 
 import com.api.ApiDb;
+import com.api.Factory;
 import com.carEntity.*;
 import jdk.nashorn.internal.parser.JSONParser;
 import org.codehaus.jackson.map.ObjectMapper;
@@ -28,6 +29,7 @@ public class TestClass {
         arrayColor.add(new Color("black",false));
         arrayColor.add(new Color ("blue",true));
         arrayColor.add(new Color("red",true));
+        arrayColor.add(new Color ("yellow",true));
 
         for(Color color: arrayColor){
             baseJson = objectMapper.writeValueAsString(color);
@@ -37,18 +39,22 @@ public class TestClass {
 
 
         ColorSet colorSetOne = new ColorSet();
-
-
         ColorSet colorSetTwo = new ColorSet();
-
-        List<ColorSet> arrayColorSet = new ArrayList<ColorSet>();
-        arrayColorSet.add(colorSetOne);
-        arrayColorSet.add(colorSetTwo);
+        ColorSet colorSetThree = new ColorSet();
+        ColorSet colorSetFour = new ColorSet();
 
 
         colorSetOne.addColor(arrayColor.get(0));
         colorSetOne.addColor(arrayColor.get(1));
         colorSetTwo.addColor(arrayColor.get(2));
+        colorSetThree.addColor(arrayColor.get(0));
+        colorSetFour.addColor(arrayColor.get(1));
+
+        List<ColorSet> arrayColorSet = new ArrayList<ColorSet>();
+        arrayColorSet.add(colorSetOne);
+        arrayColorSet.add(colorSetTwo);
+        arrayColorSet.add(colorSetThree);
+        arrayColorSet.add(colorSetFour);
 
 
         for(ColorSet colorSet: arrayColorSet){
@@ -56,6 +62,8 @@ public class TestClass {
             requestText = create + baseJson;
             apiDb.makeReq(requestText);
         }
+
+        System.out.println((ColorSet)Factory.getInstance().getColorSetDAO().getById(1l));
 
         //add some ColorSet to base
 

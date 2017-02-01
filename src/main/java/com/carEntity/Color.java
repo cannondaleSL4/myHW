@@ -8,6 +8,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 
 /**
@@ -24,10 +26,11 @@ public class Color implements CarParts, Serializable{
 
     private static final long serialVersionUID = 1L;
 
-    private int id;
+    private Long id;
     private String colorName;
     private boolean isMetallic;
-    private ColorSet colorSet = new ColorSet();
+    //private ColorSet colorSet = new ColorSet();
+    private Set<ColorSet> colorSet = new HashSet<ColorSet>(0);
 
     public Color(){}
 
@@ -39,11 +42,11 @@ public class Color implements CarParts, Serializable{
     @Id
     @Column(name = "idcolor_table")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -65,15 +68,24 @@ public class Color implements CarParts, Serializable{
         isMetallic = metallic;
     }
 
-    /*@ManyToOne(fetch = FetchType.LAZY)
-    public ColorSet getColorSet() {
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "option_of_color",
+            joinColumns = @JoinColumn(name = "idcolor_table"),
+            inverseJoinColumns = @JoinColumn(name = "idcolor_set")
+    )
+    public Set<ColorSet> getColors() {
         return colorSet;
     }
 
-    public void setColorSet(ColorSet colorSet) {
+    public void setColors(Set<ColorSet> colorSet) {
         this.colorSet = colorSet;
     }
-    */
+
+    public void addColorSet(ColorSet colorSet){
+        this.colorSet.add(colorSet);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

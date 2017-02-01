@@ -4,6 +4,7 @@ import com.api.HibernateUtil;
 import com.carEntity.ColorSet;
 import org.hibernate.Session;
 
+import javax.swing.*;
 import java.sql.SQLException;
 import java.util.Collection;
 
@@ -35,7 +36,19 @@ public class ColorSetDAO implements DAO<ColorSet> {
 
     @Override
     public ColorSet getById(Long l) {
-        return null;
+        Session session = null;
+        ColorSet colorSet = null;
+        try{
+            session = HibernateUtil.getSessionFactory().openSession();
+            colorSet = (ColorSet) session.get(ColorSet.class,l);
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error for  getting by id", JOptionPane.OK_OPTION);
+        }finally {
+            if (session != null && session.isOpen()){
+                session.close();
+            }
+        }
+        return colorSet;
     }
 
     @Override
