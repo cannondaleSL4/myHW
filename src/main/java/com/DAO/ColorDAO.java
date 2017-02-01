@@ -20,6 +20,7 @@ public class ColorDAO implements DAO<Color> {
     public void add(Color color) throws SQLException{
         Session session = null;
         try{
+           // System.out.println("size for color is ! "+color.getColors().size());
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
             //check(color);

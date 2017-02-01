@@ -29,12 +29,13 @@ public class TestClass {
         arrayColor.add(new Color("black",false));
         arrayColor.add(new Color ("blue",true));
         arrayColor.add(new Color("red",true));
-        arrayColor.add(new Color ("yellow",true));
+        arrayColor.add(new Color ("yellow",false));
 
         for(Color color: arrayColor){
-            baseJson = objectMapper.writeValueAsString(color);
+            /*baseJson = objectMapper.writeValueAsString(color);
             requestText = create + baseJson;
-            apiDb.makeReq(requestText);
+            apiDb.makeReq(requestText);*/
+            Factory.getInstance().getColorDAO().add(color);
         }
 
 
@@ -58,9 +59,10 @@ public class TestClass {
 
 
         for(ColorSet colorSet: arrayColorSet){
-            baseJson = objectMapper.writeValueAsString(colorSet);
+            Factory.getInstance().getColorSetDAO().add(colorSet);
+            /*baseJson = objectMapper.writeValueAsString(colorSet);
             requestText = create + baseJson;
-            apiDb.makeReq(requestText);
+            apiDb.makeReq(requestText);*/
         }
 
         //System.out.println((ColorSet)Factory.getInstance().getColorSetDAO().getById(1l));

@@ -43,8 +43,8 @@ public class ColorSet implements CarParts, Serializable {
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(
             name = "option_of_color",
-            joinColumns = @JoinColumn(name = "idcolor_set"),
-            inverseJoinColumns = @JoinColumn(name = "idcolor_table")
+            joinColumns = @JoinColumn(name = "idcolor_set", referencedColumnName = "idcolor_set"),
+            inverseJoinColumns = @JoinColumn(name = "idcolor_table",referencedColumnName = "idcolor_table")
     )
     private Set<Color> getColors() {
         return colors;
