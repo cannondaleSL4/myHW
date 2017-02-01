@@ -67,13 +67,8 @@ public class Color implements CarParts, Serializable{
     public void setMetallic(boolean metallic) {
         isMetallic = metallic;
     }
-
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(
-            name = "option_of_color",
-            joinColumns = @JoinColumn(name = "idcolor_table"),
-            inverseJoinColumns = @JoinColumn(name = "idcolor_set")
-    )
+    
+    @ManyToMany(mappedBy = "colors")
     public Set<ColorSet> getColors() {
         return colorSet;
     }

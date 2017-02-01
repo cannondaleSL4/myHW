@@ -40,7 +40,7 @@ public class ColorSet implements CarParts, Serializable {
     }
 
     @JsonIgnore
-    @ManyToMany(fetch=FetchType.EAGER,cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(
             name = "option_of_color",
             joinColumns = @JoinColumn(name = "idcolor_set"),
@@ -49,15 +49,6 @@ public class ColorSet implements CarParts, Serializable {
     private Set<Color> getColors() {
         return colors;
     }
-
-    /*@OneToOne(mappedBy = "colorSet",cascade = CascadeType.ALL)
-    public CarParametrs getCarParametrs() {
-        return carParametrs;
-    }*/
-
-    /*public void setCarParametrs(CarParametrs carParametrs) {
-        this.carParametrs = carParametrs;
-    }*/
 
     public void setColors(Set<Color> colors) {
         this.colors = colors;

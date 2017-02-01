@@ -63,7 +63,7 @@ public class TestClass {
             apiDb.makeReq(requestText);
         }
 
-        System.out.println((ColorSet)Factory.getInstance().getColorSetDAO().getById(1l));
+        //System.out.println((ColorSet)Factory.getInstance().getColorSetDAO().getById(1l));
 
         //add some ColorSet to base
 
