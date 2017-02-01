@@ -29,6 +29,12 @@ public class TestClass {
         arrayColor.add(new Color ("blue",true));
         arrayColor.add(new Color("red",true));
 
+        for(Color color: arrayColor){
+            baseJson = objectMapper.writeValueAsString(color);
+            requestText = create + baseJson;
+            apiDb.makeReq(requestText);
+        }
+
 
         ColorSet colorSetOne = new ColorSet();
 
@@ -39,22 +45,14 @@ public class TestClass {
         arrayColorSet.add(colorSetOne);
         arrayColorSet.add(colorSetTwo);
 
-        for(ColorSet colorSet: arrayColorSet){
-            baseJson = objectMapper.writeValueAsString(colorSet);
-            requestText = create + baseJson;
-            apiDb.makeReq(requestText);
-            System.out.println("number!!!!!! " + colorSet.getIdColorSet());
-        }
 
         colorSetOne.addColor(arrayColor.get(0));
         colorSetOne.addColor(arrayColor.get(1));
         colorSetTwo.addColor(arrayColor.get(2));
 
 
-
-        for(Color color: arrayColor){
-            System.out.println(color.getColorSet().getIdColorSet());
-            baseJson = objectMapper.writeValueAsString(color);
+        for(ColorSet colorSet: arrayColorSet){
+            baseJson = objectMapper.writeValueAsString(colorSet);
             requestText = create + baseJson;
             apiDb.makeReq(requestText);
         }

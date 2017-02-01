@@ -65,9 +65,7 @@ public class Color implements CarParts, Serializable{
         isMetallic = metallic;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    //@Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
-    @JoinColumn(name = "idcolor_set")
+    /*@ManyToOne(fetch = FetchType.LAZY)
     public ColorSet getColorSet() {
         return colorSet;
     }
@@ -75,7 +73,7 @@ public class Color implements CarParts, Serializable{
     public void setColorSet(ColorSet colorSet) {
         this.colorSet = colorSet;
     }
-
+    */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

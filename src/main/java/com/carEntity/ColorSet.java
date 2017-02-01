@@ -2,6 +2,8 @@ package com.carEntity;
 
 import org.codehaus.jackson.annotate.JsonIgnore;
 import org.codehaus.jackson.annotate.JsonTypeInfo;
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
@@ -17,7 +19,7 @@ public class ColorSet implements CarParts, Serializable {
 
     private Long id;
     private CarParametrs carParametrs;
-    private Set<Color> colors = new HashSet<Color>();
+    private Set<Color> colors = new HashSet<Color>(0);
 
     public ColorSet() {}
 
@@ -33,13 +35,18 @@ public class ColorSet implements CarParts, Serializable {
     }
 
     public void addColor(Color color){
-        color.setColorSet(this);
+        //color.setColorSet(this);
         colors.add(color);
     }
 
     @JsonIgnore
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "colorSet")
-    public Set<Color> getColors() {
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "option_of_color",
+            joinColumns =  @JoinColumn(name = "idcolor_set"),
+            inverseJoinColumns =  @JoinColumn(name = "idcolor_table")
+    )
+    private Set<Color> getColors() {
         return colors;
     }
 
