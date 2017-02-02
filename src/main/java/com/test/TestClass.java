@@ -34,11 +34,11 @@ public class TestClass {
 
         //сохранить цвета
         for(Color color: arrayColor){
-            baseJson = objectMapper.writeValueAsString(color);
+            /*baseJson = objectMapper.writeValueAsString(color);
             requestText = create + baseJson;
-            apiDb.makeReq(requestText);
+            apiDb.makeReq(requestText);*/
             //System.out.println("size!!! "+color.getColorSet().size());
-            //Factory.getInstance().getColorDAO().add(color);
+            Factory.getInstance().getColorDAO().add(color);
         }
 
         // добавляю наборы цветов
