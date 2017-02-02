@@ -40,7 +40,8 @@ public class ColorSet implements CarParts, Serializable {
     }
 
     @JsonIgnore
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    //@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "option_of_color",
             joinColumns = @JoinColumn(name = "idcolor_set", referencedColumnName = "idcolor_set"),

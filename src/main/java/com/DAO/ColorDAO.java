@@ -24,8 +24,8 @@ public class ColorDAO implements DAO<Color> {
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
             //check(color);
-            session.saveOrUpdate(color);
             session.flush();
+            session.saveOrUpdate(color);
             session.clear();
             session.getTransaction().commit();
         }catch (Exception e){

@@ -18,7 +18,9 @@ public class ColorSetDAO implements DAO<ColorSet> {
         try{
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
+            session.flush();
             session.saveOrUpdate(colorSet);
+            session.clear();
             session.getTransaction().commit();
         }catch (Exception e){
             //JOptionPane.showMessageDialog(null, e.getMessage(), "Error Insert", JOptionPane.OK_OPTION);

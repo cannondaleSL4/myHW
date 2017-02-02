@@ -25,44 +25,45 @@ public class TestClass {
         String requestText = "";
 
         // add some colors to base
+        //добавляю все цвета которые можно будет использовать в наборах
         List <Color> arrayColor = new ArrayList<Color>();
         arrayColor.add(new Color("black",false));
         arrayColor.add(new Color ("blue",true));
         arrayColor.add(new Color("red",true));
         arrayColor.add(new Color ("yellow",false));
 
+        //сохранить цвета
         for(Color color: arrayColor){
-            /*baseJson = objectMapper.writeValueAsString(color);
+            baseJson = objectMapper.writeValueAsString(color);
             requestText = create + baseJson;
-            apiDb.makeReq(requestText);*/
-            Factory.getInstance().getColorDAO().add(color);
+            apiDb.makeReq(requestText);
+            //System.out.println("size!!! "+color.getColorSet().size());
+            //Factory.getInstance().getColorDAO().add(color);
         }
 
-
-        ColorSet colorSetOne = new ColorSet();
-        ColorSet colorSetTwo = new ColorSet();
-        ColorSet colorSetThree = new ColorSet();
-        ColorSet colorSetFour = new ColorSet();
-
-
-        colorSetOne.addColor(arrayColor.get(0));
-        colorSetOne.addColor(arrayColor.get(1));
-        colorSetTwo.addColor(arrayColor.get(2));
-        colorSetThree.addColor(arrayColor.get(0));
-        colorSetFour.addColor(arrayColor.get(1));
-
+        // добавляю наборы цветов
         List<ColorSet> arrayColorSet = new ArrayList<ColorSet>();
-        arrayColorSet.add(colorSetOne);
-        arrayColorSet.add(colorSetTwo);
-        arrayColorSet.add(colorSetThree);
-        arrayColorSet.add(colorSetFour);
+        for (int i = 0; i< 7;i++){
+            arrayColorSet.add(new ColorSet());
+        }
+
+        //добавляю цвета в наборы
+        arrayColorSet.get(0).addColor(arrayColor.get(0));
+        arrayColorSet.get(1).addColor(arrayColor.get(1));
+        arrayColorSet.get(2).addColor(arrayColor.get(2));
+        arrayColorSet.get(3).addColor(arrayColor.get(3));
+        arrayColorSet.get(4).addColor(arrayColor.get(0));
+        arrayColorSet.get(4).addColor(arrayColor.get(1));
+        arrayColorSet.get(2).addColor(arrayColor.get(1));
+        arrayColorSet.get(4).addColor(arrayColor.get(2));
 
 
+        //сохраняю наборы цветов
         for(ColorSet colorSet: arrayColorSet){
-            Factory.getInstance().getColorSetDAO().add(colorSet);
             /*baseJson = objectMapper.writeValueAsString(colorSet);
             requestText = create + baseJson;
             apiDb.makeReq(requestText);*/
+            Factory.getInstance().getColorSetDAO().add(colorSet);
         }
 
         //System.out.println((ColorSet)Factory.getInstance().getColorSetDAO().getById(1l));
