@@ -13,17 +13,17 @@ import java.util.List;
 public class EngineDAO implements DAO <Engine> {
     public void add(Engine engine) throws SQLException {
         Session session = null;
+        Transaction tx = null;
         try{
             session = HibernateUtil.getSessionFactory().openSession();
-            session.beginTransaction();
-            if (!session.contains(engine)){
-                session.saveOrUpdate(engine);
-                session.flush();
-                session.clear();
-                session.getTransaction().commit();
-            }
+            tx = session.beginTransaction();
+            session.saveOrUpdate(engine);
+            session.flush();
+            session.clear();
+            session.getTransaction().commit();
         }catch (Exception e){
             //JOptionPane.showMessageDialog(null, e.getMessage(), "Error Insert", JOptionPane.OK_OPTION);
+            tx.rollback();
         }finally {
             if (session != null && session.isOpen()){
                 session.close();

@@ -27,6 +27,7 @@ public class TestClass {
             apiDb.create(color);
         }
 
+
         // add some colorSet to base
         ColorSet colorSetOne = new ColorSet();
         ColorSet colorSetTwo = new ColorSet();
@@ -121,22 +122,6 @@ public class TestClass {
         arrayCarParametrs.add(new CarParametrs(arrayModel.get(3),arrayKindOfBody.get(2), arrayEngine.get(1),arrayTransmission.get(0),arrayColorSet.get(1)));
         arrayCarParametrs.add(new CarParametrs(arrayModel.get(3),arrayKindOfBody.get(2),arrayEngine.get(2),arrayTransmission.get(2),arrayColorSet.get(2)));
         arrayCarParametrs.add(new CarParametrs(arrayModel.get(3),arrayKindOfBody.get(2),arrayEngine.get(3),arrayTransmission.get(3),arrayColorSet.get(3)));
-
-
-        /*arrayCarParametrs.add(new CarParametrs(arrayModel.get(0),arrayKindOfBody.get(0), arrayEngine.get(0),arrayTransmission.get(0),arrayColorSet.get(0)));
-        arrayCarParametrs.add(new CarParametrs(arrayModel.get(3),arrayKindOfBody.get(2), arrayEngine.get(1),arrayTransmission.get(0),arrayColorSet.get(1)));
-        arrayCarParametrs.add(new CarParametrs(arrayModel.get(3),arrayKindOfBody.get(2),arrayEngine.get(2),arrayTransmission.get(2),arrayColorSet.get(2)));
-        arrayCarParametrs.add(new CarParametrs(arrayModel.get(3),arrayKindOfBody.get(2),arrayEngine.get(3),arrayTransmission.get(3),arrayColorSet.get(3)));
-        arrayCarParametrs.add(new CarParametrs(arrayModel.get(2),arrayKindOfBody.get(0), arrayEngine.get(1),arrayTransmission.get(0),arrayColorSet.get(0)));
-        arrayCarParametrs.add(new CarParametrs(arrayModel.get(2),arrayKindOfBody.get(0),arrayEngine.get(2),arrayTransmission.get(2),arrayColorSet.get(2)));
-        arrayCarParametrs.add(new CarParametrs(arrayModel.get(2),arrayKindOfBody.get(0),arrayEngine.get(3),arrayTransmission.get(3),arrayColorSet.get(3)));
-        arrayCarParametrs.add(new CarParametrs(arrayModel.get(0),arrayKindOfBody.get(0),arrayEngine.get(1),arrayTransmission.get(2),arrayColorSet.get(1)));
-        arrayCarParametrs.add(new CarParametrs(arrayModel.get(0),arrayKindOfBody.get(1),arrayEngine.get(3),arrayTransmission.get(3),arrayColorSet.get(2)));
-
-        arrayCarParametrs.add(new CarParametrs(arrayModel.get(1),arrayKindOfBody.get(0), arrayEngine.get(1),arrayTransmission.get(0),arrayColorSet.get(0)));
-        arrayCarParametrs.add(new CarParametrs(arrayModel.get(2),arrayKindOfBody.get(0),arrayEngine.get(2),arrayTransmission.get(2),arrayColorSet.get(2)));
-        arrayCarParametrs.add(new CarParametrs(arrayModel.get(2),arrayKindOfBody.get(0),arrayEngine.get(3),arrayTransmission.get(3),arrayColorSet.get(3)));
-        */
 
         for(CarParametrs carParametrs:arrayCarParametrs){
             apiDb.create(carParametrs);

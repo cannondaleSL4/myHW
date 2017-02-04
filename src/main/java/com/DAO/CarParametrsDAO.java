@@ -15,21 +15,17 @@ public class CarParametrsDAO implements DAO <CarParametrs> {
     @Override
     public void add(CarParametrs carParametrs) throws SQLException{
         Session session = null;
+        Transaction tx = null;
         try{
             session = HibernateUtil.getSessionFactory().openSession();
-            session.beginTransaction();
-            /*if (!session.contains(carParametrs)){
-                session.saveOrUpdate(carParametrs);
-                session.flush();
-                session.clear();
-                session.getTransaction().commit();
-            }*/
+            tx =session.beginTransaction();
             session.saveOrUpdate(carParametrs);
             session.flush();
             session.clear();
             session.getTransaction().commit();
         }catch (Exception e){
             //JOptionPane.showMessageDialog(null, e.getMessage(), "Error Insert", JOptionPane.OK_OPTION);
+            tx.rollback();
         }finally {
             if (session != null && session.isOpen()){
                 session.close();

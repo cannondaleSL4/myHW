@@ -3,6 +3,9 @@ package com.DAO;
 import com.api.HibernateUtil;
 import org.hibernate.*;
 import com.carEntity.Color;
+import org.hibernate.engine.spi.SessionImplementor;
+import org.hibernate.metadata.ClassMetadata;
+
 import javax.swing.*;
 import java.sql.SQLException;
 import java.util.List;
@@ -13,18 +16,19 @@ import java.util.List;
 public class ColorDAO implements DAO<Color> {
     public void add(Color color) throws SQLException{
         Session session = null;
+        Transaction tx = null;
         try{
            // System.out.println("size for color is ! "+color.getColors().size());
+
             session = HibernateUtil.getSessionFactory().openSession();
-            session.beginTransaction();
-            if (!session.contains(color)){
-                session.saveOrUpdate(color);
-                session.flush();
-                session.clear();
-                session.getTransaction().commit();
-            }
+            tx =session.beginTransaction();
+            session.saveOrUpdate(color);
+            session.flush();
+            session.clear();
+            session.getTransaction().commit();
         }catch (Exception e){
             //JOptionPane.showMessageDialog(null, e.getMessage(), "Error Insert", JOptionPane.OK_OPTION);
+            tx.rollback();
         }finally {
             if (session != null && session.isOpen()){
                 session.close();

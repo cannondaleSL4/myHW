@@ -14,16 +14,14 @@ public class ColorSetDAO implements DAO<ColorSet> {
     @Override
     public void add(ColorSet colorSet) throws SQLException {
         Session session = null;
+        Transaction tx = null;
         try{
             session = HibernateUtil.getSessionFactory().openSession();
-            session.beginTransaction();
-            if (!session.contains(colorSet)){
-                session.saveOrUpdate(colorSet);
-                session.flush();
-                session.clear();
-                session.getTransaction().commit();
-            }
-
+            tx = session.beginTransaction();
+            session.saveOrUpdate(colorSet);
+            session.flush();
+            session.clear();
+            session.getTransaction().commit();
         }catch (Exception e){
             //JOptionPane.showMessageDialog(null, e.getMessage(), "Error Insert", JOptionPane.OK_OPTION);
         }finally {
