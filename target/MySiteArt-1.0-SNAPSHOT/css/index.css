@@ -1,0 +1,38 @@
+html {
+        background: url(../img/logo.png) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+
+}
+
+
+section form {
+    position:absolute;
+    right:10px;
+    top:10px;
+    height: 60px;
+    width: 230px;
+    border: 1px solid #887;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;   
+    -moz-box-shadow: 10px 10px 5px #887;
+    -webkit-box-shadow: 10px 10px 5px #887;
+    box-shadow: 10px 10px 5px #887;
+    background-color: #eed;
+    padding: 10px; margin-bottom: 25px;
+    line-width:200px;
+
+}
+ 
+section input {
+    margin-bottom: 3px; font-size: 12px; width: 200px;
+}
+
+.Button{
+    width: 50px;
+    position:absolute;
+    right: 40px;
+}

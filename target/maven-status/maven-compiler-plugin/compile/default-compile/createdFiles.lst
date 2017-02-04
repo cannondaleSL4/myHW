@@ -12,6 +12,7 @@ com/carEntity/ColorSet.class
 com/api/JacksonUtil.class
 com/api/HibernateUtil.class
 com/carEntity/CarParametrs.class
+servlets/FordDbServlet.class
 com/carEntity/Transmission.class
 com/DAO/ColorDAO.class
 com/DAO/ColorSetDAO.class
