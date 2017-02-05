@@ -1,6 +1,7 @@
 package com.DAO;
 
 import com.api.HibernateUtil;
+import com.carEntity.Engine;
 import com.carEntity.KindOfBody;
 import org.hibernate.*;
 import javax.swing.*;
@@ -17,10 +18,12 @@ public class KindOfBodyDAO implements DAO <KindOfBody> {
         try{
             session = HibernateUtil.getSessionFactory().openSession();
             tx = session.beginTransaction();
-            session.saveOrUpdate(kindOfBody);
-            session.flush();
-            session.clear();
-            session.getTransaction().commit();
+            if (!check(kindOfBody)){
+                session.saveOrUpdate(kindOfBody);
+                session.flush();
+                session.clear();
+                session.getTransaction().commit();
+            }
         }catch (Exception e){
             //JOptionPane.showMessageDialog(null, e.getMessage(), "Error Insert", JOptionPane.OK_OPTION);
             tx.rollback();
@@ -29,6 +32,29 @@ public class KindOfBodyDAO implements DAO <KindOfBody> {
                 session.close();
             }
         }
+    }
+
+    public boolean check(KindOfBody kindOfBody){
+        Session session = null;
+        List objects  = null;
+        try{
+            session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            Query query = session.createQuery("FROM KindOfBody " +
+                    " WHERE nameKindOfBody =:name")
+                    .setString("name",kindOfBody.getNameKindOfBody());
+            objects = query.list();
+            System.out.println(objects);
+            session.getTransaction().commit();
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error for  check contains", JOptionPane.OK_OPTION);
+        }finally {
+            if (session != null && session.isOpen()){
+                session.close();
+            }
+        }
+        if (objects.size() != 0) return true;
+        return false;
     }
 
     @Override
@@ -108,7 +134,7 @@ public class KindOfBodyDAO implements DAO <KindOfBody> {
         try{
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
-            Query query = session.createQuery("from " + KindOfBody.class);
+            Query query = session.createQuery("FROM KindOfBody ");
             objects = query.list();
             session.getTransaction().commit();
         }catch (Exception e) {

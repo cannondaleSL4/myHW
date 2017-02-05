@@ -1,6 +1,7 @@
 package com.DAO;
 
 import com.api.HibernateUtil;
+import com.carEntity.KindOfBody;
 import com.carEntity.ModelName;
 import org.hibernate.*;
 import javax.swing.*;
@@ -17,10 +18,12 @@ public class ModelNameDAO implements DAO <ModelName> {
         try{
             session = HibernateUtil.getSessionFactory().openSession();
             tx = session.beginTransaction();
-            session.saveOrUpdate(modelName);
-            session.flush();
-            session.clear();
-            session.getTransaction().commit();
+            if (!check(modelName)){
+                session.saveOrUpdate(modelName);
+                session.flush();
+                session.clear();
+                session.getTransaction().commit();
+            }
         }catch (Exception e){
             //JOptionPane.showMessageDialog(null, e.getMessage(), "Error Insert model", JOptionPane.OK_OPTION);
             tx.rollback();
@@ -29,6 +32,29 @@ public class ModelNameDAO implements DAO <ModelName> {
                 session.close();
             }
         }
+    }
+
+    public boolean check(ModelName modelName){
+        Session session = null;
+        List objects  = null;
+        try{
+            session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            Query query = session.createQuery("FROM ModelName " +
+                    " WHERE modelName =:name")
+                    .setString("name",modelName.getModelName());
+            objects = query.list();
+            System.out.println(objects);
+            session.getTransaction().commit();
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error for  check contains", JOptionPane.OK_OPTION);
+        }finally {
+            if (session != null && session.isOpen()){
+                session.close();
+            }
+        }
+        if (objects.size() != 0) return true;
+        return false;
     }
 
     @Override
@@ -108,7 +134,7 @@ public class ModelNameDAO implements DAO <ModelName> {
         try{
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
-            Query query = session.createQuery("from " + ModelName.class);
+            Query query = session.createQuery("FROM ModelName ");
             objects = query.list();
             session.getTransaction().commit();
         }catch (Exception e) {

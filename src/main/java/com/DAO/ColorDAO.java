@@ -3,9 +3,11 @@ package com.DAO;
 import com.api.HibernateUtil;
 import org.hibernate.*;
 import com.carEntity.Color;
+import org.hibernate.Query;
 import org.hibernate.engine.spi.SessionImplementor;
 import org.hibernate.metadata.ClassMetadata;
 
+import javax.persistence.*;
 import javax.swing.*;
 import java.sql.SQLException;
 import java.util.List;
@@ -18,14 +20,18 @@ public class ColorDAO implements DAO<Color> {
         Session session = null;
         Transaction tx = null;
         try{
-           // System.out.println("size for color is ! "+color.getColors().size());
-
             session = HibernateUtil.getSessionFactory().openSession();
             tx =session.beginTransaction();
-            session.saveOrUpdate(color);
-            session.flush();
-            session.clear();
-            session.getTransaction().commit();
+            /*
+            в postgresql надо или делать проверку на наличие объекта в базе, saveOrUpdate  не работает, те работает
+            но все равно выдает ошибку что этот объект уже был в базе. т.е. тупо save
+             */
+            if (!check(color)){
+                session.saveOrUpdate(color);
+                session.flush();
+                session.clear();
+                session.getTransaction().commit();
+            }
         }catch (Exception e){
             //JOptionPane.showMessageDialog(null, e.getMessage(), "Error Insert", JOptionPane.OK_OPTION);
             tx.rollback();
@@ -34,6 +40,30 @@ public class ColorDAO implements DAO<Color> {
                 session.close();
             }
         }
+    }
+
+    public boolean check(Color color){
+        Session session = null;
+        List objects  = null;
+        try{
+            session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            //какая то фигня поле класса isMetallic  не ищет, тут пришлось ставить имя таблицы
+            Query query = session.createQuery("FROM Color " +
+                    " WHERE colorName =:name AND is_metallic  =:metallic")
+                    .setString("name",color.getColorName())
+                    .setBoolean("metallic", color.isMetallic());
+            objects = query.list();
+            session.getTransaction().commit();
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error for  check contains", JOptionPane.OK_OPTION);
+        }finally {
+            if (session != null && session.isOpen()){
+                session.close();
+            }
+        }
+        if (objects.size() != 0) return true;
+        return false;
     }
 
     @Override
@@ -113,7 +143,7 @@ public class ColorDAO implements DAO<Color> {
         try{
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
-            Query query = session.createQuery("from " + Color.class);
+            Query query = session.createQuery("FROM Color ");
             objects = query.list();
             session.getTransaction().commit();
         }catch (Exception e) {

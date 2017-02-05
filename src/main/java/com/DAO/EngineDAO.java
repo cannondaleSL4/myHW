@@ -1,6 +1,7 @@
 package com.DAO;
 
 import com.api.HibernateUtil;
+import com.carEntity.Color;
 import com.carEntity.Engine;
 import org.hibernate.*;
 import javax.swing.*;
@@ -17,10 +18,12 @@ public class EngineDAO implements DAO <Engine> {
         try{
             session = HibernateUtil.getSessionFactory().openSession();
             tx = session.beginTransaction();
-            session.saveOrUpdate(engine);
-            session.flush();
-            session.clear();
-            session.getTransaction().commit();
+            if (!check(engine)){
+                session.saveOrUpdate(engine);
+                session.flush();
+                session.clear();
+                session.getTransaction().commit();
+            }
         }catch (Exception e){
             //JOptionPane.showMessageDialog(null, e.getMessage(), "Error Insert", JOptionPane.OK_OPTION);
             tx.rollback();
@@ -71,7 +74,6 @@ public class EngineDAO implements DAO <Engine> {
         try{
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
-            //session.remove(engine);
             session.delete(engine);
             session.getTransaction().commit();
         }catch (Exception e){
@@ -81,6 +83,30 @@ public class EngineDAO implements DAO <Engine> {
                 session.close();
             }
         }
+    }
+
+    public boolean check(Engine engine){
+        Session session = null;
+        List objects  = null;
+        try{
+            session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            Query query = session.createQuery("FROM Engine " +
+                    " WHERE nameOfEngine =:name AND  horsepower  =:horse")
+                    .setString("name",engine.getNameOfEngine())
+                    .setInteger("horse",engine.getHorsepower());
+            objects = query.list();
+            System.out.println(objects);
+            session.getTransaction().commit();
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error for  check contains", JOptionPane.OK_OPTION);
+        }finally {
+            if (session != null && session.isOpen()){
+                session.close();
+            }
+        }
+        if (objects.size() != 0) return true;
+        return false;
     }
 
     @Override
@@ -109,7 +135,7 @@ public class EngineDAO implements DAO <Engine> {
         try{
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
-            Query query = session.createQuery("from " + Engine.class);
+            Query query = session.createQuery("FROM Engine ");
             objects = query.list();
             session.getTransaction().commit();
         }catch (Exception e) {

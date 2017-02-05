@@ -34,6 +34,8 @@
         <mapping class="com.carEntity.Transmission"/>
         <mapping class="com.carEntity.ColorSet"/>
         <mapping class="com.carEntity.CarParametrs"/>
+        <mapping class="com.authentification.User"/>
+
 
 
 

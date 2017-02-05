@@ -1,6 +1,8 @@
 package com.api;
 
 import com.DAO.*;
+import com.authentification.UserDAO;
+
 /**
  * Created by dima on 24.01.17.
  */
@@ -15,12 +17,20 @@ public class Factory {
     private static TransmissionDAO transmissionDAO = null;
     private static CarParametrsDAO carParametrsDAO = null;
     private static ColorSetDAO colorSetDAO = null;
+    private static UserDAO userDAO = null;
 
     public static synchronized Factory getInstance(){
         if (instance == null){
             instance = new Factory();
         }
         return instance;
+    }
+
+    public UserDAO getUserDAO(){
+        if (userDAO == null){
+            userDAO = new UserDAO();
+        }
+        return userDAO;
     }
 
     public ColorDAO getColorDAO(){

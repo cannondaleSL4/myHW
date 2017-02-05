@@ -20,7 +20,7 @@
         <input type="text"  name= "j_username" placeholder="Username or email" >
         <input type="password"  name= "j_password" placeholder="Password" >
         </br>
-        <a href="registation.jsp">Sign Up</a>
+        <a href="register.jsp">Sign Up</a>
         <input type="submit" class="Button" value="Enter">
     </form>
 </section>

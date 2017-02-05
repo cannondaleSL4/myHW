@@ -2,6 +2,7 @@ package com.test;
 
 
 import com.api.ApiDb;
+import com.api.Factory;
 import com.carEntity.*;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -18,16 +19,17 @@ public class TestClass {
 
         // add some colors to base
         List <Color> arrayColor = new ArrayList<Color>();
-        arrayColor.add(new Color("black",false));
+        arrayColor.add(new Color("black",true));
         arrayColor.add(new Color ("blue",true));
         arrayColor.add(new Color("red",true));
         arrayColor.add(new Color ("yellow",false));
+        arrayColor.add(new Color("black",false));
 
         for(Color color: arrayColor){
             apiDb.create(color);
         }
 
-
+        /*
         // add some colorSet to base
         ColorSet colorSetOne = new ColorSet();
         ColorSet colorSetTwo = new ColorSet();
@@ -125,6 +127,9 @@ public class TestClass {
 
         for(CarParametrs carParametrs:arrayCarParametrs){
             apiDb.create(carParametrs);
-        }
+        }*/
+
+        Color newColor = new Color("black",false);
+        System.out.println(Factory.getInstance().getColorDAO().check(newColor));
     }
 }

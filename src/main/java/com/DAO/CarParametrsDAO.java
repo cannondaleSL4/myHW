@@ -110,7 +110,7 @@ public class CarParametrsDAO implements DAO <CarParametrs> {
         try{
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
-            Query query = session.createQuery("from " + CarParametrs.class);
+            Query query = session.createQuery("FROM CarParametrs ");
             objects = query.list();
             session.getTransaction().commit();
         }catch (Exception e) {

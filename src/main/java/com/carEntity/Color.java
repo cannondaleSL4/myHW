@@ -23,7 +23,7 @@ public class Color implements CarParts, Serializable{
 
     private Long id;
     private String colorName;
-    private boolean isMetallic;
+    private Boolean isMetallic;
     //private ColorSet colorSet = new ColorSet();
     private Set<ColorSet> colorSet = new HashSet<ColorSet>(0);
 
@@ -55,7 +55,7 @@ public class Color implements CarParts, Serializable{
     }
 
     @Column(name = "is_metallic", nullable = false)
-    public boolean isMetallic() {
+    public Boolean isMetallic() {
         return isMetallic;
     }
 

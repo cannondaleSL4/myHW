@@ -16,18 +16,18 @@
 </head>
 <body>
 <div class="login">
-    <div class="heading">
+    <div class="heading" method ="post">
         <h2>Sign in</h2>
         <form action="#">
 
             <div class="input-group input-group-lg">
                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                <input type="text" class="form-control" placeholder="Username or email">
+                <input type="text" class="form-control" name = "userName" size = "30" placeholder="Username or email">
             </div>
 
             <div class="input-group input-group-lg">
                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                <input type="password" class="form-control" placeholder="Password">
+                <input type="password" class="form-control" name = "password" size = "8" placeholder="Password">
             </div>
 
             <button type="submit" class="float">Login</button>

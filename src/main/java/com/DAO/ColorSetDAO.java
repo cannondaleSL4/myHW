@@ -65,7 +65,7 @@ public class ColorSetDAO implements DAO<ColorSet> {
         try{
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
-            Query query = session.createQuery("from " + ColorSet.class);
+            Query query = session.createQuery("From ColorSet ");
             objects = query.list();
             session.getTransaction().commit();
         }catch (Exception e) {

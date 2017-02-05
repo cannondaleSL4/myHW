@@ -1,6 +1,7 @@
 package com.DAO;
 
 import com.api.HibernateUtil;
+import com.carEntity.Engine;
 import com.carEntity.Transmission;
 import org.hibernate.*;
 import javax.swing.*;
@@ -17,10 +18,12 @@ public class TransmissionDAO implements DAO <Transmission> {
         try{
             session = HibernateUtil.getSessionFactory().openSession();
             tx = session.beginTransaction();
-            session.saveOrUpdate(transmission);
-            session.flush();
-            session.clear();
-            session.getTransaction().commit();
+            if (!check(transmission)){
+                session.saveOrUpdate(transmission);
+                session.flush();
+                session.clear();
+                session.getTransaction().commit();
+            }
         }catch (Exception e){
             //JOptionPane.showMessageDialog(null, e.getMessage(), "Error Insert", JOptionPane.OK_OPTION);
             tx.rollback();
@@ -29,6 +32,30 @@ public class TransmissionDAO implements DAO <Transmission> {
                 session.close();
             }
         }
+    }
+
+    public boolean check(Transmission transmission){
+        Session session = null;
+        List objects  = null;
+        try{
+            session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            Query query = session.createQuery("FROM Transmission " +
+                    " WHERE transmissionName =:name AND  numberOfSpeed  =:numofspeed")
+                    .setString("name",transmission.getTransmissionName())
+                    .setInteger("numofspeed",transmission.getNumberOfSpeed());
+            objects = query.list();
+            System.out.println(objects);
+            session.getTransaction().commit();
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error for  check contains", JOptionPane.OK_OPTION);
+        }finally {
+            if (session != null && session.isOpen()){
+                session.close();
+            }
+        }
+        if (objects.size() != 0) return true;
+        return false;
     }
 
     @Override
@@ -110,7 +137,7 @@ public class TransmissionDAO implements DAO <Transmission> {
         try{
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
-            Query query = session.createQuery("from " + Transmission.class);
+            Query query = session.createQuery("FROM Transmission ");
             objects = query.list();
             session.getTransaction().commit();
         }catch (Exception e) {
