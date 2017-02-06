@@ -83,7 +83,7 @@ public class User implements Serializable {
         return type == user.type;
 
     }
-    
+
     @Override
     public int hashCode() {
         int result = userName.hashCode();

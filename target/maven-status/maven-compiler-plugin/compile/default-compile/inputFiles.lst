@@ -10,14 +10,16 @@
 /home/dima/java/SuperSite/src/main/java/com/authentification/User.java
 /home/dima/java/SuperSite/src/main/java/com/DAO/CarParametrsDAO.java
 /home/dima/java/SuperSite/src/main/java/com/api/HibernateUtil.java
+/home/dima/java/SuperSite/src/main/java/com/authentification/Role.java
 /home/dima/java/SuperSite/src/main/java/com/api/Factory.java
 /home/dima/java/SuperSite/src/main/java/com/carEntity/CarParametrs.java
+/home/dima/java/SuperSite/src/main/java/servlets/Authentification/AuthFilter.java
 /home/dima/java/SuperSite/src/main/java/servlets/Authentification/AuthentificationServlet.java
 /home/dima/java/SuperSite/src/main/java/com/carEntity/CarParts.java
 /home/dima/java/SuperSite/src/main/java/com/carEntity/Engine.java
-/home/dima/java/SuperSite/src/main/java/servlets/FordDbServlet.java
 /home/dima/java/SuperSite/src/main/java/com/carEntity/ModelName.java
 /home/dima/java/SuperSite/src/main/java/com/DAO/KindOfBodyDAO.java
+/home/dima/java/SuperSite/src/main/java/servlets/Authentification/Success.java
 /home/dima/java/SuperSite/src/main/java/com/DAO/ColorSetDAO.java
 /home/dima/java/SuperSite/src/main/java/com/api/JacksonUtil.java
 /home/dima/java/SuperSite/src/main/java/com/carEntity/ColorSet.java

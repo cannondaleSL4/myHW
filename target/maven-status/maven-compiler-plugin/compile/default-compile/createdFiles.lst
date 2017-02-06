@@ -1,14 +1,16 @@
 com/DAO/TransmissionDAO.class
 com/DAO/CarParametrsDAO.class
+servlets/Authentification/AuthFilter.class
 com/carEntity/Engine.class
 com/DAO/DAO.class
 com/DAO/ModelNameDAO.class
+com/authentification/Role.class
 com/test/TestClass.class
 com/carEntity/ColorSet.class
 com/api/JacksonUtil.class
 com/carEntity/CarParametrs.class
-servlets/FordDbServlet.class
 com/carEntity/Transmission.class
+servlets/Authentification/Success.class
 com/DAO/ColorSetDAO.class
 com/carEntity/KindOfBody.class
 com/carEntity/CarParts.class
