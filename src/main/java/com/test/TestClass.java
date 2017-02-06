@@ -132,6 +132,10 @@ public class TestClass {
         }*/
 
         User admin = new User("dima", "123456", Role.ADMINISTRATOR);
+        User salesMan = new User ("alex","23456",Role.STAFF);
         apiDb.create(admin);
+        apiDb.create(salesMan);
+
+
     }
 }
