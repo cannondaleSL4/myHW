@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="PostgreSQL - ford_db@localhost" uuid="8ae44d46-b833-4646-89f5-51ccfe026110">
+    <data-source name="PostgreSQL - ford_db@localhost" uuid="7ce76d44-e311-4ffb-808a-6f6317dc809c">
       <database-info product="PostgreSQL" version="9.5.5" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>

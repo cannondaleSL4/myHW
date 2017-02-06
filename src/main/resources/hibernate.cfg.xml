@@ -13,10 +13,6 @@
 
         <property name="connection_pool_size">1</property>
 
-        <!--<property name="hbm2ddl.auto">create</property>
-            create-update это что делать с бд создавать или
-            апдейтить
-        -->
         <property name="hbm2ddl.auto">update</property>
 
 
@@ -35,21 +31,7 @@
         <mapping class="com.carEntity.ColorSet"/>
         <mapping class="com.carEntity.CarParametrs"/>
         <mapping class="com.authentification.User"/>
+        <mapping class="com.authentification.Role"/>
 
-
-
-
-        <!-- DB schema will be updated if needed -->
-        <!-- <property name="hbm2ddl.auto">update</property> -->
     </session-factory>
 </hibernate-configuration>
-
-
-<!--
-    <property name="hbm2ddl.auto">update</property>
-    <property name="hibernate.format_sql">true</property>
-
-
-    <property name="show_sql">true</property>
-
--->

@@ -1,6 +1,7 @@
 package com.api;
 
 
+import com.authentification.User;
 import com.carEntity.*;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -33,7 +34,7 @@ public class ApiDb {
     //@POST
     //@Path("/create")
     //@Consumes("application/json")
-    public void create(CarParts carParts) throws IOException, SQLException {
+    public void create(Object carParts) throws IOException, SQLException {
         if (carParts instanceof Color){
             factory.getColorDAO().add((Color)carParts);
         }else if(carParts instanceof ModelName){
@@ -48,13 +49,15 @@ public class ApiDb {
             factory.getCarParametrsDAO().add((CarParametrs)carParts);
         }else if(carParts instanceof  ColorSet) {
             factory.getColorSetDAO().add((ColorSet) carParts);
+        }else if (carParts instanceof User){
+            factory.getUserDAO().add((User) carParts);
         }
     }
 
     //@DELETE
     //@Path("/delete/{id}")
     //@Consumes("application/json")
-    private void delete(CarParts carParts, Long id) throws IOException, SQLException {
+    private void delete(Object carParts, Long id) throws IOException, SQLException {
         if (carParts instanceof Color){
             factory.getColorDAO().delete(id);
         }else if(carParts instanceof ModelName){
@@ -74,7 +77,7 @@ public class ApiDb {
 
     //@GET
     //@Produces("application/json")
-    private List<CarParts> getAll(CarParts carParts)throws IOException, SQLException{
+    private List<CarParts> getAll(Object carParts)throws IOException, SQLException{
         if (carParts instanceof Color){
             return factory.getColorDAO().getAll();
         }else if(carParts instanceof ModelName){

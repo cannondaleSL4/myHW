@@ -15,7 +15,7 @@
       <object-id>2200</object-id>
       <visible>1</visible>
       <introspection-state-number>15538</introspection-state-number>
-      <introspection-timestamp>2017-02-06.11:03:52.509</introspection-timestamp>
+      <introspection-timestamp>2017-02-06.11:05:05.553</introspection-timestamp>
     </schema>
     <schema id="5" parent="1" name="pg_catalog">
       <object-id>11</object-id>

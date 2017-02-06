@@ -3,6 +3,8 @@ package com.test;
 
 import com.api.ApiDb;
 import com.api.Factory;
+import com.authentification.Role;
+import com.authentification.User;
 import com.carEntity.*;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -129,7 +131,7 @@ public class TestClass {
             apiDb.create(carParametrs);
         }*/
 
-        Color newColor = new Color("black",false);
-        System.out.println(Factory.getInstance().getColorDAO().check(newColor));
+        User admin = new User("dima", "123456", Role.ADMINISTRATOR);
+        apiDb.create(admin);
     }
 }

@@ -1,5 +1,6 @@
 package com.authentification;
 
+import org.codehaus.jackson.annotate.JsonTypeInfo;
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -7,18 +8,29 @@ import java.io.Serializable;
  * Created by dima on 04.02.17.
  */
 @Entity
-@Table(name = "user")
+/*
+нельзя называть таблицу user это резервированное слово sql
+ */
+@Table(name = "user_base")
+@JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
 public class User implements Serializable {
     private Long id;
     private String userName;
     private String password;
-    private Role type;
+    //т.е. по умолчанию роль - юзер.
+    private Role type = Role.USER;
 
     public User(){}
 
     public User(String userName, String password){
         this.userName = userName;
         this.password = password;
+    }
+
+    public User(String userName, String password,Role type){
+        this.userName = userName;
+        this.password = password;
+        this.type = type;
     }
 
     @Id
@@ -38,7 +50,7 @@ public class User implements Serializable {
         return password;
     }
 
-
+    @Enumerated(EnumType.STRING)
     public Role getType() {
         return type;
     }

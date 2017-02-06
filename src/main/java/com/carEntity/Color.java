@@ -24,7 +24,6 @@ public class Color implements CarParts, Serializable{
     private Long id;
     private String colorName;
     private Boolean isMetallic;
-    //private ColorSet colorSet = new ColorSet();
     private Set<ColorSet> colorSet = new HashSet<ColorSet>(0);
 
     public Color(){}
