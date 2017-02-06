@@ -36,7 +36,7 @@
             <version>1.0.1.Final</version>
         </dependency>
 
-        <!-- for servlets -->
+        <!-- for servlets  -->
 
         <dependency>
             <groupId>javax.servlet</groupId>
