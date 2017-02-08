@@ -15,7 +15,6 @@
 </head>
 <body>
 <section>
-
     <form method=post action="j_security_check" >
         <input type="text"  name= "j_username" placeholder="Username or email" >
         <input type="password"  name= "j_password" placeholder="Password" >

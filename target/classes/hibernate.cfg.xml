@@ -30,8 +30,8 @@
         <mapping class="com.carEntity.Transmission"/>
         <mapping class="com.carEntity.ColorSet"/>
         <mapping class="com.carEntity.CarParametrs"/>
-        <mapping class="com.authentification.User"/>
-        <mapping class="com.authentification.Role"/>
+        <mapping class="com.authentification.userEntity.User"/>
+        <mapping class="com.authentification.userEntity.Role"/>
 
     </session-factory>
 </hibernate-configuration>

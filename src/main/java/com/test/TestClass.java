@@ -2,9 +2,8 @@ package com.test;
 
 
 import com.api.ApiDb;
-import com.api.Factory;
-import com.authentification.Role;
-import com.authentification.User;
+import com.authentification.userEntity.Role;
+import com.authentification.userEntity.User;
 import com.carEntity.*;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -133,8 +132,10 @@ public class TestClass {
 
         User admin = new User("dima", "123456", Role.ADMINISTRATOR);
         User salesMan = new User ("alex","23456",Role.STAFF);
+        User someUser = new User ("someUser", "2343");
         apiDb.create(admin);
         apiDb.create(salesMan);
+        apiDb.create(someUser);
 
 
     }

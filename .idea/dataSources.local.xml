@@ -8,7 +8,7 @@
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
       <user-name>dealer</user-name>
-      <resolve-scope>ford_db:public,dealer</resolve-scope>
+      <resolve-scope>ford_db:dealer,public</resolve-scope>
     </data-source>
   </component>
 </project>
