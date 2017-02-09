@@ -19,16 +19,23 @@ public class LoginServlet extends HttpServlet {
         String userName = request.getParameter("userName");
         String password = request.getParameter("passwolrd");
 
-        try {
-            boolean inBase = Factory.getInstance().getUserDAO().check(userName, password);
-            if (inBase){
-                request.getSession().setAttribute("userName",userName);
-                response.sendRedirect("./user/ModelNoEmployee.jsp");
-            }else{
-                response.sendRedirect("login_error.jsp");
+        if (userName != null && !userName.isEmpty()
+                && password!= null && !password.isEmpty()){
+            try {
+                boolean inBase = Factory.getInstance().getUserDAO().check(userName, password);
+                if (inBase){
+                    request.getSession().setAttribute("userName",userName);
+                    response.sendRedirect("./user/ModelNoEmployee.jsp");
+                }else{
+                    response.sendRedirect("login_error.jsp");
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
+        }else{
+            response.sendRedirect("login_error.jsp");
         }
+
+
     }
 }

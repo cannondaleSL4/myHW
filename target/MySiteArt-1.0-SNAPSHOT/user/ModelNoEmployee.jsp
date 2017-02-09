@@ -8,9 +8,7 @@
     </head>
     <body>
 	<%
-		/*String userName = request.getRemoteUser();
-		String userNameTwo = request.getUserPrincipal().getName();
-		System.out.println(userName);*/
+		//String userName = request.getRemoteUser();
 	%>
 		<section>
 			<form>

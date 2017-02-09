@@ -15,10 +15,9 @@
 </head>
 <body>
 <section>
-
-    <form method=post action="j_security_check" >
-        <input type="text"  name= "j_username" placeholder="Username or email" >
-        <input type="password"  name= "j_password" placeholder="Password" >
+    <form action="LoginServlet" method=post>
+        <input type="text"  name= "userName" placeholder="Username or email" >
+        <input type="password"  name= "password" placeholder="Password" >
         </br>
         <a href="register.jsp">Sign Up</a>
         <input type="submit" class="Button" value="Enter">
