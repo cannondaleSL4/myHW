@@ -2,8 +2,10 @@
 /home/dima/java/SuperSite/src/main/java/com/authentification/userDAO/UserDAO.java
 /home/dima/java/SuperSite/src/main/java/com/carEntity/Color.java
 /home/dima/java/SuperSite/src/main/java/com/test/TestClass.java
+/home/dima/java/SuperSite/src/main/java/servlets/LoginServlet.java
 /home/dima/java/SuperSite/src/main/java/com/carEntity/Transmission.java
 /home/dima/java/SuperSite/src/main/java/com/authentification/userEntity/User.java
+/home/dima/java/SuperSite/src/main/java/servlets/RegisterServlet.java
 /home/dima/java/SuperSite/src/main/java/com/carDAO/CarParametrsDAO.java
 /home/dima/java/SuperSite/src/main/java/com/api/HibernateUtil.java
 /home/dima/java/SuperSite/src/main/java/com/carDAO/ColorDAO.java
@@ -15,7 +17,6 @@
 /home/dima/java/SuperSite/src/main/java/com/carEntity/CarParts.java
 /home/dima/java/SuperSite/src/main/java/com/carEntity/Engine.java
 /home/dima/java/SuperSite/src/main/java/com/carDAO/EngineDAO.java
-/home/dima/java/SuperSite/src/main/java/servlets/UserControllerServlet.java
 /home/dima/java/SuperSite/src/main/java/com/carEntity/ModelName.java
 /home/dima/java/SuperSite/src/main/java/com/carDAO/DAO.java
 /home/dima/java/SuperSite/src/main/java/com/authentification/userEntity/Role.java

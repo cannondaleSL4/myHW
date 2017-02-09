@@ -8,6 +8,7 @@ com/carEntity/ColorSet.class
 com/api/JacksonUtil.class
 com/carEntity/CarParametrs.class
 com/carEntity/Transmission.class
+servlets/LoginServlet.class
 com/carEntity/KindOfBody.class
 com/carEntity/CarParts.class
 com/carDAO/ColorDAO.class
@@ -21,6 +22,6 @@ com/carDAO/ModelNameDAO.class
 com/api/HibernateUtil.class
 com/authentification/userDAO/UserDAOImpl.class
 com/carDAO/EngineDAO.class
-servlets/UserControllerServlet.class
+servlets/RegisterServlet.class
 com/api/ApiDb.class
 com/carEntity/ModelName.class

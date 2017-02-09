@@ -16,7 +16,7 @@
                 <p>
                     <%= username %>
                 </p>
-                <p><a href = "../index.jsp">Exit</a></p>
+                <p><a href = "../login.jsp">Exit</a></p>
             </form>
         </section>
         <div class="header">

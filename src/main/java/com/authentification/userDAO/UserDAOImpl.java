@@ -15,7 +15,7 @@ import java.util.List;
  */
 
 /*
-здесь пуругрузил метод add. пока не решил как верно делать add  - создавать объект сначала и загонять его сюда
+здесь перeгрузил метод add. пока не решил как верно делать add  - создавать объект сначала и загонять его сюда
 или же передавать параметры, создавать объект уже здесь и тут его персистеть.
  */
 public class UserDAOImpl implements UserDAO {
@@ -102,7 +102,31 @@ public class UserDAOImpl implements UserDAO {
     }
 
 
-    public boolean check(User user){
+    public boolean check(User user)throws SQLException{
+        Session session = null;
+        List objects  = null;
+        try{
+            session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            Query query = session.createQuery("FROM User " +
+                    " WHERE user_name =:name")
+                    //здесь то же пришлось применять имя колонки. тк. userName  не находит
+                    .setString("name",user.getName());
+            objects = query.list();
+            session.getTransaction().commit();
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error for  check contains", JOptionPane.OK_OPTION);
+        }finally {
+            if (session != null && session.isOpen()){
+                session.close();
+            }
+        }
+        if (objects.size() != 0) return true;
+        return false;
+    }
+
+    public boolean check(String userName, String password)throws SQLException{
+        User user = new User(userName,password);
         Session session = null;
         List objects  = null;
         try{
