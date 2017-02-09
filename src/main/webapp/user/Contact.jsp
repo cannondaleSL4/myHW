@@ -8,11 +8,11 @@
     </head>
     <body>
     <%
-        String username = request.getRemoteUser();
+        //String username = request.getRemoteUser();
     %>
         <section>
             <form>
-                <p><%= username %></p>
+                <p><%= session.getAttribute("userName") %></p>
                 <p><a href = "index.jsp">Exit</a></p>
             </form>
         </section>
