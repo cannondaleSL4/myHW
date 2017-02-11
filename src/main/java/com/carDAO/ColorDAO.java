@@ -19,18 +19,12 @@ public class ColorDAO implements DAO<Color> {
         try{
             session = HibernateUtil.getSessionFactory().openSession();
             tx =session.beginTransaction();
-            /*
-            в postgresql надо или делать проверку на наличие объекта в базе, saveOrUpdate  не работает, те работает
-            но все равно выдает ошибку что этот объект уже был в базе. т.е. тупо save
-             */
-            if (!check(color)){
-                session.saveOrUpdate(color);
-                session.flush();
-                session.clear();
-                session.getTransaction().commit();
-            }
+            session.saveOrUpdate(color);
+            session.flush();
+            session.clear();
+            session.getTransaction().commit();
         }catch (Exception e){
-            //JOptionPane.showMessageDialog(null, e.getMessage(), "Error Insert", JOptionPane.OK_OPTION);
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error Color", JOptionPane.OK_OPTION);
             tx.rollback();
         }finally {
             if (session != null && session.isOpen()){
@@ -53,7 +47,7 @@ public class ColorDAO implements DAO<Color> {
             objects = query.list();
             session.getTransaction().commit();
         }catch (Exception e){
-            JOptionPane.showMessageDialog(null, e.getMessage(), "Error for  check contains", JOptionPane.OK_OPTION);
+            //JOptionPane.showMessageDialog(null, e.getMessage(), "Error for  check contains", JOptionPane.OK_OPTION);
         }finally {
             if (session != null && session.isOpen()){
                 session.close();

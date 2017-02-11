@@ -23,5 +23,12 @@
         <input type="submit" class="Button" value="Enter">
     </form>
 </section>
+    <%
+        if(session.getAttribute("errorMessage")!=null)
+        {
+            out.println(session.getAttribute("errorMessage"));
+        }
+        //out.println(request.getAttribute("errorMessage"));
+    %>
 </body>
 </html>

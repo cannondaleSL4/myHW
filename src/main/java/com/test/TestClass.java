@@ -30,7 +30,6 @@ public class TestClass {
             apiDb.create(color);
         }
 
-        /*
         // add some colorSet to base
         ColorSet colorSetOne = new ColorSet();
         ColorSet colorSetTwo = new ColorSet();
@@ -91,10 +90,10 @@ public class TestClass {
 
         // add some model name to base
         List<ModelName>arrayModel = new ArrayList<ModelName>();
-        arrayModel.add(new ModelName("focus"));
-        arrayModel.add(new ModelName("fiest"));
-        arrayModel.add(new ModelName("mustang"));
-        arrayModel.add(new ModelName("explorer"));
+        arrayModel.add(new ModelName("focus","fordfocus.png"));
+        arrayModel.add(new ModelName("fiest","fordfiesta.png"));
+        arrayModel.add(new ModelName("mondeo","fordmondeo.png"));
+        arrayModel.add(new ModelName("explorer","fordexplorer.png"));
 
         for(ModelName modelName:arrayModel){
             apiDb.create(modelName);
@@ -128,7 +127,7 @@ public class TestClass {
 
         for(CarParametrs carParametrs:arrayCarParametrs){
             apiDb.create(carParametrs);
-        }*/
+        }
 
         User admin = new User("dima", "123456", Role.ADMINISTRATOR);
         User salesMan = new User ("alex","23456",Role.STAFF);

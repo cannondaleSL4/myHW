@@ -17,14 +17,12 @@ public class TransmissionDAO implements DAO <Transmission> {
         try{
             session = HibernateUtil.getSessionFactory().openSession();
             tx = session.beginTransaction();
-            if (!check(transmission)){
-                session.saveOrUpdate(transmission);
-                session.flush();
-                session.clear();
-                session.getTransaction().commit();
-            }
+            session.saveOrUpdate(transmission);
+            session.flush();
+            session.clear();
+            session.getTransaction().commit();
         }catch (Exception e){
-            //JOptionPane.showMessageDialog(null, e.getMessage(), "Error Insert", JOptionPane.OK_OPTION);
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error Transmission", JOptionPane.OK_OPTION);
             tx.rollback();
         }finally {
             if (session != null && session.isOpen()){

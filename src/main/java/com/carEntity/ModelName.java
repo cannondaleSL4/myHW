@@ -17,9 +17,11 @@ public class ModelName implements CarParts, Serializable {
 
     private Long id;
     private String modelName;
+    private String imgAdress;
 
-    public ModelName(String modelName) {
+    public ModelName(String modelName, String imgAdress) {
         this.modelName = modelName;
+        this.imgAdress = imgAdress;
     }
 
     public ModelName(){}
@@ -31,19 +33,29 @@ public class ModelName implements CarParts, Serializable {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     @Column(name= "current_modelcol",nullable = false ,unique = true)
     public String getModelName() {
         return modelName;
+    }
+
+    @Column(name= "model_img",nullable = false ,unique = true)
+    public String getImgAdress() {
+        return imgAdress;
+    }
+
+    @OneToOne(mappedBy = "modelName",cascade = CascadeType.REMOVE)
+    private CarParametrs carParametrs;
+
+    public void setImgAdress(String imgAdress) {
+        this.imgAdress = imgAdress;
     }
 
     public void setModelName(String modelName) {
         this.modelName = modelName;
     }
 
-    @OneToOne(mappedBy = "modelName",cascade = CascadeType.REMOVE)
-    private CarParametrs carParametrs;
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 }

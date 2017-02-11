@@ -17,12 +17,10 @@ public class EngineDAO implements DAO <Engine> {
         try{
             session = HibernateUtil.getSessionFactory().openSession();
             tx = session.beginTransaction();
-            if (!check(engine)){
-                session.saveOrUpdate(engine);
-                session.flush();
-                session.clear();
-                session.getTransaction().commit();
-            }
+            session.saveOrUpdate(engine);
+            session.flush();
+            session.clear();
+            session.getTransaction().commit();
         }catch (Exception e){
             //JOptionPane.showMessageDialog(null, e.getMessage(), "Error Insert", JOptionPane.OK_OPTION);
             tx.rollback();
@@ -76,7 +74,7 @@ public class EngineDAO implements DAO <Engine> {
             session.delete(engine);
             session.getTransaction().commit();
         }catch (Exception e){
-            JOptionPane.showMessageDialog(null, e.getMessage(), "Error while deleting", JOptionPane.OK_OPTION);
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error Engine", JOptionPane.OK_OPTION);
         } finally {
             if (session != null && session.isOpen()) {
                 session.close();

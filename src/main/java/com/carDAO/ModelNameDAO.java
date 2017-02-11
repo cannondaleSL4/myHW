@@ -17,14 +17,12 @@ public class ModelNameDAO implements DAO <ModelName> {
         try{
             session = HibernateUtil.getSessionFactory().openSession();
             tx = session.beginTransaction();
-            if (!check(modelName)){
-                session.saveOrUpdate(modelName);
-                session.flush();
-                session.clear();
-                session.getTransaction().commit();
-            }
+            session.saveOrUpdate(modelName);
+            session.flush();
+            session.clear();
+            session.getTransaction().commit();
         }catch (Exception e){
-            //JOptionPane.showMessageDialog(null, e.getMessage(), "Error Insert model", JOptionPane.OK_OPTION);
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error modelName", JOptionPane.OK_OPTION);
             tx.rollback();
         }finally {
             if (session != null && session.isOpen()){

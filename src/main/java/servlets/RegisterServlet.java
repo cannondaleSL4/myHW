@@ -26,7 +26,7 @@ public class RegisterServlet extends HttpServlet {
 
         try {
             Factory.getInstance().getUserDAO().add(userName,password);
-            response.sendRedirect("login_yes.jsp");
+            response.sendRedirect("login.jsp");
         } catch (SQLException e) {
             e.printStackTrace();
         }

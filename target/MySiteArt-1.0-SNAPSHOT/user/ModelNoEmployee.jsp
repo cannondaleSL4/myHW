@@ -1,4 +1,9 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.carEntity.ModelName" %>
+<%@ page import="com.api.Factory" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+		 pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ru">
     <head>
@@ -7,13 +12,10 @@
 		<link href="../css/Main.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-	<%
-		//String userName = request.getRemoteUser();
-	%>
 		<section>
 			<form>
 				<p><%= session.getAttribute("userName") %></p>
-				<p><a href = "index.jsp">Exit</a></p>
+				<p><a href = "../login.jsp">Exit</a></p>
 			</form>
 		</section>
         <div class="header">
@@ -30,26 +32,15 @@
         </div>
 
         <div id = "main">
-        	<div class = "photo">
-        		<p><img src = "../img/fordfiest.jpg"/></p>
-        		<p class = "caption">Ford Fiesta</p>
-        	</div>
-
-        	<div class = "photo">
-        		<p><img src = "../img/foto12.png"/></p>
-        		<p class = "caption">Ford Focus</p>
-        	</div>
-
-        	<div class = "photo">
-        		<p><img src = "../img/fordmondeo.png"/></p>
-        		<p class = "caption">Ford Mondeo</p>
-        	</div>
-
-        	<div class = "photo">
-        		<p><img src = "../img/fordexplorer.png"/></p>
-        		<p class = "caption">Ford Mondeo</p>
-        	</div>
-
+			<%
+				List<ModelName> modelList = Factory.getInstance().getModelNameDAO().getAll();
+				for(ModelName modelName:modelList){
+			%>
+			<div class = "photo">
+				<p><a href="<%=modelName.getModelName()%> + .jsp"><img src = "../img/<%=modelName.getImgAdress()%>"> </a></p>
+				<p class = "caption"><%=modelName.getModelName()%></p>
+			</div>
+			<%}%>
         </div>
     </body>
 </html>

@@ -24,7 +24,7 @@ public class CarParametrsDAO implements DAO <CarParametrs> {
             session.clear();
             session.getTransaction().commit();
         }catch (Exception e){
-            //JOptionPane.showMessageDialog(null, e.getMessage(), "Error Insert", JOptionPane.OK_OPTION);
+            //JOptionPane.showMessageDialog(null, e.getMessage(), "Error CarParametrs", JOptionPane.OK_OPTION);
             tx.rollback();
         }finally {
             if (session != null && session.isOpen()){
@@ -95,7 +95,7 @@ public class CarParametrsDAO implements DAO <CarParametrs> {
             session.delete(carParametrs);
             session.getTransaction().commit();
         }catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.getMessage(),"Error while gettAll operation", JOptionPane.OK_OPTION);
+            JOptionPane.showMessageDialog(null, e.getMessage(),"Error CarParametrs", JOptionPane.OK_OPTION);
         } finally {
             if (session != null && session.isOpen()) {
                 session.close();
