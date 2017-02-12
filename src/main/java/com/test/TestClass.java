@@ -90,10 +90,10 @@ public class TestClass {
 
         // add some model name to base
         List<ModelName>arrayModel = new ArrayList<ModelName>();
-        arrayModel.add(new ModelName("focus","fordfocus.png"));
-        arrayModel.add(new ModelName("fiest","fordfiesta.png"));
-        arrayModel.add(new ModelName("mondeo","fordmondeo.png"));
-        arrayModel.add(new ModelName("explorer","fordexplorer.png"));
+        arrayModel.add(new ModelName("Focus","fordfocus.png"));
+        arrayModel.add(new ModelName("Fiest","fordfiesta.png"));
+        arrayModel.add(new ModelName("Mondeo","fordmondeo.png"));
+        arrayModel.add(new ModelName("Explorer","fordexplorer.png"));
 
         for(ModelName modelName:arrayModel){
             apiDb.create(modelName);
