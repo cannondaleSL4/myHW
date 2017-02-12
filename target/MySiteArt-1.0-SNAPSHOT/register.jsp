@@ -44,11 +44,8 @@
     {
         out.println(session.getAttribute("messageSuccess"));
     }
+    session.setAttribute("errorMessage",null);
+    session.setAttribute("messageSuccess",null);
 %>
 </body>
 </html>
-
-<%--
-    RequestDispatcher dispatch = request.getRequestDispatcher("login.jsp");
-    dispatch.forward(request, response);
---%>

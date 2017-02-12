@@ -30,6 +30,7 @@
         <welcome-file>login.jsp</welcome-file>
     </welcome-file-list>
 
+
     <!--<login-config>
         <auth-method>FORM</auth-method>
         <form-login-config>

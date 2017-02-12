@@ -11,6 +11,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Enter Ford dealership</title>
+    <link rel="shortcut icon" href="img/plogo.png">
     <link href="../css/index.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -32,6 +33,8 @@
         {
             out.println(session.getAttribute("messageSuccess"));
         }
+        session.removeAttribute("errorMessage");
+        session.removeAttribute("messageSuccess");
     %>
 </body>
 </html>

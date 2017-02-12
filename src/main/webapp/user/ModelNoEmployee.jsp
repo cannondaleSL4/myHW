@@ -7,9 +7,9 @@
     <head>
         <meta charset="utf-8" />
         <title>Ford it's a future for right now!</title>
+		<link rel="shortcut icon" href="img/plogo.png">
 		<link href="../css/Main.css" rel="stylesheet" type="text/css">
     </head>
-
     <body>
 		<section>
 			<form>

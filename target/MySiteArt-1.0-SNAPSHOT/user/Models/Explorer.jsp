@@ -15,6 +15,9 @@
         <link href="../../css/Main.css" rel="stylesheet" type="text/css">
     </head>
     <body>
+    <%
+        //String username = request.getRemoteUser();
+    %>
         <section>
             <form>
                 <p><%= session.getAttribute("userName") %></p>
