@@ -148,4 +148,30 @@ public class UserDAOImpl implements UserDAO {
         if (objects.size() != 0) return true;
         return false;
     }
+
+    public boolean checkUserName(String userName)throws SQLException{
+        Session session = null;
+        List<User> objects  = null;
+        try{
+            session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            Query query = session.createQuery("FROM User " +
+                    " WHERE user_name =:name")
+                    //здесь то же пришлось применять имя колонки. тк. userName  не находит
+                    .setString("name",userName);
+            objects = query.list();
+            session.getTransaction().commit();
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error for  check contains", JOptionPane.OK_OPTION);
+        }finally {
+            if (session != null && session.isOpen()){
+                session.close();
+            }
+        }
+
+        for(User user:objects){
+            if (userName.equalsIgnoreCase(user.getName())) return true;
+        }
+        return false;
+    }
 }

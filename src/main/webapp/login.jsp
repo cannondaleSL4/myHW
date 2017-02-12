@@ -28,7 +28,10 @@
         {
             out.println(session.getAttribute("errorMessage"));
         }
-        //out.println(request.getAttribute("errorMessage"));
+        if(session.getAttribute("messageSuccess")!=null)
+        {
+            out.println(session.getAttribute("messageSuccess"));
+        }
     %>
 </body>
 </html>

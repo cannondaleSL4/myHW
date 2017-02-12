@@ -16,20 +16,20 @@ import java.util.List;
 public class LoginServlet extends HttpServlet {
     private final String messageError = " <script>\n" +
             "        window.onload = function() {\n" +
-            "            alert( \"Sorry, your are wrong, try log in again or sign up\" );\n" +
+            "            alert( \"Sorry, you are wrong, try log in again or sign up\" );\n" +
             "        };\n" +
             "    </script>";
 
     public void doPost(HttpServletRequest request,
                        HttpServletResponse response)
             throws ServletException,IOException{
-        String userName = request.getParameter("userName");
-        String password = request.getParameter("password");
+        String userName = request.getParameter("userName").trim();
+        String password = request.getParameter("password").trim();
 
         if (userName != null && !userName.isEmpty()
                 && password!= null && !password.isEmpty()){
             try {
-                boolean inBase = Factory.getInstance().getUserDAO().check(userName, password);
+                boolean inBase = Factory.getInstance().getUserDAO().checkUserName(userName);
                 List modelList = Factory.getInstance().getModelNameDAO().getAll();
                 if (inBase){
                     request.getSession().setAttribute("userName",userName);

@@ -1,9 +1,7 @@
-<%@ page import="java.util.List" %>
 <%@ page import="com.carEntity.ModelName" %>
 <%@ page import="com.api.Factory" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-		 pageEncoding="UTF-8"%>
+<%@ page import="java.util.List" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="ru">
     <head>
@@ -11,6 +9,7 @@
         <title>Ford it's a future for right now!</title>
 		<link href="../css/Main.css" rel="stylesheet" type="text/css">
     </head>
+
     <body>
 		<section>
 			<form>
@@ -19,7 +18,6 @@
 			</form>
 		</section>
         <div class="header">
-
             <div class = "picOne">
                 <img src="../img/logo.png">
             </div>
@@ -37,7 +35,7 @@
 				for(ModelName modelName:modelList){
 			%>
 			<div class = "photo">
-				<p><a href="<%=modelName.getModelName()%> + .jsp"><img src = "../img/<%=modelName.getImgAdress()%>"> </a></p>
+				<p><a href="<%=modelName.getModelName()%>.jsp"><img src = "../img/<%=modelName.getImgAdress()%>"> </a></p>
 				<p class = "caption"><%=modelName.getModelName()%></p>
 			</div>
 			<%}%>

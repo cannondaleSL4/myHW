@@ -31,8 +31,24 @@
             </div>
 
             <button type="submit" class="float">Login</button>
+            <button type="button" class="float" onclick="history.back()">back</button>
         </form>
     </div>
 </div>
+<%
+    if(session.getAttribute("errorMessage")!=null)
+    {
+        out.println(session.getAttribute("errorMessage"));
+    }
+    if(session.getAttribute("messageSuccess")!=null)
+    {
+        out.println(session.getAttribute("messageSuccess"));
+    }
+%>
 </body>
 </html>
+
+<%--
+    RequestDispatcher dispatch = request.getRequestDispatcher("login.jsp");
+    dispatch.forward(request, response);
+--%>
