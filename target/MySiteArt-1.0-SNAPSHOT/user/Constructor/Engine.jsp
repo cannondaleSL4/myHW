@@ -39,7 +39,7 @@
         </div>
 
     <div id = "main">
-        <form name="form1" onsubmit="checkBoxValidation()">
+        <form action="kindOfBody" method=post>
             <h3>Select you Engine for <%=session.getAttribute("modelName")%> </h3>
             <% List <Engine> engineList= (List<Engine>) session.getAttribute("engineList");
                 for(Engine engine: engineList){

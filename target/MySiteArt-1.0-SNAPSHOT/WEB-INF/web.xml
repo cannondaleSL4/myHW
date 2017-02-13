@@ -36,49 +36,19 @@
         <url-pattern>/user/Constructor/engine</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <display-name>kindOfBody</display-name>
+        <servlet-name>kindOfBody</servlet-name>
+        <servlet-class>servlets.ConstructorBody</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>kindOfBody</servlet-name>
+        <url-pattern>/user/Constructor/kindOfBody</url-pattern>
+    </servlet-mapping>
+
     <welcome-file-list>
         <welcome-file>login.jsp</welcome-file>
     </welcome-file-list>
-
-    
-    <!--<login-config>
-        <auth-method>FORM</auth-method>
-        <form-login-config>
-            <form-login-page>/login.jsp</form-login-page>
-            <form-error-page>/login_error.jsp</form-error-page>
-        </form-login-config>
-    </login-config>-->
-
-    <!--
-    <welcome-file-list>
-        <welcome-file>login.jsp</welcome-file>
-    </welcome-file-list>
-    <security-constraint>
-        <web-resource-collection>
-            <web-resource-name>Protected Area</web-resource-name>
-            <url-pattern>/security/protected/*</url-pattern>
-            <http-method>PUT</http-method>
-            <http-method>DELETE</http-method>
-            <http-method>GET</http-method>
-            <http-method>POST</http-method>
-        </web-resource-collection>
-        <auth-constraint>
-            <role-name>user</role-name>
-        </auth-constraint>
-    </security-constraint>
-    <security-role>
-        <role-name>manager</role-name>
-    </security-role>
-    <security-role>
-        <role-name>user</role-name>
-    </security-role>
-    <login-config>
-        <auth-method>FORM</auth-method>
-        <form-login-config>
-            <form-login-page></form-login-page>
-            <form-error-page></form-error-page>
-        </form-login-config>
-    </login-config>
-    -->
 
 </web-app>
