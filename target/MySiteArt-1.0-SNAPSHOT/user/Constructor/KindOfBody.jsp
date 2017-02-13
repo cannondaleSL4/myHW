@@ -1,4 +1,5 @@
-<%--
+<%@ page import="com.carEntity.KindOfBody" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: dima
   Date: 19.01.17
@@ -34,10 +35,21 @@
             </ul>
         </div>
 
-            <div id = "main">
-                <div class ="text">
-                    <p>we are the best company in the world!</p>
+        <div id = "main">
+            <form action="transmission" method=post>
+                <h3>Select you body for <%=session.getAttribute("modelName")%> </h3>
+                <% List<KindOfBody> bodyList= (List<KindOfBody>) session.getAttribute("kindOfBody");
+                    for(KindOfBody kindOfBody: bodyList){
+                %>
+                <div class = "check">
+                    <div class = "block1"><img src = "../../img/type/<%=kindOfBody.getImgAdress()%>"></div>
+                    <div class = "block1"><%=kindOfBody.getNameKindOfBody()%></div>
+                    <div class = "block2"><input type="checkbox" name="<%=kindOfBody.getNameKindOfBody()%>" value="<%=kindOfBody.getNameKindOfBody()%>"/></div>
                 </div>
-            </div>
+                <%}%>
+                <div class = "checkbut"><input type="submit" value="Сhoose"></div>
+            </form>
+        </div>
+
     </body>
 </html>

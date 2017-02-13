@@ -15,10 +15,11 @@ import java.util.List;
  * Created by dima on 14.02.17.
  */
 public class ConstructorBody extends HttpServlet {
-    String bodyReq ="Select e "+
+    String bodyReq ="Select kind "+
             "From CarParametrs c "+
-            "INNER JOIN c.engine e " +
-            "Where c.modelName.modelName = :model ";
+            "INNER JOIN c.kindOfBody kind " +
+            "Where c.modelName.modelName = :model "+
+            " AND c.engine.nameOfEngine = :engine";
 
     public void doPost(HttpServletRequest request,
                       HttpServletResponse response)
@@ -33,11 +34,13 @@ public class ConstructorBody extends HttpServlet {
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
             Query query = session.createQuery(bodyReq)
-                    .setString("model",modelName);
+                    .setString("model",modelName)
+                    .setString("engine",engineName);
             objects = query.list();
             session.getTransaction().commit();
-            request.getSession().setAttribute("engineList",objects);
+            request.getSession().setAttribute("kindOfBody",objects);
             request.getSession().setAttribute("modelName",modelName);
+            request.getSession().setAttribute("engineName",engineName);
         }catch (Exception e) {
             //JOptionPane.showMessageDialog(null, e.getMessage(),"Error while gettAll operation", JOptionPane.OK_OPTION);
         } finally {
