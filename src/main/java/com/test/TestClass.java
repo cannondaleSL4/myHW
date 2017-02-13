@@ -22,7 +22,7 @@ public class TestClass {
     public static void main(String[] args) throws SQLException, IOException {
 
         ApiDb apiDb = ApiDb.getInstance();
-/*
+
         // add some colors to base
         List <Color> arrayColor = new ArrayList<Color>();
         arrayColor.add(new Color("black",true));
@@ -62,11 +62,11 @@ public class TestClass {
 
         // add some engine to base
         List<Engine>arrayEngine = new ArrayList<Engine>();
-        arrayEngine.add(new Engine("1.6L Ti-VCT I-4 Engine",120));
-        arrayEngine.add(new Engine("1.0L EcoBoost I-3 Engine",123));
-        arrayEngine.add(new Engine("1.6L 16-valve Ti-VCT Turbocharged Direct Injection EcoBoost I-4",197));
-        arrayEngine.add(new Engine("2.0L Ti-VCT I-4 Flex Fuel",160));
-        arrayEngine.add(new Engine("Electric"));
+        arrayEngine.add(new Engine("1.6L Ti-VCT I-4 Engine",120,"1.6L Ti-VCT I-4 Engine.jpeg"));
+        arrayEngine.add(new Engine("1.0L EcoBoost I-3 Engine",123,"ford-ecoboost-turbo-engines.png"));
+        arrayEngine.add(new Engine("1.6L 16-valve Ti-VCT Turbocharged Direct Injection EcoBoost I-4",197,"1.6L 16-valve Ti-VCT Turbocharged Direct Injection EcoBoost I-4.jpg"));
+        arrayEngine.add(new Engine("2.0L Ti-VCT I-4 Flex Fuel",160,"2.0L Ti-VCT I-4 Flex Fuel.jpg"));
+        arrayEngine.add(new Engine("Electric","electric.jpg"));
 
         for(Engine engine:arrayEngine){
             apiDb.create(engine);
@@ -85,9 +85,9 @@ public class TestClass {
         }
         // add some type of body to base
         List<KindOfBody> arrayKindOfBody = new ArrayList<KindOfBody>();
-        arrayKindOfBody.add(new KindOfBody("sedan"));
-        arrayKindOfBody.add(new KindOfBody("hatch"));
-        arrayKindOfBody.add(new KindOfBody("suv"));
+        arrayKindOfBody.add(new KindOfBody("sedan","sedan,jpg"));
+        arrayKindOfBody.add(new KindOfBody("hatch","hatchback.jpg"));
+        arrayKindOfBody.add(new KindOfBody("suv","suv.jpg"));
 
         for(KindOfBody kindOfBody:arrayKindOfBody){
             apiDb.create(kindOfBody);
@@ -98,6 +98,7 @@ public class TestClass {
         arrayModel.add(new ModelName("Focus","fordfocus.png"));
         arrayModel.add(new ModelName("Fiesta","fordfiesta.png"));
         arrayModel.add(new ModelName("Mondeo","fordmondeo.png"));
+        arrayModel.add(new ModelName("Mustang","fordmustang.png"));
         arrayModel.add(new ModelName("Explorer","fordexplorer.png"));
 
         for(ModelName modelName:arrayModel){
@@ -122,13 +123,13 @@ public class TestClass {
         arrayCarParametrs.add(new CarParametrs(arrayModel.get(2),arrayKindOfBody.get(0),arrayEngine.get(2),arrayTransmission.get(2),arrayColorSet.get(2)));
         arrayCarParametrs.add(new CarParametrs(arrayModel.get(2),arrayKindOfBody.get(0),arrayEngine.get(3),arrayTransmission.get(3),arrayColorSet.get(3)));
 
-        arrayCarParametrs.add(new CarParametrs(arrayModel.get(1),arrayKindOfBody.get(0), arrayEngine.get(1),arrayTransmission.get(0),arrayColorSet.get(0)));
-        arrayCarParametrs.add(new CarParametrs(arrayModel.get(2),arrayKindOfBody.get(0),arrayEngine.get(2),arrayTransmission.get(2),arrayColorSet.get(2)));
-        arrayCarParametrs.add(new CarParametrs(arrayModel.get(2),arrayKindOfBody.get(0),arrayEngine.get(3),arrayTransmission.get(3),arrayColorSet.get(3)));
+        arrayCarParametrs.add(new CarParametrs(arrayModel.get(3),arrayKindOfBody.get(0), arrayEngine.get(1),arrayTransmission.get(0),arrayColorSet.get(0)));
+        arrayCarParametrs.add(new CarParametrs(arrayModel.get(3),arrayKindOfBody.get(0),arrayEngine.get(2),arrayTransmission.get(2),arrayColorSet.get(2)));
+        arrayCarParametrs.add(new CarParametrs(arrayModel.get(3),arrayKindOfBody.get(0),arrayEngine.get(3),arrayTransmission.get(3),arrayColorSet.get(3)));
 
-        arrayCarParametrs.add(new CarParametrs(arrayModel.get(3),arrayKindOfBody.get(2), arrayEngine.get(1),arrayTransmission.get(0),arrayColorSet.get(1)));
-        arrayCarParametrs.add(new CarParametrs(arrayModel.get(3),arrayKindOfBody.get(2),arrayEngine.get(2),arrayTransmission.get(2),arrayColorSet.get(2)));
-        arrayCarParametrs.add(new CarParametrs(arrayModel.get(3),arrayKindOfBody.get(2),arrayEngine.get(3),arrayTransmission.get(3),arrayColorSet.get(3)));
+        arrayCarParametrs.add(new CarParametrs(arrayModel.get(4),arrayKindOfBody.get(2), arrayEngine.get(1),arrayTransmission.get(0),arrayColorSet.get(1)));
+        arrayCarParametrs.add(new CarParametrs(arrayModel.get(4),arrayKindOfBody.get(2),arrayEngine.get(2),arrayTransmission.get(2),arrayColorSet.get(2)));
+        arrayCarParametrs.add(new CarParametrs(arrayModel.get(4),arrayKindOfBody.get(2),arrayEngine.get(3),arrayTransmission.get(3),arrayColorSet.get(3)));
 
         for(CarParametrs carParametrs:arrayCarParametrs){
             apiDb.create(carParametrs);
@@ -142,12 +143,9 @@ public class TestClass {
         apiDb.create(someUser);
 
 
-        List<CarParametrs> carParametrsList = Factory.getInstance().getCarParametrsDAO().getByModel(1l);
-        System.out.println(carParametrsList);
 
-
-
-        String modelName = "Explorer";
+        /*
+        String modelName = "Fiesta";
 
         String engineReq ="Select e "+
                 "From CarParametrs c "+

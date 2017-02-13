@@ -37,6 +37,7 @@ public class ConstuctorEngine extends HttpServlet {
             objects = query.list();
             session.getTransaction().commit();
             request.getSession().setAttribute("engineList",objects);
+            request.getSession().setAttribute("modelName",modelName);
         }catch (Exception e) {
             //JOptionPane.showMessageDialog(null, e.getMessage(),"Error while gettAll operation", JOptionPane.OK_OPTION);
         } finally {
@@ -46,16 +47,5 @@ public class ConstuctorEngine extends HttpServlet {
         }
         response.sendRedirect("Engine.jsp");
 
-        // doPost(request,response);
     }
-
-    /*public void doPost(HttpServletRequest request,
-                      HttpServletResponse response)
-            throws ServletException,IOException {
-
-        String modelName = request.getParameter("modelName");
-        request.getSession().setAttribute("modelName",modelName);
-        response.sendRedirect("Engine.jsp");
-    }*/
-
 }

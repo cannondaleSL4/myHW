@@ -1,8 +1,0 @@
-SELECT
-e.idengine,
-e.horsepower,
-e.engine_name
-FROM engine AS e
-JOIN car_parm AS c ON e.idengine = c.idengine
-JOIN current_model AS m ON m.idcurrent_model = c.idcurrent_model
-ford_db-> WHERE c.idcurrent_model = 1;

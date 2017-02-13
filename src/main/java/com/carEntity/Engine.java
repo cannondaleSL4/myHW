@@ -17,17 +17,20 @@ public class Engine implements CarParts, Serializable {
     private Long id;
     private String nameOfEngine;
     private int horsepower;
+    private String imgAdress;
 
 
     public Engine(){}
 
-    public Engine(String nameOfEngine) {
+    public Engine(String nameOfEngine,String imgAdress) {
         this.nameOfEngine = nameOfEngine;
+        this.imgAdress = imgAdress;
     }
 
-    public Engine(String nameOfEngine, int horsepower) {
+    public Engine(String nameOfEngine, int horsepower,String imgAdress) {
         this.nameOfEngine = nameOfEngine;
         this.horsepower = horsepower;
+        this.imgAdress = imgAdress;
     }
 
     public Engine(Long id,String nameOfEngine, int horsepower) {
@@ -52,13 +55,22 @@ public class Engine implements CarParts, Serializable {
         return nameOfEngine;
     }
 
-    public void setNameOfEngine(String nameOfEngine) {
-        this.nameOfEngine = nameOfEngine;
-    }
-
     @Column(name = "horsepower",nullable = false, unique = true)
     public int getHorsepower() {
         return horsepower;
+    }
+
+    @Column(name = "imgadress", unique = true)
+    public String getImgAdress() {
+        return imgAdress;
+    }
+
+    public void setImgAdress(String imgAdress) {
+        this.imgAdress = imgAdress;
+    }
+
+    public void setNameOfEngine(String nameOfEngine) {
+        this.nameOfEngine = nameOfEngine;
     }
 
     public void setHorsepower(int horsepower) {

@@ -1,0 +1,133 @@
+html{
+    background-color: #6E6E6E;
+}
+
+.header {
+    margin: 0 auto;
+    position:absolute;
+    top:110px;
+    border-radius: 6px;
+    background-color:#FFFFFF;
+    background-position: 10px 0, 10px 0, 0 0, 0 0;
+    background-size: 20px 20px;
+    box-shadow: 0 0 5px 0 #333;
+    width:98%;
+    height: 95px;
+}
+
+section form {
+    text-align: right;
+    position:absolute;
+    right:10px;
+    top:10px;
+    height: 60px;
+    width: 230px;
+    border: 1px solid #887;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 6px;
+    -moz-box-shadow: 10px 10px 5px #887;
+    -webkit-box-shadow: 10px 10px 5px #887;
+    box-shadow: 10px 10px 5px #887;
+    background-color: #eed;
+    padding: 10px; margin-bottom: 25px;
+    line-width:200px;
+
+}
+
+.picOne {
+    margin:30% auto;
+    max-width:120px;
+    max-height:120px;
+    height:auto;
+    left:10px;
+    margin-top:2px;
+    float:left;
+}
+
+
+.picOne img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#main{
+    position: absolute;
+    background-color:#FFFFFF;
+    border: 1px solid #887;
+    border-radius: 6px;
+    box-shadow: 0 0 5px 0 #333;
+    width:90%;
+    min-height: 300px;
+    height: auto;
+    margin-top:220px;
+    margin-left: 3%;
+    margin-right: 3%;
+
+}
+
+.check{
+    min-height: 100px;
+    max-width: 700px;
+    padding: 20px 20px 20px 20px;
+    margin: 0 20px 3px 20px ;
+    border: 1px solid #887;
+    border-radius: 6px;
+    box-shadow: 0 0 5px 0 #333;
+    background: #03658e;
+}
+
+.block1{
+    margin: 0 23px 0 0 ;
+    max-width:auto;
+    max-height:auto;
+    left:10px;
+    margin-top:2px;
+    float:left;
+    display:inline-block;
+
+}
+
+.block2{
+    float:right;
+}
+
+
+.block1 img{
+    border-radius: 8px;
+    float:left;
+    width:110px;
+    height:100px;
+}
+
+.checkbut{
+    margin: 20px 20px 20px 20px ;
+    width: auto;
+    text-align: right;
+}
+
+#menu{
+    margin: 0;
+    padding: 0;
+    max-width: 550px;
+    margin: 0 auto;
+    text-align: center;
+    background: #03658e;
+}
+
+#menu li{
+    display:inline-block;
+    text-align: left;
+}
+
+#menu a {
+    display: block;
+    padding: 5px 15px;
+    color: #fff;
+    font-size:150%;
+    text-decoration: none;
+}
+
+#menu a:hover {
+    background: #8AB8CC;
+}

@@ -1,7 +1,8 @@
 <%@ page import="com.carEntity.ModelName" %>
 <%@ page import="com.api.Factory" %>
 <%@ page import="java.util.List" %>
-<%@ page import="com.carEntity.CarParametrs" %><%--
+<%@ page import="com.carEntity.CarParametrs" %>
+<%@ page import="com.carEntity.Engine" %><%--
   Created by IntelliJ IDEA.
   User: dima
   Date: 19.01.17
@@ -12,10 +13,10 @@
 <!DOCTYPE html>
 <html lang="ru">
     <head>
-        <meta charset="utf-8" />
+        <meta charset="utf-8">
         <title><%= session.getAttribute("userName") %></title>
         <link rel="shortcut icon" href="img/plogo.png">
-        <link href="../../css/Main.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="../../css/Constructor.css" type="text/css">
     </head>
     <body>
         <section>
@@ -38,7 +39,19 @@
         </div>
 
     <div id = "main">
-        <p><%= session.getAttribute("engineList") %></p>
+        <form name="form1" onsubmit="checkBoxValidation()">
+            <h3>Select you Engine for <%=session.getAttribute("modelName")%> </h3>
+            <% List <Engine> engineList= (List<Engine>) session.getAttribute("engineList");
+                for(Engine engine: engineList){
+            %>
+            <div class = "check">
+                <div class = "block1"><img src = "../../img/engine/<%=engine.getImgAdress()%>"></div>
+                <div class = "block1"><%=engine.getNameOfEngine()%></div>
+                <div class = "block2"><input type="checkbox" name="<%=engine.getNameOfEngine()%>" value="<%=engine.getNameOfEngine()%>"/></div>
+            </div>
+            <%}%>
+            <div class = "checkbut"><input type="submit" value="Сhoose"></div>
+        </form>
     </div>
     </body>
 </html>

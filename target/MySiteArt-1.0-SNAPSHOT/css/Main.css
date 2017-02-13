@@ -7,12 +7,12 @@ html{
   position:absolute;
   top:110px;
   border-radius: 6px;
-  background-color:#FFFFFF;   
+  background-color:#FFFFFF;
   background-position: 10px 0, 10px 0, 0 0, 0 0;
   background-size: 20px 20px;
-  box-shadow: 0 0 5px 0 #333; 
+  box-shadow: 0 0 5px 0 #333;
   width:98%;
-  height: 95px;	
+  height: 95px;
 }
 
 .reg{
@@ -46,7 +46,7 @@ section form {
   border: 1px solid #887;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
-  border-radius: 6px;   
+  border-radius: 6px;
   -moz-box-shadow: 10px 10px 5px #887;
   -webkit-box-shadow: 10px 10px 5px #887;
   box-shadow: 10px 10px 5px #887;
@@ -61,11 +61,10 @@ section form {
   background-color:#FFFFFF;
   border: 1px solid #887;
   border-radius: 6px;
-  box-shadow: 0 0 5px 0 #333; 
+  box-shadow: 0 0 5px 0 #333;
   width:90%;
   min-height: 300px;
   height: auto;
-
   margin-top:220px;
   margin-left: 3%;
   margin-right: 3%;
@@ -90,33 +89,33 @@ section form {
 }
 
 .text{
-  margin: 0 10px 10px 0; 
-  padding: 10px 10px 10px 15px; 
+  margin: 0 10px 10px 0;
+  padding: 10px 10px 10px 15px;
 }
 
 #menu{
-	margin: 0;
+  margin: 0;
   padding: 0;
-	max-width: 550px; 
+  max-width: 550px;
   margin: 0 auto;
   text-align: center;
-  background: #03658e;	
+  background: #03658e;
 }
 
 #menu li{
-	display:inline-block;
+  display:inline-block;
   text-align: left;
 }
 
 #menu a {
-    display: block;
-    padding: 5px 15px;
-    color: #fff;
-    font-size:150%;
-    text-decoration: none;
+  display: block;
+  padding: 5px 15px;
+  color: #fff;
+  font-size:150%;
+  text-decoration: none;
 }
 
 #menu a:hover {
-    background: #8AB8CC;
+  background: #8AB8CC;
 }
 

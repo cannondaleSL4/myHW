@@ -17,9 +17,11 @@ public class KindOfBody implements CarParts, Serializable {
 
     private Long id;
     private String nameKindOfBody;
+    private String imgAdress;
 
-    public KindOfBody(String nameKindOfBody) {
+    public KindOfBody(String nameKindOfBody,String imgAdress) {
         this.nameKindOfBody = nameKindOfBody;
+        this.imgAdress = imgAdress;
     }
 
     public KindOfBody(){}
@@ -31,13 +33,22 @@ public class KindOfBody implements CarParts, Serializable {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     @Column(name="name_of_kind_of_body",nullable = false, unique = true)
     public String getNameKindOfBody() {
         return nameKindOfBody;
+    }
+
+    @Column(name="imgAdress", unique = true)
+    public String getImgAdress() {
+        return imgAdress;
+    }
+
+    public void setImgAdress(String imgAdress) {
+        this.imgAdress = imgAdress;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public void setNameKindOfBody(String nameKindOfBody) {
