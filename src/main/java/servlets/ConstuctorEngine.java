@@ -28,7 +28,7 @@ public class ConstuctorEngine extends HttpServlet {
         String modelName = request.getParameter("modelName");
 
         Session session = null;
-        List objects  = null;
+        List objects  =  null;
         try{
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
