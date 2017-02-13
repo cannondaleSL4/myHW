@@ -54,6 +54,29 @@ public class ModelNameDAO implements DAO <ModelName> {
         return false;
     }
 
+    public Long getId(String name){
+        //ModelName model = new ModelName(name,null);
+        Session session = null;
+        Transaction tx = null;
+        List<ModelName> modelNameList = getAll();
+        Long result = null;
+        try{
+            session = HibernateUtil.getSessionFactory().openSession();
+            tx = session.beginTransaction();
+            for(ModelName modelName:modelNameList){
+                if (modelName.getModelName().equalsIgnoreCase(name))result =(Long) modelName.getId();
+            }
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error modelName", JOptionPane.OK_OPTION);
+            tx.rollback();
+        }finally {
+            if (session != null && session.isOpen()){
+                session.close();
+            }
+        }
+        return result;
+    }
+
     @Override
     public void update(Long l, ModelName modelName) throws SQLException {
         Session session = null;
@@ -63,7 +86,7 @@ public class ModelNameDAO implements DAO <ModelName> {
             session.update(getById(l));
             session.getTransaction().commit();
         }catch (Exception e){
-            JOptionPane.showMessageDialog(null, e.getMessage(), "Error for update", JOptionPane.OK_OPTION);
+            //JOptionPane.showMessageDialog(null, e.getMessage(), "Error for update", JOptionPane.OK_OPTION);
         }finally {
             if (session != null && session.isOpen()){
                 session.close();

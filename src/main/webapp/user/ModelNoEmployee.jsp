@@ -35,10 +35,11 @@
 				for(ModelName modelName:modelList){
 			%>
 			<div class = "photo">
-				<p><a href="<%=modelName.getModelName()%>.jsp"><img src = "../img/<%=modelName.getImgAdress()%>"> </a></p>
+				<p><a href="Constructor/engine?modelName=<%=modelName.getModelName()%>"><img src = "../img/<%=modelName.getImgAdress()%>"> </a></p>
 				<p class = "caption"><%=modelName.getModelName()%></p>
 			</div>
 			<%}%>
         </div>
     </body>
 </html>
+

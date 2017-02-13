@@ -2,9 +2,14 @@ package com.test;
 
 
 import com.api.ApiDb;
+import com.api.Factory;
+import com.api.HibernateUtil;
 import com.authentification.userEntity.Role;
 import com.authentification.userEntity.User;
 import com.carEntity.*;
+import org.hibernate.Query;
+import org.hibernate.Session;
+
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -17,7 +22,7 @@ public class TestClass {
     public static void main(String[] args) throws SQLException, IOException {
 
         ApiDb apiDb = ApiDb.getInstance();
-
+/*
         // add some colors to base
         List <Color> arrayColor = new ArrayList<Color>();
         arrayColor.add(new Color("black",true));
@@ -137,5 +142,29 @@ public class TestClass {
         apiDb.create(someUser);
 
 
+        List<CarParametrs> carParametrsList = Factory.getInstance().getCarParametrsDAO().getByModel(1l);
+        System.out.println(carParametrsList);
+
+
+
+        String modelName = "Explorer";
+
+        String engineReq ="Select e "+
+                "From CarParametrs c "+
+                "INNER JOIN c.engine e " +
+                "Where c.modelName.modelName = :model ";
+
+
+
+        Session session = null;
+        List objects  = null;
+
+        session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        Query query = session.createQuery(engineReq)
+                .setString("model",modelName);
+        objects = query.list();
+
+        System.out.println(objects);*/
     }
 }

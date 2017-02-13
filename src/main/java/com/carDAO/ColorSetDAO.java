@@ -23,7 +23,7 @@ public class ColorSetDAO implements DAO<ColorSet> {
             session.clear();
             session.getTransaction().commit();
         }catch (Exception e){
-            JOptionPane.showMessageDialog(null, e.getMessage(), "Error ColorSet", JOptionPane.OK_OPTION);
+            //JOptionPane.showMessageDialog(null, e.getMessage(), "Error ColorSet", JOptionPane.OK_OPTION);
         }finally {
             if (session != null && session.isOpen()){
                 session.close();

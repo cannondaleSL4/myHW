@@ -122,4 +122,23 @@ public class CarParametrsDAO implements DAO <CarParametrs> {
         }
         return objects;
     }
+
+    public List getByModel(Long modelid) {
+        Session session = null;
+        List objects  = null;
+        try{
+            session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            Query query = session.createQuery("FROM CarParametrs WHERE ModelName.id = 1");
+            objects = query.list();
+            session.getTransaction().commit();
+        }catch (Exception e) {
+            //JOptionPane.showMessageDialog(null, e.getMessage(),"Error while gettAll operation", JOptionPane.OK_OPTION);
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+        return objects;
+    }
 }
