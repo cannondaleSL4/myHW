@@ -25,16 +25,14 @@
     </form>
 </section>
     <%
-        if(session.getAttribute("errorMessage")!=null)
+        if(request.getAttribute("errorMessage")!=null)
         {
-            out.println(session.getAttribute("errorMessage"));
+            out.println(request.getAttribute("errorMessage"));
         }
-        if(session.getAttribute("messageSuccess")!=null)
+        if(request.getAttribute("messageSuccess")!=null)
         {
-            out.println(session.getAttribute("messageSuccess"));
+            out.println(request.getAttribute("messageSuccess"));
         }
-        session.removeAttribute("errorMessage");
-        session.removeAttribute("messageSuccess");
     %>
 </body>
 </html>

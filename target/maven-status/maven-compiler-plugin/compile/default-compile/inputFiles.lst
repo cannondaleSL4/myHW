@@ -15,6 +15,7 @@
 /home/dima/java/SuperSite/src/main/java/com/authentification/userDAO/UserDAOImpl.java
 /home/dima/java/SuperSite/src/main/java/com/carEntity/CarParametrs.java
 /home/dima/java/SuperSite/src/main/java/com/carEntity/CarParts.java
+/home/dima/java/SuperSite/src/main/java/servlets/ConstructorTransmission.java
 /home/dima/java/SuperSite/src/main/java/com/carEntity/Engine.java
 /home/dima/java/SuperSite/src/main/java/com/carDAO/EngineDAO.java
 /home/dima/java/SuperSite/src/main/java/com/carEntity/ModelName.java

@@ -47,6 +47,17 @@
         <url-pattern>/user/Constructor/kindOfBody</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <display-name>transmission</display-name>
+        <servlet-name>transmission</servlet-name>
+        <servlet-class>servlets.ConstructorTransmission</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>transmission</servlet-name>
+        <url-pattern>/user/Constructor/transmission</url-pattern>
+    </servlet-mapping>
+
     <welcome-file-list>
         <welcome-file>login.jsp</welcome-file>
     </welcome-file-list>

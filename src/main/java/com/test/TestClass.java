@@ -85,8 +85,8 @@ public class TestClass {
         }
         // add some type of body to base
         List<KindOfBody> arrayKindOfBody = new ArrayList<KindOfBody>();
-        arrayKindOfBody.add(new KindOfBody("sedan","sedan,jpg"));
-        arrayKindOfBody.add(new KindOfBody("hatch","hatchback.jpg"));
+        arrayKindOfBody.add(new KindOfBody("sedan","sedan.jpg"));
+        arrayKindOfBody.add(new KindOfBody("hatchback","hatchback.jpg"));
         arrayKindOfBody.add(new KindOfBody("suv","suv.jpg"));
 
         for(KindOfBody kindOfBody:arrayKindOfBody){

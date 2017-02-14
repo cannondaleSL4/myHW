@@ -2,6 +2,7 @@ package servlets;
 
 import com.api.Factory;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -37,16 +38,18 @@ public class LoginServlet extends HttpServlet {
                     response.sendRedirect("./user/ModelNoEmployee.jsp");
                 }else{
                     request.getSession().invalidate();
-                    request.getSession().setAttribute("errorMessage", messageError);
-                    response.sendRedirect("login.jsp");
+                    request.setAttribute("errorMessage", messageError);
+                    RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
+                    rd.forward(request, response);
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }else{
             request.getSession().invalidate();
-            request.getSession().setAttribute("errorMessage", messageError);
-            response.sendRedirect("login.jsp");
+            request.setAttribute("errorMessage", messageError);
+            RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
+            rd.forward(request, response);
         }
     }
 }

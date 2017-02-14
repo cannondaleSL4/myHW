@@ -24,8 +24,11 @@ public class ConstuctorEngine extends HttpServlet {
     public void doGet(HttpServletRequest request,
                        HttpServletResponse response)
             throws ServletException,IOException {
-
+        /*
+        здесь я из request.getParametrs перевожу в request.getSession.getParametrs
+         */
         String modelName = request.getParameter("modelName");
+        request.getSession().setAttribute("modelName",modelName);
 
         Session session = null;
         List objects  =  null;
@@ -37,7 +40,6 @@ public class ConstuctorEngine extends HttpServlet {
             objects = query.list();
             session.getTransaction().commit();
             request.getSession().setAttribute("engineList",objects);
-            request.getSession().setAttribute("modelName",modelName);
         }catch (Exception e) {
             //JOptionPane.showMessageDialog(null, e.getMessage(),"Error while gettAll operation", JOptionPane.OK_OPTION);
         } finally {

@@ -3,6 +3,7 @@ package servlets;
 import com.api.Factory;
 import com.authentification.userEntity.User;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -43,28 +44,28 @@ public class RegisterServlet extends HttpServlet {
         String userName = request.getParameter("userName").trim();
         String password = request.getParameter("password").trim();
 
-
-
         if (userName != null && !userName.isEmpty()
                 && password!= null && !password.isEmpty()){
             try {
                 boolean inBase = Factory.getInstance().getUserDAO().checkUserName(userName);
                 if (!inBase){
                     Factory.getInstance().getUserDAO().add(userName,password);
-                    request.getSession().setAttribute("messageSuccess", messageSuccess);
-                    response.sendRedirect("login.jsp");
+                    request.setAttribute("messageSuccess", messageSuccess);
+                    response.sendRedirect("/login.jsp");
                 }else{
                     request.getSession().invalidate();
-                    request.getSession().setAttribute("errorMessage", messageBusy);
-                    response.sendRedirect("register.jsp");
+                    request.setAttribute("errorMessage", messageBusy);
+                    RequestDispatcher rd = request.getRequestDispatcher("/register.jsp");
+                    rd.forward(request, response);
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }else{
             request.getSession().invalidate();
-            request.getSession().setAttribute("errorMessage", messageError);
-            response.sendRedirect("register.jsp");
+            request.setAttribute("errorMessage", messageError);
+            RequestDispatcher rd = request.getRequestDispatcher("/register.jsp");
+            rd.forward(request, response);
         }
     }
 }

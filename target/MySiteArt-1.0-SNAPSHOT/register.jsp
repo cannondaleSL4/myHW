@@ -31,21 +31,19 @@
             </div>
 
             <button type="submit" class="float">Login</button>
-            <button type="button" class="float" onclick="history.back()">back</button>
+            <button type="button" class="float" onclick="history.go(-1)">back</button>
         </form>
     </div>
 </div>
 <%
-    if(session.getAttribute("errorMessage")!=null)
+    if(request.getAttribute("errorMessage")!=null)
     {
-        out.println(session.getAttribute("errorMessage"));
+        out.println(request.getAttribute("errorMessage"));
     }
-    if(session.getAttribute("messageSuccess")!=null)
+    if(request.getAttribute("messageSuccess")!=null)
     {
-        out.println(session.getAttribute("messageSuccess"));
+        out.println(request.getAttribute("messageSuccess"));
     }
-    session.setAttribute("errorMessage",null);
-    session.setAttribute("messageSuccess",null);
 %>
 </body>
 </html>
