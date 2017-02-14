@@ -13,7 +13,7 @@
         <meta charset="utf-8" />
         <title><%= session.getAttribute("userName") %></title>
         <link rel="shortcut icon" href="img/plogo.png">
-        <link href="../../css/Main.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="../../css/Constructor.css" type="text/css">
     </head>
     <body>
         <section>
@@ -38,13 +38,14 @@
         <div id = "main">
             <form action="transmission" method=post>
                 <h3>Select you body for <%=session.getAttribute("modelName")%> </h3>
+                <h3>Select you body for <%=session.getAttribute("kindOfBody")%> </h3>
                 <% List<KindOfBody> bodyList= (List<KindOfBody>) session.getAttribute("kindOfBody");
                     for(KindOfBody kindOfBody: bodyList){
                 %>
                 <div class = "check">
                     <div class = "block1"><img src = "../../img/type/<%=kindOfBody.getImgAdress()%>"></div>
                     <div class = "block1"><%=kindOfBody.getNameKindOfBody()%></div>
-                    <div class = "block2"><input type="checkbox" name="<%=kindOfBody.getNameKindOfBody()%>" value="<%=kindOfBody.getNameKindOfBody()%>"/></div>
+                    <div class = "block2"><input type="radio" name="<%=kindOfBody.getNameKindOfBody()%>" value="<%=kindOfBody.getNameKindOfBody()%>"/></div>
                 </div>
                 <%}%>
                 <div class = "checkbut"><input type="submit" value="Сhoose"></div>

@@ -47,7 +47,7 @@
             <div class = "check">
                 <div class = "block1"><img src = "../../img/engine/<%=engine.getImgAdress()%>"></div>
                 <div class = "block1"><%=engine.getNameOfEngine()%></div>
-                <div class = "block2"><input type="checkbox" name="<%=engine.getNameOfEngine()%>" value="<%=engine.getNameOfEngine()%>"/></div>
+                <div class = "block2"><input type="radio" name="engineName" value="<%=engine.getNameOfEngine()%>"/></div>
             </div>
             <%}%>
             <div class = "checkbut"><input type="submit" value="Сhoose"></div>

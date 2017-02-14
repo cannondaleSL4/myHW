@@ -22,7 +22,7 @@ public class TestClass {
     public static void main(String[] args) throws SQLException, IOException {
 
         ApiDb apiDb = ApiDb.getInstance();
-
+/*
         // add some colors to base
         List <Color> arrayColor = new ArrayList<Color>();
         arrayColor.add(new Color("black",true));
@@ -141,16 +141,18 @@ public class TestClass {
         apiDb.create(admin);
         apiDb.create(salesMan);
         apiDb.create(someUser);
+*/
 
 
 
-        /*
-        String modelName = "Fiesta";
+        String modelName = "Explorer";
+        String engineName = "1.0L EcoBoost I-3 Engine";
 
-        String engineReq ="Select e "+
+        String bodyReq ="Select kind "+
                 "From CarParametrs c "+
-                "INNER JOIN c.engine e " +
-                "Where c.modelName.modelName = :model ";
+                "INNER JOIN c.kindOfBody kind " +
+                "Where c.modelName.modelName = :model "+
+                " AND c.engine.nameOfEngine = :engine";
 
 
 
@@ -159,10 +161,11 @@ public class TestClass {
 
         session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
-        Query query = session.createQuery(engineReq)
-                .setString("model",modelName);
+        Query query = session.createQuery(bodyReq)
+                .setString("model",modelName)
+                .setString("engine",engineName);
         objects = query.list();
 
-        System.out.println(objects);*/
+        System.out.println(objects);
     }
 }

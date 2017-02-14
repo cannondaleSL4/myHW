@@ -28,6 +28,8 @@ public class ConstructorBody extends HttpServlet {
         String modelName = request.getParameter("modelName");
         String engineName = request.getParameter("engineName");
 
+        //System.out.println(engineName);
+
         Session session = null;
         List objects  =  null;
         try{
@@ -37,10 +39,22 @@ public class ConstructorBody extends HttpServlet {
                     .setString("model",modelName)
                     .setString("engine",engineName);
             objects = query.list();
+
+
+            System.out.println(modelName);
+            System.out.println(engineName);
+
             session.getTransaction().commit();
+            /*
+            теоретически в чек боксе можно было бы выбирать несоклько значений и в этом случае
+            для корректного перебора принимаемого выбора нужно было бы использовать getParameterValues
+            но т.к меня интересует только один выбор - я продолжаю работать с getParameteValues
+
+            не, все не так. надо использовать не checkbox  а radiobutton!!!
+             */
             request.getSession().setAttribute("kindOfBody",objects);
-            request.getSession().setAttribute("modelName",modelName);
-            request.getSession().setAttribute("engineName",engineName);
+            //request.getSession().setAttribute("modelName",modelName);
+            //request.getSession().setAttribute("engineName",engineName);
         }catch (Exception e) {
             //JOptionPane.showMessageDialog(null, e.getMessage(),"Error while gettAll operation", JOptionPane.OK_OPTION);
         } finally {

@@ -12,7 +12,7 @@
         <meta charset="utf-8" />
         <title><%= session.getAttribute("userName") %></title>
         <link rel="shortcut icon" href="img/plogo.png">
-        <link href="../../css/Main.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="../../css/Constructor.css" type="text/css">
     </head>
     <body>
         <section>
