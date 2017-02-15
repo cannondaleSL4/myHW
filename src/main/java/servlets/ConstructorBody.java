@@ -27,7 +27,7 @@ public class ConstructorBody extends HttpServlet {
                       HttpServletResponse response)
             throws ServletException,IOException {
 
-        if (request.getParameter("engineName")==null ||
+        if (request.getParameter("engineName")==null &&
                 request.getSession().getAttribute("engineName")==null ){
             response.sendRedirect("user/Constructor/engine");
         }
