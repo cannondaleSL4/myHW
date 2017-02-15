@@ -14,7 +14,7 @@
 <html lang="ru">
     <head>
         <meta charset="utf-8">
-        <title><%= session.getAttribute("userName") %></title>
+        <title>Engine</title>
         <link rel="shortcut icon" href="img/plogo.png">
         <link rel="stylesheet" href="../../css/Constructor.css" type="text/css">
     </head>

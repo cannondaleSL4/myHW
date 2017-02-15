@@ -10,7 +10,7 @@
 <html lang="ru">
     <head>
         <meta charset="utf-8" />
-        <title><%= session.getAttribute("userName") %></title>
+        <title>Colors</title>
         <link rel="shortcut icon" href="img/plogo.png">
         <link href="../../css/Main.css" rel="stylesheet" type="text/css">
     </head>

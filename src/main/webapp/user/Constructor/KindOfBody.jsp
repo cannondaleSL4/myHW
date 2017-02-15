@@ -11,7 +11,7 @@
 <html lang="ru">
     <head>
         <meta charset="utf-8" />
-        <title><%= session.getAttribute("userName") %></title>
+        <title>Kind of body</title>
         <link rel="shortcut icon" href="img/plogo.png">
         <link rel="stylesheet" href="../../css/Constructor.css" type="text/css">
     </head>

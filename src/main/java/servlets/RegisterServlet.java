@@ -22,7 +22,13 @@ public class RegisterServlet extends HttpServlet {
 
     private final String messageError = " <script>\n" +
             "        window.onload = function() {\n" +
-            "            alert( \"Sorry some error try again please\" );\n" +
+            "            alert( \"Sorry some error try again later\" );\n" +
+            "        };\n" +
+            "    </script>";
+
+    private final String messageErrorEmpty = " <script>\n" +
+            "        window.onload = function() {\n" +
+            "            alert( \"Sorry login or password is empty, try again\" );\n" +
             "        };\n" +
             "    </script>";
 
@@ -34,7 +40,7 @@ public class RegisterServlet extends HttpServlet {
 
     private final String messageBusy = " <script>\n" +
             "        window.onload = function() {\n" +
-            "            alert( \"Sorry, this login is busy, try some any\" );\n" +
+            "            alert( \"Sorry, this login is busy, try some another login\" );\n" +
             "        };\n" +
             "    </script>";
 
@@ -60,10 +66,14 @@ public class RegisterServlet extends HttpServlet {
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
+                request.getSession().invalidate();
+                request.setAttribute("errorMessage", messageError);
+                RequestDispatcher rd = request.getRequestDispatcher("/register.jsp");
+                rd.forward(request, response);
             }
         }else{
             request.getSession().invalidate();
-            request.setAttribute("errorMessage", messageError);
+            request.setAttribute("errorMessage", messageErrorEmpty);
             RequestDispatcher rd = request.getRequestDispatcher("/register.jsp");
             rd.forward(request, response);
         }

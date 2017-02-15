@@ -31,7 +31,7 @@
             </div>
 
             <button type="submit" class="float">Login</button>
-            <button type="button" class="float" onclick="history.go(-1)">back</button>
+            <button type="button" class="float" ><a href="login.jsp" style="color:black; text-decoration:none;">Back</a></button>
         </form>
     </div>
 </div>

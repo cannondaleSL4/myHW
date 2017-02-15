@@ -13,7 +13,7 @@
     <body>
 		<section>
 			<form>
-				<p><%= session.getAttribute("userName") %></p>
+				<p><%=request.getSession().getAttribute("userName")%></p>
 				<p><a href = "../login.jsp">Exit</a></p>
 			</form>
 		</section>

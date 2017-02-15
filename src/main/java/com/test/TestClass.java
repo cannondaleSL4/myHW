@@ -22,7 +22,7 @@ public class TestClass {
     public static void main(String[] args) throws SQLException, IOException {
 
         ApiDb apiDb = ApiDb.getInstance();
-/*
+
         // add some colors to base
         List <Color> arrayColor = new ArrayList<Color>();
         arrayColor.add(new Color("black",true));
@@ -141,10 +141,10 @@ public class TestClass {
         apiDb.create(admin);
         apiDb.create(salesMan);
         apiDb.create(someUser);
-*/
 
 
 
+         /*
         String modelName = "Explorer";
         String engineName = "1.0L EcoBoost I-3 Engine";
 
@@ -167,5 +167,6 @@ public class TestClass {
         objects = query.list();
 
         System.out.println(objects);
+        */
     }
 }
