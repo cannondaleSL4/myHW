@@ -42,8 +42,7 @@ public class TransmissionDAO implements DAO <Transmission> {
                     .setString("name",transmission.getTransmissionName())
                     .setInteger("numofspeed",transmission.getNumberOfSpeed());
             objects = query.list();
-            System.out.println(objects);
-            session.getTransaction().commit();
+            //session.getTransaction().commit();
         }catch (Exception e){
             JOptionPane.showMessageDialog(null, e.getMessage(), "Error for  check contains", JOptionPane.OK_OPTION);
         }finally {
@@ -62,7 +61,7 @@ public class TransmissionDAO implements DAO <Transmission> {
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
             session.update(getById(l));
-            session.getTransaction().commit();
+            //session.getTransaction().commit();
         }catch (Exception e){
             JOptionPane.showMessageDialog(null, e.getMessage(), "Error for update", JOptionPane.OK_OPTION);
         }finally {
@@ -98,7 +97,7 @@ public class TransmissionDAO implements DAO <Transmission> {
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
             session.delete(transmission);
-            session.getTransaction().commit();
+            //session.getTransaction().commit();
         }catch (Exception e){
             JOptionPane.showMessageDialog(null, e.getMessage(), "Error while deleting", JOptionPane.OK_OPTION);
         } finally {
@@ -117,7 +116,7 @@ public class TransmissionDAO implements DAO <Transmission> {
             session.beginTransaction();
             transmission = (Transmission) session.load(Transmission.class,l);
             session.delete(transmission);
-            session.getTransaction().commit();
+            //session.getTransaction().commit();
         }catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage(),"Error while gettAll operation", JOptionPane.OK_OPTION);
         } finally {

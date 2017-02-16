@@ -45,7 +45,7 @@ public class ColorDAO implements DAO<Color> {
                     .setString("name",color.getColorName())
                     .setBoolean("metallic", color.isMetallic());
             objects = query.list();
-            session.getTransaction().commit();
+            //session.getTransaction().commit();
         }catch (Exception e){
             //JOptionPane.showMessageDialog(null, e.getMessage(), "Error for  check contains", JOptionPane.OK_OPTION);
         }finally {
@@ -64,7 +64,7 @@ public class ColorDAO implements DAO<Color> {
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
             session.update(getById(l));
-            session.getTransaction().commit();
+           //session.getTransaction().commit();
         }catch (Exception e){
             JOptionPane.showMessageDialog(null, e.getMessage(), "Error for update", JOptionPane.OK_OPTION);
         }finally {

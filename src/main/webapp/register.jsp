@@ -35,15 +35,23 @@
         </form>
     </div>
 </div>
+</body>
 <%
     if(request.getAttribute("errorMessage")!=null)
     {
-        out.println(request.getAttribute("errorMessage"));
+        out.println("<script>\n" +
+                "  window.onload = function() {\n" +
+                "    alert( '" +request.getAttribute("errorMessage") + "' );\n" +
+                "  };\n" +
+                "</script>");
     }
     if(request.getAttribute("messageSuccess")!=null)
     {
-        out.println(request.getAttribute("messageSuccess"));
+        out.println("<script>\n" +
+                "  window.onload = function() {\n" +
+                "    alert( '" +request.getAttribute("\"messageSuccess\"") + "' );\n" +
+                "  };\n" +
+                "</script>");
     }
 %>
-</body>
 </html>

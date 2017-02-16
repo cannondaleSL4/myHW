@@ -41,8 +41,7 @@ public class ModelNameDAO implements DAO <ModelName> {
                     " WHERE modelName =:name")
                     .setString("name",modelName.getModelName());
             objects = query.list();
-            System.out.println(objects);
-            session.getTransaction().commit();
+            //session.getTransaction().commit();
         }catch (Exception e){
             JOptionPane.showMessageDialog(null, e.getMessage(), "Error for  check contains", JOptionPane.OK_OPTION);
         }finally {

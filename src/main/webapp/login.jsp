@@ -24,15 +24,23 @@
         <input type="submit" class="Button" value="Enter">
     </form>
 </section>
-    <%
-        if(request.getAttribute("errorMessage")!=null)
-        {
-            out.println(request.getAttribute("errorMessage"));
-        }
-        if(request.getAttribute("messageSuccess")!=null)
-        {
-            out.println(request.getAttribute("messageSuccess"));
-        }
-    %>
 </body>
+<%
+    if(request.getAttribute("errorMessage")!=null)
+    {
+        out.println("<script>\n" +
+                "  window.onload = function() {\n" +
+                "    alert( '" +request.getAttribute("errorMessage") + "' );\n" +
+                "  };\n" +
+                "</script>");
+    }
+    if(request.getAttribute("messageSuccess")!=null)
+    {
+        out.println("<script>\n" +
+                "  window.onload = function() {\n" +
+                "    alert( '" +request.getAttribute("\"messageSuccess\"") + "' );\n" +
+                "  };\n" +
+                "</script>");
+    }
+%>
 </html>

@@ -112,7 +112,7 @@ public class CarParametrsDAO implements DAO <CarParametrs> {
             session.beginTransaction();
             Query query = session.createQuery("FROM CarParametrs ");
             objects = query.list();
-            session.getTransaction().commit();
+            //session.getTransaction().commit();
         }catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage(),"Error while gettAll operation", JOptionPane.OK_OPTION);
         } finally {
@@ -131,7 +131,7 @@ public class CarParametrsDAO implements DAO <CarParametrs> {
             session.beginTransaction();
             Query query = session.createQuery("FROM CarParametrs WHERE ModelName.id = 1");
             objects = query.list();
-            session.getTransaction().commit();
+            //session.getTransaction().commit();
         }catch (Exception e) {
             //JOptionPane.showMessageDialog(null, e.getMessage(),"Error while gettAll operation", JOptionPane.OK_OPTION);
         } finally {

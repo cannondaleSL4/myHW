@@ -41,8 +41,7 @@ public class KindOfBodyDAO implements DAO <KindOfBody> {
                     " WHERE nameKindOfBody =:name")
                     .setString("name",kindOfBody.getNameKindOfBody());
             objects = query.list();
-            System.out.println(objects);
-            session.getTransaction().commit();
+            //session.getTransaction().commit();
         }catch (Exception e){
             JOptionPane.showMessageDialog(null, e.getMessage(), "Error kindOfBody", JOptionPane.OK_OPTION);
         }finally {
@@ -95,7 +94,7 @@ public class KindOfBodyDAO implements DAO <KindOfBody> {
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
             session.delete(kindOfBody);
-            session.getTransaction().commit();
+            //session.getTransaction().commit();
         }catch (Exception e){
             JOptionPane.showMessageDialog(null, e.getMessage(), "Error while deleting", JOptionPane.OK_OPTION);
         } finally {
@@ -133,7 +132,7 @@ public class KindOfBodyDAO implements DAO <KindOfBody> {
             session.beginTransaction();
             Query query = session.createQuery("FROM KindOfBody ");
             objects = query.list();
-            session.getTransaction().commit();
+            //session.getTransaction().commit();
         }catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage(),"Error while gettAll operation", JOptionPane.OK_OPTION);
         } finally {

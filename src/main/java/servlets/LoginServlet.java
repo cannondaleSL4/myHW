@@ -17,24 +17,11 @@ import java.util.List;
  */
 public class LoginServlet extends HttpServlet {
 
-    private final String messageErrorEmpty = " <script>\n" +
-            "        window.onload = function() {\n" +
-            "            alert( \"Sorry login or password is empty, try again\" );\n" +
-            "        };\n" +
-            "    </script>";
 
-    private final String messageErrorLP = " <script>\n" +
-            "        window.onload = function() {\n" +
-            "            alert( \"Sorry, you are wrong, login or password is incorrect( " +
-            "            or you need to register)\" );\n" +
-            "        };\n" +
-            "    </script>";
-
-    private final String messageError = " <script>\n" +
-            "        window.onload = function() {\n" +
-            "            alert( \"Sorry some error try again later\" );\n" +
-            "        };\n" +
-            "    </script>";
+    private final String messageErrorEmpty ="Sorry login or password is empty, try again";
+    private final String messageErrorLP = "Sorry, you are wrong, login or password is" +
+            " incorrect(or you need to register)";
+    private final String messageError ="Sorry some error try again later";
 
     public void doPost(HttpServletRequest request,
                        HttpServletResponse response)

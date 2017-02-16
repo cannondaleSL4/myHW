@@ -93,8 +93,7 @@ public class EngineDAO implements DAO <Engine> {
                     .setString("name",engine.getNameOfEngine())
                     .setInteger("horse",engine.getHorsepower());
             objects = query.list();
-            System.out.println(objects);
-            session.getTransaction().commit();
+            //session.getTransaction().commit();
         }catch (Exception e){
             JOptionPane.showMessageDialog(null, e.getMessage(), "Error for  check contains", JOptionPane.OK_OPTION);
         }finally {
@@ -134,7 +133,7 @@ public class EngineDAO implements DAO <Engine> {
             session.beginTransaction();
             Query query = session.createQuery("FROM Engine ");
             objects = query.list();
-            session.getTransaction().commit();
+            //session.getTransaction().commit();
         }catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage(),"Error while gettAll operation", JOptionPane.OK_OPTION);
         } finally {

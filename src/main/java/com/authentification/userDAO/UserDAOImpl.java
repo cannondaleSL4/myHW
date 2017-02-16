@@ -73,7 +73,7 @@ public class UserDAOImpl implements UserDAO {
             session.beginTransaction();
             Query query = session.createQuery("FROM User ");
             objects = query.list();
-            session.getTransaction().commit();
+            //session.getTransaction().commit();
         }catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage(),"Error while gettAll operation", JOptionPane.OK_OPTION);
         } finally {
@@ -113,7 +113,7 @@ public class UserDAOImpl implements UserDAO {
                     //здесь то же пришлось применять имя колонки. тк. userName  не находит
                     .setString("name",user.getName());
             objects = query.list();
-            session.getTransaction().commit();
+            //session.getTransaction().commit();
         }catch (Exception e){
             JOptionPane.showMessageDialog(null, e.getMessage(), "Error for  check contains", JOptionPane.OK_OPTION);
         }finally {
@@ -137,7 +137,7 @@ public class UserDAOImpl implements UserDAO {
                     //здесь то же пришлось применять имя колонки. тк. userName  не находит
                     .setString("name",user.getName());
             objects = query.list();
-            session.getTransaction().commit();
+            //session.getTransaction().commit();
         }catch (Exception e){
             JOptionPane.showMessageDialog(null, e.getMessage(), "Error for  check contains", JOptionPane.OK_OPTION);
         }finally {
@@ -160,7 +160,7 @@ public class UserDAOImpl implements UserDAO {
                     //здесь то же пришлось применять имя колонки. тк. userName  не находит
                     .setString("name",userName);
             objects = query.list();
-            session.getTransaction().commit();
+            //session.getTransaction().commit();
         }catch (Exception e){
             JOptionPane.showMessageDialog(null, e.getMessage(), "Error for  check contains", JOptionPane.OK_OPTION);
         }finally {

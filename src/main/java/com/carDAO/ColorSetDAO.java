@@ -67,7 +67,7 @@ public class ColorSetDAO implements DAO<ColorSet> {
             session.beginTransaction();
             Query query = session.createQuery("From ColorSet ");
             objects = query.list();
-            session.getTransaction().commit();
+            //session.getTransaction().commit();
         }catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage(),"Error while gettAll operation", JOptionPane.OK_OPTION);
         } finally {
