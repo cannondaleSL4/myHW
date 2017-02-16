@@ -22,6 +22,9 @@ public class ConstuctorEngine extends HttpServlet {
             "INNER JOIN c.engine e " +
             "Where c.modelName.modelName = :model ";
 
+    String userName = null;
+    String password = null;
+
     public void doGet(HttpServletRequest request,
                        HttpServletResponse response)
             throws ServletException,IOException {
@@ -33,19 +36,14 @@ public class ConstuctorEngine extends HttpServlet {
         request.getSession().setAttribute("modelName",modelName);
 
         Cookie[] cookies = request.getCookies();
-
-        int length = cookies.length;
-        String userName = null;
-        String password = null;
-        for(int i = 0; i <length;i++){
-            Cookie cookie = cookies[i];
-            if (cookie.getName().equals("userName")){
-                userName = cookie.getValue();
-            }else if (cookie.getName().equals("password")){
-                password = cookie.getValue();
-            }
-        }
-
+        
+        /*
+        из cookie беру логин пароль, если оно там есть, то ок, если нет то необходимо пройти процедуру аутентификации
+         */
+        //// TODO: 16.02.17  
+        if (!isLoggined(cookies))
+        
+        
         if (userName!=null && password!=null){
             Session session = null;
             List objects  =  null;
@@ -69,5 +67,22 @@ public class ConstuctorEngine extends HttpServlet {
             response.sendRedirect("login.jsp");
         }
 
+    }
+    
+    private boolean isLoggined(Cookie[] cookies){
+        int length = cookies.length;
+        for(int i = 0; i <length;i++){
+            Cookie cookie = cookies[i];
+            if (cookie.getName().equals("userName")){
+                userName = cookie.getValue();
+            }else if (cookie.getName().equals("password")){
+                password = cookie.getValue();
+            }
+        }
+        
+        if (userName!=null && password!=null){
+            return true;
+        }
+        return false;
     }
 }
