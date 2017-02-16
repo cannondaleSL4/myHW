@@ -1,5 +1,6 @@
 package com.authentification.userEntity;
 
+import org.apache.commons.codec.digest.DigestUtils;
 import org.codehaus.jackson.annotate.JsonTypeInfo;
 import javax.persistence.*;
 import java.io.Serializable;
@@ -19,17 +20,18 @@ public class User implements Serializable {
     private String password;
     //т.е. по умолчанию роль - юзер.
     private Role type = Role.USER;
+    private String salt = "Random$SaltValue#WithSpecialCharacters12@$@4&#%^$*";
 
     public User(){}
 
     public User(String userName, String password){
         this.userName = userName;
-        this.password = password;
+        this.password = DigestUtils.md5Hex(password + salt);
     }
 
     public User(String userName, String password,Role type){
         this.userName = userName;
-        this.password = password;
+        this.password = DigestUtils.md5Hex(password + salt);
         this.type = type;
     }
 
@@ -68,7 +70,7 @@ public class User implements Serializable {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.password = DigestUtils.md5Hex(password+ salt);
     }
 
     @Override
@@ -102,46 +104,3 @@ public class User implements Serializable {
                 '}';
     }
 }
-
-/*
-@Entity
-@Table (
-        name  = "color_table",
-        uniqueConstraints =
-        @UniqueConstraint(columnNames = {"color_table_name","is_metallic"})
-)
-@JsonTypeInfo (use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
-public class Color implements CarParts, Serializable{
-
-    private static final long serialVersionUID = 1L;
-
-    private Long id;
-    private String colorName;
-    private boolean isMetallic;
-    //private ColorSet colorSet = new ColorSet();
-    private Set<ColorSet> colorSet = new HashSet<ColorSet>(0);
-
-    public Color(){}
-
-    public Color(String colorName, boolean isMetallic) {
-        this.colorName = colorName;
-        this.isMetallic = isMetallic;
-    }
-
-    @Id
-    @Column(name = "idcolor_table")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    @Column(name = "color_table_name", nullable = false)
-    public String getColorName() {
-        return colorName;
-    }
-
- */

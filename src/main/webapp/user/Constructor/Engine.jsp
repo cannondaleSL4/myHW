@@ -17,6 +17,14 @@
         <title>Engine</title>
         <link rel="shortcut icon" href="img/plogo.png">
         <link rel="stylesheet" href="../../css/Constructor.css" type="text/css">
+        <%
+            if(session.getAttribute("userName")==null){
+                response.sendRedirect("/login.jsp");
+            }else{
+                System.out.println("TEEEEEEEEEEEEEEEEEEEEEEEST");
+                System.out.println(session.getAttribute("userName"));
+            }
+        %>
     </head>
     <body>
         <section>

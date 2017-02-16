@@ -23,30 +23,62 @@ public class ConstructorBody extends HttpServlet {
             "Where c.modelName.modelName = :model "+
             " AND c.engine.nameOfEngine = :engine";
 
+
+    String userName = null;
+    String password = null;
+
+
+
     public void doPost(HttpServletRequest request,
                       HttpServletResponse response)
             throws ServletException,IOException {
 
-        if (request.getParameter("engineName")==null &&
-                request.getSession().getAttribute("engineName")==null ){
-            response.sendRedirect("user/Constructor/engine");
-        }
+
+        Cookie[] cookies = request.getCookies();
+
+        if (isLoggined(cookies)) {
+            if (request.getParameter("engineName") == null &&
+                    request.getSession().getAttribute("engineName") == null) {
+                response.sendRedirect("user/Constructor/engine");
+            }
 
         /*
         здесь я из request.getParametrs перевожу в request.getSession.getParametrs
          */
 
-        String engineName = request.getParameter("engineName");
-        request.getSession().setAttribute("engineName",engineName);
+            String engineName = request.getParameter("engineName");
+            request.getSession().setAttribute("engineName", engineName);
 
-        String modelName = request.getSession().getAttribute("modelName").toString();
+            String modelName = request.getSession().getAttribute("modelName").toString();
+
+            Session session = null;
+            List objects = null;
+            try {
+                session = HibernateUtil.getSessionFactory().openSession();
+                session.beginTransaction();
+                Query query = session.createQuery(bodyReq)
+                        .setString("model", modelName)
+                        .setString("engine", engineName);
+                objects = query.list();
+                session.getTransaction().commit();
+                request.getSession().setAttribute("kindOfBody", objects);
+                response.sendRedirect("KindOfBody.jsp");
+            }catch (Exception e) {
+                //JOptionPane.showMessageDialog(null, e.getMessage(),"Error while gettAll operation", JOptionPane.OK_OPTION);
+            } finally {
+                if (session != null && session.isOpen()) {
+                    session.close();
+                }
+            }
+        }else{
+            response.sendRedirect("login.jsp");
+        }
+    }
 
 
-        Cookie[] cookies = request.getCookies();
 
+    private boolean isLoggined(Cookie[] cookies){
         int length = cookies.length;
-        String userName = null;
-        String password = null;
         for(int i = 0; i <length;i++){
             Cookie cookie = cookies[i];
             if (cookie.getName().equals("userName")){
@@ -57,27 +89,8 @@ public class ConstructorBody extends HttpServlet {
         }
 
         if (userName!=null && password!=null){
-            Session session = null;
-            List objects  =  null;
-            try{
-                session = HibernateUtil.getSessionFactory().openSession();
-                session.beginTransaction();
-                Query query = session.createQuery(bodyReq)
-                        .setString("model",modelName)
-                        .setString("engine",engineName);
-                objects = query.list();
-                session.getTransaction().commit();
-                request.getSession().setAttribute("kindOfBody",objects);
-            }catch (Exception e) {
-                //JOptionPane.showMessageDialog(null, e.getMessage(),"Error while gettAll operation", JOptionPane.OK_OPTION);
-            } finally {
-                if (session != null && session.isOpen()) {
-                    session.close();
-                }
-            }
-            response.sendRedirect("KindOfBody.jsp");
-        }else{
-            response.sendRedirect("login.jsp");
+            return true;
         }
+        return false;
     }
 }

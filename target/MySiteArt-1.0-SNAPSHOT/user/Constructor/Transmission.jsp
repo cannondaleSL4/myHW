@@ -15,6 +15,11 @@
         <title>Transmission</title>
         <link rel="shortcut icon" href="img/plogo.png">
         <link rel="stylesheet" href="../../css/Constructor.css" type="text/css">
+        <%
+            if(session.getAttribute("userName")==null){
+                response.sendRedirect("/login.jsp");
+            }
+        %>
     </head>
     <body>
         <section>

@@ -20,34 +20,10 @@ public class RegisterServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
-    /*private final String messageError = " <script>\n" +
-            "        window.onload = function() {\n" +
-            "            alert( \"Sorry some error try again later\" );\n" +
-            "        };\n" +
-            "    </script>";*/
-
     private final String messageError = "Sorry some error try again later";
     private final String messageErrorEmpty = "Sorry login or password is empty, try again";
     private final String messageSuccess = "You have successfully signed up";
     private final String messageBusy = "Sorry, this login is busy, try some another login";
-
-    /*private final String messageErrorEmpty = " <script>\n" +
-            "        window.onload = function() {\n" +
-            "            alert( \"Sorry login or password is empty, try again\" );\n" +
-            "        };\n" +
-            "    </script>";*/
-
-    /*private final String messageSuccess = " <script>\n" +
-            "        window.onload = function() {\n" +
-            "            alert( \"You have successfully signed up\" );\n" +
-            "        };\n" +
-            "    </script>";*/
-
-    /*private final String messageBusy = " <script>\n" +
-            "        window.onload = function() {\n" +
-            "            alert( \"Sorry, this login is busy, try some another login\" );\n" +
-            "        };\n" +
-            "    </script>";*/
 
     protected void doPost(HttpServletRequest request,
                           HttpServletResponse response) throws ServletException, IOException {
@@ -68,6 +44,7 @@ public class RegisterServlet extends HttpServlet {
                     request.setAttribute("errorMessage", messageBusy);
                     RequestDispatcher rd = request.getRequestDispatcher("/register.jsp");
                     rd.forward(request, response);
+                    //response.sendRedirect("/register.jsp");
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -75,12 +52,14 @@ public class RegisterServlet extends HttpServlet {
                 request.setAttribute("errorMessage", messageError);
                 RequestDispatcher rd = request.getRequestDispatcher("/register.jsp");
                 rd.forward(request, response);
+                //response.sendRedirect("/register.jsp");
             }
         }else{
             request.getSession().invalidate();
             request.setAttribute("errorMessage", messageErrorEmpty);
             RequestDispatcher rd = request.getRequestDispatcher("/register.jsp");
             rd.forward(request, response);
+            //response.sendRedirect("/register.jsp");
         }
     }
 }

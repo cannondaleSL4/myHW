@@ -35,6 +35,7 @@
           <element id="library" level="project" name="Maven: org.eclipse.sisu:org.eclipse.sisu.inject:0.3.2" />
           <element id="library" level="project" name="Maven: org.codehaus.plexus:plexus-component-annotations:1.5.5" />
           <element id="library" level="project" name="Maven: org.codehaus.plexus:plexus-classworlds:2.5.2" />
+          <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.10" />
         </element>
       </element>
       <element id="directory" name="META-INF">

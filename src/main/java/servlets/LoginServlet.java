@@ -37,9 +37,9 @@ public class LoginServlet extends HttpServlet {
                 if (inBase){
 
                     Cookie name = new Cookie("userName",userName);
-                    Cookie pass = new Cookie("password", password);
-
                     response.addCookie(name);
+
+                    Cookie pass = new Cookie("password", password);
                     response.addCookie(pass);
 
                     request.getSession().setAttribute("userName",userName);
@@ -50,6 +50,7 @@ public class LoginServlet extends HttpServlet {
                     request.setAttribute("errorMessage", messageErrorLP);
                     RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
                     rd.forward(request, response);
+                    //response.sendRedirect("/login.jsp");
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -57,12 +58,14 @@ public class LoginServlet extends HttpServlet {
                 request.setAttribute("errorMessage", messageError);
                 RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
                 rd.forward(request, response);
+                //response.sendRedirect("/login.jsp");
             }
         }else{
             request.getSession().invalidate();
             request.setAttribute("errorMessage", messageErrorEmpty);
             RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
             rd.forward(request, response);
+            //response.sendRedirect("/login.jsp");
         }
     }
 }

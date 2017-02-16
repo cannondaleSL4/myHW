@@ -40,11 +40,7 @@ public class ConstuctorEngine extends HttpServlet {
         /*
         из cookie беру логин пароль, если оно там есть, то ок, если нет то необходимо пройти процедуру аутентификации
          */
-        //// TODO: 16.02.17  
-        if (!isLoggined(cookies))
-        
-        
-        if (userName!=null && password!=null){
+        if (isLoggined(cookies)){
             Session session = null;
             List objects  =  null;
             try{
@@ -55,18 +51,18 @@ public class ConstuctorEngine extends HttpServlet {
                 objects = query.list();
                 session.getTransaction().commit();
                 request.getSession().setAttribute("engineList",objects);
+                response.sendRedirect("Engine.jsp");
             }catch (Exception e) {
-                //JOptionPane.showMessageDialog(null, e.getMessage(),"Error while gettAll operation", JOptionPane.OK_OPTION);
+                //todo в случае ошибки надо выводить сообщение пользователю
+                //response.sendRedirect("Engine.jsp");
             } finally {
                 if (session != null && session.isOpen()) {
                     session.close();
                 }
             }
-            response.sendRedirect("Engine.jsp");
         }else{
             response.sendRedirect("login.jsp");
         }
-
     }
     
     private boolean isLoggined(Cookie[] cookies){

@@ -25,41 +25,32 @@ public class ConstructorTransmission extends HttpServlet {
             " AND c.engine.nameOfEngine = :engine " +
             "AND c.kindOfBody.nameKindOfBody = :kindOfBody";
 
+    String userName = null;
+    String password = null;
+
+
     public void doPost(HttpServletRequest request,
                        HttpServletResponse response)
             throws ServletException,IOException {
 
-        if (request.getParameter("engineName")==null &&
-                request.getSession().getAttribute("engineName")==null ){
-            response.sendRedirect("user/Constructor/engine");
-        }
+        Cookie[] cookies = request.getCookies();
+
+        if (isLoggined(cookies)){
+            if (request.getParameter("engineName")==null &&
+                    request.getSession().getAttribute("engineName")==null ){
+                response.sendRedirect("user/Constructor/engine");
+            }
 
         /*
         здесь я из request.getParametrs перевожу в request.getSession.getParametrs
          */
 
-        String kindOfBody = request.getParameter("kindOfBody");
-        request.getSession().setAttribute("kindOfBody",kindOfBody);
+            String kindOfBody = request.getParameter("kindOfBody");
+            request.getSession().setAttribute("kindOfBody",kindOfBody);
 
-        String modelName = request.getSession().getAttribute("modelName").toString();
-        String engineName = request.getSession().getAttribute("engineName").toString();
+            String modelName = request.getSession().getAttribute("modelName").toString();
+            String engineName = request.getSession().getAttribute("engineName").toString();
 
-
-        Cookie[] cookies = request.getCookies();
-
-        int length = cookies.length;
-        String userName = null;
-        String password = null;
-        for(int i = 0; i <length;i++){
-            Cookie cookie = cookies[i];
-            if (cookie.getName().equals("userName")){
-                userName = cookie.getValue();
-            }else if (cookie.getName().equals("password")){
-                password = cookie.getValue();
-            }
-        }
-
-        if (userName!=null && password!=null){
             Session session = null;
             List objects  =  null;
             try{
@@ -72,6 +63,7 @@ public class ConstructorTransmission extends HttpServlet {
                 objects = query.list();
                 session.getTransaction().commit();
                 request.getSession().setAttribute("transmission",objects);
+                response.sendRedirect("Transmission.jsp");
             }catch (Exception e) {
                 //JOptionPane.showMessageDialog(null, e.getMessage(),"Error while gettAll operation", JOptionPane.OK_OPTION);
             } finally {
@@ -79,10 +71,25 @@ public class ConstructorTransmission extends HttpServlet {
                     session.close();
                 }
             }
-            response.sendRedirect("Transmission.jsp");
         }else{
             response.sendRedirect("login.jsp");
         }
+    }
 
+    private boolean isLoggined(Cookie[] cookies){
+        int length = cookies.length;
+        for(int i = 0; i <length;i++){
+            Cookie cookie = cookies[i];
+            if (cookie.getName().equals("userName")){
+                userName = cookie.getValue();
+            }else if (cookie.getName().equals("password")){
+                password = cookie.getValue();
+            }
+        }
+
+        if (userName!=null && password!=null){
+            return true;
+        }
+        return false;
     }
 }

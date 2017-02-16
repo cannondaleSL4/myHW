@@ -13,6 +13,11 @@
         <title>Colors</title>
         <link rel="shortcut icon" href="img/plogo.png">
         <link href="../../css/Main.css" rel="stylesheet" type="text/css">
+        <%
+            if(session.getAttribute("userName")==null){
+                response.sendRedirect("/login.jsp");
+            }
+        %>
     </head>
     <body>
         <section>
