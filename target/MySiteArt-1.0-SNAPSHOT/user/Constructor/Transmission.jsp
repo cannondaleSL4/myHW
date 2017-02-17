@@ -51,7 +51,7 @@
                 <div class = "check">
                     <%--<div class = "block1"><img src = "../../img/type/<%=kindOfBody.getImgAdress()%>"></div>--%>
                     <div class = "block1"><%=transmission.getTransmissionName()%></div>
-                    <div class = "block2"><input type="radio" name="kindOfBody" value="<%=transmission.getTransmissionName()%>"/></div>
+                    <div class = "block2"><input type="radio" name="transmission" value="<%=transmission.getTransmissionName()%>"/></div>
                 </div>
                 <%}
                         }%>

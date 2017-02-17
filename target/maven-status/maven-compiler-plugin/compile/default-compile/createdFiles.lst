@@ -15,6 +15,7 @@ com/carEntity/KindOfBody.class
 com/carEntity/CarParts.class
 com/carDAO/ColorDAO.class
 com/carDAO/KindOfBodyDAO.class
+servlets/ConstructorColor.class
 com/api/Factory.class
 com/carDAO/TransmissionDAO.class
 servlets/ConstructorBody.class

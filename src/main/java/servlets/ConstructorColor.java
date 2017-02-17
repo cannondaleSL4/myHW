@@ -16,12 +16,13 @@ import java.util.List;
  * Created by dima on 17.02.17.
  */
 public class ConstructorColor extends HttpServlet {
-    String colorReq ="Select tr "+
+    String colorReq ="Select cs "+
             "From CarParametrs c "+
-            "INNER JOIN c.transmission tr " +
+            "INNER JOIN c.colorSet cs " +
             "Where c.modelName.modelName = :model "+
             " AND c.engine.nameOfEngine = :engine " +
-            "AND c.kindOfBody.nameKindOfBody = :kindOfBody";
+            "AND c.kindOfBody.nameKindOfBody = :kindOfBody "+
+            "AND c.transmission.transmissionName =:transmission ";
 
     String userName = null;
     String password = null;
@@ -43,9 +44,11 @@ public class ConstructorColor extends HttpServlet {
         здесь я из request.getParametrs перевожу в request.getSession.getParametrs
          */
 
-            String kindOfBody = request.getParameter("kindOfBody");
-            request.getSession().setAttribute("kindOfBody",kindOfBody);
+            String transmission = request.getParameter("transmission");
+            request.getSession().setAttribute("transmission",transmission);
 
+
+            String kindOfBody = request.getSession().getAttribute("kindOfBody").toString();
             String modelName = request.getSession().getAttribute("modelName").toString();
             String engineName = request.getSession().getAttribute("engineName").toString();
 
@@ -57,11 +60,12 @@ public class ConstructorColor extends HttpServlet {
                 Query query = session.createQuery(colorReq)
                         .setString("model",modelName)
                         .setString("engine",engineName)
-                        .setString("kindOfBody",kindOfBody);
+                        .setString("kindOfBody",kindOfBody)
+                        .setString("transmission",transmission);
                 objects = query.list();
                 session.getTransaction().commit();
-                request.getSession().setAttribute("transmission",objects);
-                response.sendRedirect("Transmission.jsp");
+                request.getSession().setAttribute("colorSet",objects);
+                response.sendRedirect("Color.jsp");
             }catch (Exception e) {
                 //JOptionPane.showMessageDialog(null, e.getMessage(),"Error while gettAll operation", JOptionPane.OK_OPTION);
             } finally {

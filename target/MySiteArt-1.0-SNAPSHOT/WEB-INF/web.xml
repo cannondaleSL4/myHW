@@ -58,6 +58,17 @@
         <url-pattern>/user/Constructor/transmission</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <display-name>color</display-name>
+        <servlet-name>color</servlet-name>
+        <servlet-class>servlets.ConstructorColor</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>color</servlet-name>
+        <url-pattern>/user/Constructor/color</url-pattern>
+    </servlet-mapping>
+
     <welcome-file-list>
         <welcome-file>login.jsp</welcome-file>
     </welcome-file-list>

@@ -53,7 +53,10 @@
                     <div class = "block2"><input type="radio" name="kindOfBody" value="<%=kindOfBody.getNameKindOfBody()%>"/></div>
                 </div>
                 <%}
-                        }%>
+                        }else{
+                    System.out.println("null!!!");
+                }
+                %>
                 <div class = "checkbut"><input type="submit" value="Сhoose"></div>
             </form>
         </div>

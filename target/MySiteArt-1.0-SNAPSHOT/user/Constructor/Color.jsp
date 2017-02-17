@@ -44,7 +44,7 @@
         </div>
         <div id = "main">
             <%
-                List<ColorSet> colorSetList = Factory.getInstance().getColorSetDAO().getAll();
+                List<ColorSet> colorSetList = (List<ColorSet>) session.getAttribute("colorSet");
                     if (colorSetList!=null){
                         for(ColorSet colorSet:colorSetList){
                             for (Color color: colorSet.getColors()){
