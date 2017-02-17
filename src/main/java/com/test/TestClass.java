@@ -25,11 +25,11 @@ public class TestClass {
 
         // add some colors to base
         List <Color> arrayColor = new ArrayList<Color>();
-        arrayColor.add(new Color("black",true));
-        arrayColor.add(new Color ("blue",true));
-        arrayColor.add(new Color("red",true));
-        arrayColor.add(new Color ("yellow",false));
-        arrayColor.add(new Color("black",false));
+        arrayColor.add(new Color("black",true,"blackf.png"));
+        arrayColor.add(new Color ("blue",true,"bluef.png"));
+        arrayColor.add(new Color("red",true,"redf.png"));
+        arrayColor.add(new Color ("yellow",false,"yellow.png"));
+        arrayColor.add(new Color("black",false,"blackf.png"));
 
         for(Color color: arrayColor){
             apiDb.create(color);

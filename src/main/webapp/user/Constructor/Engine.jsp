@@ -20,9 +20,6 @@
         <%
             if(session.getAttribute("userName")==null){
                 response.sendRedirect("/login.jsp");
-            }else{
-                System.out.println("TEEEEEEEEEEEEEEEEEEEEEEEST");
-                System.out.println(session.getAttribute("userName"));
             }
         %>
     </head>
@@ -50,14 +47,17 @@
         <form action="kindOfBody" method=post>
             <h3>Select you Engine for <%=session.getAttribute("modelName")%> </h3>
             <% List <Engine> engineList= (List<Engine>) session.getAttribute("engineList");
-                for(Engine engine: engineList){
+                if (engineList!= null){
+                    for(Engine engine: engineList){
+
             %>
             <div class = "check">
                 <div class = "block1"><img src = "../../img/engine/<%=engine.getImgAdress()%>"></div>
                 <div class = "block1"><%=engine.getNameOfEngine()%></div>
                 <div class = "block2"><input type="radio" name="engineName" value="<%=engine.getNameOfEngine()%>"/></div>
             </div>
-            <%}%>
+            <%}
+                }%>
             <div class = "checkbut"><input type="submit" value="Сhoose"></div>
         </form>
     </div>

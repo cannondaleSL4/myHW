@@ -42,7 +42,7 @@ public class ColorSet implements CarParts, Serializable {
             joinColumns = @JoinColumn(name = "idcolor_set", referencedColumnName = "idcolor_set"),
             inverseJoinColumns = @JoinColumn(name = "idcolor_table",referencedColumnName = "idcolor_table")
     )
-    private Set<Color> getColors() {
+    public Set<Color> getColors() {
         return colors;
     }
 

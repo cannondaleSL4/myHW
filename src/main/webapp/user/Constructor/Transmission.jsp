@@ -45,14 +45,16 @@
             <form action="color" method=post>
                 <h3>Select your transmission for <%=session.getAttribute("modelName")%> </h3>
                 <% List<Transmission> transmissionList= (List<Transmission>) session.getAttribute("transmission");
-                    for(Transmission transmission: transmissionList){
+                    if (transmissionList!=null){
+                        for(Transmission transmission: transmissionList){
                 %>
                 <div class = "check">
                     <%--<div class = "block1"><img src = "../../img/type/<%=kindOfBody.getImgAdress()%>"></div>--%>
                     <div class = "block1"><%=transmission.getTransmissionName()%></div>
                     <div class = "block2"><input type="radio" name="kindOfBody" value="<%=transmission.getTransmissionName()%>"/></div>
                 </div>
-                <%}%>
+                <%}
+                        }%>
                 <div class = "checkbut"><input type="submit" value="Сhoose"></div>
             </form>
         </div>

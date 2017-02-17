@@ -1,4 +1,8 @@
-<%--
+<%@ page import="com.carEntity.ColorSet" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.api.Factory" %>
+<%@ page import="com.carEntity.ModelName" %>
+<%@ page import="com.carEntity.Color" %><%--
   Created by IntelliJ IDEA.
   User: dima
   Date: 19.01.17
@@ -38,11 +42,21 @@
                 <li><a href="../About.jsp">About</a></li>
             </ul>
         </div>
-
-            <div id = "main">
-                <div class ="text">
-                    <p>we are the best company in the world!</p>
-                </div>
+        <div id = "main">
+            <%
+                List<ColorSet> colorSetList = Factory.getInstance().getColorSetDAO().getAll();
+                    if (colorSetList!=null){
+                        for(ColorSet colorSet:colorSetList){
+                            for (Color color: colorSet.getColors()){
+            %>
+            <div class = "photo">
+                <p><a href="Constructor/result?colorset=<%=color.getColorName()%>"><img src = "../../img/color/<%=color.getImgAdress()%>"> </a></p>
+                <p class = "caption"><%=color.getColorName()%></p>
             </div>
+            <%}
+                }
+                    }
+            %>
+        </div>
     </body>
 </html>

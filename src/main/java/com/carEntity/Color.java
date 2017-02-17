@@ -24,13 +24,15 @@ public class Color implements CarParts, Serializable{
     private Long id;
     private String colorName;
     private Boolean isMetallic;
+    private String imgAdress;
     private Set<ColorSet> colorSet = new HashSet<ColorSet>(0);
 
     public Color(){}
 
-    public Color(String colorName, boolean isMetallic) {
+    public Color(String colorName, boolean isMetallic,String imgAdress) {
         this.colorName = colorName;
         this.isMetallic = isMetallic;
+        this.imgAdress = imgAdress;
     }
 
     @Id
@@ -69,6 +71,14 @@ public class Color implements CarParts, Serializable{
 
     public void setColors(Set<ColorSet> colorSet) {
         this.colorSet = colorSet;
+    }
+
+    public String getImgAdress() {
+        return imgAdress;
+    }
+
+    public void setImgAdress(String imgAdress) {
+        this.imgAdress = imgAdress;
     }
 
     @Override
