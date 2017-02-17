@@ -20,9 +20,6 @@
         <%
             if(session.getAttribute("userName")==null){
                 response.sendRedirect("/login.jsp");
-            }else{
-                System.out.println("TEEEEEEEEEEEEEEEEEEEEEEEST");
-                System.out.println(session.getAttribute("userName"));
             }
         %>
     </head>

@@ -13,11 +13,10 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * Created by dima on 14.02.17.
+ * Created by dima on 17.02.17.
  */
-public class ConstructorTransmission extends HttpServlet {
-
-    String transmissionReq ="Select tr "+
+public class ConstructorColor extends HttpServlet {
+    String colorReq ="Select tr "+
             "From CarParametrs c "+
             "INNER JOIN c.transmission tr " +
             "Where c.modelName.modelName = :model "+
@@ -55,7 +54,7 @@ public class ConstructorTransmission extends HttpServlet {
             try{
                 session = HibernateUtil.getSessionFactory().openSession();
                 session.beginTransaction();
-                Query query = session.createQuery(transmissionReq)
+                Query query = session.createQuery(colorReq)
                         .setString("model",modelName)
                         .setString("engine",engineName)
                         .setString("kindOfBody",kindOfBody);
