@@ -23,7 +23,7 @@ public class ConstructorResult extends HttpServlet {
             " AND c.engine.nameOfEngine = :engine " +
             "AND c.kindOfBody.nameKindOfBody = :kindOfBody "+
             "AND c.transmission.transmissionName =:transmission "+
-            "AND c.colorSet.colors =:colors ";
+            "AND c.colorSet.id =:colorSetId ";
 
     String userName = null;
     String password = null;
@@ -59,7 +59,7 @@ public class ConstructorResult extends HttpServlet {
                         .setString("engine",engineName)
                         .setString("kindOfBody",kindOfBody)
                         .setString("transmission",transmission)
-                        .setString("colorset",colorset);
+                        .setString("colorSetId",colorset);
                 request.getSession().setAttribute("result",objects);
                 response.sendRedirect("Result.jsp");
             }catch (Exception e) {
