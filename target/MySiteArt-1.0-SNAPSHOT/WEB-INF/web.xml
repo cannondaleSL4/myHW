@@ -79,6 +79,17 @@
         <url-pattern>/user/Constructor/color</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <display-name>result</display-name>
+        <servlet-name>result</servlet-name>
+        <servlet-class>servlets.ConstructorResult</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>result</servlet-name>
+        <url-pattern>/user/Constructor/result</url-pattern>
+    </servlet-mapping>
+
     <welcome-file-list>
         <welcome-file>login.jsp</welcome-file>
     </welcome-file-list>

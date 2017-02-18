@@ -1,0 +1,116 @@
+html{
+  background-color: #6E6E6E;
+}
+
+.header {
+  margin: 0 auto;
+  position:absolute;
+  top:110px;
+  border-radius: 6px;
+  background-color:#FFFFFF;
+  background-position: 10px 0, 10px 0, 0 0, 0 0;
+  background-size: 20px 20px;
+  box-shadow: 0 0 5px 0 #333;
+  width:98%;
+  height: 95px;
+}
+
+
+.picOne {
+  margin:30% auto;
+  max-width:120px;
+  max-height:120px;
+  height:auto;
+  left:10px;
+  margin-top:2px;
+  float:left;
+}
+
+
+.picOne img{
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+section form {
+  text-align: right;
+  position:absolute;
+  right:10px;
+  top:10px;
+  height: 60px;
+  width: 230px;
+  border: 1px solid #887;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 6px;
+  -moz-box-shadow: 10px 10px 5px #887;
+  -webkit-box-shadow: 10px 10px 5px #887;
+  box-shadow: 10px 10px 5px #887;
+  background-color: #eed;
+  padding: 10px; margin-bottom: 25px;
+  line-width:200px;
+
+}
+
+#menu{
+  margin: 0;
+  padding: 0;
+  max-width: 550px;
+  margin: 0 auto;
+  text-align: center;
+  background: #03658e;
+}
+
+#menu li{
+  display:inline-block;
+  text-align: left;
+}
+
+#menu a {
+  display: block;
+  padding: 5px 15px;
+  color: #fff;
+  font-size:150%;
+  text-decoration: none;
+}
+
+#menu a:hover {
+  background: #8AB8CC;
+}
+
+
+#main{
+  position: absolute;
+  background-color:#FFFFFF;
+  border: 1px solid #887;
+  border-radius: 6px;
+  box-shadow: 0 0 5px 0 #333;
+  width:90%;
+  min-height: 300px;
+  height: auto;
+  margin-top:220px;
+  margin-left: 3%;
+  margin-right: 3%;
+
+  text-align: center; /* Выравнивание по центру */
+
+}
+
+.photoColor{
+  margin: 0 10px 10px 0; /* Отступы */
+  padding: 10px 0 0 10px; /* Поля сверху и снизу */
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.color{
+  float:left;
+}
+
+.color img{
+  width: 50px;
+  height: 50px;
+  height: auto;
+}
+

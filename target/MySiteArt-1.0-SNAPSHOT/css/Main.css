@@ -15,11 +15,6 @@ html{
   height: 95px;
 }
 
-.reg{
-
-}
-
-
 .picOne {
   margin:30% auto;
   max-width:120px;
@@ -69,6 +64,8 @@ section form {
   margin-left: 3%;
   margin-right: 3%;
 
+  text-align: center; /* Выравнивание по центру */
+
 }
 
 .photo{
@@ -86,15 +83,19 @@ section form {
 
 .photoColor{
   margin: 0 10px 10px 0; /* Отступы */
-  padding: 10px 0; /* Поля сверху и снизу */
-  text-align: center; /* Выравнивание по центру */
-  display: inline-block; /* Строчно-блочный элемент */
-  width: 100px;
-  height: 100px;
+  padding: 10px 0 0 10px; /* Поля сверху и снизу */
+  max-width: 100px;
+  max-height: 100px;
 }
 
-.photo p{
-  margin: 0;
+.color{
+  float:left;
+}
+
+.color img{
+  width: 50px;
+  height: 50px;
+  height: auto;
 }
 
 .text{

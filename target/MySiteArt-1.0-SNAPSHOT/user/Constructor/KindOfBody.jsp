@@ -24,7 +24,6 @@
         <section>
             <form>
                 <p><%= session.getAttribute("userName") %></p>
-                <p><%= session.getAttribute("kindOfBody") %></p>
                 <p><a href = "../../login.jsp">Exit</a></p>
             </form>
         </section>

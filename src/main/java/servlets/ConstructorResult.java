@@ -25,16 +25,12 @@ public class ConstructorResult extends HttpServlet {
             "AND c.transmission.transmissionName =:transmission "+
             "AND c.colorSet.colors =:colors ";
 
-
     String userName = null;
     String password = null;
 
     public void doGet(HttpServletRequest request,
                       HttpServletResponse response)
             throws ServletException,IOException {
-        /*
-        здесь я из request.getParametrs перевожу в request.getSession.getParametrs
-         */
 
         Cookie[] cookies = request.getCookies();
 
@@ -42,16 +38,30 @@ public class ConstructorResult extends HttpServlet {
         из cookie беру логин пароль, если оно там есть, то ок, если нет то необходимо пройти процедуру аутентификации
          */
         if (isLoggined(cookies)){
+
+            //здесь я из request.getParametrs перевожу в request.getSession.getParametrs
+
+            String colorset = request.getParameter("colorset");
+            request.getSession().setAttribute("colorset",colorset);
+
+            String kindOfBody = request.getSession().getAttribute("kindOfBody").toString();
+            String modelName = request.getSession().getAttribute("modelName").toString();
+            String engineName = request.getSession().getAttribute("engineName").toString();
+            String transmission = request.getSession().getAttribute("transmission").toString();
+
             Session session = null;
             List objects  =  null;
             try{
                 session = HibernateUtil.getSessionFactory().openSession();
                 session.beginTransaction();
-                Query query = session.createQuery(carParmReq);
-                objects = query.list();
-                //session.getTransaction().commit();
-                request.getSession().setAttribute("modelList",objects);
-                response.sendRedirect("Model.jsp");
+                Query query = session.createQuery(carParmReq)
+                        .setString("model",modelName)
+                        .setString("engine",engineName)
+                        .setString("kindOfBody",kindOfBody)
+                        .setString("transmission",transmission)
+                        .setString("colorset",colorset);
+                request.getSession().setAttribute("result",objects);
+                response.sendRedirect("Result.jsp");
             }catch (Exception e) {
                 //todo в случае ошибки надо выводить сообщение пользователю
                 //response.sendRedirect("Engine.jsp");

@@ -40,8 +40,6 @@ public class ConstructorBody extends HttpServlet {
         if (isLoggined(cookies)) {
 
         //здесь я из request.getParametrs перевожу в request.getSession.getParametrs
-
-
             String engineName = request.getParameter("engineName");
             request.getSession().setAttribute("engineName", engineName);
 

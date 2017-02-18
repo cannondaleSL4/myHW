@@ -2,7 +2,8 @@
 <%@ page import="java.util.List" %>
 <%@ page import="com.api.Factory" %>
 <%@ page import="com.carEntity.ModelName" %>
-<%@ page import="com.carEntity.Color" %><%--
+<%@ page import="com.carEntity.Color" %>
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: dima
   Date: 19.01.17
@@ -16,7 +17,7 @@
         <meta charset="utf-8" />
         <title>Colors</title>
         <link rel="shortcut icon" href="img/plogo.png">
-        <link href="../../css/Main.css" rel="stylesheet" type="text/css">
+        <link href="../../css/Color.css" rel="stylesheet" type="text/css">
         <%
             if(session.getAttribute("userName")==null){
                 response.sendRedirect("/login.jsp");
@@ -44,19 +45,24 @@
         </div>
         <div id = "main">
             <%
-                List<ColorSet> colorSetList = (List<ColorSet>) session.getAttribute("colorSet");
+                List<ColorSet> colorSetList = (ArrayList<ColorSet>) session.getAttribute("colorSet");
                     if (colorSetList!=null){
+                        String colorsName = " ";
                         for(ColorSet colorSet:colorSetList){
-                            for (Color color: colorSet.getColors()){
             %>
-            <div class = "photoColor">
-                <p><a href="result?colorset=<%=color.getColorName()%>"><img src = "../../img/color/<%=color.getImgAdress()%>"> </a></p>
-                <p class = "caption"><%=color.getColorName()%></p>
-            </div>
-            <%}
-                }
-                    }
-            %>
+                <div class = "photoColor">
+                    <a href="result?colorset=<%=colorSet.getIdColorSet()%>">
+                <%
+                    for(Color color: colorSet.getColors()){
+                    colorsName+=color.getColorName() + " ";
+                %>
+                    <div class  = "color"><p><img src = "../../img/color/<%=color.getImgAdress()%>"></p></div>
+                <% } %>
+                    <p class = "caption"> <%=colorsName%></p>
+                    </a>
+                </div>
+
+            <% } }%>
         </div>
     </body>
 </html>
