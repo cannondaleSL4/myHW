@@ -16,6 +16,7 @@ import java.util.List;
 /**
  * Created by dima on 14.02.17.
  */
+
 public class ConstructorBody extends HttpServlet {
     String bodyReq ="Select kind "+
             "From CarParametrs c "+
@@ -37,14 +38,9 @@ public class ConstructorBody extends HttpServlet {
         Cookie[] cookies = request.getCookies();
 
         if (isLoggined(cookies)) {
-            if (request.getParameter("engineName") == null &&
-                    request.getSession().getAttribute("engineName") == null) {
-                response.sendRedirect("user/Constructor/engine");
-            }
 
-        /*
-        здесь я из request.getParametrs перевожу в request.getSession.getParametrs
-         */
+        //здесь я из request.getParametrs перевожу в request.getSession.getParametrs
+
 
             String engineName = request.getParameter("engineName");
             request.getSession().setAttribute("engineName", engineName);
@@ -57,21 +53,22 @@ public class ConstructorBody extends HttpServlet {
                 session = HibernateUtil.getSessionFactory().openSession();
                 session.beginTransaction();
                 Query query = session.createQuery(bodyReq)
-                        .setString("model", modelName)
-                        .setString("engine", engineName);
+                        .setString("model",modelName)
+                        .setString("engine",engineName);
                 objects = query.list();
-                session.getTransaction().commit();
-                request.getSession().setAttribute("kindOfBody", objects);
-                response.sendRedirect("KindOfBody.jsp");
+                request.getSession().setAttribute("kindOfBody",objects);
             }catch (Exception e) {
                 //JOptionPane.showMessageDialog(null, e.getMessage(),"Error while gettAll operation", JOptionPane.OK_OPTION);
+                request.getRequestDispatcher("login.jsp").forward(request, response);
             } finally {
                 if (session != null && session.isOpen()) {
                     session.close();
                 }
             }
+            System.out.println(request.getSession().getAttribute("kindOfBody"));
+            response.sendRedirect("KindOfBody.jsp");
         }else{
-            response.sendRedirect("login.jsp");
+            request.getRequestDispatcher("login.jsp").forward(request, response);
         }
     }
 

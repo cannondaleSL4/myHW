@@ -1,6 +1,6 @@
 com/authentification/userEntity/User.class
-com/authentification/userDAO/UserDAO.class
 com/carEntity/Engine.class
+com/authentification/userDAO/UserDAO.class
 com/carDAO/DAO.class
 com/carDAO/ColorSetDAO.class
 com/test/TestClass.class
@@ -9,6 +9,7 @@ com/carEntity/ColorSet.class
 com/api/JacksonUtil.class
 com/carEntity/CarParametrs.class
 servlets/ConstructorTransmission.class
+servlets/ConstructorModel.class
 com/carEntity/Transmission.class
 servlets/LoginServlet.class
 com/carEntity/KindOfBody.class

@@ -49,7 +49,7 @@ public class ConstuctorEngine extends HttpServlet {
                 Query query = session.createQuery(engineReq)
                         .setString("model",modelName);
                 objects = query.list();
-                session.getTransaction().commit();
+                //session.getTransaction().commit();
                 request.getSession().setAttribute("engineList",objects);
                 response.sendRedirect("Engine.jsp");
             }catch (Exception e) {
@@ -61,7 +61,7 @@ public class ConstuctorEngine extends HttpServlet {
                 }
             }
         }else{
-            response.sendRedirect("login.jsp");
+            request.getRequestDispatcher("login.jsp").forward(request, response);
         }
     }
     

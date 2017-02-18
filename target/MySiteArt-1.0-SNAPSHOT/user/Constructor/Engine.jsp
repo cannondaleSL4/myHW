@@ -37,7 +37,7 @@
             </div>
             
             <ul id="menu">
-                <li><a href="../ModelNoEmployee.jsp">Models</a></li>
+                <li><a href="Model.jsp">Models</a></li>
                 <li><a href="../Contact.jsp">Contact Us</a></li>
                 <li><a href="../About.jsp">About</a></li>
             </ul>

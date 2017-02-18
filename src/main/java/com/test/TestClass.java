@@ -138,9 +138,12 @@ public class TestClass {
         User admin = new User("dima", "123456", Role.ADMINISTRATOR);
         User salesMan = new User ("alex","23456",Role.STAFF);
         User someUser = new User ("someUser", "2343");
+        User user1234 = new User ("1234", "1234");
         apiDb.create(admin);
         apiDb.create(salesMan);
         apiDb.create(someUser);
+        apiDb.create(user1234);
+
 
 
 

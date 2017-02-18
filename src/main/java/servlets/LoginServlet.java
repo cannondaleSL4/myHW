@@ -44,7 +44,7 @@ public class LoginServlet extends HttpServlet {
 
                     request.getSession().setAttribute("userName",userName);
                     request.getSession().setAttribute("modelList",modelList);
-                    response.sendRedirect("./user/ModelNoEmployee.jsp");
+                    response.sendRedirect("/user/Constructor/model");
                 }else{
                     request.getSession().invalidate();
                     request.setAttribute("errorMessage", messageErrorLP);

@@ -24,6 +24,7 @@
         <section>
             <form>
                 <p><%= session.getAttribute("userName") %></p>
+                <p><%= session.getAttribute("kindOfBody") %></p>
                 <p><a href = "../../login.jsp">Exit</a></p>
             </form>
         </section>
@@ -34,7 +35,7 @@
             </div>
             
             <ul id="menu">
-                <li><a href="../ModelNoEmployee.jsp">Models</a></li>
+                <li><a href="Model.jsp">Models</a></li>
                 <li><a href="../Contact.jsp">Contact Us</a></li>
                 <li><a href="../About.jsp">About</a></li>
             </ul>
@@ -44,8 +45,8 @@
             <form action="transmission" method=post>
                 <h3>Select your body for <%=session.getAttribute("modelName")%> </h3>
                 <% List<KindOfBody> bodyList= (List<KindOfBody>) session.getAttribute("kindOfBody");
-                    if (bodyList==null){
-                        for(KindOfBody kindOfBody: bodyList){
+                   if (bodyList!=null){
+                       for(KindOfBody kindOfBody: bodyList){
                 %>
                 <div class = "check">
                     <div class = "block1"><img src = "../../img/type/<%=kindOfBody.getImgAdress()%>"></div>
@@ -53,10 +54,7 @@
                     <div class = "block2"><input type="radio" name="kindOfBody" value="<%=kindOfBody.getNameKindOfBody()%>"/></div>
                 </div>
                 <%}
-                        }else{
-                    System.out.println("null!!!");
-                }
-                %>
+                }%>
                 <div class = "checkbut"><input type="submit" value="Сhoose"></div>
             </form>
         </div>

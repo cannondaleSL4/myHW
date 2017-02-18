@@ -25,6 +25,16 @@
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>model</servlet-name>
+        <servlet-class>servlets.ConstructorModel</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>model</servlet-name>
+        <url-pattern>/user/Constructor/model</url-pattern>
+    </servlet-mapping>
     
     <servlet>
         <servlet-name>engine</servlet-name>

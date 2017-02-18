@@ -35,11 +35,6 @@ public class ConstructorTransmission extends HttpServlet {
         Cookie[] cookies = request.getCookies();
 
         if (isLoggined(cookies)){
-            if (request.getParameter("engineName")==null &&
-                    request.getSession().getAttribute("engineName")==null ){
-                response.sendRedirect("user/Constructor/engine");
-            }
-
         /*
         здесь я из request.getParametrs перевожу в request.getSession.getParametrs
          */
@@ -60,7 +55,7 @@ public class ConstructorTransmission extends HttpServlet {
                         .setString("engine",engineName)
                         .setString("kindOfBody",kindOfBody);
                 objects = query.list();
-                session.getTransaction().commit();
+                //session.getTransaction().commit();
                 request.getSession().setAttribute("transmission",objects);
                 response.sendRedirect("Transmission.jsp");
             }catch (Exception e) {
@@ -71,7 +66,7 @@ public class ConstructorTransmission extends HttpServlet {
                 }
             }
         }else{
-            response.sendRedirect("login.jsp");
+            request.getRequestDispatcher("login.jsp").forward(request, response);
         }
     }
 
