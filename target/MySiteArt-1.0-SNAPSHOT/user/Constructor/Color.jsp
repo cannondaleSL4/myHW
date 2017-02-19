@@ -59,6 +59,7 @@
                     <div class  = "color"><p><img src = "../../img/color/<%=color.getImgAdress()%>"></p></div>
                 <% } %>
                     <p class = "caption"> <%=colorsName%></p>
+                        <%session.setAttribute("colorS",colorsName); %>
                     </a>
                 </div>
 

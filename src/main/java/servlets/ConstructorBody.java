@@ -3,8 +3,6 @@ package servlets;
 import com.api.HibernateUtil;
 import org.hibernate.Query;
 import org.hibernate.Session;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;

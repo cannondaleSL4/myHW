@@ -1,0 +1,134 @@
+html{
+    background-color: #6E6E6E;
+}
+
+.header {
+    margin: 0 auto;
+    position:absolute;
+    top:110px;
+    border-radius: 6px;
+    background-color:#FFFFFF;
+    background-position: 10px 0, 10px 0, 0 0, 0 0;
+    background-size: 20px 20px;
+    box-shadow: 0 0 5px 0 #333;
+    width:98%;
+    height: 95px;
+}
+
+.picOne {
+    margin:30% auto;
+    max-width:120px;
+    max-height:120px;
+    height:auto;
+    left:10px;
+    margin-top:2px;
+    float:left;
+}
+
+
+.picOne img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+section form {
+    text-align: right;
+    position:absolute;
+    right:10px;
+    top:10px;
+    height: 60px;
+    width: 230px;
+    border: 1px solid #887;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 6px;
+    -moz-box-shadow: 10px 10px 5px #887;
+    -webkit-box-shadow: 10px 10px 5px #887;
+    box-shadow: 10px 10px 5px #887;
+    background-color: #eed;
+    padding: 10px; margin-bottom: 25px;
+    line-width:200px;
+
+}
+
+#main{
+    position: absolute;
+    background-color:#FFFFFF;
+    border: 1px solid #887;
+    border-radius: 6px;
+    box-shadow: 0 0 5px 0 #333;
+    width:90%;
+    min-height: 300px;
+    height: auto;
+    margin-top:220px;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.result{
+    text-align: center;
+    display:inline-block;
+}
+
+.inresult{
+    margin: 10px 10px 10px 20px;
+    float:left;
+}
+
+.inresultR{
+    margin: 10px 20px 10px 0;
+    float:right;
+    width: 300px;
+    height: 150px;
+    text-align: center;
+}
+
+.inresultR img{
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: middle;
+}
+
+
+BODY {
+    background: white; /* Цвет фона веб-страницы */
+}
+
+TABLE {
+    width: 300px; /* Ширина таблицы */
+    border-collapse: collapse; /* Убираем двойные линии между ячейками */
+    border: 2px solid white; /* Прячем рамку вокруг таблицы */
+}
+
+TD, TH {
+    padding: 3px; /* Поля вокруг содержимого таблицы */
+    border: 1px solid maroon; /* Параметры рамки */
+    text-align: left; /* Выравнивание по левому краю */
+}
+
+
+#menu{
+    margin: 0;
+    padding: 0;
+    max-width: 550px;
+    margin: 0 auto;
+    text-align: center;
+    background: #03658e;
+}
+
+#menu li{
+    display:inline-block;
+    text-align: left;
+}
+
+#menu a {
+    display: block;
+    padding: 5px 15px;
+    color: #fff;
+    font-size:150%;
+    text-decoration: none;
+}
+
+#menu a:hover {
+    background: #8AB8CC;
+}

@@ -3,7 +3,6 @@ package servlets;
 import com.api.HibernateUtil;
 import org.hibernate.Query;
 import org.hibernate.Session;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
@@ -35,9 +34,8 @@ public class ConstructorColor extends HttpServlet {
         Cookie[] cookies = request.getCookies();
 
         if (isLoggined(cookies)){
-        /*
-        здесь я из request.getParametrs перевожу в request.getSession.getParametrs
-         */
+
+        //здесь я из request.getParametrs перевожу в request.getSession.getParametrs
 
             String transmission = request.getParameter("transmission");
             request.getSession().setAttribute("transmission",transmission);

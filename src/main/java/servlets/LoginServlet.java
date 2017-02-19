@@ -48,24 +48,24 @@ public class LoginServlet extends HttpServlet {
                 }else{
                     request.getSession().invalidate();
                     request.setAttribute("errorMessage", messageErrorLP);
-                    RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
-                    rd.forward(request, response);
-                    //response.sendRedirect("/login.jsp");
+                    //RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
+                    //rd.forward(request, response);
+                    response.sendRedirect("/login.jsp");
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
                 request.getSession().invalidate();
                 request.setAttribute("errorMessage", messageError);
-                RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
-                rd.forward(request, response);
-                //response.sendRedirect("/login.jsp");
+                //RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
+                //rd.forward(request, response);
+                response.sendRedirect("/login.jsp");
             }
         }else{
             request.getSession().invalidate();
             request.setAttribute("errorMessage", messageErrorEmpty);
-            RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
-            rd.forward(request, response);
-            //response.sendRedirect("/login.jsp");
+            //RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
+            //rd.forward(request, response);
+            response.sendRedirect("/login.jsp");
         }
     }
 }

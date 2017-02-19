@@ -3,7 +3,6 @@ package servlets;
 import com.api.HibernateUtil;
 import org.hibernate.Query;
 import org.hibernate.Session;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
@@ -34,9 +33,8 @@ public class ConstructorResult extends HttpServlet {
 
         Cookie[] cookies = request.getCookies();
 
-        /*
-        из cookie беру логин пароль, если оно там есть, то ок, если нет то необходимо пройти процедуру аутентификации
-         */
+        //из cookie беру логин пароль, если оно там есть, то ок, если нет то необходимо пройти процедуру аутентификации
+
         if (isLoggined(cookies)){
 
             //здесь я из request.getParametrs перевожу в request.getSession.getParametrs
@@ -59,7 +57,8 @@ public class ConstructorResult extends HttpServlet {
                         .setString("engine",engineName)
                         .setString("kindOfBody",kindOfBody)
                         .setString("transmission",transmission)
-                        .setString("colorSetId",colorset);
+                        .setInteger("colorSetId",Integer.parseInt(colorset));
+                objects = query.list();
                 request.getSession().setAttribute("result",objects);
                 response.sendRedirect("Result.jsp");
             }catch (Exception e) {

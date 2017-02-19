@@ -3,7 +3,6 @@ package servlets;
 import com.api.HibernateUtil;
 import org.hibernate.Query;
 import org.hibernate.Session;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
@@ -26,15 +25,13 @@ public class ConstructorModel extends HttpServlet {
     public void doGet(HttpServletRequest request,
                       HttpServletResponse response)
             throws ServletException,IOException {
-        /*
-        здесь я из request.getParametrs перевожу в request.getSession.getParametrs
-         */
+
+        //здесь я из request.getParametrs перевожу в request.getSession.getParametrs
 
         Cookie[] cookies = request.getCookies();
 
-        /*
-        из cookie беру логин пароль, если оно там есть, то ок, если нет то необходимо пройти процедуру аутентификации
-         */
+        //из cookie беру логин пароль, если оно там есть, то ок, если нет то необходимо пройти процедуру аутентификации
+
         if (isLoggined(cookies)){
             Session session = null;
             List objects  =  null;
@@ -43,7 +40,6 @@ public class ConstructorModel extends HttpServlet {
                 session.beginTransaction();
                 Query query = session.createQuery(modelReq);
                 objects = query.list();
-                //session.getTransaction().commit();
                 request.getSession().setAttribute("modelList",objects);
                 response.sendRedirect("Model.jsp");
             }catch (Exception e) {

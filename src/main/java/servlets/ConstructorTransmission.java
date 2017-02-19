@@ -3,7 +3,6 @@ package servlets;
 import com.api.HibernateUtil;
 import org.hibernate.Query;
 import org.hibernate.Session;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
@@ -35,9 +34,8 @@ public class ConstructorTransmission extends HttpServlet {
         Cookie[] cookies = request.getCookies();
 
         if (isLoggined(cookies)){
-        /*
-        здесь я из request.getParametrs перевожу в request.getSession.getParametrs
-         */
+
+        //здесь я из request.getParametrs перевожу в request.getSession.getParametrs
 
             String kindOfBody = request.getParameter("kindOfBody");
             request.getSession().setAttribute("kindOfBody",kindOfBody);
@@ -55,7 +53,6 @@ public class ConstructorTransmission extends HttpServlet {
                         .setString("engine",engineName)
                         .setString("kindOfBody",kindOfBody);
                 objects = query.list();
-                //session.getTransaction().commit();
                 request.getSession().setAttribute("transmission",objects);
                 response.sendRedirect("Transmission.jsp");
             }catch (Exception e) {

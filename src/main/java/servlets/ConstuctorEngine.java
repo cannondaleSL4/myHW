@@ -28,18 +28,16 @@ public class ConstuctorEngine extends HttpServlet {
     public void doGet(HttpServletRequest request,
                        HttpServletResponse response)
             throws ServletException,IOException {
-        /*
-        здесь я из request.getParametrs перевожу в request.getSession.getParametrs
-         */
+
+        //здесь я из request.getParametrs перевожу в request.getSession.getParametrs
 
         String modelName = request.getParameter("modelName");
         request.getSession().setAttribute("modelName",modelName);
 
         Cookie[] cookies = request.getCookies();
-        
-        /*
-        из cookie беру логин пароль, если оно там есть, то ок, если нет то необходимо пройти процедуру аутентификации
-         */
+
+        //из cookie беру логин пароль, если оно там есть, то ок, если нет то необходимо пройти процедуру аутентификации
+
         if (isLoggined(cookies)){
             Session session = null;
             List objects  =  null;
@@ -49,7 +47,6 @@ public class ConstuctorEngine extends HttpServlet {
                 Query query = session.createQuery(engineReq)
                         .setString("model",modelName);
                 objects = query.list();
-                //session.getTransaction().commit();
                 request.getSession().setAttribute("engineList",objects);
                 response.sendRedirect("Engine.jsp");
             }catch (Exception e) {
