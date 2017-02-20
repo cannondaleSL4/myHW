@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.security.Principal;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -23,14 +24,34 @@ public class LoginServlet extends HttpServlet {
             " incorrect(or you need to register)";
     private final String messageError ="Sorry some error try again later";
 
+    public void doGet(HttpServletRequest request,
+                      HttpServletResponse response)
+            throws ServletException,IOException {
+        if (request.getAttribute("error")!=null){
+            request.getSession().invalidate();
+            request.setAttribute("errorMessage", messageErrorLP);
+            response.sendRedirect("/login.jsp");
+        }
+    }
+
     public void doPost(HttpServletRequest request,
                        HttpServletResponse response)
             throws ServletException,IOException{
-        String userName = request.getParameter("userName").trim();
-        String password = request.getParameter("password").trim();
+        String userName = request.getParameter("j_username").trim();
+        String password = request.getParameter("j_password").trim();
+
 
         if (userName != null && !userName.isEmpty()
                 && password!= null && !password.isEmpty()){
+
+
+            System.out.println("TEEEEEEEEEEEEEEEEEEEEEEST" + request.isUserInRole("ADMINISTRATOR"));
+            System.out.println("TEEEEEEEEEEEEEEEEEEEEEEST" + request.isUserInRole("admin"));
+            System.out.println(request.getRemoteUser());
+            System.out.println(request.getUserPrincipal());
+
+
+
             try {
                 boolean inBase = Factory.getInstance().getUserDAO().check(userName,password);
                 List modelList = Factory.getInstance().getModelNameDAO().getAll();
@@ -48,23 +69,17 @@ public class LoginServlet extends HttpServlet {
                 }else{
                     request.getSession().invalidate();
                     request.setAttribute("errorMessage", messageErrorLP);
-                    //RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
-                    //rd.forward(request, response);
                     response.sendRedirect("/login.jsp");
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
                 request.getSession().invalidate();
                 request.setAttribute("errorMessage", messageError);
-                //RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
-                //rd.forward(request, response);
                 response.sendRedirect("/login.jsp");
             }
         }else{
             request.getSession().invalidate();
             request.setAttribute("errorMessage", messageErrorEmpty);
-            //RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
-            //rd.forward(request, response);
             response.sendRedirect("/login.jsp");
         }
     }

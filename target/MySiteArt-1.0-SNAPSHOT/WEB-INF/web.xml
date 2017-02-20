@@ -4,6 +4,14 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+
+    <!-- login and register servlet -->
+
     <servlet>
         <display-name>RegisterServlet</display-name>
         <servlet-name>RegisterServlet</servlet-name>
@@ -16,6 +24,10 @@
     </servlet-mapping>
 
     <servlet>
+        <security-role-ref>
+            <role-name>ADMINISTRATOR</role-name>
+            <role-link>admin</role-link>
+        </security-role-ref>
         <display-name>LoginServlet</display-name>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>servlets.LoginServlet</servlet-class>
@@ -26,9 +38,11 @@
         <url-pattern>/LoginServlet</url-pattern>
     </servlet-mapping>
 
+    <!-- contructor models for users -->
+
     <servlet>
         <servlet-name>model</servlet-name>
-        <servlet-class>servlets.ConstructorModel</servlet-class>
+        <servlet-class>servlets.user.ConstructorModel</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -38,7 +52,7 @@
     
     <servlet>
         <servlet-name>engine</servlet-name>
-        <servlet-class>servlets.ConstuctorEngine</servlet-class>        
+        <servlet-class>servlets.user.ConstuctorEngine</servlet-class>
     </servlet>
     
     <servlet-mapping>
@@ -49,7 +63,7 @@
     <servlet>
         <display-name>kindOfBody</display-name>
         <servlet-name>kindOfBody</servlet-name>
-        <servlet-class>servlets.ConstructorBody</servlet-class>
+        <servlet-class>servlets.user.ConstructorBody</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -60,7 +74,7 @@
     <servlet>
         <display-name>transmission</display-name>
         <servlet-name>transmission</servlet-name>
-        <servlet-class>servlets.ConstructorTransmission</servlet-class>
+        <servlet-class>servlets.user.ConstructorTransmission</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -71,7 +85,7 @@
     <servlet>
         <display-name>color</display-name>
         <servlet-name>color</servlet-name>
-        <servlet-class>servlets.ConstructorColor</servlet-class>
+        <servlet-class>servlets.user.ConstructorColor</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -82,13 +96,78 @@
     <servlet>
         <display-name>result</display-name>
         <servlet-name>result</servlet-name>
-        <servlet-class>servlets.ConstructorResult</servlet-class>
+        <servlet-class>servlets.user.ConstructorResult</servlet-class>
     </servlet>
 
     <servlet-mapping>
         <servlet-name>result</servlet-name>
         <url-pattern>/user/Constructor/result</url-pattern>
     </servlet-mapping>
+
+
+
+    <!-- constructor models for stuff -->
+
+    <servlet>
+        <display-name>modelStuff</display-name>
+        <servlet-name>modelStuff</servlet-name>
+        <servlet-class>servlets.user.ConstructorResult</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>modelStuff</servlet-name>
+        <url-pattern>/stuff/Constructor/model</url-pattern>
+    </servlet-mapping>
+
+    <!-- security -->
+
+    <!-- security for stuff's content -->
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>stuff</web-resource-name>
+            <url-pattern>/stuff/*</url-pattern>
+            <http-method>GET</http-method>
+            <http-method>POST</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>ADMINISTRATOR</role-name>
+            <role-name>STAFF</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <!-- security for admin's content -->
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>admin content</web-resource-name>
+            <url-pattern>/admin/*</url-pattern>
+            <http-method>GET</http-method>
+            <http-method>POST</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>ADMINISTRATOR</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <!-- security role -->
+    <security-role>
+        <role-name>STAFF</role-name>
+    </security-role>
+
+    <security-role>
+        <role-name>ADMINISTRATOR</role-name>
+    </security-role>
+
+
+
+    <!-- login config -->
+
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/LoginServlet</form-login-page>
+            <form-error-page>/LoginServlet?error=1</form-error-page>
+        </form-login-config>
+    </login-config>
 
     <welcome-file-list>
         <welcome-file>login.jsp</welcome-file>
