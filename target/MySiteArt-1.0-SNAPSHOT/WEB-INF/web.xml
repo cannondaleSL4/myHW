@@ -4,6 +4,9 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
+
+    <!-- login logout register servlets -->
+
     <servlet>
         <display-name>RegisterServlet</display-name>
         <servlet-name>RegisterServlet</servlet-name>
@@ -38,6 +41,19 @@
     </servlet-mapping>
 
 
+    <!-- staff servlets -->
+    <servlet>
+        <servlet-name>staffmodel</servlet-name>
+        <servlet-class>servlets.staff.ConstructorModel</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>staffmodel</servlet-name>
+        <url-pattern>/staff/staffmodel</url-pattern>
+    </servlet-mapping>
+
+    <!-- Admin servlets -->
+
     <servlet>
         <display-name>addUser</display-name>
         <servlet-name>addUser</servlet-name>
@@ -49,7 +65,19 @@
         <url-pattern>/admin/addUser</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>user</servlet-name>
+        <servlet-class>servlets.admin.MainAdmin</servlet-class>
+    </servlet>
 
+    <servlet-mapping>
+        <servlet-name>user</servlet-name>
+        <url-pattern>/admin/user</url-pattern>
+    </servlet-mapping>
+
+
+
+    <!-- users servlets -->
 
     <servlet>
         <servlet-name>model</servlet-name>
@@ -61,28 +89,6 @@
         <url-pattern>/user/Constructor/model</url-pattern>
     </servlet-mapping>
 
-    <servlet>
-        <servlet-name>staffmodel</servlet-name>
-        <servlet-class>servlets.staff.ConstructorModel</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>staffmodel</servlet-name>
-        <url-pattern>/staff/staffmodel</url-pattern>
-    </servlet-mapping>
-
-
-    <servlet>
-        <servlet-name>user</servlet-name>
-        <servlet-class>servlets.admin.MainAdmin</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>user</servlet-name>
-        <url-pattern>/admin/user</url-pattern>
-    </servlet-mapping>
-
-    
     <servlet>
         <servlet-name>engine</servlet-name>
         <servlet-class>servlets.user.ConstuctorEngine</servlet-class>

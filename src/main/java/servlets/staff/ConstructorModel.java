@@ -48,6 +48,7 @@ public class ConstructorModel extends HttpServlet {
                 response.sendRedirect("/staff/StaffModel.jsp");
             }catch (Exception e) {
                 //todo в случае ошибки надо выводить сообщение пользователю
+                System.out.println(444444444);
                 response.sendRedirect("/logout");
             } finally {
                 if (session != null && session.isOpen()) {
@@ -55,6 +56,7 @@ public class ConstructorModel extends HttpServlet {
                 }
             }
         }else{
+            System.out.println(555555555);
             response.sendRedirect("/logout");
         }
     }
@@ -73,7 +75,7 @@ public class ConstructorModel extends HttpServlet {
         if (userName!=null && password!=null){
             return true;
         }
-        System.out.println("false");
+        System.out.println(666666666);
         return false;
     }
 }

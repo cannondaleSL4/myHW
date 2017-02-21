@@ -11,7 +11,9 @@
     <%
         if(session.getAttribute("userName")==null){
             response.sendRedirect("/logout");
-        }else if(session.getAttribute("userRole").toString().equalsIgnoreCase("ADMINISTRATOR")) {
+            System.out.println(888888888);
+        }else if(!session.getAttribute("userRole").toString().equalsIgnoreCase("ADMINISTRATOR") &&
+                !session.getAttribute("userRole").toString().equalsIgnoreCase("STAFF")) {
             response.sendRedirect("/logout");
         }
     %>

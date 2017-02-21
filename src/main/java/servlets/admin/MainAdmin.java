@@ -42,7 +42,7 @@ public class MainAdmin extends HttpServlet {
                 Query query = session.createQuery(userReq);
                 objects = query.list();
                 request.getSession().setAttribute("userList",objects);
-                response.sendRedirect("/admin/user");
+                response.sendRedirect("/admin/admin.jsp");
             }catch (Exception e) {
                 //todo в случае ошибки надо выводить сообщение пользователю
                 response.sendRedirect("logout");
