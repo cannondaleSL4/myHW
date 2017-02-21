@@ -135,41 +135,15 @@ public class TestClass {
             apiDb.create(carParametrs);
         }
 
-        User admin = new User("dima", "123456", Role.ADMINISTRATOR);
-        User salesMan = new User ("alex","23456",Role.STAFF);
+        //User admin = new User("admin", "1234", Role.ADMINISTRATOR);
+        //User alex = new User ("alex","1234",Role.STAFF);
         User someUser = new User ("someUser", "2343");
         User user1234 = new User ("1234", "1234");
-        apiDb.create(admin);
-        apiDb.create(salesMan);
+        //apiDb.create(admin);
+        //apiDb.create(alex);
         apiDb.create(someUser);
         apiDb.create(user1234);
 
 
-
-
-         /*
-        String modelName = "Explorer";
-        String engineName = "1.0L EcoBoost I-3 Engine";
-
-        String bodyReq ="Select kind "+
-                "From CarParametrs c "+
-                "INNER JOIN c.kindOfBody kind " +
-                "Where c.modelName.modelName = :model "+
-                " AND c.engine.nameOfEngine = :engine";
-
-
-
-        Session session = null;
-        List objects  = null;
-
-        session = HibernateUtil.getSessionFactory().openSession();
-        session.beginTransaction();
-        Query query = session.createQuery(bodyReq)
-                .setString("model",modelName)
-                .setString("engine",engineName);
-        objects = query.list();
-
-        System.out.println(objects);
-        */
     }
 }

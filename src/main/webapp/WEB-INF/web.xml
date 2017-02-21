@@ -13,7 +13,7 @@
     <!-- login and register servlet -->
 
     <servlet>
-        <display-name>RegisterServlet</display-name>
+        <display-name>register</display-name>
         <servlet-name>RegisterServlet</servlet-name>
         <servlet-class>servlets.RegisterServlet</servlet-class>
     </servlet>
@@ -24,23 +24,20 @@
     </servlet-mapping>
 
     <servlet>
-        <security-role-ref>
-            <role-name>ADMINISTRATOR</role-name>
-            <role-link>admin</role-link>
-        </security-role-ref>
-        <display-name>LoginServlet</display-name>
-        <servlet-name>LoginServlet</servlet-name>
+        <display-name>login</display-name>
+        <servlet-name>login</servlet-name>
         <servlet-class>servlets.LoginServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>LoginServlet</servlet-name>
-        <url-pattern>/LoginServlet</url-pattern>
+        <servlet-name>login</servlet-name>
+        <url-pattern>/login/</url-pattern>
     </servlet-mapping>
 
     <!-- contructor models for users -->
 
     <servlet>
+        <display-name>model</display-name>
         <servlet-name>model</servlet-name>
         <servlet-class>servlets.user.ConstructorModel</servlet-class>
     </servlet>
@@ -49,12 +46,13 @@
         <servlet-name>model</servlet-name>
         <url-pattern>/user/Constructor/model</url-pattern>
     </servlet-mapping>
-    
+
     <servlet>
+        <display-name>engine</display-name>
         <servlet-name>engine</servlet-name>
         <servlet-class>servlets.user.ConstuctorEngine</servlet-class>
     </servlet>
-    
+
     <servlet-mapping>
         <servlet-name>engine</servlet-name>
         <url-pattern>/user/Constructor/engine</url-pattern>
@@ -106,7 +104,7 @@
 
 
 
-    <!-- constructor models for stuff -->
+    <!-- constructor models for staff -->
 
     <servlet>
         <display-name>modelStuff</display-name>
@@ -121,11 +119,11 @@
 
     <!-- security -->
 
-    <!-- security for stuff's content -->
+    <!-- security for staff's content -->
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>stuff</web-resource-name>
-            <url-pattern>/stuff/*</url-pattern>
+            <url-pattern>/staff/*</url-pattern>
             <http-method>GET</http-method>
             <http-method>POST</http-method>
         </web-resource-collection>
@@ -157,15 +155,15 @@
         <role-name>ADMINISTRATOR</role-name>
     </security-role>
 
-
-
     <!-- login config -->
 
     <login-config>
         <auth-method>FORM</auth-method>
         <form-login-config>
-            <form-login-page>/LoginServlet</form-login-page>
-            <form-error-page>/LoginServlet?error=1</form-error-page>
+            <!--<form-login-page>/LoginServlet</form-login-page>
+            <form-error-page>/LoginServlet?error=1</form-error-page>-->
+            <form-login-page>/login.jsp</form-login-page>
+            <form-error-page>/login/</form-error-page>
         </form-login-config>
     </login-config>
 

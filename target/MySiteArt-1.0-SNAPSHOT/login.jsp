@@ -23,8 +23,9 @@
         <a href="register.jsp">Sign Up</a>
         <input type="submit" class="Button" value="Enter">
     </form>-->
-    <form action="j_security_check" method="POST">
-        <input type="text"  name= "j_username" placeholder="Username or email" >
+    <!--<form action="j_security_check" method=post>-->
+    <form method="POST" action="<%=request.getContextPath()%>/j_security_check">
+    <input type="text"  name= "j_username" placeholder="Username or email" >
         <input type="password"  name= "j_password" placeholder="Password" >
         </br>
         <a href="register.jsp">Sign Up</a>
