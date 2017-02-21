@@ -9,4 +9,5 @@ import javax.persistence.Enumerated;
 
 public enum Role {
     ADMINISTRATOR, STAFF,USER;
+
 }

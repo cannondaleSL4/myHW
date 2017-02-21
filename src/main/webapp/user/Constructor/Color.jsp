@@ -28,7 +28,7 @@
         <section>
             <form>
                 <p><%= session.getAttribute("userName") %></p>
-                <p><a href = "../../login.jsp">Exit</a></p>
+                <p><a href = "/logout">Exit</a></p>
             </form>
         </section>
         <div class="header">
@@ -38,9 +38,9 @@
             </div>
             
             <ul id="menu">
-                <li><a href="Model.jsp">Models</a></li>
-                <li><a href="../Contact.jsp">Contact Us</a></li>
-                <li><a href="../About.jsp">About</a></li>
+                <li><a href="../../overall/Model.jsp">Models</a></li>
+                <li><a href="../../overall/Contact.jsp">Contact Us</a></li>
+                <li><a href="../../overall/About.jsp">About</a></li>
             </ul>
         </div>
         <div id = "main">

@@ -135,9 +135,9 @@ public class TestClass {
             apiDb.create(carParametrs);
         }
 
-        User admin = new User("dima", "123456", Role.ADMINISTRATOR);
-        User salesMan = new User ("alex","23456",Role.STAFF);
-        User someUser = new User ("someUser", "2343");
+        User admin = new User("dima", "1234", Role.ADMINISTRATOR);
+        User salesMan = new User ("alex","1234",Role.STAFF);
+        User someUser = new User ("someUser", "1234");
         User user1234 = new User ("1234", "1234");
         apiDb.create(admin);
         apiDb.create(salesMan);

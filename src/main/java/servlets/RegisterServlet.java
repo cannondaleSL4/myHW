@@ -25,6 +25,8 @@ public class RegisterServlet extends HttpServlet {
     private final String messageSuccess = "You have successfully signed up";
     private final String messageBusy = "Sorry, this login is busy, try some another login";
 
+
+    @Override
     protected void doPost(HttpServletRequest request,
                           HttpServletResponse response) throws ServletException, IOException {
 
@@ -40,26 +42,21 @@ public class RegisterServlet extends HttpServlet {
                     request.setAttribute("messageSuccess", messageSuccess);
                     response.sendRedirect("/login.jsp");
                 }else{
-                    request.getSession().invalidate();
                     request.setAttribute("errorMessage", messageBusy);
                     RequestDispatcher rd = request.getRequestDispatcher("/register.jsp");
                     rd.forward(request, response);
-                    //response.sendRedirect("/register.jsp");
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
-                request.getSession().invalidate();
                 request.setAttribute("errorMessage", messageError);
                 RequestDispatcher rd = request.getRequestDispatcher("/register.jsp");
                 rd.forward(request, response);
-                //response.sendRedirect("/register.jsp");
             }
         }else{
-            request.getSession().invalidate();
+            //request.getSession().invalidate();
             request.setAttribute("errorMessage", messageErrorEmpty);
             RequestDispatcher rd = request.getRequestDispatcher("/register.jsp");
             rd.forward(request, response);
-            //response.sendRedirect("/register.jsp");
         }
     }
 }

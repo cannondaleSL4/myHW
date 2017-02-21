@@ -27,18 +27,65 @@
     </servlet-mapping>
 
     <servlet>
+        <display-name>logout</display-name>
+        <servlet-name>logout</servlet-name>
+        <servlet-class>servlets.Logout</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>logout</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <display-name>addUser</display-name>
+        <servlet-name>addUser</servlet-name>
+        <servlet-class>servlets.admin.AddUser</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>addUser</servlet-name>
+        <url-pattern>/admin/addUser</url-pattern>
+    </servlet-mapping>
+
+
+
+    <servlet>
         <servlet-name>model</servlet-name>
-        <servlet-class>servlets.ConstructorModel</servlet-class>
+        <servlet-class>servlets.user.ConstructorModel</servlet-class>
     </servlet>
 
     <servlet-mapping>
         <servlet-name>model</servlet-name>
         <url-pattern>/user/Constructor/model</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>staffmodel</servlet-name>
+        <servlet-class>servlets.staff.ConstructorModel</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>staffmodel</servlet-name>
+        <url-pattern>/staff/staffmodel</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>user</servlet-name>
+        <servlet-class>servlets.admin.MainAdmin</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>user</servlet-name>
+        <url-pattern>/admin/user</url-pattern>
+    </servlet-mapping>
+
     
     <servlet>
         <servlet-name>engine</servlet-name>
-        <servlet-class>servlets.ConstuctorEngine</servlet-class>        
+        <servlet-class>servlets.user.ConstuctorEngine</servlet-class>
     </servlet>
     
     <servlet-mapping>
@@ -49,7 +96,7 @@
     <servlet>
         <display-name>kindOfBody</display-name>
         <servlet-name>kindOfBody</servlet-name>
-        <servlet-class>servlets.ConstructorBody</servlet-class>
+        <servlet-class>servlets.user.ConstructorBody</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -60,7 +107,7 @@
     <servlet>
         <display-name>transmission</display-name>
         <servlet-name>transmission</servlet-name>
-        <servlet-class>servlets.ConstructorTransmission</servlet-class>
+        <servlet-class>servlets.user.ConstructorTransmission</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -71,7 +118,7 @@
     <servlet>
         <display-name>color</display-name>
         <servlet-name>color</servlet-name>
-        <servlet-class>servlets.ConstructorColor</servlet-class>
+        <servlet-class>servlets.user.ConstructorColor</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -82,7 +129,7 @@
     <servlet>
         <display-name>result</display-name>
         <servlet-name>result</servlet-name>
-        <servlet-class>servlets.ConstructorResult</servlet-class>
+        <servlet-class>servlets.user.ConstructorResult</servlet-class>
     </servlet>
 
     <servlet-mapping>
