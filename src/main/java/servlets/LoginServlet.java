@@ -1,6 +1,8 @@
 package servlets;
 
 import com.api.Factory;
+import com.authentification.userEntity.Role;
+import com.authentification.userEntity.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
@@ -27,7 +29,7 @@ public class LoginServlet extends HttpServlet {
             throws ServletException,IOException {
         if (request.getAttribute("error")!=null){
             request.getSession().invalidate();
-            request.setAttribute("errorMessage", messageErrorLP);
+            request.getSession().setAttribute("errorMessage", messageErrorLP);
             response.sendRedirect("/login.jsp");
         }
     }
@@ -53,7 +55,17 @@ public class LoginServlet extends HttpServlet {
 
                     request.getSession().setAttribute("userName",userName);
                     request.getSession().setAttribute("modelList",modelList);
-                    response.sendRedirect("/user/Constructor/model");
+
+                    User user = Factory.getInstance().getUserDAO().getUserByNameAndPassword(userName,password);
+
+                    if(user.getType() == Role.ADMINISTRATOR){
+                        response.sendRedirect("/admin/admin.jsp");
+                    }else if (user.getType() == Role.STAFF){
+                        response.sendRedirect("/stuff/Constructor/model");
+                    } else {
+                        response.sendRedirect("/user/Constructor/model");
+                    }
+
                 }else{
                     request.getSession().invalidate();
                     request.getSession().setAttribute("errorMessage", messageErrorLP);

@@ -1,6 +1,7 @@
 package servlets;
 
 import com.api.Factory;
+import org.codehaus.plexus.util.StringUtils;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -28,17 +29,18 @@ public class RegisterServlet extends HttpServlet {
         String userName = request.getParameter("userName").trim();
         String password = request.getParameter("password").trim();
 
-        if (userName != null && !userName.isEmpty()
-                && password!= null && !password.isEmpty()){
+        if (StringUtils.isNotBlank(userName) && StringUtils.isNotBlank(password)){
             try {
                 boolean inBase = Factory.getInstance().getUserDAO().checkUserName(userName);
                 if (!inBase){
                     Factory.getInstance().getUserDAO().add(userName,password);
-                    request.setAttribute("messageSuccess", messageSuccess);
+                    //request.setAttribute("messageSuccess", messageSuccess);
+                    request.getSession().setAttribute("messageSuccess", messageSuccess);
                     response.sendRedirect("/login.jsp");
                 }else{
                     request.getSession().invalidate();
-                    request.setAttribute("errorMessage", messageBusy);
+                    //request.setAttribute("errorMessage", messageBusy);
+                    request.getSession().setAttribute("errorMessage", messageBusy);
                     RequestDispatcher rd = request.getRequestDispatcher("/register.jsp");
                     rd.forward(request, response);
                     //response.sendRedirect("/register.jsp");

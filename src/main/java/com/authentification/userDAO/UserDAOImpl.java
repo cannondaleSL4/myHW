@@ -64,6 +64,27 @@ public class UserDAOImpl implements UserDAO {
         }
     }
 
+    public User getUserByNameAndPassword(String name, String password) {
+        User user = new User(name,password);
+        Session session = null;
+        List objects  = null;
+        try{
+            session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            Query query = session.createQuery("FROM User " +
+                    " WHERE user_name =:name")
+                    .setString("name",user.getName());
+            objects = query.list();
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error for  check contains", JOptionPane.OK_OPTION);
+        }finally {
+            if (session != null && session.isOpen()){
+                session.close();
+            }
+        }
+        return (User) objects.get(0);
+    }
+
     @Override
     public List<User> getAll() {
         Session session = null;
