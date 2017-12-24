@@ -1,6 +1,7 @@
 com/authentification/userEntity/User.class
 com/carEntity/Engine.class
 com/authentification/userDAO/UserDAO.class
+servlets/admin/AddUser.class
 com/carDAO/DAO.class
 com/carDAO/ColorSetDAO.class
 com/test/TestClass.class
@@ -12,7 +13,6 @@ servlets/LoginServlet.class
 servlets/user/ConstructorColor.class
 servlets/user/ConstructorResult.class
 com/carEntity/KindOfBody.class
-servlets/staff/ConstructorModelStaff.class
 com/carEntity/CarParts.class
 com/carDAO/ColorDAO.class
 com/carDAO/KindOfBodyDAO.class
@@ -22,8 +22,11 @@ servlets/user/ConstuctorEngine.class
 com/authentification/userEntity/Role.class
 com/carDAO/CarParametrsDAO.class
 com/carEntity/Color.class
+servlets/staff/ConstructorModel.class
+servlets/Logout.class
 servlets/user/ConstructorTransmission.class
 com/carDAO/ModelNameDAO.class
+servlets/admin/MainAdmin.class
 com/api/HibernateUtil.class
 com/authentification/userDAO/UserDAOImpl.class
 servlets/user/ConstructorModel.class

@@ -2,8 +2,8 @@ package servlets;
 
 import com.api.Factory;
 import com.authentification.userEntity.Role;
-import com.authentification.userEntity.User;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
@@ -24,63 +24,56 @@ public class LoginServlet extends HttpServlet {
             " incorrect(or you need to register)";
     private final String messageError ="Sorry some error try again later";
 
-    public void doGet(HttpServletRequest request,
-                      HttpServletResponse response)
-            throws ServletException,IOException {
-        if (request.getAttribute("error")!=null){
-            request.getSession().invalidate();
-            request.getSession().setAttribute("errorMessage", messageErrorLP);
-            response.sendRedirect("/login.jsp");
-        }
-    }
-
+    @Override
     public void doPost(HttpServletRequest request,
                        HttpServletResponse response)
             throws ServletException,IOException{
-        String userName = request.getParameter("j_username").trim();
-        String password = request.getParameter("j_password").trim();
-
+        String userName = request.getParameter("userName").trim();
+        String password = request.getParameter("password").trim();
 
         if (userName != null && !userName.isEmpty()
                 && password!= null && !password.isEmpty()){
             try {
                 boolean inBase = Factory.getInstance().getUserDAO().check(userName,password);
+                List modelList = Factory.getInstance().getModelNameDAO().getAll();
                 if (inBase){
-                    List modelList = Factory.getInstance().getModelNameDAO().getAll();
+
+                    Role userRole = Factory.getInstance().getUserDAO().getRole(userName);
+
                     Cookie name = new Cookie("userName",userName);
                     response.addCookie(name);
 
                     Cookie pass = new Cookie("password", password);
                     response.addCookie(pass);
 
+                    Cookie role  = new Cookie("userRole",userRole.toString());
+                    response.addCookie(role);
+
                     request.getSession().setAttribute("userName",userName);
                     request.getSession().setAttribute("modelList",modelList);
+                    request.getSession().setAttribute("userRole",userRole);
 
-                    User user = Factory.getInstance().getUserDAO().getUserByNameAndPassword(userName,password);
-
-                    if(user.getType() == Role.ADMINISTRATOR){
-                        response.sendRedirect("/admin/admin.jsp");
-                    }else if (user.getType() == Role.STAFF){
-                        response.sendRedirect("/stuff/Constructor/model");
-                    } else {
+                    if (userRole.toString().equalsIgnoreCase("administrator")){
+                        response.sendRedirect("/admin/user");
+                    }else if (userRole.toString().equalsIgnoreCase("staff")){
+                        response.sendRedirect("/staff/staffmodel");
+                    }else{
                         response.sendRedirect("/user/Constructor/model");
                     }
-
                 }else{
-                    request.getSession().invalidate();
-                    request.getSession().setAttribute("errorMessage", messageErrorLP);
-                    response.sendRedirect("/login.jsp");
+                    request.setAttribute("errorMessage", messageErrorLP);
+                    RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
+                    rd.forward(request, response);
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
-                request.getSession().invalidate();
-                request.getSession().setAttribute("errorMessage", messageError);
-                response.sendRedirect("/login.jsp");
+                request.setAttribute("errorMessage", messageError);
+                RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
+                rd.forward(request, response);
             }
         }else{
-            request.getSession().invalidate();
-            request.getSession().setAttribute("errorMessage", messageErrorEmpty);
-            response.sendRedirect("/login.jsp");
+            request.setAttribute("errorMessage", messageErrorEmpty);
+            RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
+            rd.forward(request, response);
         }
     }
 }

@@ -1,6 +1,7 @@
 package com.authentification.userDAO;
 
 import com.api.HibernateUtil;
+import com.authentification.userEntity.Role;
 import com.authentification.userEntity.User;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -64,27 +65,6 @@ public class UserDAOImpl implements UserDAO {
         }
     }
 
-    public User getUserByNameAndPassword(String name, String password) {
-        User user = new User(name,password);
-        Session session = null;
-        List objects  = null;
-        try{
-            session = HibernateUtil.getSessionFactory().openSession();
-            session.beginTransaction();
-            Query query = session.createQuery("FROM User " +
-                    " WHERE user_name =:name")
-                    .setString("name",user.getName());
-            objects = query.list();
-        }catch (Exception e){
-            JOptionPane.showMessageDialog(null, e.getMessage(), "Error for  check contains", JOptionPane.OK_OPTION);
-        }finally {
-            if (session != null && session.isOpen()){
-                session.close();
-            }
-        }
-        return (User) objects.get(0);
-    }
-
     @Override
     public List<User> getAll() {
         Session session = null;
@@ -119,6 +99,27 @@ public class UserDAOImpl implements UserDAO {
                 session.close();
             }
         }
+    }
+
+    public Role getRole(String name){
+        Session session = null;
+        List<User> objects  = null;
+        try{
+            session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            Query query = session.createQuery("FROM User " +
+                    " WHERE user_name =:name")
+                    //здесь то же пришлось применять имя колонки. тк. userName  не находит
+                    .setString("name",name);
+            objects = query.list();
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error for  check contains", JOptionPane.OK_OPTION);
+        }finally {
+            if (session != null && session.isOpen()){
+                session.close();
+            }
+        }
+        return objects.get(0).getType();
     }
 
 

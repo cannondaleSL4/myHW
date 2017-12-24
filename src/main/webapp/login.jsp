@@ -16,9 +16,9 @@
 </head>
 <body>
 <section>
-    <form method="POST" action="<%=request.getContextPath()%>/j_security_check">
-    <input type="text"  name= "j_username" placeholder="Username or email" >
-        <input type="password"  name= "j_password" placeholder="Password" >
+    <form action="LoginServlet" method=post>
+        <input type="text"  name= "userName" placeholder="Username or email" >
+        <input type="password"  name= "password" placeholder="Password" >
         </br>
         <a href="register.jsp">Sign Up</a>
         <input type="submit" class="Button" value="Enter">
@@ -26,23 +26,21 @@
 </section>
 </body>
 <%
-    if(session.getAttribute("errorMessage")!=null)
+    if(request.getAttribute("errorMessage")!=null)
     {
         out.println("<script>\n" +
                 "  window.onload = function() {\n" +
-                "    alert( '" +session.getAttribute("errorMessage") + "' );\n" +
+                "    alert( '" +request.getAttribute("errorMessage") + "' );\n" +
                 "  };\n" +
                 "</script>");
-        session.setAttribute("errorMessage", null);
     }
-    if(session.getAttribute("messageSuccess")!=null)
+    if(request.getAttribute("messageSuccess")!=null)
     {
         out.println("<script>\n" +
                 "  window.onload = function() {\n" +
-                "    alert( '" +session.getAttribute("messageSuccess") + "' );\n" +
+                "    alert( '" +request.getAttribute("\"messageSuccess\"") + "' );\n" +
                 "  };\n" +
                 "</script>");
-        session.setAttribute("messageSuccess", null);
     }
 %>
 </html>

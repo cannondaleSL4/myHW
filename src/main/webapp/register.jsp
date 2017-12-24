@@ -37,23 +37,21 @@
 </div>
 </body>
 <%
-    if(session.getAttribute("errorMessage")!=null)
+    if(request.getAttribute("errorMessage")!=null)
     {
         out.println("<script>\n" +
                 "  window.onload = function() {\n" +
-                "    alert( '" +session.getAttribute("errorMessage") + "' );\n" +
+                "    alert( '" +request.getAttribute("errorMessage") + "' );\n" +
                 "  };\n" +
                 "</script>");
-        session.setAttribute("errorMessage", null);
     }
-    if(session.getAttribute("messageSuccess")!=null)
+    if(request.getAttribute("messageSuccess")!=null)
     {
         out.println("<script>\n" +
                 "  window.onload = function() {\n" +
-                "    alert( '" +session.getAttribute("messageSuccess") + "' );\n" +
+                "    alert( '" +request.getAttribute("\"messageSuccess\"") + "' );\n" +
                 "  };\n" +
                 "</script>");
-        session.setAttribute("messageSuccess", null);
     }
 %>
 </html>
