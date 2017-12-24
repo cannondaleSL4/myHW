@@ -55,7 +55,7 @@ public class TransmissionDAO implements DAO <Transmission> {
     }
 
     @Override
-    public void update(Long l, Transmission transmission) throws SQLException {
+    public void update(Integer l, Transmission transmission) throws SQLException {
         Session session = null;
         try{
             session = HibernateUtil.getSessionFactory().openSession();
@@ -74,7 +74,7 @@ public class TransmissionDAO implements DAO <Transmission> {
 
 
     @Override
-    public Transmission getById(Long l) {
+    public Transmission getById(Integer l) {
         Session session = null;
         Transmission transmission = null;
         try{
@@ -108,7 +108,7 @@ public class TransmissionDAO implements DAO <Transmission> {
     }
 
     @Override
-    public void delete(Long l) {
+    public void delete(Integer l) {
         Session session = null;
         Transmission transmission =null;
         try{

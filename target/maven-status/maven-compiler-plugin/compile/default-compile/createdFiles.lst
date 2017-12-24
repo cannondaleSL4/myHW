@@ -8,12 +8,12 @@ com/carEntity/ColorSet.class
 com/api/JacksonUtil.class
 com/carEntity/CarParametrs.class
 com/carEntity/Transmission.class
-servlets/user/ConstructorColor.class
 servlets/LoginServlet.class
+servlets/user/ConstructorColor.class
 servlets/user/ConstructorResult.class
 com/carEntity/KindOfBody.class
-com/carEntity/CarParts.class
 servlets/staff/ConstructorModelStaff.class
+com/carEntity/CarParts.class
 com/carDAO/ColorDAO.class
 com/carDAO/KindOfBodyDAO.class
 com/api/Factory.class

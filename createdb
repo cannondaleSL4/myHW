@@ -1,0 +1,62 @@
+CREATE TABLE IF NOT EXISTS color_table (
+  idcolor_table serial PRIMARY KEY,
+  color_table_name varchar(256) NOT NULL,
+  imgAdress varchar(256) NOT NULL,
+  is_metallic BOOLEAN NOT NULL,
+  UNIQUE (color_table_name,is_metallic)
+);
+
+CREATE TABLE IF NOT EXISTS color_set (
+  idcolor_set serial PRIMARY KEY
+);
+
+/*
+таблица для связи цветов и сетов
+*/
+CREATE TABLE IF NOT EXISTS option_of_color (
+  idcolor_table INT NOT NULL REFERENCES color_table (idcolor_table),
+  idcolor_set INT NOT NULL REFERENCES color_set (idcolor_set),
+  PRIMARY KEY (idcolor_table, idcolor_set)
+);
+
+
+CREATE TABLE IF NOT EXISTS current_model (
+  idcurrent_model serial PRIMARY KEY,
+  current_modelcol VARCHAR(45)  NOT NULL,
+  model_img VARCHAR(45)  NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS kind_of_body (
+  idkind_of_body serial PRIMARY KEY,
+  imgadress varchar(256) NOT NULL UNIQUE,
+  name_of_kind_of_body varchar(256) NOT NULL UNIQUE
+);
+
+CREATE TABLE IF NOT EXISTS transmission (
+  idtransmission serial PRIMARY KEY,
+  transmission_name varchar(256) NOT NULL,
+  number_of_speed int NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS engine (
+  idengine serial PRIMARY KEY,
+  engine_name varchar(256) NOT NULL UNIQUE,
+  imgadress varchar(256) NOT NULL UNIQUE,
+  horsepower int NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS car_parm (
+  id_car_parm serial PRIMARY KEY,
+  idkind_of_body INT NOT NULL REFERENCES kind_of_body (idkind_of_body),
+  idtransmission INT REFERENCES transmission (idtransmission),
+  idengine INT NOT NULL REFERENCES engine (idengine),
+  idcurrent_model INT NOT NULL REFERENCES current_model(idcurrent_model),
+  idcolor_set INT NOT NULL REFERENCES color_set (idcolor_set)
+);
+
+CREATE TABLE IF NOT EXISTS user_base (
+ id_user serial PRIMARY KEY,
+ type VARCHAR(45)  NOT NULL,
+ user_name VARCHAR(45)  NOT NULL UNIQUE,
+ user_password VARCHAR(45)  NOT NULL
+);

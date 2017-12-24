@@ -24,7 +24,7 @@ public class CarParametrsDAO implements DAO <CarParametrs> {
             session.clear();
             session.getTransaction().commit();
         }catch (Exception e){
-            //JOptionPane.showMessageDialog(null, e.getMessage(), "Error CarParametrs", JOptionPane.OK_OPTION);
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error CarParametrs", JOptionPane.OK_OPTION);
             tx.rollback();
         }finally {
             if (session != null && session.isOpen()){
@@ -34,7 +34,7 @@ public class CarParametrsDAO implements DAO <CarParametrs> {
     }
 
     @Override
-    public void update(Long l, CarParametrs carParametrs) throws SQLException {
+    public void update(Integer l, CarParametrs carParametrs) throws SQLException {
         Session session = null;
         try{
             session = HibernateUtil.getSessionFactory().openSession();
@@ -51,7 +51,7 @@ public class CarParametrsDAO implements DAO <CarParametrs> {
     }
 
     @Override
-    public CarParametrs getById(Long l) {
+    public CarParametrs getById(Integer l) {
         Session session = null;
         CarParametrs carParametrs = null;
         try{
@@ -85,7 +85,7 @@ public class CarParametrsDAO implements DAO <CarParametrs> {
     }
 
     @Override
-    public void delete(Long l) {
+    public void delete(Integer l) {
         Session session = null;
         CarParametrs carParametrs =null;
         try{
@@ -123,7 +123,7 @@ public class CarParametrsDAO implements DAO <CarParametrs> {
         return objects;
     }
 
-    public List getByModel(Long modelid) {
+    public List getByModel(Integer modelid) {
         Session session = null;
         List objects  = null;
         try{

@@ -8,9 +8,9 @@ import java.util.Collection;
  */
 public interface DAO <T> {
     void add(T t)throws SQLException;
-    void update(Long l,T t)throws SQLException;
-    T getById(Long l);
+    void update(Integer l,T t)throws SQLException;
+    T getById(Integer l);
     void delete(T t);
     Collection getAll();
-    void delete(Long l);
+    void delete(Integer l);
 }

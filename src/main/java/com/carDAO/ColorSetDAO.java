@@ -32,12 +32,12 @@ public class ColorSetDAO implements DAO<ColorSet> {
     }
 
     @Override
-    public void update(Long l, ColorSet colorSet) throws SQLException {
+    public void update(Integer l, ColorSet colorSet) throws SQLException {
 
     }
 
     @Override
-    public ColorSet getById(Long l) {
+    public ColorSet getById(Integer l) {
         Session session = null;
         ColorSet colorSet = null;
         try{
@@ -79,7 +79,7 @@ public class ColorSetDAO implements DAO<ColorSet> {
     }
 
     @Override
-    public void delete(Long l) {
+    public void delete(Integer l) {
 
     }
 }

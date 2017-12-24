@@ -57,7 +57,7 @@ public class ApiDb {
     //@DELETE
     //@Path("/delete/{id}")
     //@Consumes("application/json")
-    private void delete(Object carParts, Long id) throws IOException, SQLException {
+    private void delete(Object carParts, Integer id) throws IOException, SQLException {
         if (carParts instanceof Color){
             factory.getColorDAO().delete(id);
         }else if(carParts instanceof ModelName){

@@ -19,9 +19,9 @@ import java.util.Set;
 @JsonTypeInfo (use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
 public class Color implements CarParts, Serializable{
 
-    private static final long serialVersionUID = 1L;
+    private static final Long serialVersionUID = 1L;
 
-    private Long id;
+    private Integer id;
     private String colorName;
     private Boolean isMetallic;
     private String imgAdress;
@@ -38,11 +38,11 @@ public class Color implements CarParts, Serializable{
     @Id
     @Column(name = "idcolor_table")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -60,6 +60,11 @@ public class Color implements CarParts, Serializable{
         return isMetallic;
     }
 
+    @Column(name = "imgAdress", nullable = false)
+    public String getImgAdress() {
+        return imgAdress;
+    }
+
     public void setMetallic(boolean metallic) {
         isMetallic = metallic;
     }
@@ -71,10 +76,6 @@ public class Color implements CarParts, Serializable{
 
     public void setColors(Set<ColorSet> colorSet) {
         this.colorSet = colorSet;
-    }
-
-    public String getImgAdress() {
-        return imgAdress;
     }
 
     public void setImgAdress(String imgAdress) {

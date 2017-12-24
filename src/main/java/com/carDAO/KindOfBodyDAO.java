@@ -54,7 +54,7 @@ public class KindOfBodyDAO implements DAO <KindOfBody> {
     }
 
     @Override
-    public void update(Long l, KindOfBody kindOfBody) throws SQLException {
+    public void update(Integer l, KindOfBody kindOfBody) throws SQLException {
         Session session = null;
         try{
             session = HibernateUtil.getSessionFactory().openSession();
@@ -71,7 +71,7 @@ public class KindOfBodyDAO implements DAO <KindOfBody> {
     }
 
     @Override
-    public KindOfBody getById(Long l) {
+    public KindOfBody getById(Integer l) {
         Session session = null;
         KindOfBody kindOfBody = null;
         try{
@@ -105,7 +105,7 @@ public class KindOfBodyDAO implements DAO <KindOfBody> {
     }
 
     @Override
-    public void delete(Long l) {
+    public void delete(Integer l) {
         Session session = null;
         KindOfBody kindOfBody =null;
         try{

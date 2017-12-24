@@ -1,24 +1,21 @@
 package servlets;
 
 import com.api.Factory;
-import com.authentification.userEntity.User;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.List;
 
 /**
  * Created by dima on 07.02.17.
  */
 public class RegisterServlet extends HttpServlet {
 
-    private static final long serialVersionUID = 1L;
+    private static final Long serialVersionUID = 1L;
 
     private final String messageError = "Sorry some error try again later";
     private final String messageErrorEmpty = "Sorry login or password is empty, try again";

@@ -2,14 +2,12 @@ package servlets;
 
 import com.api.Factory;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.security.Principal;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -43,20 +41,10 @@ public class LoginServlet extends HttpServlet {
 
         if (userName != null && !userName.isEmpty()
                 && password!= null && !password.isEmpty()){
-
-
-            System.out.println("TEEEEEEEEEEEEEEEEEEEEEEST" + request.isUserInRole("ADMINISTRATOR"));
-            System.out.println("TEEEEEEEEEEEEEEEEEEEEEEST" + request.isUserInRole("admin"));
-            System.out.println(request.getRemoteUser());
-            System.out.println(request.getUserPrincipal());
-
-
-
             try {
                 boolean inBase = Factory.getInstance().getUserDAO().check(userName,password);
-                List modelList = Factory.getInstance().getModelNameDAO().getAll();
                 if (inBase){
-
+                    List modelList = Factory.getInstance().getModelNameDAO().getAll();
                     Cookie name = new Cookie("userName",userName);
                     response.addCookie(name);
 
@@ -68,18 +56,18 @@ public class LoginServlet extends HttpServlet {
                     response.sendRedirect("/user/Constructor/model");
                 }else{
                     request.getSession().invalidate();
-                    request.setAttribute("errorMessage", messageErrorLP);
+                    request.getSession().setAttribute("errorMessage", messageErrorLP);
                     response.sendRedirect("/login.jsp");
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
                 request.getSession().invalidate();
-                request.setAttribute("errorMessage", messageError);
+                request.getSession().setAttribute("errorMessage", messageError);
                 response.sendRedirect("/login.jsp");
             }
         }else{
             request.getSession().invalidate();
-            request.setAttribute("errorMessage", messageErrorEmpty);
+            request.getSession().setAttribute("errorMessage", messageErrorEmpty);
             response.sendRedirect("/login.jsp");
         }
     }
