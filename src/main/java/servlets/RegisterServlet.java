@@ -46,14 +46,14 @@ public class RegisterServlet extends HttpServlet {
             } catch (SQLException e) {
                 e.printStackTrace();
                 request.getSession().invalidate();
-                request.setAttribute("errorMessage", messageError);
+                request.getSession().setAttribute("errorMessage", messageError);
                 RequestDispatcher rd = request.getRequestDispatcher("/register.jsp");
                 rd.forward(request, response);
                 //response.sendRedirect("/register.jsp");
             }
         }else{
             request.getSession().invalidate();
-            request.setAttribute("errorMessage", messageErrorEmpty);
+            request.getSession().setAttribute("errorMessage", messageErrorEmpty);
             RequestDispatcher rd = request.getRequestDispatcher("/register.jsp");
             rd.forward(request, response);
             //response.sendRedirect("/register.jsp");

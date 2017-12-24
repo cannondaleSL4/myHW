@@ -6,7 +6,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="66ec465c-8951-42bb-b69f-4a93fa579594" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/createdb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MySiteArt-1.0-SNAPSHOT.war" afterPath="$PROJECT_DIR$/target/MySiteArt-1.0-SNAPSHOT.war" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/com/api/ApiDb.class" afterPath="$PROJECT_DIR$/target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/com/api/ApiDb.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/com/authentification/userEntity/User.class" afterPath="$PROJECT_DIR$/target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/com/authentification/userEntity/User.class" />
@@ -49,31 +48,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/servlets/LoginServlet.class" afterPath="$PROJECT_DIR$/target/classes/servlets/LoginServlet.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/servlets/RegisterServlet.class" afterPath="$PROJECT_DIR$/target/classes/servlets/RegisterServlet.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/7ce76d44-e311-4ffb-808a-6f6317dc809c.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/7ce76d44-e311-4ffb-808a-6f6317dc809c.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/api/ApiDb.java" afterPath="$PROJECT_DIR$/src/main/java/com/api/ApiDb.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/authentification/userEntity/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/authentification/userEntity/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/carDAO/CarParametrsDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/carDAO/CarParametrsDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/carDAO/ColorDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/carDAO/ColorDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/carDAO/ColorSetDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/carDAO/ColorSetDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/carDAO/DAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/carDAO/DAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/carDAO/EngineDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/carDAO/EngineDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/carDAO/KindOfBodyDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/carDAO/KindOfBodyDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/carDAO/ModelNameDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/carDAO/ModelNameDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/carDAO/TransmissionDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/carDAO/TransmissionDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/carEntity/CarParametrs.java" afterPath="$PROJECT_DIR$/src/main/java/com/carEntity/CarParametrs.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/carEntity/Color.java" afterPath="$PROJECT_DIR$/src/main/java/com/carEntity/Color.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/carEntity/ColorSet.java" afterPath="$PROJECT_DIR$/src/main/java/com/carEntity/ColorSet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/carEntity/Engine.java" afterPath="$PROJECT_DIR$/src/main/java/com/carEntity/Engine.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/carEntity/KindOfBody.java" afterPath="$PROJECT_DIR$/src/main/java/com/carEntity/KindOfBody.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/carEntity/ModelName.java" afterPath="$PROJECT_DIR$/src/main/java/com/carEntity/ModelName.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/carEntity/Transmission.java" afterPath="$PROJECT_DIR$/src/main/java/com/carEntity/Transmission.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/test/TestClass.java" afterPath="$PROJECT_DIR$/src/main/java/com/test/TestClass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/servlets/LoginServlet.java" afterPath="$PROJECT_DIR$/src/main/java/servlets/LoginServlet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/servlets/RegisterServlet.java" afterPath="$PROJECT_DIR$/src/main/java/servlets/RegisterServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/register.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/register.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/hibernate.cfg.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MySiteArt-1.0-SNAPSHOT/login.jsp" afterPath="$PROJECT_DIR$/target/MySiteArt-1.0-SNAPSHOT/login.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" />
@@ -153,6 +129,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="RegisterServlet.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/servlets/RegisterServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="705">
+              <caret line="55" column="45" lean-forward="false" selection-start-line="55" selection-start-column="45" selection-end-line="55" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="StaffModel.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/staff/StaffModel.jsp">
           <provider selected="true" editor-type-id="text-editor">
@@ -186,18 +172,8 @@
       <file leaf-file-name="LoginServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/servlets/LoginServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="711">
-              <caret line="69" column="45" lean-forward="false" selection-start-line="69" selection-start-column="45" selection-end-line="69" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="createdb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/createdb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="870">
-              <caret line="61" column="2" lean-forward="false" selection-start-line="61" selection-start-column="2" selection-end-line="61" selection-end-column="2" />
+            <state relative-caret-position="546">
+              <caret line="58" column="53" lean-forward="true" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -299,7 +275,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/carEntity/KindOfBody.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/carEntity/ModelName.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/carEntity/Transmission.java" />
-        <option value="$PROJECT_DIR$/src/main/java/servlets/RegisterServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/carEntity/Color.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/carEntity/CarParametrs.java" />
         <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
@@ -309,6 +284,7 @@
         <option value="$PROJECT_DIR$/src/main/webapp/register.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/servlets/LoginServlet.java" />
         <option value="$PROJECT_DIR$/createdb" />
+        <option value="$PROJECT_DIR$/src/main/java/servlets/RegisterServlet.java" />
       </list>
     </option>
   </component>
@@ -1452,12 +1428,20 @@
       <workItem from="1487570756204" duration="23705000" />
       <workItem from="1487628161647" duration="241000" />
       <workItem from="1487628521408" duration="12700000" />
-      <workItem from="1513960136749" duration="23944000" />
+      <workItem from="1513960136749" duration="24068000" />
     </task>
+    <task id="LOCAL-00001" summary="add file for create DB">
+      <created>1514103253491</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1514103253491</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="367011000" />
+    <option name="totallyTimeSpent" value="367135000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="57" y="24" width="1863" height="1056" extended-state="6" />
@@ -1558,17 +1542,12 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="add file for create DB" />
+    <option name="LAST_COMMIT_MESSAGE" value="add file for create DB" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/servlets/RegisterServlet.java</url>
-          <line>33</line>
-          <properties />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/webapp/user/Constructor/Engine.jsp</url>
           <line>49</line>
@@ -1781,14 +1760,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/RegisterServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="17" column="52" lean-forward="false" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
           <folding />
         </state>
       </provider>
@@ -2094,18 +2065,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/LoginServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="711">
-          <caret line="69" column="45" lean-forward="false" selection-start-line="69" selection-start-column="45" selection-end-line="69" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/createdb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="870">
           <caret line="61" column="2" lean-forward="false" selection-start-line="61" selection-start-column="2" selection-end-line="61" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/LoginServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="58" column="53" lean-forward="true" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/RegisterServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="55" column="45" lean-forward="false" selection-start-line="55" selection-start-column="45" selection-end-line="55" selection-end-column="45" />
           <folding />
         </state>
       </provider>
