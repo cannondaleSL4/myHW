@@ -6,7 +6,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="66ec465c-8951-42bb-b69f-4a93fa579594" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/servlets/user/ConstructorBody.class" afterPath="$PROJECT_DIR$/target/classes/servlets/user/ConstructorBody.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/servlets/user/ConstructorColor.class" afterPath="$PROJECT_DIR$/target/classes/servlets/user/ConstructorColor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/servlets/user/ConstructorModel.class" afterPath="$PROJECT_DIR$/target/classes/servlets/user/ConstructorModel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/servlets/user/ConstructorResult.class" afterPath="$PROJECT_DIR$/target/classes/servlets/user/ConstructorResult.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/servlets/user/ConstructorTransmission.class" afterPath="$PROJECT_DIR$/target/classes/servlets/user/ConstructorTransmission.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/servlets/user/ConstuctorEngine.class" afterPath="$PROJECT_DIR$/target/classes/servlets/user/ConstuctorEngine.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SuperSite.iws" />
@@ -107,7 +112,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="540">
               <caret line="46" column="49" lean-forward="false" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="49" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -149,9 +156,18 @@
       <file leaf-file-name="TestClass.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/test/TestClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="74" column="67" lean-forward="true" selection-start-line="74" selection-start-column="67" selection-end-line="74" selection-end-column="67" />
-              <folding />
+            <state relative-caret-position="990">
+              <caret line="74" column="67" lean-forward="false" selection-start-line="74" selection-start-column="67" selection-end-line="74" selection-end-column="67" />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#536#543#0" expanded="false" />
+                <element signature="e#1420#1430#0" expanded="false" />
+                <element signature="e#1680#1688#0" expanded="false" />
+                <element signature="e#2337#2351#0" expanded="false" />
+                <element signature="e#2846#2858#0" expanded="false" />
+                <element signature="e#3114#3125#0" expanded="false" />
+                <element signature="e#3523#3537#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -159,11 +175,9 @@
       <file leaf-file-name="AddUser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/servlets/admin/AddUser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
+            <state relative-caret-position="915">
               <caret line="61" column="49" lean-forward="false" selection-start-line="61" selection-start-column="29" selection-end-line="61" selection-end-column="49" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -324,10 +338,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="988" />
-    <option name="y" value="52" />
-    <option name="width" value="932" />
-    <option name="height" value="1028" />
+    <option name="x" value="57" />
+    <option name="y" value="24" />
+    <option name="width" value="1863" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -442,32 +456,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SuperSite" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SuperSite" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1505,6 +1493,7 @@
       <workItem from="1514114335019" duration="3212000" />
       <workItem from="1514232071481" duration="14504000" />
       <workItem from="1514280020415" duration="65000" />
+      <workItem from="1514280601978" duration="147000" />
     </task>
     <task id="LOCAL-00001" summary="all change is over">
       <created>1514116182536</created>
@@ -1527,11 +1516,18 @@
       <option name="project" value="LOCAL" />
       <updated>1514279581223</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Merge branch 'forMerge'&#10;&#10;# Conflicts:&#10;#&#9;.idea/dataSources/7ce76d44-e311-4ffb-808a-6f6317dc809c/_metadata_/metadata&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/main/java/com/authentification/userDAO/UserDAOImpl.java&#10;#&#9;src/main/java/com/test/TestClass.java&#10;#&#9;src/main/java/servlets/Logout.java&#10;#&#9;src/main/java/servlets/RegisterServlet.java&#10;#&#9;src/main/java/servlets/admin/AddUser.java&#10;#&#9;src/main/java/servlets/admin/MainAdmin.java&#10;#&#9;src/main/java/servlets/staff/ConstructorModel.java&#10;#&#9;src/main/webapp/WEB-INF/web.xml&#10;#&#9;src/main/webapp/admin/admin.jsp&#10;#&#9;src/main/webapp/img/user.png&#10;#&#9;src/main/webapp/staff/StaffModel.jsp&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT.war&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/com/authentification/userDAO/UserDAOImpl.class&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/com/test/TestClass.class&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/RegisterServlet.class&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/admin/AddUser.class&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/user/ConstructorBody.class&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/user/ConstructorColor.class&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/user/ConstructorModel.class&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/user/ConstructorResult.class&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/user/ConstructorTransmission.class&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/user/ConstuctorEngine.class&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/web.xml&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/admin/admin.jsp&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/img/user.png&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/staff/StaffModel.jsp&#10;#&#9;target/classes/com/authentification/userDAO/UserDAOImpl.class&#10;#&#9;target/classes/com/test/TestClass.class&#10;#&#9;target/classes/servlets/RegisterServlet.class&#10;#&#9;target/classes/servlets/admin/AddUser.class&#10;#&#9;target/classes/servlets/user/ConstructorBody.class&#10;#&#9;target/classes/servlets/user/ConstructorColor.class&#10;#&#9;target/classes/servlets/user/ConstructorModel.class&#10;#&#9;target/classes/servlets/user/ConstructorResult.class&#10;#&#9;target/classes/servlets/user/ConstructorTransmission.class&#10;#&#9;target/classes/servlets/user/ConstuctorEngine.class&#10;#&#9;target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst&#10;#&#9;target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst&#10;">
+      <created>1514280637751</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1514280637751</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="354936000" />
+    <option name="totallyTimeSpent" value="355083000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1543,7 +1539,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="988" y="52" width="932" height="1028" extended-state="4" />
+    <frame x="57" y="24" width="1863" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1562,15 +1558,16 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38494623" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3107527" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28713968" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21175167" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21075268" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36666667" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4334086" sideWeight="0.5157025" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.51693004" sideWeight="0.4842975" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5233902" sideWeight="0.4842975" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988048" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="JavaEE:App" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
@@ -1581,7 +1578,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925585" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3107527" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32705098" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1638,7 +1634,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="all change is over" />
-    <option name="LAST_COMMIT_MESSAGE" value="all change is over" />
+    <MESSAGE value="Merge branch 'forMerge'&#10;&#10;# Conflicts:&#10;#&#9;.idea/dataSources/7ce76d44-e311-4ffb-808a-6f6317dc809c/_metadata_/metadata&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/main/java/com/authentification/userDAO/UserDAOImpl.java&#10;#&#9;src/main/java/com/test/TestClass.java&#10;#&#9;src/main/java/servlets/Logout.java&#10;#&#9;src/main/java/servlets/RegisterServlet.java&#10;#&#9;src/main/java/servlets/admin/AddUser.java&#10;#&#9;src/main/java/servlets/admin/MainAdmin.java&#10;#&#9;src/main/java/servlets/staff/ConstructorModel.java&#10;#&#9;src/main/webapp/WEB-INF/web.xml&#10;#&#9;src/main/webapp/admin/admin.jsp&#10;#&#9;src/main/webapp/img/user.png&#10;#&#9;src/main/webapp/staff/StaffModel.jsp&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT.war&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/com/authentification/userDAO/UserDAOImpl.class&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/com/test/TestClass.class&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/RegisterServlet.class&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/admin/AddUser.class&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/user/ConstructorBody.class&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/user/ConstructorColor.class&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/user/ConstructorModel.class&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/user/ConstructorResult.class&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/user/ConstructorTransmission.class&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/user/ConstuctorEngine.class&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/web.xml&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/admin/admin.jsp&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/img/user.png&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/staff/StaffModel.jsp&#10;#&#9;target/classes/com/authentification/userDAO/UserDAOImpl.class&#10;#&#9;target/classes/com/test/TestClass.class&#10;#&#9;target/classes/servlets/RegisterServlet.class&#10;#&#9;target/classes/servlets/admin/AddUser.class&#10;#&#9;target/classes/servlets/user/ConstructorBody.class&#10;#&#9;target/classes/servlets/user/ConstructorColor.class&#10;#&#9;target/classes/servlets/user/ConstructorModel.class&#10;#&#9;target/classes/servlets/user/ConstructorResult.class&#10;#&#9;target/classes/servlets/user/ConstructorTransmission.class&#10;#&#9;target/classes/servlets/user/ConstuctorEngine.class&#10;#&#9;target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst&#10;#&#9;target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'forMerge'&#10;&#10;# Conflicts:&#10;#&#9;.idea/dataSources/7ce76d44-e311-4ffb-808a-6f6317dc809c/_metadata_/metadata&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/main/java/com/authentification/userDAO/UserDAOImpl.java&#10;#&#9;src/main/java/com/test/TestClass.java&#10;#&#9;src/main/java/servlets/Logout.java&#10;#&#9;src/main/java/servlets/RegisterServlet.java&#10;#&#9;src/main/java/servlets/admin/AddUser.java&#10;#&#9;src/main/java/servlets/admin/MainAdmin.java&#10;#&#9;src/main/java/servlets/staff/ConstructorModel.java&#10;#&#9;src/main/webapp/WEB-INF/web.xml&#10;#&#9;src/main/webapp/admin/admin.jsp&#10;#&#9;src/main/webapp/img/user.png&#10;#&#9;src/main/webapp/staff/StaffModel.jsp&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT.war&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/com/authentification/userDAO/UserDAOImpl.class&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/com/test/TestClass.class&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/RegisterServlet.class&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/admin/AddUser.class&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/user/ConstructorBody.class&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/user/ConstructorColor.class&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/user/ConstructorModel.class&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/user/ConstructorResult.class&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/user/ConstructorTransmission.class&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/user/ConstuctorEngine.class&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/web.xml&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/admin/admin.jsp&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/img/user.png&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/staff/StaffModel.jsp&#10;#&#9;target/classes/com/authentification/userDAO/UserDAOImpl.class&#10;#&#9;target/classes/com/test/TestClass.class&#10;#&#9;target/classes/servlets/RegisterServlet.class&#10;#&#9;target/classes/servlets/admin/AddUser.class&#10;#&#9;target/classes/servlets/user/ConstructorBody.class&#10;#&#9;target/classes/servlets/user/ConstructorColor.class&#10;#&#9;target/classes/servlets/user/ConstructorModel.class&#10;#&#9;target/classes/servlets/user/ConstructorResult.class&#10;#&#9;target/classes/servlets/user/ConstructorTransmission.class&#10;#&#9;target/classes/servlets/user/ConstuctorEngine.class&#10;#&#9;target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst&#10;#&#9;target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1678,7 +1675,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1005">
           <caret line="77" column="36" lean-forward="false" selection-start-line="77" selection-start-column="36" selection-end-line="77" selection-end-column="36" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1996,7 +1995,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="46" column="49" lean-forward="false" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="49" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2065,19 +2066,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/test/TestClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="74" column="67" lean-forward="true" selection-start-line="74" selection-start-column="67" selection-end-line="74" selection-end-column="67" />
-          <folding />
+        <state relative-caret-position="990">
+          <caret line="74" column="67" lean-forward="false" selection-start-line="74" selection-start-column="67" selection-end-line="74" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#536#543#0" expanded="false" />
+            <element signature="e#1420#1430#0" expanded="false" />
+            <element signature="e#1680#1688#0" expanded="false" />
+            <element signature="e#2337#2351#0" expanded="false" />
+            <element signature="e#2846#2858#0" expanded="false" />
+            <element signature="e#3114#3125#0" expanded="false" />
+            <element signature="e#3523#3537#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/servlets/admin/AddUser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
+        <state relative-caret-position="915">
           <caret line="61" column="49" lean-forward="false" selection-start-line="61" selection-start-column="29" selection-end-line="61" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
