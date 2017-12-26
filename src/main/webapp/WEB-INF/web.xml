@@ -54,6 +54,17 @@
 
     <!-- Admin servlets -->
     <servlet>
+        <display-name>deleteUser</display-name>
+        <servlet-name>deleteUser</servlet-name>
+        <servlet-class>servlets.admin.DeleteUser</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>deleteUser</servlet-name>
+        <url-pattern>/admin/deleteUser</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <display-name>editUser</display-name>
         <servlet-name>editUser</servlet-name>
         <servlet-class>servlets.admin.EditUser</servlet-class>

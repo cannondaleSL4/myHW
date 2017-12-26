@@ -17,6 +17,7 @@ com/carEntity/CarParts.class
 com/carDAO/ColorDAO.class
 com/carDAO/KindOfBodyDAO.class
 com/api/Factory.class
+servlets/admin/DeleteUser.class
 com/carDAO/TransmissionDAO.class
 servlets/user/ConstuctorEngine.class
 com/authentification/userEntity/Role.class

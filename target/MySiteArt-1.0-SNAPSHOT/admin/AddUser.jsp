@@ -35,6 +35,7 @@
         <li><a href="/staff/staffmodel">Model for dealership</a></li>
         <li><a href="../overall/Contact.jsp">Contact Us</a></li>
         <li><a href="../overal/About.jsp">About</a></li>
+        <li><a href="DeleteUser.jsp">Delete User</a></li>
     </ul>
 </div>
 
