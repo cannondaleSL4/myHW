@@ -13,8 +13,8 @@
 
         <property name="connection_pool_size">1</property>
 
-        <property name="hbm2ddl.auto">update</property>
-
+        <property name="hbm2ddl.auto">validate</property>
+        <property name="hibernate.temp.use_jdbc_metadata_defaults">false</property>
 
         <property name="current_session_context_class">thread</property>
 
@@ -22,16 +22,14 @@
         <property name="hibernate.format_sql">true</property>
         <property name="connection.autocommit">true</property>
 
-
         <mapping class="com.carEntity.Color"/>
+        <mapping class="com.carEntity.ColorSet"/>
         <mapping class="com.carEntity.Engine"/>
+        <mapping class="com.carEntity.Transmission"/>
         <mapping class="com.carEntity.KindOfBody"/>
         <mapping class="com.carEntity.ModelName"/>
-        <mapping class="com.carEntity.Transmission"/>
-        <mapping class="com.carEntity.ColorSet"/>
         <mapping class="com.carEntity.CarParametrs"/>
         <mapping class="com.authentification.userEntity.User"/>
-        <mapping class="com.authentification.userEntity.Role"/>
 
     </session-factory>
 </hibernate-configuration>

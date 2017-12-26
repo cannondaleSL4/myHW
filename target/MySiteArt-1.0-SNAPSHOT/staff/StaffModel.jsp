@@ -10,11 +10,7 @@
     <link href="../../css/Main.css" rel="stylesheet" type="text/css">
     <%
         if(session.getAttribute("userName")==null){
-            response.sendRedirect("/logout");
-            System.out.println(888888888);
-        }else if(!session.getAttribute("userRole").toString().equalsIgnoreCase("ADMINISTRATOR") &&
-                !session.getAttribute("userRole").toString().equalsIgnoreCase("STAFF")) {
-            response.sendRedirect("/logout");
+            response.sendRedirect("/login.jsp");
         }
     %>
 </head>
@@ -22,7 +18,7 @@
 <section>
     <form>
         <p><%=request.getSession().getAttribute("userName")%></p>
-        <p><a href = "/logout">Exit</a></p>
+        <p><a href = "../../login.jsp">Exit</a></p>
     </form>
 </section>
 <div class="header">
@@ -31,9 +27,9 @@
     </div>
 
     <ul id="menu">
-        <li><a href="/user/Constructor/model">Model for user</a></li>
-        <li><a href="../overall/Contact.jsp">Contact Us</a></li>
-        <li><a href="../overal/About.jsp">About</a></li>
+        <li><a href="Model.jsp">Models</a></li>
+        <li><a href="../Contact.jsp">Contact Us</a></li>
+        <li><a href="../About.jsp">About</a></li>
     </ul>
 </div>
 
@@ -44,14 +40,13 @@
             for(ModelName modelName:modelNameList){
     %>
     <div class = "photo">
-        <p><a href="edit?modelName=<%=modelName.getModelName()%>"><img src = "../img/<%=modelName.getImgAdress()%>"> </a></p>
+        <p><a href="engine?modelName=<%=modelName.getModelName()%>"><img src = "../../img/<%=modelName.getImgAdress()%>"> </a></p>
         <p class = "caption"><%=modelName.getModelName()%></p>
-    </div>
     <%}
     }%>
         <div class = "photo">
             <p>
-                <a href="add?modelName=y"> <img src = "../img/pl.png"></a>
+                <img src = "../img/plus.png" onmouseover="document.getElementById('Text').value='Add new model'" onmouseout="document.getElementById('Text').value=''"><a href="plus?y"></a>
             </p>
         </div>
     </div>

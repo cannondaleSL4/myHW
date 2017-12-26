@@ -4,7 +4,6 @@ import com.api.Factory;
 import com.api.HibernateUtil;
 import com.authentification.userEntity.Role;
 import com.authentification.userEntity.User;
-import org.hibernate.Query;
 import org.hibernate.Session;
 
 import javax.servlet.ServletException;

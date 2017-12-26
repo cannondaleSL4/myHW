@@ -32,7 +32,7 @@ public class EngineDAO implements DAO <Engine> {
     }
 
     @Override
-    public void update(Long l, Engine engine) throws SQLException {
+    public void update(Integer l, Engine engine) throws SQLException {
         Session session = null;
         try{
             session = HibernateUtil.getSessionFactory().openSession();
@@ -49,7 +49,7 @@ public class EngineDAO implements DAO <Engine> {
     }
 
     @Override
-    public Engine getById(Long l) {
+    public Engine getById(Integer l) {
         Session session = null;
         Engine engine = null;
         try{
@@ -106,7 +106,7 @@ public class EngineDAO implements DAO <Engine> {
     }
 
     @Override
-    public void delete(Long l) {
+    public void delete(Integer l) {
         Session session = null;
         Engine engine =null;
         try{

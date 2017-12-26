@@ -58,7 +58,7 @@ public class ColorDAO implements DAO<Color> {
     }
 
     @Override
-    public void update(Long l, Color color) throws SQLException {
+    public void update(Integer l, Color color) throws SQLException {
         Session session = null;
         try{
             session = HibernateUtil.getSessionFactory().openSession();
@@ -75,7 +75,7 @@ public class ColorDAO implements DAO<Color> {
     }
 
     @Override
-    public Color getById(Long l) {
+    public Color getById(Integer l) {
         Session session = null;
         Color color = null;
         try{
@@ -109,7 +109,7 @@ public class ColorDAO implements DAO<Color> {
     }
 
     @Override
-    public void delete(Long l) {
+    public void delete(Integer l) {
         Session session = null;
         Color color =null;
         try{

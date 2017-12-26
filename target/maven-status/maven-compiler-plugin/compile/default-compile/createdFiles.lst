@@ -9,8 +9,8 @@ com/carEntity/ColorSet.class
 com/api/JacksonUtil.class
 com/carEntity/CarParametrs.class
 com/carEntity/Transmission.class
-servlets/user/ConstructorColor.class
 servlets/LoginServlet.class
+servlets/user/ConstructorColor.class
 servlets/user/ConstructorResult.class
 com/carEntity/KindOfBody.class
 com/carEntity/CarParts.class
@@ -22,12 +22,13 @@ servlets/user/ConstuctorEngine.class
 com/authentification/userEntity/Role.class
 com/carDAO/CarParametrsDAO.class
 com/carEntity/Color.class
-servlets/Logout.class
 servlets/staff/ConstructorModel.class
+servlets/Logout.class
 servlets/user/ConstructorTransmission.class
 com/carDAO/ModelNameDAO.class
 servlets/admin/MainAdmin.class
 com/api/HibernateUtil.class
+servlets/admin/EditUser.class
 com/authentification/userDAO/UserDAOImpl.class
 servlets/user/ConstructorModel.class
 com/carDAO/EngineDAO.class

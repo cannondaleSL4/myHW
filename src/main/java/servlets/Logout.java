@@ -12,7 +12,7 @@ public class Logout extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request,
-                       HttpServletResponse response) throws IOException {
+                      HttpServletResponse response) throws IOException {
         request.getSession().invalidate();
         response.sendRedirect("/login.jsp");
     }

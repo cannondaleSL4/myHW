@@ -13,9 +13,9 @@ import java.io.Serializable;
 public class KindOfBody implements CarParts, Serializable {
 
 
-    private static final long serialVersionUID = 1L;
+    private static final Long serialVersionUID = 1L;
 
-    private Long id;
+    private Integer id;
     private String nameKindOfBody;
     private String imgAdress;
 
@@ -29,7 +29,7 @@ public class KindOfBody implements CarParts, Serializable {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name = "idkind_of_body",nullable = false, unique = true)
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -47,7 +47,7 @@ public class KindOfBody implements CarParts, Serializable {
         this.imgAdress = imgAdress;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -55,6 +55,6 @@ public class KindOfBody implements CarParts, Serializable {
         this.nameKindOfBody = nameKindOfBody;
     }
 
-    @OneToOne(mappedBy = "kindOfBody",cascade = CascadeType.REMOVE)
+    @OneToOne(mappedBy = "kind_of_body",cascade = CascadeType.REMOVE)
     private CarParametrs carParametrs;
 }

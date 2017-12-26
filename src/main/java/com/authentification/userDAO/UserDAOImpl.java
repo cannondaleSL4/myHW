@@ -65,6 +65,26 @@ public class UserDAOImpl implements UserDAO {
         }
     }
 
+    public void update(User user) throws SQLException {
+        Session session = null;
+        Transaction tx = null;
+        try{
+            session = HibernateUtil.getSessionFactory().openSession();
+            tx =session.beginTransaction();
+            session.update(user);
+            session.flush();
+            session.clear();
+            session.getTransaction().commit();
+        }catch (Exception e){
+            //JOptionPane.showMessageDialog(null, e.getMessage(), "Error Insert", JOptionPane.OK_OPTION);
+            tx.rollback();
+        }finally {
+            if (session != null && session.isOpen()){
+                session.close();
+            }
+        }
+    }
+
     @Override
     public List<User> getAll() {
         Session session = null;
@@ -122,6 +142,29 @@ public class UserDAOImpl implements UserDAO {
         return objects.get(0).getType();
     }
 
+    public User getUser(String name){
+        Session session = null;
+        List<User> objects  = null;
+        try{
+            session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            Query query = session.createQuery("FROM User " +
+                    " WHERE user_name =:name")
+                    //здесь то же пришлось применять имя колонки. тк. userName  не находит
+                    .setString("name",name);
+            objects = query.list();
+
+            int a = 10;
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error for  check contains", JOptionPane.OK_OPTION);
+        }finally {
+            if (session != null && session.isOpen()){
+                session.close();
+            }
+        }
+        return objects.get(0);
+    }
+
 
     private boolean check(User user)throws SQLException{
         Session session = null;
@@ -153,11 +196,11 @@ public class UserDAOImpl implements UserDAO {
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
             Query query = session.createQuery("FROM User " +
-                    " WHERE user_name =:name")
+                    " WHERE user_name =:name AND user_password =:password")
                     //здесь то же пришлось применять имя колонки. тк. userName  не находит
-                    .setString("name",user.getName());
+                    .setString("name",user.getName())
+                    .setString("password", user.getPassword());
             objects = query.list();
-            //session.getTransaction().commit();
         }catch (Exception e){
             JOptionPane.showMessageDialog(null, e.getMessage(), "Error for  check contains", JOptionPane.OK_OPTION);
         }finally {

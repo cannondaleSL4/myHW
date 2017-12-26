@@ -13,21 +13,21 @@ import java.util.Set;
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
 public class ColorSet implements CarParts, Serializable {
 
-    private static final long serialVersionUID = 1L;
+    private static final Long serialVersionUID = 1L;
 
-    private Long id;
+    private Integer id;
     private Set<Color> colors = new HashSet<Color>(0);
 
     public ColorSet() {}
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idcolor_set")
-    public Long getIdColorSet() {
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public Integer getIdColorSet() {
         return id;
     }
 
-    public void setIdColorSet(Long idColorSet) {
+    public void setIdColorSet(Integer idColorSet) {
         this.id = idColorSet;
     }
 
@@ -58,6 +58,6 @@ public class ColorSet implements CarParts, Serializable {
                 '}';
     }
 
-    @OneToOne(mappedBy = "engine",cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "color_set",cascade = CascadeType.ALL)
     private CarParametrs carParametrs;
 }

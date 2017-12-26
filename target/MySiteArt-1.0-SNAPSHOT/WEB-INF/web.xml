@@ -53,6 +53,16 @@
     </servlet-mapping>
 
     <!-- Admin servlets -->
+    <servlet>
+        <display-name>editUser</display-name>
+        <servlet-name>editUser</servlet-name>
+        <servlet-class>servlets.admin.EditUser</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>editUser</servlet-name>
+        <url-pattern>/admin/editUser</url-pattern>
+    </servlet-mapping>
 
     <servlet>
         <display-name>addUser</display-name>
@@ -93,7 +103,7 @@
         <servlet-name>engine</servlet-name>
         <servlet-class>servlets.user.ConstuctorEngine</servlet-class>
     </servlet>
-    
+
     <servlet-mapping>
         <servlet-name>engine</servlet-name>
         <url-pattern>/user/Constructor/engine</url-pattern>

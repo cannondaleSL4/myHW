@@ -22,7 +22,7 @@ public class ModelNameDAO implements DAO <ModelName> {
             session.clear();
             session.getTransaction().commit();
         }catch (Exception e){
-            JOptionPane.showMessageDialog(null, e.getMessage(), "Error modelName", JOptionPane.OK_OPTION);
+            //JOptionPane.showMessageDialog(null, e.getMessage(), "Error modelName", JOptionPane.OK_OPTION);
             tx.rollback();
         }finally {
             if (session != null && session.isOpen()){
@@ -53,17 +53,17 @@ public class ModelNameDAO implements DAO <ModelName> {
         return false;
     }
 
-    public Long getId(String name){
+    public Integer getId(String name){
         //ModelName model = new ModelName(name,null);
         Session session = null;
         Transaction tx = null;
         List<ModelName> modelNameList = getAll();
-        Long result = null;
+        Integer result = null;
         try{
             session = HibernateUtil.getSessionFactory().openSession();
             tx = session.beginTransaction();
             for(ModelName modelName:modelNameList){
-                if (modelName.getModelName().equalsIgnoreCase(name))result =(Long) modelName.getId();
+                if (modelName.getModelName().equalsIgnoreCase(name))result =(Integer) modelName.getId();
             }
         }catch (Exception e){
             JOptionPane.showMessageDialog(null, e.getMessage(), "Error modelName", JOptionPane.OK_OPTION);
@@ -77,7 +77,7 @@ public class ModelNameDAO implements DAO <ModelName> {
     }
 
     @Override
-    public void update(Long l, ModelName modelName) throws SQLException {
+    public void update(Integer l, ModelName modelName) throws SQLException {
         Session session = null;
         try{
             session = HibernateUtil.getSessionFactory().openSession();
@@ -94,7 +94,7 @@ public class ModelNameDAO implements DAO <ModelName> {
     }
 
     @Override
-    public ModelName getById(Long l) {
+    public ModelName getById(Integer l) {
         Session session = null;
         ModelName modelName = null;
         try{
@@ -128,7 +128,7 @@ public class ModelNameDAO implements DAO <ModelName> {
     }
 
     @Override
-    public void delete(Long l) {
+    public void delete(Integer l) {
         Session session = null;
         ModelName modelName =null;
         try{

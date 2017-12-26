@@ -4,6 +4,7 @@ import org.apache.commons.codec.digest.DigestUtils;
 import org.codehaus.jackson.annotate.JsonTypeInfo;
 import javax.persistence.*;
 import java.io.Serializable;
+import java.security.Principal;
 
 /**
  * Created by dima on 04.02.17.
@@ -14,8 +15,8 @@ import java.io.Serializable;
  */
 @Table(name = "user_base")
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
-public class User implements Serializable {
-    private Long id;
+public class User implements Serializable, Principal {
+    private Integer id;
     private String userName;
     private String password;
     //т.е. по умолчанию роль - юзер.
@@ -38,7 +39,7 @@ public class User implements Serializable {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name = "id_user",nullable = false, unique = true)
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -61,7 +62,7 @@ public class User implements Serializable {
         this.type = type;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

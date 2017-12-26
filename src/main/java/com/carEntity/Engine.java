@@ -12,9 +12,9 @@ import java.io.Serializable;
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
 public class Engine implements CarParts, Serializable {
 
-    private static final long serialVersionUID = 1L;
+    private static final Long serialVersionUID = 1L;
 
-    private Long id;
+    private Integer id;
     private String nameOfEngine;
     private int horsepower;
     private String imgAdress;
@@ -33,7 +33,7 @@ public class Engine implements CarParts, Serializable {
         this.imgAdress = imgAdress;
     }
 
-    public Engine(Long id,String nameOfEngine, int horsepower) {
+    public Engine(Integer id,String nameOfEngine, int horsepower) {
         this.nameOfEngine = nameOfEngine;
         this.horsepower = horsepower;
         this.id = id;
@@ -42,11 +42,11 @@ public class Engine implements CarParts, Serializable {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name = "idengine",nullable = false, unique = true)
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
