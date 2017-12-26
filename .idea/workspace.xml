@@ -6,26 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="66ec465c-8951-42bb-b69f-4a93fa579594" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/servlets/admin/DeleteUser.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/admin/DeleteUser.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MySiteArt-1.0-SNAPSHOT.war" afterPath="$PROJECT_DIR$/target/MySiteArt-1.0-SNAPSHOT.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/user/ConstructorBody.class" afterPath="$PROJECT_DIR$/target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/user/ConstructorBody.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/user/ConstructorColor.class" afterPath="$PROJECT_DIR$/target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/user/ConstructorColor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/user/ConstructorModel.class" afterPath="$PROJECT_DIR$/target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/user/ConstructorModel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/user/ConstructorResult.class" afterPath="$PROJECT_DIR$/target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/user/ConstructorResult.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/user/ConstructorTransmission.class" afterPath="$PROJECT_DIR$/target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/user/ConstructorTransmission.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/user/ConstuctorEngine.class" afterPath="$PROJECT_DIR$/target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/user/ConstuctorEngine.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/admin/AddUser.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/admin/AddUser.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/admin/EditUser.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/admin/EditUser.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MySiteArt-1.0-SNAPSHOT/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/target/MySiteArt-1.0-SNAPSHOT/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MySiteArt-1.0-SNAPSHOT/admin/AddUser.jsp" afterPath="$PROJECT_DIR$/target/MySiteArt-1.0-SNAPSHOT/admin/AddUser.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MySiteArt-1.0-SNAPSHOT/admin/EditUser.jsp" afterPath="$PROJECT_DIR$/target/MySiteArt-1.0-SNAPSHOT/admin/EditUser.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MySiteArt-1.0-SNAPSHOT/admin/admin.jsp" afterPath="$PROJECT_DIR$/target/MySiteArt-1.0-SNAPSHOT/admin/admin.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
     </list>
     <ignored path="SuperSite.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -308,7 +289,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="988" />
+    <option name="x" value="57" />
     <option name="y" value="52" />
     <option name="width" value="932" />
     <option name="height" value="1028" />
@@ -1330,7 +1311,7 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <configuration default="false" name="Ford" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.6" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration default="false" name="Ford" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.32 (Ubuntu)" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <file path="$PROJECT_DIR$/target/MySiteArt-1.0-SNAPSHOT.war">
@@ -1469,7 +1450,7 @@
       <workItem from="1514280601978" duration="212000" />
       <workItem from="1514284668444" duration="619000" />
       <workItem from="1514308257260" duration="4250000" />
-      <workItem from="1514313533406" duration="4211000" />
+      <workItem from="1514313533406" duration="4733000" />
     </task>
     <task id="LOCAL-00001" summary="all change is over">
       <created>1514116182536</created>
@@ -1506,11 +1487,18 @@
       <option name="project" value="LOCAL" />
       <updated>1514280752491</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Merge branch 'forMerge'&#10;&#10;# Conflicts:&#10;#&#9;.idea/dataSources/7ce76d44-e311-4ffb-808a-6f6317dc809c/_metadata_/metadata&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/main/java/com/authentification/userDAO/UserDAOImpl.java&#10;#&#9;src/main/java/com/test/TestClass.java&#10;#&#9;src/main/java/servlets/Logout.java&#10;#&#9;src/main/java/servlets/RegisterServlet.java&#10;#&#9;src/main/java/servlets/admin/AddUser.java&#10;#&#9;src/main/java/servlets/admin/MainAdmin.java&#10;#&#9;src/main/java/servlets/staff/ConstructorModel.java&#10;#&#9;src/main/webapp/WEB-INF/web.xml&#10;#&#9;src/main/webapp/admin/admin.jsp&#10;#&#9;src/main/webapp/img/user.png&#10;#&#9;src/main/webapp/staff/StaffModel.jsp&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT.war&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/com/authentification/userDAO/UserDAOImpl.class&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/com/test/TestClass.class&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/RegisterServlet.class&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/admin/AddUser.class&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/user/ConstructorBody.class&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/user/ConstructorColor.class&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/user/ConstructorModel.class&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/user/ConstructorResult.class&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/user/ConstructorTransmission.class&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/classes/servlets/user/ConstuctorEngine.class&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/WEB-INF/web.xml&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/admin/admin.jsp&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/img/user.png&#10;#&#9;target/MySiteArt-1.0-SNAPSHOT/staff/StaffModel.jsp&#10;#&#9;target/classes/com/authentification/userDAO/UserDAOImpl.class&#10;#&#9;target/classes/com/test/TestClass.class&#10;#&#9;target/classes/servlets/RegisterServlet.class&#10;#&#9;target/classes/servlets/admin/AddUser.class&#10;#&#9;target/classes/servlets/user/ConstructorBody.class&#10;#&#9;target/classes/servlets/user/ConstructorColor.class&#10;#&#9;target/classes/servlets/user/ConstructorModel.class&#10;#&#9;target/classes/servlets/user/ConstructorResult.class&#10;#&#9;target/classes/servlets/user/ConstructorTransmission.class&#10;#&#9;target/classes/servlets/user/ConstuctorEngine.class&#10;#&#9;target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst&#10;#&#9;target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst&#10;">
+      <created>1514319323480</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1514319323480</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="364228000" />
+    <option name="totallyTimeSpent" value="364750000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1522,7 +1510,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="988" y="52" width="932" height="1028" extended-state="4" />
+    <frame x="57" y="52" width="932" height="1028" extended-state="4" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
