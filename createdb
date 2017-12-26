@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS option_of_color (
 
 CREATE TABLE IF NOT EXISTS current_model (
   idcurrent_model serial PRIMARY KEY,
-  current_modelcol VARCHAR(45)  NOT NULL,
+  current_modelcol VARCHAR(45)  NOT NULL UNIQUE,
   model_img VARCHAR(45)  NOT NULL
 );
 
@@ -60,3 +60,6 @@ CREATE TABLE IF NOT EXISTS user_base (
  user_name VARCHAR(45)  NOT NULL UNIQUE,
  user_password VARCHAR(45)  NOT NULL
 );
+
+
+drop table color_set,color_table,current_model,engine,kind_of_body,option_of_color,transmission,car_parm,user_base cascade;

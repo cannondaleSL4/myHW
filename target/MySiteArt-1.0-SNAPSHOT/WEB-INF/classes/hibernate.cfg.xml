@@ -22,7 +22,6 @@
         <property name="hibernate.format_sql">true</property>
         <property name="connection.autocommit">true</property>
 
-
         <mapping class="com.carEntity.Color"/>
         <mapping class="com.carEntity.ColorSet"/>
         <mapping class="com.carEntity.Engine"/>
@@ -31,7 +30,6 @@
         <mapping class="com.carEntity.ModelName"/>
         <mapping class="com.carEntity.CarParametrs"/>
         <mapping class="com.authentification.userEntity.User"/>
-        <mapping class="com.authentification.userEntity.Role"/>
 
     </session-factory>
 </hibernate-configuration>

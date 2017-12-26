@@ -28,6 +28,7 @@ servlets/user/ConstructorTransmission.class
 com/carDAO/ModelNameDAO.class
 servlets/admin/MainAdmin.class
 com/api/HibernateUtil.class
+servlets/admin/EditUser.class
 com/authentification/userDAO/UserDAOImpl.class
 servlets/user/ConstructorModel.class
 com/carDAO/EngineDAO.class

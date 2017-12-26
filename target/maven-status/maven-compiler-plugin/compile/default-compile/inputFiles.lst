@@ -8,6 +8,7 @@
 /home/dima/java/SuperSite/src/main/java/servlets/RegisterServlet.java
 /home/dima/java/SuperSite/src/main/java/servlets/user/ConstructorResult.java
 /home/dima/java/SuperSite/src/main/java/servlets/user/ConstructorColor.java
+/home/dima/java/SuperSite/src/main/java/servlets/admin/EditUser.java
 /home/dima/java/SuperSite/src/main/java/com/carDAO/CarParametrsDAO.java
 /home/dima/java/SuperSite/src/main/java/com/carDAO/ColorDAO.java
 /home/dima/java/SuperSite/src/main/java/com/api/HibernateUtil.java

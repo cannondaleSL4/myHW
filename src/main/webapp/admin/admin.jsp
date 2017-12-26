@@ -45,7 +45,7 @@
             for(User user:userList){
     %>
     <div class = "photo">
-        <p><a href="editUser?userName=<%=user.getName()%>"><img src = "../img/user.png"> </a></p>
+        <p><a href="EditUser.jsp?nameForChange=<%=user.getName() %>"><img src = "../img/user.png"> </a></p>
         <p class = "caption"><%=user.getName()%></p>
     </div>
     <%}
