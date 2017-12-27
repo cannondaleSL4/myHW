@@ -31,14 +31,10 @@ public class ConstuctorEngine extends HttpServlet {
                        HttpServletResponse response)
             throws ServletException,IOException {
 
-        //здесь я из request.getParametrs перевожу в request.getSession.getParametrs
-
         String modelName = request.getParameter("modelName");
         request.getSession().setAttribute("modelName",modelName);
 
         Cookie[] cookies = request.getCookies();
-
-        //из cookie беру логин пароль, если оно там есть, то ок, если нет то необходимо пройти процедуру аутентификации
 
         if (isLoggined(cookies)){
             Session session = null;

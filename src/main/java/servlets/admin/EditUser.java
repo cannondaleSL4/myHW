@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
 /**
  * Created by dima on 26.12.17.
@@ -24,23 +23,15 @@ public class EditUser extends HttpServlet {
     public void doGet(HttpServletRequest request,
                       HttpServletResponse response)
             throws ServletException,IOException {
+
         cookies = request.getCookies();
 
-        if (isLoggined(cookies)){
-            Session session = null;
-            List objects  =  null;
-            try{
-                response.sendRedirect("/admin/EditUser.jsp");
-            }catch (Exception e) {
-                //todo в случае ошибки надо выводить сообщение пользователю
+        if (isLoggined(cookies)) {
+            try {
+                response.sendRedirect("/admin/AddUser.jsp");
+            } catch (Exception e) {
                 response.sendRedirect("/logout");
-            } finally {
-                if (session != null && session.isOpen()) {
-                    session.close();
-                }
             }
-        }else{
-            response.sendRedirect("/logout");
         }
     }
 

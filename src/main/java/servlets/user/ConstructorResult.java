@@ -34,11 +34,7 @@ public class ConstructorResult extends HttpServlet {
 
         Cookie[] cookies = request.getCookies();
 
-        //из cookie беру логин пароль, если оно там есть, то ок, если нет то необходимо пройти процедуру аутентификации
-
         if (isLoggined(cookies)){
-
-            //здесь я из request.getParametrs перевожу в request.getSession.getParametrs
 
             String colorset = request.getParameter("colorset");
             request.getSession().setAttribute("colorset",colorset);

@@ -36,8 +36,6 @@ public class ConstructorTransmission extends HttpServlet {
 
         if (isLoggined(cookies)){
 
-        //здесь я из request.getParametrs перевожу в request.getSession.getParametrs
-
             String kindOfBody = request.getParameter("kindOfBody");
             request.getSession().setAttribute("kindOfBody",kindOfBody);
 

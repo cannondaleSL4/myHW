@@ -2,7 +2,6 @@ package servlets.admin;
 
 import com.api.Factory;
 import com.authentification.userEntity.User;
-import org.hibernate.Session;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
@@ -25,28 +24,14 @@ public class DeleteUser extends HttpServlet {
     public void doGet(HttpServletRequest request,
                       HttpServletResponse response)
             throws ServletException,IOException {
-
-        //здесь я из request.getParametrs перевожу в request.getSession.getParametrs
-
         cookies = request.getCookies();
 
-        //из cookie беру логин пароль, если оно там есть, то ок, если нет то необходимо пройти процедуру аутентификации
-
-        if (isLoggined(cookies)){
-            Session session = null;
-            List objects  =  null;
-            try{
-                response.sendRedirect("/admin/EditUser.jsp");
-            }catch (Exception e) {
-                //todo в случае ошибки надо выводить сообщение пользователю
+        if (isLoggined(cookies)) {
+            try {
+                response.sendRedirect("/admin/AddUser.jsp");
+            } catch (Exception e) {
                 response.sendRedirect("/logout");
-            } finally {
-                if (session != null && session.isOpen()) {
-                    session.close();
-                }
             }
-        }else{
-            response.sendRedirect("/logout");
         }
     }
 

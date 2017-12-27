@@ -35,8 +35,6 @@ public class ConstructorColor extends HttpServlet {
 
         if (isLoggined(cookies)){
 
-        //здесь я из request.getParametrs перевожу в request.getSession.getParametrs
-
             String transmission = request.getParameter("transmission");
             request.getSession().setAttribute("transmission",transmission);
 
