@@ -8,6 +8,7 @@ com/test/TestClass.class
 com/carEntity/ColorSet.class
 com/api/JacksonUtil.class
 com/carEntity/CarParametrs.class
+servlets/UtilLoggined.class
 com/carEntity/Transmission.class
 servlets/LoginServlet.class
 servlets/user/ConstructorColor.class

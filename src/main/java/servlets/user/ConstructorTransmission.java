@@ -3,6 +3,8 @@ package servlets.user;
 import com.api.HibernateUtil;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import servlets.UtilLoggined;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
@@ -23,10 +25,6 @@ public class ConstructorTransmission extends HttpServlet {
             " AND c.engine.nameOfEngine = :engine " +
             "AND c.kindOfBody.nameKindOfBody = :kindOfBody";
 
-    String userName = null;
-    String password = null;
-
-
     @Override
     public void doPost(HttpServletRequest request,
                        HttpServletResponse response)
@@ -34,7 +32,7 @@ public class ConstructorTransmission extends HttpServlet {
 
         Cookie[] cookies = request.getCookies();
 
-        if (isLoggined(cookies)){
+        if (UtilLoggined.isLoggined(cookies)){
 
             String kindOfBody = request.getParameter("kindOfBody");
             request.getSession().setAttribute("kindOfBody",kindOfBody);
@@ -64,22 +62,5 @@ public class ConstructorTransmission extends HttpServlet {
         }else{
             response.sendRedirect("/logout");
         }
-    }
-
-    private boolean isLoggined(Cookie[] cookies){
-        int length = cookies.length;
-        for(int i = 0; i <length;i++){
-            Cookie cookie = cookies[i];
-            if (cookie.getName().equals("userName")){
-                userName = cookie.getValue();
-            }else if (cookie.getName().equals("password")){
-                password = cookie.getValue();
-            }
-        }
-
-        if (userName!=null && password!=null){
-            return true;
-        }
-        return false;
     }
 }

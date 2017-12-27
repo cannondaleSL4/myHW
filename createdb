@@ -63,3 +63,11 @@ CREATE TABLE IF NOT EXISTS user_base (
 
 
 drop table color_set,color_table,current_model,engine,kind_of_body,option_of_color,transmission,car_parm,user_base cascade;
+
+select u.name as owner, a.name as auto
+  from users u
+  inner join autos a ON a.oid = u.id
+
+select *
+  from users u
+  inner join autos a ON a.oid = u.id

@@ -3,6 +3,8 @@ package servlets.user;
 import com.api.HibernateUtil;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import servlets.UtilLoggined;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
@@ -19,9 +21,6 @@ public class ConstructorModel extends HttpServlet {
     String modelReq ="Select m "+
             "From ModelName m";
 
-    String userName = null;
-    String password = null;
-
     @Override
     public void doGet(HttpServletRequest request,
                       HttpServletResponse response)
@@ -29,7 +28,7 @@ public class ConstructorModel extends HttpServlet {
 
         Cookie[] cookies = request.getCookies();
 
-        if (isLoggined(cookies)){
+        if (UtilLoggined.isLoggined(cookies)){
             Session session = null;
             List objects  =  null;
             try{
@@ -52,23 +51,5 @@ public class ConstructorModel extends HttpServlet {
             System.out.println(222222222);
             response.sendRedirect("/logout");
         }
-    }
-
-    private boolean isLoggined(Cookie[] cookies){
-        int length = cookies.length;
-        for(int i = 0; i <length;i++){
-            Cookie cookie = cookies[i];
-            if (cookie.getName().equals("userName")){
-                userName = cookie.getValue();
-            }else if (cookie.getName().equals("password")){
-                password = cookie.getValue();
-            }
-        }
-
-        if (userName!=null && password!=null){
-            return true;
-        }
-        System.out.println(333333333);
-        return false;
     }
 }

@@ -34,16 +34,13 @@ public class RegisterServlet extends HttpServlet {
                 boolean inBase = Factory.getInstance().getUserDAO().checkUserName(userName);
                 if (!inBase){
                     Factory.getInstance().getUserDAO().add(userName,password);
-                    //request.setAttribute("messageSuccess", messageSuccess);
                     request.getSession().setAttribute("messageSuccess", messageSuccess);
                     response.sendRedirect("/login.jsp");
                 }else{
                     request.getSession().invalidate();
-                    //request.setAttribute("errorMessage", messageBusy);
                     request.getSession().setAttribute("errorMessage", messageBusy);
                     RequestDispatcher rd = request.getRequestDispatcher("/register.jsp");
                     rd.forward(request, response);
-                    //response.sendRedirect("/register.jsp");
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -51,14 +48,12 @@ public class RegisterServlet extends HttpServlet {
                 request.getSession().setAttribute("errorMessage", messageError);
                 RequestDispatcher rd = request.getRequestDispatcher("/register.jsp");
                 rd.forward(request, response);
-                //response.sendRedirect("/register.jsp");
             }
         }else{
             request.getSession().invalidate();
             request.getSession().setAttribute("errorMessage", messageErrorEmpty);
             RequestDispatcher rd = request.getRequestDispatcher("/register.jsp");
             rd.forward(request, response);
-            //response.sendRedirect("/register.jsp");
         }
     }
 }
