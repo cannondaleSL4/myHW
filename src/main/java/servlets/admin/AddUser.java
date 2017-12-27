@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
 /**
  * Created by dima on 21.02.17.
@@ -28,27 +27,14 @@ public class AddUser extends HttpServlet {
                       HttpServletResponse response)
             throws ServletException,IOException {
 
-        //здесь я из request.getParametrs перевожу в request.getSession.getParametrs
-
         cookies = request.getCookies();
 
-        //из cookie беру логин пароль, если оно там есть, то ок, если нет то необходимо пройти процедуру аутентификации
-
-        if (isLoggined(cookies)){
-            Session session = null;
-            List objects  =  null;
-            try{
+        if (isLoggined(cookies)) {
+            try {
                 response.sendRedirect("/admin/AddUser.jsp");
-            }catch (Exception e) {
-                //todo в случае ошибки надо выводить сообщение пользователю
+            } catch (Exception e) {
                 response.sendRedirect("/logout");
-            } finally {
-                if (session != null && session.isOpen()) {
-                    session.close();
-                }
             }
-        }else{
-            response.sendRedirect("/logout");
         }
     }
 
@@ -56,7 +42,6 @@ public class AddUser extends HttpServlet {
     public void doPost (HttpServletRequest request,
                         HttpServletResponse response) throws IOException {
 
-        //из cookie беру логин пароль, если оно там есть, то ок, если нет то необходимо пройти процедуру аутентификации
         cookies = request.getCookies();
 
         String newUserName = request.getParameter("userName");
@@ -75,22 +60,15 @@ public class AddUser extends HttpServlet {
 
         Session session=null;
 
-        if (isLoggined(cookies)){
-            try{
+        if (isLoggined(cookies)) {
+            try {
                 session = HibernateUtil.getSessionFactory().openSession();
                 session.beginTransaction();
                 Factory.getInstance().getUserDAO().add(newUser);
                 response.sendRedirect("/admin/user");
-            }catch (Exception e) {
-                //todo в случае ошибки надо выводить сообщение пользователю
+            } catch (Exception e) {
                 response.sendRedirect("/logout");
-            } finally {
-                if (session != null && session.isOpen()) {
-                    session.close();
-                }
             }
-        }else{
-            response.sendRedirect("/logout");
         }
     }
 

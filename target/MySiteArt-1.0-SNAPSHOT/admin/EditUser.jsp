@@ -12,7 +12,8 @@
     <title>Edit user</title>
     <link href="../css/Main.css" rel="stylesheet" type="text/css">
     <%
-        if(session.getAttribute("userName")== null){
+        String username = (String) session.getAttribute("userName");
+        if(username == null){
             response.sendRedirect("/logout");
         }else if(!session.getAttribute("userRole").toString().equalsIgnoreCase("ADMINISTRATOR")) {
             response.sendRedirect("/logout");
@@ -20,12 +21,9 @@
     %>
 </head>
 <body>
-<%
-    String username = request.getRemoteUser();
-%>
 <section>
     <form>
-        <p><%= session.getAttribute("userName") %></p>
+        <p><%= username %></p>
         <p><a href = "/logout">Exit</a></p>
     </form>
 </section>

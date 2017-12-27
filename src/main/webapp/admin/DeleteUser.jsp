@@ -12,9 +12,11 @@
 <head>
     <meta charset="utf-8" />
     <title>Edit user</title>
+    <link href="../css/Check.css" rel="stylesheet" type="text/css">
     <link href="../css/Main.css" rel="stylesheet" type="text/css">
     <%
-        if(session.getAttribute("userName")== null){
+        String username = (String) session.getAttribute("userName");
+        if(username == null){
             response.sendRedirect("/logout");
         }else if(!session.getAttribute("userRole").toString().equalsIgnoreCase("ADMINISTRATOR")) {
             response.sendRedirect("/logout");
@@ -22,12 +24,9 @@
     %>
 </head>
 <body>
-<%
-    String username = request.getRemoteUser();
-%>
 <section>
     <form>
-        <p><%= session.getAttribute("userName") %></p>
+        <p><%= username %></p>
         <p><a href = "/logout">Exit</a></p>
     </form>
 </section>
@@ -44,6 +43,7 @@
 </div>
 
 <div id = "main">
+    <h2>for delete user please mark these users </h2>
     <%
         List<User> listOfUser = (List<User>) Factory.getInstance().getUserDAO().getAll();
     %>
@@ -51,16 +51,15 @@
     <form action = "/admin/deleteUser" method="post">
         <%
             for(User user : listOfUser){
-                if(user.getName().equals(session.getAttribute("userName"))){ %>
-                    <input type="checkbox" name=<%= user.getName()%> value=<%= user.getName()%>>
-                }
-        <%
+                if(!user.getName().equals(username)){ %>
+                    <div class = "checkout">
+                    <input id="<%= user.getName()%>" type="checkbox" name="delete" value=<%= user.getName()%>>
+                    <label for="<%= user.getName()%>"><%= user.getName()%></label>
+                    </div>
+                <%}
             }
             %>
     <input type="submit" value="Submit!">
-    </form>
-        <%
-        %>
     </form>
 </div>
 

@@ -1,7 +1,6 @@
 package servlets.admin;
 
 import com.api.Factory;
-import com.api.HibernateUtil;
 import com.authentification.userEntity.User;
 import org.hibernate.Session;
 
@@ -25,12 +24,7 @@ public class EditUser extends HttpServlet {
     public void doGet(HttpServletRequest request,
                       HttpServletResponse response)
             throws ServletException,IOException {
-
-        //здесь я из request.getParametrs перевожу в request.getSession.getParametrs
-
         cookies = request.getCookies();
-
-        //из cookie беру логин пароль, если оно там есть, то ок, если нет то необходимо пройти процедуру аутентификации
 
         if (isLoggined(cookies)){
             Session session = null;
@@ -62,17 +56,13 @@ public class EditUser extends HttpServlet {
             try{
                 User user =Factory.getInstance().getUserDAO().getUser(request.getSession().getAttribute("nameForChange").toString()) ;
                 user.setName(request.getParameter("newName"));
-                session = HibernateUtil.getSessionFactory().openSession();
-                session.beginTransaction();
+                //session = HibernateUtil.getSessionFactory().openSession();
+                //session.beginTransaction();
                 Factory.getInstance().getUserDAO().update(user);
                 response.sendRedirect("/admin/user");
             }catch (Exception e) {
                 //todo в случае ошибки надо выводить сообщение пользователю
                 response.sendRedirect("/logout");
-            } finally {
-                if (session != null && session.isOpen()) {
-                    session.close();
-                }
             }
         }else{
             response.sendRedirect("/logout");
